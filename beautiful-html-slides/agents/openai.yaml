@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beautiful HTML Slides"
+  short_description: "Build polished HTML slide decks from curated templates."
+  default_prompt: "Use $beautiful-html-slides to create a polished HTML slide deck from my topic and content."

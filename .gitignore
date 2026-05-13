@@ -1,0 +1,36 @@
+# Built-in/system skills are managed by Codex, not this sync repo.
+.system/
+
+# Python/runtime caches.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# JavaScript/runtime caches.
+node_modules/
+.npm/
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# NORA and research workflow runtime outputs. These belong to project workspaces.
+**/handoff.json
+**/output/
+**/outputs/
+**/.checkpoints/
+**/harness/logs/
+**/experiment_state.json
+**/.nora.local.json
+
+# Local environments and secrets. Keep example files.
+**/.venv/
+**/venv/
+**/env/
+**/secrets/*
+!**/secrets/*.example
+

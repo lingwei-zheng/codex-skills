@@ -1,0 +1,4 @@
+interface:
+  display_name: "DOCX"
+  short_description: "Read and safely revise Word .docx files in Codex."
+  default_prompt: "Use  to extract or rewrite content from a .docx file and return a safe revised document."

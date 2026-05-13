@@ -1,0 +1,7 @@
+interface:
+  display_name: "NORA"
+  short_description: "Route NORA research workflows for geoscience, GIScience, and GeoAI."
+  default_prompt: "Use $nora to run a NORA research workflow for my geoscience, remote sensing, GIScience, or GeoAI project."
+
+policy:
+  allow_implicit_invocation: true
