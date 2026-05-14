@@ -4,21 +4,35 @@ This repository stores user-installed Codex skills for syncing across machines.
 
 ## Use On A New Machine
 
-Clone this repository into the Codex skills directory:
+Clone this repository anywhere convenient, then run the platform installer to copy the managed skills into `~/.codex/skills`.
 
 ```bash
-mkdir -p ~/.codex
-git clone <repo-url> ~/.codex/skills
+git clone <repo-url>
+cd codex-skills
+./install-mac.sh
 ```
 
-If `~/.codex/skills` already exists, clone elsewhere and copy/merge the skill folders manually.
+On Windows PowerShell:
+
+```powershell
+git clone <repo-url>
+cd codex-skills
+.\install-windows.ps1
+```
+
+Notes:
+
+- The Mac installer skips `docx` because Codex already provides the built-in `Documents` capability there.
+- The Windows installer keeps `docx` available from this repository.
+- Both installers copy top-level skills and supported `nora/skills/*` sub-skills into `~/.codex/skills`.
+- Restart Codex after installation so it reloads the updated skills.
 
 ## Routine Sync
 
 After changing skills on one machine:
 
 ```bash
-cd ~/.codex/skills
+cd /path/to/codex-skills
 git status
 git add <changed-skill>
 git commit -m "Update Codex skills"
@@ -28,8 +42,9 @@ git push
 On another machine:
 
 ```bash
-cd ~/.codex/skills
+cd /path/to/codex-skills
 git pull
+./install-mac.sh
 ```
 
 ## Policy
