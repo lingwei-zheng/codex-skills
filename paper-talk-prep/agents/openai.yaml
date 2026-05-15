@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Talk Prep"
+  short_description: "Plan slide-by-slide paper talks and speaker notes."
+  default_prompt: "Use $paper-talk-prep to turn my paper into a slide-by-slide presentation plan with on-slide text and speaker notes."
+
+policy:
+  allow_implicit_invocation: true
