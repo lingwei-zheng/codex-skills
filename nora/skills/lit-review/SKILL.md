@@ -48,32 +48,63 @@ Examples:
 
 | Priority | Source | ID | How to detect | What it provides |
 |----------|--------|----|---------------|-----------------|
-| 1 | **Zotero** (via MCP) | `zotero` | Try calling any `mcp__zotero__*` tool — if unavailable, skip | Collections, tags, annotations, PDF highlights, BibTeX, semantic search |
+| 1 | **Zotero** (via MCP or Codex plugin helper) | `zotero` | Try any Zotero MCP/app tool first; if unavailable, use the Zotero plugin helper described below | Collections, tags, annotations or indexed full text when available, attachment metadata, BibTeX, local-library search |
 | 2 | **Obsidian** (via MCP) | `obsidian` | Try calling any `mcp__obsidian-vault__*` tool — if unavailable, skip | Research notes, paper summaries, tagged references, wikilinks |
 | 3 | **Local PDFs** | `local` | `Glob: papers/**/*.pdf` | Raw PDF content (first 3 pages) |
 | 4 | **Web search** | `web` | Always available (WebSearch) | arXiv, Semantic Scholar, Google Scholar |
 | 5 | **Semantic Scholar API** | `semantic-scholar` | `tools/semantic_scholar_fetch.py` exists | Published venue papers (IEEE, ACM, Springer) with structured metadata: citation counts, venue info, TLDR. **Only runs when explicitly requested** via `— sources: semantic-scholar` or `— sources: web, semantic-scholar` |
 
-> **Graceful degradation**: If no MCP servers are configured, the skill works exactly as before (local PDFs + web search). Zotero and Obsidian are pure additions.
+> **Graceful degradation**: If no MCP servers are configured, still try the Codex Zotero plugin helper. If no Zotero route is available, the skill works exactly as before (local PDFs + web search). Zotero and Obsidian are pure additions.
 
 
 ## Workflow
 
 ### Step 0a: Search Zotero Library (if available)
 
-**Skip this step entirely if Zotero MCP is not configured.**
+Use Zotero when `zotero` is included in `— sources:` or when sources default to `all`.
 
-Try calling a Zotero MCP tool (e.g., search). If it succeeds:
+Detection order:
+
+1. Try calling a Zotero MCP or app tool if available.
+2. If no Zotero MCP/app tool is available, use the Codex Zotero plugin helper:
+   `C:/Users/Lingwei/.codex/plugins/cache/openai-curated/zotero/dc902811/skills/zotero/scripts/zotero.py`
+3. If that exact path is missing, search for:
+   `C:/Users/Lingwei/.codex/plugins/cache/openai-curated/zotero/*/skills/zotero/scripts/zotero.py`
+4. Start with:
+   ```bash
+   python "<zotero.py>" status --json
+   ```
+5. If `api_running` is false but `local_api_enabled_pref` is true, tell the user Zotero Desktop must be open or restarted.
+6. If `local_api_enabled_pref` is false and the user asked to operate Zotero, run:
+   ```bash
+   python "<zotero.py>" enable --restart
+   ```
+7. If Zotero cannot be reached, skip this source and record `Zotero unavailable` in the source coverage note.
+
+When Zotero succeeds:
 
 1. **Search by topic**: Use the Zotero search tool to find papers matching the research topic
 2. **Read collections**: Check if the user has a relevant collection/folder for this topic
-3. **Extract annotations**: For highly relevant papers, pull PDF highlights and notes — these represent what the user found important
-4. **Export BibTeX**: Get citation data for relevant papers (useful for `/paper-draft` later)
+3. **Extract annotations or full text when available**: For highly relevant papers, pull indexed full text, PDF attachment metadata, highlights, or notes when the route supports them and the user request justifies that extra read
+4. **Export BibTeX**: Get citation data for relevant papers, useful for `/paper-draft` later
 5. **Compile results**: For each relevant Zotero entry, extract:
    - Title, authors, year, venue
+   - Zotero item key
+   - BibTeX key when available
    - User's annotations/highlights (if any)
    - Tags the user assigned
    - Which collection it belongs to
+
+For the plugin helper, use these command patterns:
+
+```bash
+python "<zotero.py>" search "QUERY" --json
+python "<zotero.py>" collections
+python "<zotero.py>" tags
+python "<zotero.py>" export-bibtex --out references.bib
+python "<zotero.py>" children ITEMKEY --json
+python "<zotero.py>" fulltext ATTACHMENTKEY --out output/paper-cache/zotero-ATTACHMENTKEY-fulltext.txt
+```
 
 > 📚 Zotero annotations are gold — they show what the user personally highlighted as important, which is far more valuable than generic summaries.
 
@@ -236,7 +267,6 @@ If Zotero BibTeX was exported, include a `references.bib` snippet for direct use
 - Note if a paper directly competes with or supports our approach
 - **Never fail because a MCP server is not configured** — always fall back gracefully to the next data source
 - Zotero/Obsidian tools may have different names depending on how the user configured the MCP server (e.g., `mcp__zotero__search` or `mcp__zotero-mcp__search_items`). Try the most common patterns and adapt.
-
 
 
 

@@ -44,6 +44,29 @@ Interpret upstream Claude Code terms as follows:
 | Claude hooks in `harness/hooks/` or `settings.json` | Preserve as upstream metadata. Do not install or execute hooks unless the user explicitly asks. |
 | `.mcp.json` servers | Treat as setup notes. Use currently available Codex tools instead of assuming those MCP servers are installed. |
 
+## Zotero Integration
+
+When a NORA workflow needs Zotero, citations, BibTeX, references, or local paper-library search, use the Zotero plugin if it is available even when upstream NORA text refers to a Zotero MCP server.
+
+Resolution order:
+
+1. Use any currently available Zotero MCP or app tool if present.
+2. Otherwise use the installed Zotero plugin helper:
+   `C:/Users/Lingwei/.codex/plugins/cache/openai-curated/zotero/dc902811/skills/zotero/scripts/zotero.py`
+3. If the helper path is missing, search under `C:/Users/Lingwei/.codex/plugins/cache/openai-curated/zotero/*/skills/zotero/scripts/zotero.py`.
+4. If no Zotero route is available, continue with local PDFs and web sources and record the gap.
+
+Helper command pattern:
+
+```bash
+python <zotero.py> status --json
+python <zotero.py> search "<query>" --json
+python <zotero.py> export-bibtex --out references.bib
+python <zotero.py> fulltext <attachment-key> --out <file>
+```
+
+Start with `status --json`. If the local API is disabled but Zotero is needed for the requested workflow, run `enable --restart` only when the user has asked to operate Zotero. Treat Zotero writes such as `import-bibtex` and `import-ris` as explicit write actions requiring clear user intent.
+
 ## Codex Checkpointing
 
 Use `scripts/nora_checkpoint.py` instead of Claude Code `Stop` hooks. Run it from the active project workspace before pausing a long NORA workflow, switching machines, or handing off to a future session:
