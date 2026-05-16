@@ -41,6 +41,18 @@ The internal workflow entry files are named `WORKFLOW.md`, not `SKILL.md`, so
 Codex registers only this root router skill instead of exposing every vendored
 upstream workflow as a separate skill.
 
+## Project Path Contract
+
+When operating inside a project workspace, read `.codex/project.yaml` if it exists before selecting or running a workflow. Treat it as the project-level path contract for shared workflow paths such as handoff, notes, inputs, outputs, papers, and sync state.
+
+Path resolution priority:
+
+1. explicit user argument or selected workflow input
+2. `.codex/project.yaml`
+3. this adapter's or the selected workflow's documented default paths
+
+Vendored ARS workflow files may keep their upstream paths. Use `.codex/project.yaml` only when it explicitly maps the needed semantic path, and record important fallback choices in the project handoff.
+
 ## Workflow Router
 
 Choose the workflow by intent:

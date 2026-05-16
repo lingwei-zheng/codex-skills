@@ -17,6 +17,18 @@ Use this root skill as the Codex router for the bundled NORA Claude Code skill p
 
 Do not load the whole pack by default. Select one workflow, read only the needed `SKILL.md`, then load only directly referenced knowledge, template, config, or tool files.
 
+## Project Path Contract
+
+When operating inside a project workspace, read `.codex/project.yaml` if it exists before routing into a NORA workflow. Treat it as the project-level path contract for shared workflow paths such as handoff, notes, inputs, outputs, papers, and sync state.
+
+Path resolution priority:
+
+1. explicit user argument or selected workflow input
+2. `.codex/project.yaml`
+3. NORA's documented default paths from `CLAUDE.md` or `skills/<workflow>/SKILL.md`
+
+Preserve NORA-owned checkpoint files (`handoff.json`, `memory/MEMORY.md`, `harness/logs/sessions.log`, `.checkpoints/`) as a separate state layer. Use `.codex/project.yaml` for shared path resolution, not as a replacement for NORA's checkpoint schema.
+
 ## Codex Runtime Mapping
 
 Interpret upstream Claude Code terms as follows:

@@ -7,6 +7,20 @@ description: Use when the user wants to continue work across devices, recover Co
 
 This skill standardizes cross-device work for `Codex local`, especially a stronger coding machine plus a lighter writing machine.
 
+## Project path contract
+
+Every project should use one canonical path contract:
+
+- `.codex/project.yaml`
+
+Before reading or writing project workflow files, resolve paths from `.codex/project.yaml` first. If the file or key is missing, use the documented default path and record the fallback in `HANDOFF.md` when it affects future resume work.
+
+If `.codex/project.yaml` does not exist and the user asks to initialize or clean up project workflow state, offer to create it from:
+
+- `references/project-yaml-template.yaml`
+
+Do not create multiple competing path maps for different skills. Add new semantic paths to `.codex/project.yaml` instead.
+
 ## Default model
 
 - Treat the stronger machine as the default `coding / analysis / experiment` machine.
@@ -28,6 +42,7 @@ Use this workflow when the user asks to:
 
 At the project root, prefer these files:
 
+- `.codex/project.yaml`
 - `TODO.md`
 - `HANDOFF.md`
 - `notes/experiment-log.md`
@@ -42,6 +57,7 @@ These are owned by this skill only. They should not replace or overwrite state f
 
 If they do not exist, offer to create them from:
 
+- `references/project-yaml-template.yaml`
 - `references/todo-template.md`
 - `references/handoff-template.md`
 - `references/experiment-log-template.md`
@@ -91,19 +107,20 @@ If mixed, split it into two phases:
 
 When resuming work on a different machine:
 
-1. Read `TODO.md` and `HANDOFF.md` first.
-2. Inspect recent repository state:
+1. Read `.codex/project.yaml` first if present and resolve all workflow paths from it.
+2. Read the resolved `TODO.md` and `HANDOFF.md` paths.
+3. Inspect recent repository state:
    - latest commits
    - current uncommitted changes
    - any experiment or notes files referenced by `HANDOFF.md`
    - relevant skill-owned state files, read-only, when `HANDOFF.md` points to them or the requested workflow needs them
-3. Reconstruct:
+4. Reconstruct:
    - current task
    - completed work
    - next step
    - constraints and known risks
    - file ownership boundaries that must be preserved
-4. Continue only after that reconstruction is explicit.
+5. Continue only after that reconstruction is explicit.
 
 If `HANDOFF.md` is missing, infer state from the repo and create one before substantial new work.
 
@@ -111,11 +128,12 @@ If `HANDOFF.md` is missing, infer state from the repo and create one before subs
 
 Before switching devices or ending a substantial work block:
 
-1. Update `TODO.md`
-2. Update `HANDOFF.md`
-3. Record any experiment results in `notes/experiment-log.md`
-4. Record any reusable writing language or interpretation in `notes/writing-notes.md`
-5. If another skill's checkpoint is required, run or invoke that skill's checkpoint process separately instead of editing its state files from `sync`.
+1. Resolve workflow paths from `.codex/project.yaml` if present.
+2. Update the resolved `TODO.md`
+3. Update the resolved `HANDOFF.md`
+4. Record any experiment results in the resolved experiment log path.
+5. Record any reusable writing language or interpretation in the resolved writing notes path.
+6. If another skill's checkpoint is required, run or invoke that skill's checkpoint process separately instead of editing its state files from `sync`.
 
 Keep handoff updates short and operational. Do not turn them into narrative diaries.
 
@@ -130,6 +148,14 @@ When using this skill, the assistant should produce one or more of:
 - a split plan separating coding and writing phases
 
 ## File conventions
+
+### `.codex/project.yaml`
+
+- project-level source of truth for workflow paths
+- stores semantic path names, not skill-specific instructions
+- every skill should prefer it before using built-in defaults
+- add new path keys here when a workflow needs persistent artifacts
+- do not use it to claim ownership of another skill's private state schema
 
 ### `sync/`
 
@@ -176,13 +202,13 @@ Use for:
 For resume on the coding machine:
 
 ```text
-Use the sync workflow. Read TODO.md, HANDOFF.md, recent commits, and current uncommitted changes. Reconstruct the current implementation state, then continue the next coding step without repeating completed work.
+Use the sync workflow. Read .codex/project.yaml if present, then read the resolved TODO and HANDOFF files, recent commits, and current uncommitted changes. Reconstruct the current implementation state, then continue the next coding step without repeating completed work.
 ```
 
 For resume on the writing machine:
 
 ```text
-Use the sync workflow. Read TODO.md, HANDOFF.md, notes/experiment-log.md, and notes/writing-notes.md. Reconstruct the current project state, then turn it into writing-ready summaries, outlines, or prose.
+Use the sync workflow. Read .codex/project.yaml if present, then read the resolved TODO, HANDOFF, experiment log, and writing notes files. Reconstruct the current project state, then turn it into writing-ready summaries, outlines, or prose.
 ```
 
 For end-of-session handoff:

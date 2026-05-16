@@ -1,0 +1,44 @@
+version: 1
+
+project:
+  name: ""
+  root: "."
+
+machines:
+  coding: "Windows"
+  writing: "MacBook Air"
+
+paths:
+  state:
+    todo: "TODO.md"
+    handoff: "HANDOFF.md"
+
+  notes:
+    dir: "notes"
+    experiment_log: "notes/experiment-log.md"
+    writing_notes: "notes/writing-notes.md"
+
+  inputs:
+    data_raw: "data/raw"
+    data_processed: "data/processed"
+    configs: "configs"
+
+  outputs:
+    dir: "output"
+    figures: "output/figures"
+    tables: "output/tables"
+    reports: "output/reports"
+
+  papers:
+    dir: "paper"
+    draft: "paper/draft.md"
+    figures: "paper/figures"
+
+  sync:
+    dir: "sync"
+    state: "sync/sync_state.json"
+    sessions_log: "sync/sessions.log"
+
+compatibility:
+  fallback_policy: "Use documented skill defaults when a key is missing, and record important fallbacks in HANDOFF.md."
+  preserve_other_skill_state: true
