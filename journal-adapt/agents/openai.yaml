@@ -1,0 +1,7 @@
+interface:
+  display_name: "Journal Adapt"
+  short_description: "Build target-journal writing rules from corpus papers, then revise a manuscript section by section."
+  default_prompt: "Use $journal-adapt to build a dynamic writing skill from my target-journal corpus, then revise my manuscript after I approve the rules."
+
+policy:
+  allow_implicit_invocation: true
