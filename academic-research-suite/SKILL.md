@@ -53,6 +53,8 @@ Path resolution priority:
 
 Vendored ARS workflow files may keep their upstream paths. Use `.codex/project.yaml` only when it explicitly maps the needed semantic path, and record important fallback choices in the project handoff.
 
+For long-running or multi-round ARS work, also look for a project progress file before selecting the next phase. Prefer an explicit user-provided progress path; otherwise use the active workspace's existing progress artifact if present, such as `.codexpotter/projects/**/MAIN.md`, `output/progress/MAIN.md`, `output/reports/QUALITY_GATES.md`, or the latest handoff file. Treat the progress file as the task ledger, `ars/shared/handoff_schemas.md` outputs as inter-stage state, and source manuscripts/data as immutable inputs unless the user asks to revise them.
+
 ## Workflow Router
 
 Choose the workflow by intent:
@@ -67,6 +69,8 @@ Choose the workflow by intent:
 
 If the request spans multiple workflows, start with `ars/academic-pipeline/WORKFLOW.md`
 unless the user clearly asked for a single phase.
+
+Use multi-round file workflow mode for broad research-to-paper work, staged review/revision, deep research with deliverables, citation or integrity checking, experiment planning, reproducibility validation, and requests that explicitly ask to continue, iterate, polish, validate, or run the full pipeline. This mode is especially appropriate for `ars/academic-pipeline/WORKFLOW.md`, `ars/deep-research/WORKFLOW.md`, `ars/academic-paper-reviewer/WORKFLOW.md`, `ars/experiment-agent/WORKFLOW.md`, and `ars/academic-paper/WORKFLOW.md` revision, citation-check, formatting, or drafting modes. Do not use it for Socratic scoping before the user has converged on a research question, or for short explanatory answers.
 
 ### Paper Topic Scoping Override
 
@@ -156,6 +160,8 @@ using them in Codex:
 | `/ars-*` slash command, Claude plugin command | Treat `ars/commands/ars-*.md` as optional prompt recipes. Codex does not register slash commands from this package. |
 | SessionStart hook, SubagentStop hook, `hooks/hooks.json` | Treat as upstream Claude Code hook metadata only. Do not install or execute Claude hooks in Codex unless the user explicitly asks to inspect or port a hook. |
 
+When multi-round file workflow mode is active, implement fresh-session semantics from files: first read the project path contract, progress ledger, latest handoff, relevant Material Passport or source inventory, current phase artifact, and quality-gate reports. Continue from those files rather than relying on prior chat context.
+
 ## Agent Prompt Use
 
 When a workflow lists agents:
@@ -165,10 +171,13 @@ When a workflow lists agents:
 3. Treat each agent file as a scoped role prompt with an input/output contract.
 4. Produce the phase output in the current conversation unless the user requested files.
 5. Use `ars/shared/handoff_schemas.md` when a phase hands material to another phase.
+6. In multi-round file workflow mode, write the phase handoff before moving to the next phase; include stage, input materials, decisions, claims, evidence, risks, open questions, next actions, and quality-gate status when applicable.
 
 For multi-review phases, preserve independence by writing each reviewer section
 before synthesizing. Do not let the final synthesis erase critical findings from
 devil's advocate or methodology roles.
+
+In multi-round file workflow mode, preserve independent reviewer notes as separate artifacts or clearly separated sections before writing the editorial synthesis and final action list. Later rounds should work from the final action list, but keep the original reviewer notes available as supporting evidence.
 
 ## Canonical Agent Files
 
@@ -226,6 +235,8 @@ When it points to another workflow, resolve it under `ars/<workflow>/...`.
 When it points to root-level `scripts/...`, `examples/...`, or `docs/...`, resolve
 it under `ars/scripts/...`, `ars/examples/...`, or `ars/docs/...`.
 
+In multi-round file workflow mode, make quality gates file-backed. Record gate outcomes under the active workspace, preferably in `output/reports/QUALITY_GATES.md`, `output/reports/INTEGRITY_CHECK.md`, `output/reports/CITATION_CHECK.md`, or `output/reports/REVISION_LOG.md` as appropriate. Add unresolved gate failures to the progress ledger as concrete Todo items.
+
 ## Inactive Upstream Scripts
 
 `manifest.json` lists `inactive_upstream_scripts` that are vendored for
@@ -256,3 +267,4 @@ only when the task needs programmatic reference verification.
   and whether the next gate is optional or mandatory.
 - For paper/research outputs, keep uncertainty explicit and separate evidence,
   inference, and recommendation.
+- For multi-round file workflow mode, end only when the progress ledger has no remaining Todo items, required handoff and final artifacts exist, mandatory quality gates pass or have documented deferrals, and critical reviewer findings are resolved or explicitly carried forward.

@@ -29,6 +29,8 @@ Path resolution priority:
 
 Preserve NORA-owned checkpoint files (`handoff.json`, `memory/MEMORY.md`, `harness/logs/sessions.log`, `.checkpoints/`) as a separate state layer. Use `.codex/project.yaml` for shared path resolution, not as a replacement for NORA's checkpoint schema.
 
+For long-running or multi-round work, also look for a project progress file before routing. Prefer an explicit user-provided progress path; otherwise use the active workspace's existing progress artifact if present, such as `.codexpotter/projects/**/MAIN.md`, `output/progress/MAIN.md`, `output/REVIEW_STATE.json`, or `handoff.json`. Treat the progress file as the current task ledger, `handoff.json` as cross-session state, and `memory/MEMORY.md` as durable project knowledge; do not let any one of them overwrite the others.
+
 ## Codex Runtime Mapping
 
 Interpret upstream Claude Code terms as follows:
@@ -116,16 +118,22 @@ Choose the smallest relevant workflow:
 
 If a request spans multiple workflows, start with `skills/full-pipeline/SKILL.md` unless the user clearly asks for a single phase.
 
+Use multi-round file workflow mode for broad lifecycle tasks, file-producing research tasks, and requests that explicitly ask to continue, iterate, polish, validate, or run a full pipeline. This mode is especially appropriate for `full-pipeline`, `idea-discovery-pipeline`, `experiment-design-pipeline`, `deploy-experiment`, `generate-report`, `paper-writing-pipeline`, `paper-review-loop`, and `submit-check`. Do not use it for lightweight Q&A, brief method advice, one-off lookup tasks, or interactive scoping where the next step depends on the user's answer.
+
 ## Operating Rules
 
 - Keep generated project artifacts in the user's active workspace unless the user asks to modify the installed skill itself.
 - Before writing long-running research artifacts, check whether the active workspace already has `RESEARCH_PLAN.md`, `BRIEF.md`, `handoff.json`, `output/REVIEW_STATE.json`, or `memory/MEMORY.md`.
 - Preserve NORA's generator-evaluator separation: the same phase should not both draft and score its own work.
+- In multi-round file workflow mode, keep a concise progress ledger with `Overall Goal`, `In Progress`, `Todo`, `Done`, `Open Questions`, and `Verification Gaps`. Move work through that ledger as phases start and finish, and record artifact paths plus key decisions after each phase.
+- In multi-round file workflow mode, make each phase restartable from files: write the phase artifact, evidence/source list, unresolved risks, verification gaps, and next actions before moving on.
+- When reviewing prior rounds, distrust completion claims until checked against the original goal, current artifacts, evidence files, and unresolved gaps. Add concrete Todo items for missing or weak work instead of summarizing the issue only in chat.
 - Do not fabricate citations, datasets, benchmark values, experiment results, or journal requirements. Verify against authoritative sources when claims depend on current or external evidence.
 - Do not execute destructive commands, push to remotes, install hooks, or configure MCP servers without explicit user instruction.
 - For experiment execution, surface compute, dependency, API key, and GPU assumptions before running expensive or long-lived jobs.
 - For data download, record source URL, license/terms when available, retrieval date, and file integrity information.
 - Before pausing or ending a multi-step NORA workflow, run `scripts/nora_checkpoint.py` for the active workspace unless the user asks not to write state.
+- End multi-round work only when Todo is empty, required final artifacts exist, critical review issues are resolved or explicitly deferred, verification gaps are closed or documented, and checkpoint state is current.
 
 ## Output Defaults
 
