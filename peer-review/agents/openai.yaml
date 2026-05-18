@@ -1,0 +1,7 @@
+interface:
+  display_name: "Peer Review"
+  short_description: "Review academic manuscripts with NORA, Academic Research Suite, and visual figure/table checks."
+  default_prompt: "Use $peer-review to review this manuscript and produce required, important, and minor revision comments plus a journal-ready referee report."
+
+policy:
+  allow_implicit_invocation: true
