@@ -1,6 +1,6 @@
 ---
 name: peer-review
-description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with required/important/minor revisions. This skill orchestrates NORA and Academic Research Suite review perspectives, requires visual inspection of key figures/tables when possible, and produces bilingual working reports plus a concise journal-submission-ready review.
+description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with critical/important/minor revisions. This skill orchestrates NORA and Academic Research Suite review perspectives, requires visual inspection of key figures/tables when possible, and produces bilingual working reports plus a concise journal-submission-ready review.
 ---
 
 # Journal Peer Review Workflow
@@ -94,7 +94,7 @@ Use a devil's-advocate pass to identify the strongest rejection-risk issue.
 
 Default issue hierarchy:
 
-1. **Required revision**: exactly 1 issue. Choose the single highest-risk issue that could plausibly lead to rejection if unresolved. Do not bundle several independent issues under one heading.
+1. **Critical revision**: exactly 1 issue. Choose the single highest-risk issue that could plausibly lead to rejection if unresolved. Do not bundle several independent issues under one heading.
 2. **Important revisions**: 1-5 issues that affect the editorial decision, such as theory, logic, methods, evidence, statistical rigor, interpretation, or journal fit.
 3. **Minor revisions**: 1-5 issues for language, terminology, formatting, figure captions, repetition, or presentation.
 
@@ -114,7 +114,7 @@ For journal-submission-ready reviews:
 
 - Start with one paragraph summarizing what the paper studies, its strengths, its main weakness, and the decision.
 - Use only three section headings:
-  - `## 1. Required Revision`
+  - `## 1. Critical Revision`
   - `## 2. Important Revisions`
   - `## 3. Minor Revisions`
 - Do not use subheadings for individual points.
@@ -135,7 +135,7 @@ Use **Minor Revision** only when methods and evidence are sound and remaining is
 Before finalizing, verify:
 
 - Visual inspection was performed or its absence was disclosed.
-- The required revision is truly one issue, not several bundled issues.
+- The critical revision is truly one issue, not several bundled issues.
 - Important and minor revisions obey the requested count limits.
 - The journal-submission-ready report has no per-point subheadings.
 - Any user comments in parentheses or placeholders have been resolved.
