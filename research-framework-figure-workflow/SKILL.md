@@ -40,6 +40,8 @@ Identify the source manuscript and figure target:
 
 Prefer existing project files over asking the user. If multiple plausible source files exist, use the newest or most explicit manuscript file and record the assumption.
 
+If `.codex/project.yaml` defines `paths.manuscript.source_of_truth`, use that Markdown manuscript as the preferred source before scanning for Word, PDF, or legacy draft files. Treat generated DOCX files as exchange copies unless the user explicitly says the figure should follow a reviewed Word version.
+
 ### 2. NORA Logic Pass
 
 Use NORA-style planning before visual design. Extract:

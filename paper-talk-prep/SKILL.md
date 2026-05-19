@@ -16,6 +16,8 @@ Turn a paper into a talk plan before slide design starts. Produce the presentati
    - venue or format: class presentation, group meeting, conference talk, seminar, defense
    - language
 
+   If `.codex/project.yaml` defines `paths.manuscript.source_of_truth`, use that Markdown manuscript as the default paper draft source before scanning for DOCX/PDF exports.
+
 2. Choose the analysis route:
    - Use `academic-research-suite` for general academic papers and standard research communication tasks.
    - Use `nora` when the paper is in geoscience, GIScience, remote sensing, GeoAI, spatial data science, disaster resilience, environmental health, or related domains.

@@ -21,6 +21,18 @@ If `.codex/project.yaml` does not exist and the user asks to initialize or clean
 
 Do not create multiple competing path maps for different skills. Add new semantic paths to `.codex/project.yaml` instead.
 
+## Manuscript Source Contract
+
+For academic writing projects, prefer the manuscript paths declared under `.codex/project.yaml`:
+
+- `paths.manuscript.source_of_truth` is the canonical editable manuscript, normally Markdown.
+- `paths.manuscript.exchange_format` identifies the advisor-facing format, commonly DOCX.
+- `paths.manuscript.reference_docx` is the Pandoc Word style template when DOCX export is needed.
+- `paths.manuscript.bibliography` is the preferred BibTeX file.
+- `paths.manuscript.latex_status: deferred` means do not require LaTeX tooling or create LaTeX/PDF outputs unless the user explicitly re-enables that path.
+
+When syncing or handing off writing work, record changes against the Markdown source first. Treat Word files as imported originals, exported review copies, or tracked-comment inputs unless the project path contract explicitly says otherwise.
+
 ## Default model
 
 - Treat the stronger machine as the default `coding / analysis / experiment` machine.
@@ -156,6 +168,7 @@ When using this skill, the assistant should produce one or more of:
 - every skill should prefer it before using built-in defaults
 - add new path keys here when a workflow needs persistent artifacts
 - do not use it to claim ownership of another skill's private state schema
+- for writing projects, may include `paths.manuscript` with Markdown source, DOCX exchange output, bibliography, style template, and LaTeX readiness
 
 ### `sync/`
 

@@ -104,8 +104,8 @@ resume_from_passport=<hash> [stage=<n>] [mode=<m>]
 | **3'** | **RE-REVIEW** | **`academic-paper-reviewer`** | **re-review** | **Verification review report: revision response checklist + residual issues** |
 | **4'** | **RE-REVISE** | **`academic-paper`** | **revision** | **Second revised draft (if needed)** |
 | **4.5** | **FINAL INTEGRITY** | **`integrity_verification_agent`** | **final-check** | **Final verification report (must achieve 100% pass to proceed)** |
-| 5 | FINALIZE | `academic-paper` | format-convert | Final Paper (default MD; DOCX via Pandoc when available, otherwise conversion instructions; ask about LaTeX; confirm correctness; PDF) |
-| **6** | **PROCESS SUMMARY** | **orchestrator** | **auto** | **Paper creation process record MD + LaTeX to PDF (bilingual)** |
+| 5 | FINALIZE | `academic-paper` | format-convert | Final Paper (Markdown source; DOCX via Pandoc when available; LaTeX/PDF only when enabled or requested) |
+| **6** | **PROCESS SUMMARY** | **orchestrator** | **auto** | **Paper creation process record MD; PDF only when LaTeX/PDF is enabled** |
 
 **Parallelization opportunity (v3.3)**: Within Stage 2, the `academic-paper` skill's Phase 1 (literature_strategist_agent) and the `visualization_agent` can operate in parallel after Phase 2 (structure_architect_agent) completes the outline. Specifically:
 - Once the outline includes a visualization plan, `visualization_agent` can begin figure generation
@@ -126,8 +126,17 @@ This mirrors PaperOrchestra's parallel execution of Plot Generation (Step 2) and
 6. **Stage 3' RE-REVIEW** -> Accept|Minor -> Stage 4.5 / Major -> Stage 4'
 7. **Stage 4' RE-REVISE** -> user confirmation -> Stage 4.5 (no return to review)
 8. **Stage 4.5 FINAL INTEGRITY** -> PASS (zero issues) -> Stage 5 (FAIL -> fix and re-verify)
-9. **Stage 5 FINALIZE** -> MD -> DOCX via Pandoc when available (otherwise instructions) -> ask about LaTeX -> confirm -> PDF -> Stage 6
-10. **Stage 6 PROCESS SUMMARY** -> ask language version -> generate process record MD -> LaTeX -> PDF -> end
+9. **Stage 5 FINALIZE** -> MD source -> DOCX via Pandoc when available (otherwise instructions) -> if project LaTeX status is deferred, record deferral and skip PDF -> Stage 6
+10. **Stage 6 PROCESS SUMMARY** -> ask language version -> generate process record MD -> PDF only when LaTeX/PDF is enabled -> end
+
+### Markdown-First Manuscript Contract
+
+If `.codex/project.yaml` defines `paths.manuscript`, Stage 2 and Stage 5 must use it:
+
+- `source_of_truth` is the canonical manuscript to revise.
+- `bibliography`, optional `csl`, and `reference_docx` are the Pandoc conversion inputs.
+- `generated_docx` is the preferred Word exchange output.
+- `latex_status: deferred` means LaTeX/PDF are not required deliverables and should not block pipeline completion.
 
 See `references/pipeline_state_machine.md` for complete state transition definitions.
 

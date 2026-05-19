@@ -1,6 +1,6 @@
 ---
 name: paper-writing-pipeline
-description: "Full paper writing pipeline. Orchestrates paper-plan → paper-figure-generate → paper-draft → paper-review-loop → paper-covert to go from upstream research artifacts to a polished, submission-ready manuscript package (Markdown → LaTeX → PDF + DOCX). Use when user says \"write paper pipeline\", \"paper writing\", or wants the complete paper generation workflow."
+description: "Full paper writing pipeline. Orchestrates paper-plan → paper-figure-generate → paper-draft → paper-review-loop → paper-covert to go from upstream research artifacts to a polished manuscript package. Markdown is the primary manuscript; DOCX via Pandoc is the default exchange output; LaTeX/PDF are generated only when enabled. Use when user says \"write paper pipeline\", \"paper writing\", or wants the complete paper generation workflow."
 argument-hint: [narrative-report-path-or-topic]
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, Skill, mcp__codex__codex, mcp__codex__codex-reply
 ---
@@ -15,7 +15,7 @@ This skill chains five sub-skills into a single automated pipeline:
 
 ```
 /paper-plan → /paper-figure-generate → /paper-draft → /paper-review-loop → /paper-covert
-  (outline)       (figures & prompts)     (Markdown)     (review & revise)    (LaTeX + PDF + DOCX)
+  (outline)       (figures & prompts)     (Markdown)     (review & revise)    (DOCX via Pandoc; LaTeX/PDF optional)
 ```
 
 Each phase builds on the previous one's output. The pipeline takes upstream research artifacts and produces a polished, reviewed submission package in `output/submission/`.
@@ -34,7 +34,7 @@ output/manuscript/    (MANUSCRIPT_DRAFT.md, sections/*.md, CLAIM_SUPPORT_MAP.md,
     ↓ Phase 4: paper-review-loop
 output/manuscript/    (MANUSCRIPT_REVISED.md, sections_revised/*.md, REVIEW_REPORT.md, CLAIM_RISK_REPORT.md)
     ↓ Phase 5: paper-covert
-output/submission/    (latex/, pdf/MANUSCRIPT_SUBMISSION_READY.pdf, docx/, SUBMISSION_MANIFEST.md)
+output/submission/    (docx/, SUBMISSION_MANIFEST.md; latex/ and pdf/ only when enabled)
 ```
 
 ---
@@ -47,6 +47,7 @@ output/submission/    (latex/, pdf/MANUSCRIPT_SUBMISSION_READY.pdf, docx/, SUBMI
 - **AUTO_PROCEED = true** — Auto-continue between phases. Set `false` to pause and wait for user approval after each phase.
 - **HUMAN_CHECKPOINT = false** — When `true`, the review loop (Phase 4) pauses after each round's review to let you see the score and provide custom modification instructions. When `false` (default), the loop runs fully autonomously. Passed through to `paper-review-loop`.
 - **DRAFT_MODE** — One of `full`, `partial`, `skeleton`. Determined automatically by `paper-draft` based on evidence readiness. Can be forced via argument.
+- **LATEX_STATUS** — If `.codex/project.yaml` declares `paths.manuscript.latex_status: deferred`, Phase 5 produces DOCX via Pandoc and records LaTeX/PDF as deferred unless the user explicitly requests them.
 
 > Override inline: `/paper-writing-pipeline "NARRATIVE_REPORT.md" — venue: NeurIPS, human checkpoint: true`
 > IEEE example: `/paper-writing-pipeline "NARRATIVE_REPORT.md" — venue: IEEE_JOURNAL`
@@ -273,7 +274,7 @@ Review loop complete (Round [N]):
 - Major issues: [resolved] / [total]
 - Unresolved: [list of carry-over issues, if any]
 
-Shall I proceed with LaTeX conversion and PDF generation?
+Shall I proceed with DOCX export via Pandoc?
 ```
 
 - **User approves** (or AUTO_PROCEED=true) → proceed to Phase 5.
@@ -287,13 +288,17 @@ Shall I proceed with LaTeX conversion and PDF generation?
 Invoke `paper-covert` to convert the final manuscript into a submission package:
 
 ```
-Skill: paper-covert "$VENUE"
+Skill: paper-covert "$VENUE mode:docx"
 ```
 
 **What this does:**
 - Reads the best available manuscript: `MANUSCRIPT_REVISED.md` (preferred) → `MANUSCRIPT_DRAFT.md` (fallback)
 - Resolves venue from argument → `PAPER_PLAN.md` → default; loads venue profile from `profiles/<venue>.yaml`
-- Builds modular LaTeX tree in `output/submission/latex/`:
+- Exports DOCX directly from Markdown via Pandoc when LaTeX is deferred:
+  - Uses `paths.manuscript.source_of_truth`, `metadata`, `bibliography`, optional `csl`, and `reference_docx` from `.codex/project.yaml` when present
+  - Writes the preferred advisor-facing DOCX to `paths.manuscript.generated_docx` when present
+  - Records citation, asset, and placeholder gaps in the manifest
+- Builds modular LaTeX tree in `output/submission/latex/` only when LaTeX/PDF is enabled:
   - `main.tex` (lean entry with `\input` only)
   - `preamble.tex` (venue-specific packages and environments)
   - `metadata.tex` (title, keywords, highlights)
@@ -301,8 +306,7 @@ Skill: paper-covert "$VENUE"
   - `references.bib` (from existing .bib or synthesized from paper-cache; never fabricated)
   - `figures/` (copied from `output/figures/` per FIGURE_MANIFEST)
   - `build.sh` (latexmk → pdflatex fallback build script)
-- Compiles PDF via `latexmk -pdf` with auto-fix for common errors
-- Exports DOCX via Pandoc (LaTeX source preferred, Markdown fallback)
+- Compiles PDF via `latexmk -pdf` with auto-fix for common errors when PDF mode is enabled
 - Writes `SUBMISSION_MANIFEST.md` with:
   - Source manuscript path and readiness level
   - Files generated with paths
@@ -408,7 +412,7 @@ After all phases complete, present a summary report:
 | Figure data missing for code-pathway figures | 2 | Produce specification stubs. Continue to Phase 3 with stubs noted. |
 | REVIEWER_MODEL (Codex MCP) unavailable | 1, 3, 4 | Fall back to Claude subagent with fresh context for review. Log the degradation. |
 | PDF compilation fails | 5 | Keep LaTeX source intact. Record error in SUBMISSION_MANIFEST.md. Attempt DOCX via Markdown fallback. Report failure. |
-| Pandoc unavailable for DOCX | 5 | Record `docx: blocked` in manifest. PDF is the primary deliverable. |
+| Pandoc unavailable for DOCX | 5 | Record `docx: blocked` in manifest. If LaTeX is deferred, stop after Markdown artifacts and provide the blocked conversion status. |
 | Context approaching limit mid-phase | Any | Write current state to phase-specific state file. Update `handoff.json`. Tell user to resume in a new session. |
 
 ---

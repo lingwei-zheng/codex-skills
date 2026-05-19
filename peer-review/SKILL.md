@@ -32,6 +32,8 @@ Do not produce a final review from extracted text alone if the manuscript contai
 
 1. Identify the manuscript PDF and all supplementary files in the user-specified folder.
 2. Read `.codex/project.yaml` if present to respect project paths.
+   - If `paths.manuscript.source_of_truth` exists, include that Markdown manuscript as the default review text source.
+   - If `paths.manuscript.generated_docx` exists, treat it as an exchange copy and cross-check only when the user asks to review the Word version.
 3. Record reviewed materials explicitly:
    - main manuscript PDF
    - extracted manuscript text

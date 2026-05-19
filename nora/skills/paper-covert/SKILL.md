@@ -1,6 +1,6 @@
 ---
 name: paper-covert
-description: Converts the final Markdown manuscript from `paper-draft` / `paper-review-loop` into a submission package for the target venue — modular LaTeX (one file per section), compiled PDF, and Word `.docx`. Venue is read from `output/PAPER_PLAN.md` (or argument) and routed through a small YAML profile. Does not rewrite prose, score, or invent citations.
+description: Converts the final Markdown manuscript from `paper-draft` / `paper-review-loop` into a submission package for the target venue — DOCX via Pandoc by default, with modular LaTeX/PDF only when enabled. Venue is read from `output/PAPER_PLAN.md` (or argument) and routed through a small YAML profile. Does not rewrite prose, score, or invent citations.
 argument-hint: [venue-or-manuscript-path]
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob
 ---
@@ -21,8 +21,10 @@ Convert the final manuscript in `output/manuscript/` into a submission package f
 - **OUT = `output/submission/`**
 - **VENUE** — argument `venue:<name>` → `PAPER_PLAN.md` §0/§2 → `research_contract.md` → `IJGIS`.
 - **PROFILE** — `./profiles/<venue>.yaml`, else `./profiles/generic.yaml`.
+- **PROJECT_MANUSCRIPT** — when `.codex/project.yaml` defines `paths.manuscript.source_of_truth`, that Markdown file overrides the default `SRC` unless the user explicitly selects a different manuscript.
+- **LATEX_STATUS** — when `.codex/project.yaml` defines `paths.manuscript.latex_status: deferred`, skip LaTeX tree and PDF compilation unless the user explicitly requests `mode:latex`, `mode:pdf`, or `mode:all`.
 
-Inline override: `/paper-covert — venue: ISPRS, mode: latex`. Modes: `all` (default), `latex`, `pdf`, `docx`.
+Inline override: `/paper-covert — venue: ISPRS, mode: docx`. Modes: `docx` (default when LaTeX is deferred), `all`, `latex`, `pdf`.
 
 ---
 
@@ -71,7 +73,7 @@ output/submission/
 └── docx/MANUSCRIPT_SUBMISSION_READY.docx
 ```
 
-Filenames are stable; overwrite in place. Two-digit zero-padded section prefixes match `paper-draft`.
+Filenames are stable; overwrite in place. In docx-only mode, omit `latex/` and `pdf/` outputs and record `latex: deferred` in the manifest.
 
 ---
 
@@ -80,7 +82,22 @@ Filenames are stable; overwrite in place. Two-digit zero-padded section prefixes
 ### 1. Resolve source and venue
 Pick `SRC` by priority above. Read `PLAN` for title, keywords, venue, declarations, figure/table plan. Load `PROFILE`. Record the source path, venue, and profile choice at the top of `SUBMISSION_MANIFEST.md`.
 
-### 2. Build the LaTeX tree
+### 2. Export the DOCX
+When LaTeX is deferred or `mode:docx` is selected, export directly from Markdown:
+
+- Use project paths from `.codex/project.yaml` when available:
+  - `paths.manuscript.source_of_truth` as source Markdown.
+  - `paths.manuscript.metadata` as `--metadata-file` when present.
+  - `paths.manuscript.bibliography` as `--bibliography`.
+  - `paths.manuscript.csl` as `--csl` when non-null.
+  - `paths.manuscript.reference_docx` as `--reference-doc`.
+  - `paths.manuscript.generated_docx` as preferred output when present.
+- Run Pandoc with `--citeproc`; if the bibliography is empty, still export and list citation gaps in the manifest.
+- Treat DOCX as an exchange artifact. Do not rewrite the Markdown manuscript during conversion.
+
+### 3. Build the LaTeX tree
+Skip this step when `LATEX_STATUS` is `deferred` and no LaTeX/PDF mode was explicitly requested.
+
 - Write `main.tex`, `preamble.tex`, `metadata.tex` from `./templates/`, filling in profile fields (`documentclass`, `class_options`, `bib_style`, `bib_engine`) and manuscript metadata (title, keywords, highlights when the venue requires them).
 - For each section in `SECTIONS_SRC/`, write one `.tex` file under `latex/sections/` using these conversion rules:
   - `#`/`##`/`###` → `\section`/`\subsection`/`\subsubsection` with a `\label{sec:...}`.
@@ -93,18 +110,20 @@ Pick `SRC` by priority above. Read `PLAN` for title, keywords, venue, declaratio
 
 Section file mapping adapts to the manuscript's actual section list; `PLAN` §19 is authoritative when it differs from the default 01–11 layout. Appendices use `appendix_<letter>.tex`.
 
-### 3. Wire the bibliography
+### 4. Wire the bibliography
 - If a `.bib` exists under `output/manuscript/` or repo root → copy to `latex/references.bib`.
 - Else synthesize from `memory/paper-cache/*.json` — copy only entries whose keys appear in the manuscript; never invent.
 - Use `bib_style` and `bib_engine` from the profile. Unresolved `[CITE: …]` or missing keys → list in the manifest's **Bibliography gaps** section; do not fabricate.
 
-### 4. Build the PDF
+### 5. Build the PDF
+Skip this step when `LATEX_STATUS` is `deferred` and no PDF mode was explicitly requested.
+
 Write `build.sh` from `./templates/build_script_template.sh`. Run it (`latexmk -pdf`; fallback to `pdflatex + bibtex + pdflatex ×2`). Copy `main.pdf` to `pdf/MANUSCRIPT_SUBMISSION_READY.pdf`. On failure, keep the LaTeX tree intact and record the first error + likely cause in the manifest under **Build**.
 
-### 5. Export the DOCX
-Prefer `pandoc latex/main.tex -o docx/MANUSCRIPT_SUBMISSION_READY.docx --citeproc --bibliography=latex/references.bib`. If Pandoc rejects venue LaTeX, fall back to `pandoc` on the source Markdown (concatenated `SECTIONS_SRC/*.md`). If Pandoc is unavailable, record `docx: blocked` in the manifest.
+### 6. Export the DOCX from LaTeX when requested
+When LaTeX/PDF mode has already built `latex/main.tex`, prefer `pandoc latex/main.tex -o docx/MANUSCRIPT_SUBMISSION_READY.docx --citeproc --bibliography=latex/references.bib`. If Pandoc rejects venue LaTeX, fall back to the Markdown-to-DOCX path above. If Pandoc is unavailable, record `docx: blocked` in the manifest.
 
-### 6. Write the manifest
+### 7. Write the manifest
 Write `SUBMISSION_MANIFEST.md` from `./templates/SUBMISSION_MANIFEST_TEMPLATE.md`:
 - source manuscript path + readiness (`reviewed` / `revised` / `draft-only`)
 - venue + profile (flag fallback `generic` explicitly)
@@ -112,7 +131,7 @@ Write `SUBMISSION_MANIFEST.md` from `./templates/SUBMISSION_MANIFEST_TEMPLATE.md
 - **Bibliography gaps** (unresolved citations) — carried from `CITATION_GAPS.md` plus anything new.
 - **Asset gaps** — figures referenced but missing from the manifest; figures marked `Needs revision`.
 - **Content gaps** — `[PLACEHOLDER …]` blocks remaining in the LaTeX.
-- **Build** — PDF engine, pass/fail, warning counts; DOCX pathway, pass/fail.
+- **Build** — DOCX pathway, pass/fail; PDF engine, pass/fail, warning counts, or `latex/pdf: deferred`.
 - **Readiness** — honest per-format statement. Do not mark "submission-ready" while any gap above is open or a build failed.
 
 Append one line to `output/PROJ_NOTES.md`:
@@ -127,7 +146,7 @@ YYYY-MM-DD paper-covert venue=<V> source=<revised|draft> pdf=<ok|fail> docx=<ok|
 - **Venue structure**: `PROFILE` defaults → `PLAN` §19 overrides. Log the final structure in the manifest.
 - **No publisher class bundled**: use `article` + the profile's bib style; record in the manifest that a publisher re-wrap is needed at submission time. Never claim the output is an official publisher template.
 - **Incomplete manuscript**: still produce the package; placeholders stay visible; readiness is `partial`.
-- **Mode restriction**: `mode:latex` stops after step 3; `mode:pdf` skips DOCX; `mode:docx` still needs LaTeX for the Pandoc path unless Markdown→DOCX is forced.
+- **Mode restriction**: `mode:docx` uses Markdown-to-DOCX and does not require LaTeX. `mode:latex` stops after the LaTeX tree. `mode:pdf` skips DOCX. `mode:all` requires LaTeX tooling unless the project contract marks LaTeX as deferred, in which case ask or record the deferral.
 
 ---
 

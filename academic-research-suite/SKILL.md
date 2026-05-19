@@ -55,6 +55,18 @@ Vendored ARS workflow files may keep their upstream paths. Use `.codex/project.y
 
 For long-running or multi-round ARS work, also look for a project progress file before selecting the next phase. Prefer an explicit user-provided progress path; otherwise use the active workspace's existing progress artifact if present, such as `.codexpotter/projects/**/MAIN.md`, `output/progress/MAIN.md`, `output/reports/QUALITY_GATES.md`, or the latest handoff file. Treat the progress file as the task ledger, `ars/shared/handoff_schemas.md` outputs as inter-stage state, and source manuscripts/data as immutable inputs unless the user asks to revise them.
 
+## Manuscript Source Contract
+
+When `.codex/project.yaml` defines `paths.manuscript`, ARS paper workflows should honor it:
+
+- `source_of_truth` is the manuscript to read and revise, normally Markdown.
+- `exchange_format: docx` means DOCX is for advisor review or submission exchange, not the primary editable source.
+- `bibliography` and optional `csl` should drive Pandoc citation rendering when converting.
+- `reference_docx` should be used for Pandoc DOCX styling.
+- `latex_status: deferred` means do not require LaTeX, do not block completion on PDF compilation, and prefer Markdown/DOCX deliverables unless the user explicitly requests LaTeX.
+
+If a workflow receives a Word file with comments or tracked changes, extract or inspect it as review input, then merge accepted changes back into the Markdown source of truth.
+
 ## Workflow Router
 
 Choose the workflow by intent:

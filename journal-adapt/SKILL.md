@@ -31,6 +31,8 @@ These override everything else. Never violate them.
 
 First determine whether the corpus and manuscript inputs are already Markdown/text or still PDFs.
 
+If the active workspace has `.codex/project.yaml` with `paths.manuscript.source_of_truth`, use that Markdown manuscript as the default manuscript input. Use `paths.manuscript.bibliography` and optional `paths.manuscript.csl` as context for citation rendering, but do not change citation keys. Treat DOCX files as exchange or review inputs unless the user explicitly selects a Word manuscript.
+
 - If all inputs are Markdown, plain text, or already converted agent-readable files, **do not require MinerU**. Proceed directly to Phase 1.
 - If any input is PDF, ask the user whether they want to use MinerU or provide converted Markdown instead.
 

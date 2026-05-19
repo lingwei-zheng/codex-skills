@@ -25,6 +25,10 @@ The main strategy should come from the course notes in `Chapter1-Week1-7`. The r
 - If the draft is Chinese or structurally rough, reconstruct the logic first and the prose second.
 - Avoid em dashes in polished output by default. Prefer commas, parentheses, or full stops. Use colons sparingly unless the user explicitly asks to preserve dash-based punctuation or wants a colon-led style.
 
+## Project Manuscript Source
+
+When the active workspace has `.codex/project.yaml` with `paths.manuscript.source_of_truth`, treat that Markdown file as the preferred polishing target. Use DOCX files as review inputs or exports, not as the source of truth, unless the user explicitly asks to polish a specific Word file. If `paths.manuscript.latex_status` is `deferred`, do not introduce LaTeX-specific formatting requirements during polishing.
+
 ## When to open extra files
 
 These files are reference support. Use them after the section's rhetorical job is clear.

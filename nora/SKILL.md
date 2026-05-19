@@ -31,6 +31,19 @@ Preserve NORA-owned checkpoint files (`handoff.json`, `memory/MEMORY.md`, `harne
 
 For long-running or multi-round work, also look for a project progress file before routing. Prefer an explicit user-provided progress path; otherwise use the active workspace's existing progress artifact if present, such as `.codexpotter/projects/**/MAIN.md`, `output/progress/MAIN.md`, `output/REVIEW_STATE.json`, or `handoff.json`. Treat the progress file as the current task ledger, `handoff.json` as cross-session state, and `memory/MEMORY.md` as durable project knowledge; do not let any one of them overwrite the others.
 
+## Manuscript Source Contract
+
+When `.codex/project.yaml` defines `paths.manuscript`, use it before NORA's default manuscript locations:
+
+- `source_of_truth`: canonical editable manuscript, usually Markdown.
+- `metadata`: Pandoc metadata file, when present.
+- `bibliography`: preferred BibTeX source for citations.
+- `reference_docx`: Pandoc DOCX style template.
+- `generated_docx`: preferred advisor-facing Word export.
+- `latex_status: deferred`: skip LaTeX/PDF requirements and route conversion work to Markdown-to-DOCX unless the user explicitly asks for LaTeX.
+
+For writing and review workflows, revise the Markdown source first and export DOCX as an exchange artifact. Do not promote a Word export back to source of truth unless the user explicitly asks to accept Word revisions into Markdown.
+
 ## Codex Runtime Mapping
 
 Interpret upstream Claude Code terms as follows:

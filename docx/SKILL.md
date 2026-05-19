@@ -16,6 +16,15 @@ Use this skill to work with `.docx` files in a way that is practical for Codex:
 
 Prefer this skill over ad hoc zip/XML poking when the user explicitly asks to open or modify a Word document.
 
+## Markdown-First Project Rule
+
+If the active workspace has `.codex/project.yaml` with `paths.manuscript.source_of_truth`, treat that file as the canonical editable manuscript. In that setup:
+
+- Use `.docx` files as originals, advisor review copies, or Pandoc exports.
+- When generating Word output, prefer Pandoc with `paths.manuscript.reference_docx` and `paths.manuscript.bibliography` if those paths exist.
+- If a reviewed Word file contains useful comments or edits, inspect/extract them and merge accepted changes into the Markdown source of truth.
+- Do not overwrite or treat generated DOCX as the primary source unless the user explicitly asks to switch source formats.
+
 ## Workflow Decision Tree
 
 1. If the goal is to read content from a `.docx`, run `scripts/extract_docx_text.ps1`.
@@ -23,6 +32,7 @@ Prefer this skill over ad hoc zip/XML poking when the user explicitly asks to op
 3. If the goal is to create a new Word file from finalized text, run `scripts/write_docx_via_word.ps1`.
 4. If the goal is to revise a user-owned document, prefer creating a new output file instead of overwriting the original.
 5. If the document is third-party, legal, contractual, academic review, or otherwise high-stakes, do not silently rewrite the original. Extract, revise into a new file, and preserve an audit trail.
+6. If the goal is to export a Markdown-first manuscript to Word and Pandoc paths are declared in `.codex/project.yaml`, use that Pandoc build path before Word COM automation.
 
 ## Reading A DOCX
 

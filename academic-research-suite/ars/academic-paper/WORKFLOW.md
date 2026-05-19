@@ -1,6 +1,6 @@
 ---
 name: academic-paper
-description: "12-agent academic paper writing pipeline. 10 modes (full/plan/outline/revision/revision-coach/abstract/lit-review/format-convert/citation-check/disclosure). 6 paper types, 5 citation formats, bilingual abstracts, LaTeX/DOCX-via-Pandoc/PDF output. Style Calibration + Writing Quality Check + Anti-Patterns with IRON RULE markers. Triggers: write paper, academic paper, guide my paper, parse reviews, AI disclosure, 寫論文, 學術論文, 引導我寫論文, 審查意見."
+description: "12-agent academic paper writing pipeline. 10 modes (full/plan/outline/revision/revision-coach/abstract/lit-review/format-convert/citation-check/disclosure). 6 paper types, 5 citation formats, bilingual abstracts, Markdown-first drafting, DOCX-via-Pandoc exchange output, and optional LaTeX/PDF output. Style Calibration + Writing Quality Check + Anti-Patterns with IRON RULE markers. Triggers: write paper, academic paper, guide my paper, parse reviews, AI disclosure, 寫論文, 學術論文, 引導我寫論文, 審查意見."
 metadata:
   version: "3.1.1"
   last_updated: "2026-04-27"
@@ -40,7 +40,7 @@ Write a paper on the impact of declining birth rates on private university manag
 5. Full-text drafting — section-by-section draft, register adjustment
 6. Citation compliance + bilingual abstract (parallel)
 7. Peer review — five-dimension scoring, revision suggestions
-8. Output formatting — LaTeX/DOCX (via Pandoc)/PDF/Markdown
+8. Output formatting — Markdown source, DOCX via Pandoc, optional LaTeX/PDF
 
 ---
 
@@ -75,7 +75,7 @@ Activate `plan` mode when the user wants guidance, step-by-step planning, or exp
 | Citation | Multi-format (APA/Chicago/MLA/IEEE/Vancouver) | APA 7.0 only |
 | Abstract | Bilingual (zh-CN + EN) | Single language |
 | Peer review | Simulated 5-dimension review | Editorial review |
-| Output format | LaTeX/DOCX (via Pandoc)/PDF/Markdown | Markdown only |
+| Output format | Markdown source; DOCX via Pandoc; optional LaTeX/PDF | Markdown only |
 | Revision loop | Max 2 rounds with targeted feedback | Max 2 rounds |
 
 ---
@@ -102,7 +102,9 @@ Activate `plan` mode when the user wants guidance, step-by-step planning, or exp
 ## Output Formats
 
 ### Text Formats
-LaTeX (.tex + .bib), DOCX (via Pandoc), PDF (via LaTeX or Pandoc), Markdown.
+Markdown is the preferred source format. DOCX is produced via Pandoc for advisor review or submission exchange. LaTeX (.tex + .bib) and PDF are optional late-stage outputs.
+
+When `.codex/project.yaml` contains `paths.manuscript`, use those paths for `source_of_truth`, `metadata`, `bibliography`, optional `csl`, `reference_docx`, and `generated_docx`. If `paths.manuscript.latex_status` is `deferred`, do not require LaTeX or block completion on PDF output.
 
 ### Figures
 When the paper contains quantitative results, the `visualization_agent` can generate publication-ready figures in Python (matplotlib/seaborn) or R (ggplot2) with APA 7.0 formatting and colorblind-safe palettes. Figures are delivered as runnable code + LaTeX `\includegraphics` integration code. See `references/statistical_visualization_standards.md` for chart type decision trees and code templates.
