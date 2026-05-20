@@ -34,6 +34,8 @@ The upstream skill resources live in this skill directory:
 - `scripts/`: deterministic helpers, including `svg_to_pptx.py`, project management, validators, converters, image analysis, and TTS helpers.
 - `templates/`: upstream layout and spec templates.
 - `requirements.txt`: Python dependencies declared by upstream.
+- `environment.yml`: cross-platform Conda environment for Windows/macOS replication.
+- `references/environment.md`: setup and verification commands for `codex_ppt`.
 
 Read `references/upstream-SKILL.md` before running a full PPT creation workflow. Load workflow files only when the requested feature needs them.
 
@@ -74,6 +76,14 @@ conda run -n codex_ppt python "$SKILL_DIR\scripts\project_manager.py" --help
 ```
 
 The `codex_ppt` environment is expected at `D:\Anaconda\envs\codex_ppt` on this Windows machine. It contains the upstream requirements plus `cairosvg` for stronger SVG-to-PNG fallback rendering.
+
+To recreate the environment on another machine, run from this skill directory:
+
+```powershell
+conda env create -f environment.yml
+```
+
+On macOS, the same `environment.yml` is the preferred setup path.
 
 For SVG to PPTX export:
 
