@@ -1,0 +1,7 @@
+interface:
+  display_name: "PPT Master"
+  short_description: "Build editable native PowerPoint decks with the ppt-master SVG-to-PPTX workflow."
+  default_prompt: "Use $ppt-master to turn my approved slide plan or source materials into an editable PowerPoint deck."
+
+policy:
+  allow_implicit_invocation: true
