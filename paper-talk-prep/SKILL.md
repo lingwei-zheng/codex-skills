@@ -44,7 +44,10 @@ Turn a paper into a talk plan before slide design starts. Produce the presentati
    - slide-by-slide content plan plus speaker notes
    - full script
 
-6. If the user wants the deck built, hand off the approved slide plan to `beautiful-html-slides`.
+6. If the user wants the deck built, hand off the approved slide plan to the renderer that matches the requested output:
+   - browser-openable HTML deck -> `beautiful-html-slides`
+   - editable PowerPoint deck -> `ppt-master`
+   - artifact-tool or Google Slides-oriented deck -> Presentations plugin when available
 
 ## Output Modes
 
@@ -108,7 +111,10 @@ If the user gives a target audience, adapt vocabulary and assumed background to 
 If the user asks to build slides after the content plan is approved:
 
 1. Keep the slide numbering and titles stable.
-2. Pass only the approved slide sequence to `beautiful-html-slides`.
+2. Choose the renderer by output format:
+   - `.html` or browser deck: pass only the approved slide sequence to `beautiful-html-slides`.
+   - `.pptx` or editable PowerPoint: pass only the approved slide sequence to `ppt-master`.
+   - artifact-tool presentation: use the Presentations plugin if that is the user's requested target.
 3. Preserve the distinction between `on-slide text` and `speaker notes`.
 4. Keep speaker notes as separate notes, not visible body copy.
 

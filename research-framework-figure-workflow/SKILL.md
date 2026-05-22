@@ -12,6 +12,8 @@ Use this skill as the default orchestrator for research framework figures. It se
 
 Do not let image generation invent the conceptual model. Lock the model first with NORA-style artifacts, then generate and revise visuals.
 
+Do not route conceptual framework figures through `nature-figure`. `nature-figure` is for empirical publication plots and multi-panel scientific figures, not for defining or rendering conceptual models.
+
 ## Required Skill Routing
 
 When this skill triggers, also use these local skills when available:
@@ -117,6 +119,7 @@ python "C:/Users/Lingwei/.codex/skills/nora/scripts/nora_checkpoint.py" --worksp
 ## Production Rules
 
 - Use `image_gen` only for target-paper raster candidate/final images when `paper-framework-figure` allows an `IMAGE_ONLY` step.
+- Do not call `nature-figure` for this workflow.
 - Never embed target-paper candidate, second-round, formal, final, or revision images in prose replies.
 - For text replies governed by `paper-framework-figure`, obey its required section order and state footer.
 - Prefer English labels for manuscript figures unless the user requests another language.

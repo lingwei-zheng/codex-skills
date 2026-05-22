@@ -21,8 +21,11 @@ Not the main tool for:
 - Deciding from scratch what claim a paper should visualize.
 - Auditing whether a figure supports the paper argument.
 - Writing full reviewer-style figure critique.
+- Making conceptual framework figures for theses, dissertations, or research papers; use `research-framework-figure-workflow` for those.
 
 If the user is still deciding the figure claim, panel logic, or caption argument, use an available research-writing or paper-analysis skill upstream first.
+
+For conceptual framework figures, thesis overview figures, graphical research models, or paper argument diagrams, route to `research-framework-figure-workflow`. This skill may be used later only if the approved framework becomes an engineering/system/algorithm diagram or an exact quantitative plot.
 
 ## Core Decision
 

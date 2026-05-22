@@ -10,6 +10,7 @@ PowerShell:
 $target = "$env:USERPROFILE\.claude\skills\engineering-figure-agent"
 New-Item -ItemType Directory -Force $target | Out-Null
 Copy-Item -Recurse -Force adapters\claude-code\skills\engineering-figure-agent\* $target
+Move-Item -Force "$target\CLAUDE_SKILL.md" "$target\SKILL.md"
 ```
 
 macOS/Linux:
@@ -17,7 +18,10 @@ macOS/Linux:
 ```bash
 mkdir -p ~/.claude/skills/engineering-figure-agent
 cp -R adapters/claude-code/skills/engineering-figure-agent/* ~/.claude/skills/engineering-figure-agent/
+mv ~/.claude/skills/engineering-figure-agent/CLAUDE_SKILL.md ~/.claude/skills/engineering-figure-agent/SKILL.md
 ```
+
+The adapter keeps its Claude Code skill file as `CLAUDE_SKILL.md` inside the Codex skill repository so Codex does not register it as a second local skill with the same name.
 
 ## Use
 
