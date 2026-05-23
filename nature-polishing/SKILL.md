@@ -1,6 +1,6 @@
 ---
 name: nature-polishing
-description: Polish, restructure, or translate academic prose into Nature-leaning English using the paper-architecture and writing-strategy principles from Scientific English Writing & Communication, with phrase-level support from Academic Phrasebank. Use whenever the user asks to polish a manuscript paragraph, abstract, introduction, results, discussion, conclusion, title, methods section, or Chinese academic draft for publication-quality English.
+description: Polish, restructure, translate, or humanize academic prose into publication-quality English using the paper-architecture and writing-strategy principles from Scientific English Writing & Communication, with phrase-level support from Academic Phrasebank. Use whenever the user asks to polish a manuscript paragraph, abstract, introduction, results, discussion, conclusion, title, methods section, or Chinese academic draft for publication-quality English, or when the user wants an already polished paper to sound less mechanical through a controlled final human-style pass.
 metadata:
   version: 5.0.2
   author: Yuan1z skill rebuilt from course notes plus Academic Phrasebank
@@ -25,6 +25,22 @@ The main strategy should come from the course notes in `Chapter1-Week1-7`. The r
 - If the draft is Chinese or structurally rough, reconstruct the logic first and the prose second.
 - Avoid em dashes in polished output by default. Prefer commas, parentheses, or full stops. Use colons sparingly unless the user explicitly asks to preserve dash-based punctuation or wants a colon-led style.
 
+## Operating modes
+
+Choose the smallest mode that matches the request.
+
+- `formal-polish`:
+  Use for normal polishing, restructuring, translation, section rewriting, and publication-quality English cleanup. This is the default.
+- `human-final-pass`:
+  Use only when the manuscript has already received formal polishing and the user wants it to sound less mechanical while staying academically credible.
+
+When `human-final-pass` is active:
+
+- remind the user once that this pass is intended for text that has already been formally polished, then continue without waiting for confirmation;
+- preserve facts, citations, LaTeX commands, formulas, numeric claims, and technical meaning exactly;
+- limit human-style variation by default to Introduction, Related Work or Literature Review when it functions as related work, and Results or result-facing prose in Results and Discussion;
+- keep intentional grammar imperfections disabled unless the user explicitly enables them in the same request.
+
 ## Project Manuscript Source
 
 When the active workspace has `.codex/project.yaml` with `paths.manuscript.source_of_truth`, treat that Markdown file as the preferred polishing target. Use DOCX files as review inputs or exports, not as the source of truth, unless the user explicitly asks to polish a specific Word file. If `paths.manuscript.latex_status` is `deferred`, do not introduce LaTeX-specific formatting requirements during polishing.
@@ -38,6 +54,9 @@ These files are reference support. Use them after the section's rhetorical job i
 | [references/section-moves.md](references/section-moves.md) | You need section-specific move orders or phrase patterns derived from Academic Phrasebank |
 | [references/phrasebank-playbook.md](references/phrasebank-playbook.md) | You need hedging, transition, evidence, limitation, or future-work phrase families |
 | [references/style-guardrails.md](references/style-guardrails.md) | You need academic-style checks, paragraph/sentence checks, article use, register, or mechanics |
+| [references/human-final-pass-policy.md](references/human-final-pass-policy.md) | `human-final-pass` is active and you need the authorial posture, pattern-breaking rules, or grammar-error policy |
+| [references/human-final-pass-targeting.md](references/human-final-pass-targeting.md) | `human-final-pass` is active and you need section eligibility or boundary rules |
+| [references/human-final-pass-calibration.md](references/human-final-pass-calibration.md) | `human-final-pass` is active and you need the 70/30 formal-natural calibration or grammar-imperfection caps |
 
 ## Core architecture
 
@@ -299,6 +318,50 @@ When the source is Chinese or strongly Chinese-influenced English:
 - verify terminology, causality, hedging, and disciplinary nuance
 - keep key technical terms stable
 
+## Human final pass
+
+Use this mode only after formal polishing. Its job is not to re-architect the paper or add new content. Its job is to make already polished prose sound less template-like.
+
+### Pre-pass reminder
+
+Before editing in `human-final-pass`, state this reminder in one sentence:
+
+`This final pass is intended for text that has already been formally polished; I will preserve technical content and only soften mechanical phrasing in eligible sections.`
+
+Do not stop after the reminder unless the user asked you to wait.
+
+### What changes in this mode
+
+- Break selective LLM-style patterns first:
+  repetitive transition openers, uniform paragraph rhythm, symmetric emphasis, and over-regular sentence starts.
+- Add restrained human variation second:
+  more direct motivation lines, occasional shorter follow-up sentences, mild active/passive alternation, uneven confidence where the evidence supports it, and less template-like transitions.
+- Preserve existing natural expressions when they already read well. Do not rewrite them just to make them seem more human.
+
+### Grammar-error overlay
+
+Intentional grammar imperfections remain off by default.
+
+Enable them only when the user explicitly asks for phrases such as:
+
+- `enable grammar errors`
+- `turn on grammar-error mode`
+- `add minor grammar errors`
+- `add small grammar mistakes`
+
+If enabled:
+
+- keep the density low, usually 1 imperfection per 250-400 editable words and no more than 6 per paper unless the user requests otherwise;
+- place them only in eligible prose sections;
+- never place them in abstract, methods, theory, conclusion, captions, equations, theorem statements, tables, algorithms, citations, bibliography, or exact numeric claims;
+- log each intentional imperfection explicitly in `Revision notes:`.
+
+### Priority in this mode
+
+Use this order:
+
+`technical preservation -> section eligibility -> pattern-breaking -> restrained naturalness -> optional grammar-error overlay`
+
 ## Citation, ethics, and AI boundaries
 
 ### Intellectual debt
@@ -375,6 +438,12 @@ Default output:
 1. The polished text as plain prose, not in a code block.
 2. `Revision notes:` with `3-5` short bullets on the major structural and stylistic changes.
 3. If the rewrite changed section logic, say so explicitly.
+
+When `human-final-pass` is active:
+
+- keep `Revision notes:` focused on pattern-breaking, naturalness changes, preserved human traces, and any excluded sections left untouched;
+- if grammar-error mode is enabled, add one bullet that lists each intentional imperfection and where it was inserted;
+- if you reduced the naturalness density to preserve rigor, say so explicitly.
 
 If the user asks for side-by-side revision, provide:
 

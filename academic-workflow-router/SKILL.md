@@ -16,8 +16,8 @@ Do not run a full NORA or Academic Research Suite pipeline unless the user expli
 | Literature review | `nora` -> `skills/lit-review/SKILL.md` with Zotero when available | `academic-research-suite` for stricter synthesis, claim-reference checks, or review design |
 | Research design | `nora` -> `skills/refine-research/SKILL.md`, `skills/experiment-design/SKILL.md`, or `skills/experiment-design-pipeline/SKILL.md` | `academic-research-suite` as external critique |
 | Data analysis and charts in Python/R | `data-analysis-and-figures` | NORA `spatial-analysis`, `nature-figure`, `pdf`, `docx` as needed |
-| Reading results and writing discussion | `academic-research-suite` for claim/evidence logic, then `nature-polishing` or `journal-adapt` only for prose/style | NORA paper skills when the results belong to an active NORA project |
-| Academic writing and polishing | `academic-research-suite` for structure and argument; `journal-adapt` for target-journal adaptation; `nature-polishing` for language polishing | NORA `paper-writing-pipeline` only for full manuscript generation from NORA artifacts |
+| Reading results and writing discussion | `academic-research-suite` for claim/evidence logic, then `nature-polishing` `formal-polish` or `journal-adapt` for prose/style | NORA paper skills when the results belong to an active NORA project |
+| Academic writing and polishing | `academic-research-suite` for structure and argument; `journal-adapt` for target-journal adaptation; `nature-polishing` for polishing (`formal-polish` by default, `human-final-pass` only when explicitly requested) | NORA `paper-writing-pipeline` only for full manuscript generation from NORA artifacts |
 | Conceptual framework figure | `research-framework-figure-workflow` | `paper-framework-figure`; do not route through `nature-figure` |
 | Engineering, algorithm, system, or exact benchmark figure | `engineering-figure-agent` | `nature-figure` only for journal-format plot polish |
 | Paper to talk, slides, or speaker notes | `paper-talk-prep` first | `beautiful-html-slides` for HTML decks; `ppt-master` for editable PPTX |
@@ -35,6 +35,7 @@ Do not run a full NORA or Academic Research Suite pipeline unless the user expli
 4. Treat `academic-research-suite` as the default for general academic reasoning, literature synthesis, manuscript logic, reviewer-style checks, and writing architecture outside a NORA project.
 5. Keep renderer skills behind planning skills. For example, use `paper-talk-prep` before building a deck, and use `research-framework-figure-workflow` before generating a conceptual figure image.
 6. When a request is small, answer or act directly with the smallest relevant skill instead of invoking a pipeline.
+7. For polishing requests, default to `nature-polishing` `formal-polish`. Use `nature-polishing` `human-final-pass` only when the user explicitly asks for a less mechanical final pass on text that has already been formally polished.
 
 ## Conflict Avoidance
 

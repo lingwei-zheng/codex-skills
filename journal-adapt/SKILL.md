@@ -474,6 +474,8 @@ Tell the user:
 > [N] sections revised. [N] rule candidates identified.
 > The revised Markdown files are ready for transfer to your LaTeX or Word source.
 
+If the user explicitly wants the final manuscript to sound less mechanical after journal adaptation, optionally hand the revised eligible sections or full revised manuscript to `nature-polishing` in `human-final-pass` mode. Use that only as a final post-polish layer. Do not do it by default, and do not let it alter technical content, citations, formulas, or journal-specific constraints established in `dynamic_writing_skill.md`.
+
 ---
 
 # STATIC BASE WRITING RULES
