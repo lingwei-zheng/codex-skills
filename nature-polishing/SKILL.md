@@ -38,7 +38,7 @@ When `human-final-pass` is active:
 
 - remind the user once that this pass is intended for text that has already been formally polished, then continue without waiting for confirmation;
 - preserve facts, citations, LaTeX commands, formulas, numeric claims, and technical meaning exactly;
-- limit human-style variation by default to Introduction, Related Work or Literature Review when it functions as related work, and Results or result-facing prose in Results and Discussion;
+- limit human-style variation by default to Introduction, Related Work or Literature Review when it functions as related work, Results or result-facing prose in Results and Discussion, plus moderate humanization in Conclusion and Limitations;
 - keep intentional grammar imperfections disabled unless the user explicitly enables them in the same request.
 
 ## Project Manuscript Source

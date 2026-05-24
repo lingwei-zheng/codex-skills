@@ -11,6 +11,8 @@ Apply human-style variation only to these sections unless the user explicitly as
 - Results
 - Experimental Results
 - Results-facing prose inside Results and Discussion
+- Conclusion (moderate humanization only)
+- Limitations (moderate humanization only)
 
 ## Excluded sections
 
@@ -23,8 +25,6 @@ Do not add conversational phrasing or intentional grammar imperfections to:
 - Theory, Preliminaries, Problem Formulation, or Proofs
 - Experimental Setup, Datasets, Metrics, or Implementation Details
 - Ablation Study setup prose
-- Limitations
-- Conclusion
 - Acknowledgments
 - References or Bibliography
 - Tables, figure captions, equations, algorithms, theorem environments, and code blocks
@@ -36,3 +36,5 @@ For LaTeX, detect boundaries from `\section`, `\subsection`, and `\paragraph` co
 For Markdown or plain prose, rely on visible headings. If headings are missing or ambiguous, edit only paragraphs whose section role is clear and state the assumption in `Revision notes:`.
 
 When a section mixes setup and results, edit only the result-facing interpretive prose and leave setup details formal.
+
+For Conclusion and Limitations, apply only moderate style variation. Do not alter claim boundaries, certainty levels tied to evidence, stated limitations, or any numeric/technical content.
