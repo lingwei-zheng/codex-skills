@@ -1,7 +1,0 @@
-interface:
-  display_name: "Data Analysis And Figures"
-  short_description: "Analyze academic data and produce reproducible Python/R figures."
-  default_prompt: "Use $data-analysis-and-figures to analyze my data, make reproducible Python/R charts, and prepare an evidence handoff for Results and Discussion."
-
-policy:
-  allow_implicit_invocation: true

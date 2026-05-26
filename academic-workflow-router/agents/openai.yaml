@@ -1,7 +1,0 @@
-interface:
-  display_name: "Academic Workflow Router"
-  short_description: "Route common academic tasks to the right local skill."
-  default_prompt: "Use $academic-workflow-router to choose the right workflow for my academic task and avoid unnecessary cross-skill pipelines."
-
-policy:
-  allow_implicit_invocation: true

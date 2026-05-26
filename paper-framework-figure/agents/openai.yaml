@@ -1,7 +1,0 @@
-interface:
-  display_name: "Paper Framework Figure"
-  short_description: "Design, prompt, critique, and integrate publication-ready research-paper framework figures."
-  default_prompt: "Use $paper-framework-figure to design a publication-ready framework figure for my paper."
-
-policy:
-  allow_implicit_invocation: true

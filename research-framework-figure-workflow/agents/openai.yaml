@@ -1,7 +1,0 @@
-interface:
-  display_name: "Research Framework Figure Workflow"
-  short_description: "NORA-reviewed workflow for thesis and paper framework figures."
-  default_prompt: "Use this workflow to turn a thesis or paper draft into a NORA-reviewed conceptual framework figure with candidate boards, prompts, captions, and revision checks."
-
-policy:
-  allow_implicit_invocation: true
