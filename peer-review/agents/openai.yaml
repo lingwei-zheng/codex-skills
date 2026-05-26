@@ -1,0 +1,7 @@
+interface:
+  display_name: "Peer Review"
+  short_description: "Journal-style manuscript review with ARS and field context."
+  default_prompt: "Use $peer-review to review this manuscript with critical, important, and minor revisions."
+
+policy:
+  allow_implicit_invocation: true
