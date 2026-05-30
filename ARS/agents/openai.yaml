@@ -1,8 +1,0 @@
-interface:
-  display_name: "ARS"
-  short_description: "Academic research and writing workflows for geography/GIScience."
-  brand_color: "#2563EB"
-  default_prompt: "Use $ARS with ars-plan to map my paper structure, missing evidence, and geography/GIScience framing."
-
-policy:
-  allow_implicit_invocation: true

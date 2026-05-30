@@ -1,5 +1,5 @@
 {
-  "name": "ARS",
+  "name": "academic-research",
   "adapter_version": "0.1.8",
   "version_file": "VERSION",
   "generated_for": "codex",
@@ -52,32 +52,32 @@
   ],
   "inactive_upstream_scripts": [
     {
-      "path": "skills/ARS/ars/scripts/check_version_consistency.py",
+      "path": "skills/academic-research/ars/scripts/check_version_consistency.py",
       "reason": "Requires upstream .claude/CLAUDE.md suite-version table, which is intentionally not vendored in the Codex package."
     },
     {
-      "path": "skills/ARS/ars/scripts/check_spec_consistency.py",
+      "path": "skills/academic-research/ars/scripts/check_spec_consistency.py",
       "reason": "Requires upstream .claude/CLAUDE.md contract text, which is intentionally not vendored in the Codex package."
     },
     {
-      "path": "skills/ARS/ars/hooks/hooks.json",
+      "path": "skills/academic-research/ars/hooks/hooks.json",
       "reason": "Claude Code plugin hook metadata. Preserved for upstream traceability but not installed or executed by Codex."
     }
   ],
   "historical_artifacts": [
     {
-      "path": "skills/ARS/ars/docs/design/2026-04-23-ars-v3.6.2-sprint-contract-design.md",
+      "path": "skills/academic-research/ars/docs/design/2026-04-23-ars-v3.6.2-sprint-contract-design.md",
       "disclaimer": "Upstream design/plan document, vendored for traceability. NOT a Codex runtime instruction. References to superpowers:* skills, maintainer-local paths, or Claude Code session describe the upstream development environment."
     },
     {
-      "path": "skills/ARS/ars/docs/design/2026-04-23-ars-v3.6.4-literature-corpus-adapters-plan.md",
+      "path": "skills/academic-research/ars/docs/design/2026-04-23-ars-v3.6.4-literature-corpus-adapters-plan.md",
       "disclaimer": "Upstream design/plan document, vendored for traceability. NOT a Codex runtime instruction. References to superpowers:* skills, maintainer-local paths, or Claude Code session describe the upstream development environment."
     }
   ],
   "packaging": {
     "type": "single_codex_suite_skill",
-    "entrypoint": "skills/ARS/SKILL.md",
-    "vendored_root": "skills/ARS/ars"
+    "entrypoint": "skills/academic-research/SKILL.md",
+    "vendored_root": "skills/academic-research/ars"
   },
   "runtime_notes": [
     "Claude Code agent-team wording is adapted by SKILL.md into Codex inline role-prompt usage.",
@@ -95,3 +95,4 @@
     "Cross-model API behavior is disabled by default and requires explicit user request."
     ]
 }
+

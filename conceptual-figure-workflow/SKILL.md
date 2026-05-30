@@ -1,4 +1,4 @@
----
+﻿---
 name: conceptual-figure-workflow
 description: Use when the user wants a conceptual framework figure, experiment design diagram, thesis framework, research mechanism diagram, theoretical model figure, variable relationship diagram, or paper overview schematic. This skill first uses ARS to review the theory structure, research question, variables, mechanisms, hypotheses, and claim-evidence boundaries, then produces a figure brief for engineering-figure-agent to execute.
 ---
@@ -25,7 +25,7 @@ publication plots and multi-panel empirical figures.
 
 ## Workflow
 
-1. Read `../ARS/SKILL.md` and route the research-logic review to the smallest
+1. Read `../academic-research/SKILL.md` and route the research-logic review to the smallest
    relevant ARS workflow, normally `academic-paper`, `deep-research`, or
    `experiment-agent`.
 2. If the figure is geography, human geography, GIScience, GeoAI, spatial
@@ -68,3 +68,4 @@ source of truth for later iterations.
 - For spatial work, state the spatial unit and avoid implying scale-free effects.
 - For health geography, separate exposure, vulnerability, access, outcome, and
   contextual pathways unless the user's theory combines them explicitly.
+
