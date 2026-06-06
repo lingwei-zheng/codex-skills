@@ -34,6 +34,7 @@ Avoid:
 - long historical throat-clearing
 - detailed results
 - inflated novelty claims before the gap is defined
+- contribution sentences led by defensive disclaimers instead of a direct statement of the study aim or scope
 
 ## Literature Review
 
@@ -124,6 +125,7 @@ Avoid:
 
 - discussion-length mechanism explanations
 - repeating every visual detail from the figure
+- opening the paragraph with `we do not claim` or similar disclaimers unless a misreading of the evidence is otherwise likely
 
 ## Discussion
 
@@ -157,6 +159,7 @@ Avoid:
 
 - repeating the Results section in new words
 - claiming mechanism when only association was shown
+- letting boundary language overshadow the main interpretive claim
 
 ## Conclusion
 
@@ -185,6 +188,7 @@ Avoid:
 
 - introducing new experiments
 - ending on vague praise of the work
+- leading the close with self-diminishing disclaimers instead of first stating the contribution
 
 ## Abstract
 
@@ -212,6 +216,7 @@ Useful phrase families:
 - `These findings suggest ...`
 
 Keep the abstract selective. If a detail does not affect editorial triage, it probably does not belong.
+Do not let defensive caveats occupy the abstract's key result or implication sentence unless they are required to prevent material overclaim.
 
 ## Title
 

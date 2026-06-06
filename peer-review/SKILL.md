@@ -1,4 +1,4 @@
-﻿---
+---
 name: peer-review
 description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with critical, important, and minor revisions. This skill uses ARS as the main reviewer framework, local geography/GIScience/health geography field context when relevant, and pdf/docx tools for manuscript and visual-material inspection. Chinese outputs default to Simplified Chinese.
 ---
@@ -109,10 +109,10 @@ specifies otherwise.
 
 Recommended file set:
 
-- `涓枃瀹＄鎶ュ憡.md`: Simplified Chinese working report.
+- `中文审稿报告.md`: Simplified Chinese working report.
 - `English_Peer_Review_Report.md`: English working report synchronized to the
   Chinese report.
-- `鏈熷垔鎻愪氦瀹＄鎰忚.md`: concise English journal-submission-ready review.
+- `期刊提交审稿意见.md`: concise English journal-submission-ready review.
 
 For journal-submission-ready reviews:
 
@@ -147,4 +147,3 @@ Before finalizing, verify:
 - Important and minor revisions obey the requested count limits.
 - The journal-submission-ready report has no per-point subheadings.
 - Existing user-edited files are not overwritten unintentionally.
-

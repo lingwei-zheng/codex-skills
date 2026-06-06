@@ -23,6 +23,8 @@ the curated article-pattern reference. The wording layer should come from
 - Do not let AI draft the paper's core scientific argument from scratch.
 - If the draft is Chinese or structurally rough, reconstruct the logic first and the prose second.
 - Avoid em dashes in polished output by default. Prefer commas, parentheses, or full stops. Use colons sparingly unless the user explicitly asks to preserve dash-based punctuation or wants a colon-led style.
+- Default to positive, information-dense claim sentences. Do not lead with low-value defensive disclaimers such as `we do not claim`, `this does not mean`, or `our purpose is not ... but ...` when a direct statement of what the paper does is enough.
+- Keep limitation language only when it changes the correct interpretation of evidence, method validity, identification strength, generalisability, or scope. Do not surface weak points early in contribution-heavy positions when they do not need to be foregrounded there.
 
 ## Operating modes
 
@@ -50,6 +52,7 @@ These files are reference support. Use them after the section's rhetorical job i
 | [references/section-moves.md](references/section-moves.md) | You need section-specific move orders or phrase patterns derived from Academic Phrasebank |
 | [references/phrasebank-playbook.md](references/phrasebank-playbook.md) | You need hedging, transition, evidence, limitation, or future-work phrase families |
 | [references/style-guardrails.md](references/style-guardrails.md) | You need academic-style checks, paragraph/sentence checks, article use, register, or mechanics |
+| [references/defensive-phrasing.md](references/defensive-phrasing.md) | You need rules for compressing defensive disclaimers into direct claims or deciding when a boundary sentence is genuinely necessary |
 | [references/human-final-pass-policy.md](references/human-final-pass-policy.md) | `human-final-pass` is active and you need authorial posture, pattern-breaking rules, or grammar-error policy |
 | [references/human-final-pass-targeting.md](references/human-final-pass-targeting.md) | `human-final-pass` is active and you need section eligibility or hard boundary rules |
 | [references/human-final-pass-calibration.md](references/human-final-pass-calibration.md) | `human-final-pass` is active and you need formal-natural ratio calibration or grammar-imperfection caps |
@@ -144,6 +147,24 @@ Prioritize in this order:
 
 `paper type -> section job -> paragraph logic -> claim/evidence/boundary -> sentence polish`
 
+### 7. Distinguish necessary boundaries from defensive self-diminishing
+
+Keep a boundary sentence only when it is needed for the reader to interpret the evidence correctly.
+
+Retain or add a boundary when:
+
+- it changes the valid strength of the claim
+- it states a real method, sample, identification, or external-validity limit
+- it belongs naturally in Discussion, Limitations, robustness framing, or a methods constraint
+- removing it would create overclaim
+
+Compress or rewrite a defensive sentence when:
+
+- it says what the paper does not do before saying what it does
+- it foregrounds a weakness in a contribution sentence, abstract implication sentence, or introduction question turn
+- it raises a potential attack point that the current location does not need to spotlight
+- it lowers density without changing truth conditions
+
 ## Section responsibilities
 
 ### Introduction
@@ -159,6 +180,7 @@ The Introduction should:
 - indicate how the study addresses it
 
 Do not summarize the Results section here. Do not summarize the Conclusion here.
+Do not let contribution or question-setting sentences lead with defensive disclaimers. State the study aim, scope, and contribution directly.
 
 ### Results
 
@@ -172,6 +194,7 @@ Results writing should:
 - use supplementary data sparingly
 
 Results should answer `what happened`, not `what it ultimately means`.
+Do not open a Results paragraph with a disclaimer about what the paper is not claiming unless that warning is essential to prevent misreading of the reported evidence.
 
 ### Discussion
 
@@ -189,6 +212,8 @@ Short rule:
 - `Results = what we observed`
 - `Discussion = how we understand it, and when it may fail`
 
+Discussion is the natural home for real boundary statements, but even here the boundary should clarify interpretation rather than pre-emptively diminish the paper.
+
 ### Conclusion
 
 Use the three-part close:
@@ -198,6 +223,7 @@ Use the three-part close:
 3. state the implication with a boundary
 
 Do not introduce new data in the conclusion. Always run an overclaim check here.
+Do not let the central contribution sentence be led by `this does not mean`, `we do not claim`, or similar defensive framing. Put any necessary boundary after the contribution has been stated.
 
 ### Title
 
@@ -267,6 +293,7 @@ It should answer:
 4. Why should anyone care?
 
 Some journals require a strict abstract format. Follow the journal if it conflicts with the generic pattern.
+Keep the core result and implication sentences direct. Avoid abstract-level self-diminishing disclaimers unless omitting them would materially overstate the finding.
 
 ## Sentence and paragraph control
 

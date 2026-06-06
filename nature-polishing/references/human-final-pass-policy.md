@@ -37,6 +37,7 @@ Avoid:
 - Overly dramatic claims such as "remarkably", "game-changing", or "revolutionary".
 - Replacing precise academic verbs with vague informal verbs.
 - Adding author emotion or subjective certainty that the evidence does not support.
+- Treating self-defensive AI phrasing as "human texture". Humanization should usually remove `we do not claim`, `this does not mean`, and similar low-density disclaimers unless the boundary is genuinely needed there.
 
 ## LLM Feature Elimination
 

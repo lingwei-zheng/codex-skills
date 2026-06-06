@@ -138,6 +138,7 @@ Useful patterns:
 - `Another source of uncertainty is ...`
 
 Pair limitation language with the actual source of uncertainty, not with vague modesty.
+Do not expand limitation phrase families into the default tone of contribution sentences, abstracts, or conclusion closes.
 
 ## Implication language
 

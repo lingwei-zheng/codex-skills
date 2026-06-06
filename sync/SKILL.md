@@ -1,239 +1,202 @@
 ---
 name: sync
-description: Use when the user wants to continue work across devices, recover Codex local context after switching machines, set up or follow a cross-device handoff workflow, or decide whether a task should stay on the coding machine or move to the writing machine.
+description: Use when the user wants to resume a research or paper project across devices, initialize a clean research-project workspace, reconstruct recent analysis or writing state from project files, or leave a concise cross-device handoff without relying on chat history.
 ---
 
 # Sync
 
-This skill standardizes cross-device work for `Codex local`, especially a stronger coding machine plus a lighter writing machine.
+This skill standardizes cross-device work for research and paper projects in `Codex local`.
 
-## Project path contract
+## Core model
 
-Every project should use one canonical path contract:
+Treat these four layers as the default research handoff contract:
 
-- `.codex/project.yaml`
+- `git` records what changed
+- `configs/` records which settings were used
+- `output/archived_runs/` keeps each important output batch
+- `notes/*_log.md` records why the work changed and what happens next
 
-Before reading or writing project workflow files, resolve paths from `.codex/project.yaml` first. If the file or key is missing, use the documented default path and record the fallback in `HANDOFF.md` when it affects future resume work.
+Do not default to `TODO.md`, `HANDOFF.md`, `sync_state.json`, or chat-history assumptions.
 
-If `.codex/project.yaml` does not exist and the user asks to initialize or clean up project workflow state, offer to create it from:
+## Default project layout
 
-- `references/project-yaml-template.yaml`
+Prefer this lightweight research layout:
 
-Do not create multiple competing path maps for different skills. Add new semantic paths to `.codex/project.yaml` instead.
+```text
+project/
+  README.md
+  AGENTS.md
+  CLAUDE.md
+  .gitignore
 
-## Manuscript Source Contract
+  data/
+    raw/
+    clean/
 
-For academic writing projects, prefer the manuscript paths declared under `.codex/project.yaml`:
+  code/
+    analysis/
+    scripts/
 
-- `paths.manuscript.source_of_truth` is the canonical editable manuscript, normally Markdown.
-- `paths.manuscript.exchange_format` identifies the advisor-facing format, commonly DOCX.
-- `paths.manuscript.reference_docx` is the Pandoc Word style template when DOCX export is needed.
-- `paths.manuscript.bibliography` is the preferred BibTeX file.
-- `paths.manuscript.latex_status: deferred` means do not require LaTeX tooling or create LaTeX/PDF outputs unless the user explicitly re-enables that path.
+  configs/
+  htc/
 
-When syncing or handing off writing work, record changes against the Markdown source first. Treat Word files as imported originals, exported review copies, or tracked-comment inputs unless the project path contract explicitly says otherwise.
+  output/
+    current/
+    archived_runs/
 
-## Default model
+  paper/
+    manuscript/
+      current/
+      versions/
+    supplement/
+      current/
+      versions/
+    response_to_reviewers/
 
-- Treat the stronger machine as the default `coding / analysis / experiment` machine.
-- Treat the lighter machine as the default `writing / ideation / reading` machine.
-- Do not assume local chat history syncs across devices.
-- Assume code state can sync through `git` or cloud storage, but conversation state must be reconstructed from project files.
+  notes/
+    analysis_log.md
+    manuscript_log.md
+```
+
+Default rules:
+
+- `data/raw/` is read-only source data and should not be overwritten.
+- `code/analysis/` holds project-specific workflows; use ordered names such as `00_...` to `99_...`.
+- `code/scripts/` holds reusable helpers and should not depend on project-global paths.
+- `output/current/` holds in-progress artifacts.
+- `output/archived_runs/` holds dated, versioned output snapshots.
+- `notes/analysis_log.md` records analysis reasons, decisions, and next runs.
+- `notes/manuscript_log.md` records writing, submission, and reviewer-response reasons.
+
+## Optional path map
+
+`.codex/project.yaml` is optional. Use it only when the project has non-standard or multiple active paths for manuscripts, configs, exports, or data locations.
+
+When present:
+
+- resolve workflow paths from it first
+- keep it as a small path index, not a second workflow log
+- prefer `references/project-yaml-template.yaml` as the initializer
+- do not require it for simple projects
 
 ## When this skill should act
 
 Use this workflow when the user asks to:
 
-- continue a task after switching machines
-- set up a reusable handoff process
-- decide which machine should own a task
-- recover context for a `Codex local` project
-- convert current project state into writing-ready notes
+- continue a research or paper task after switching machines
+- initialize a reusable research-project skeleton
+- reconstruct current analysis or manuscript state
+- decide whether coding or writing work belongs on a different machine
+- leave a concise project handoff based on files, outputs, and git state
 
-## Required project files
+## Machine split
 
-At the project root, prefer these files:
+Prefer the coding machine for code edits, notebooks, model runs, figures, batch exports, environment debugging, or tooling-heavy inspection.
 
-- `.codex/project.yaml`
+Prefer the writing machine for drafting or revising prose, reviewer responses, outlines, synthesis, or light reading of notes and outputs without execution.
+
+If mixed, split into two phases:
+
+1. coding machine produces artifacts, configs, and logged decisions
+2. writing machine turns them into manuscript prose or response text
+
+## Default state sources
+
+Prefer these sources, in this order:
+
+1. `git` status and recent commits
+2. `configs/`
+3. `output/current/`
+4. recent `output/archived_runs/`
+5. `notes/analysis_log.md`
+6. `notes/manuscript_log.md`
+7. `.codex/project.yaml` only when the project actually uses it
+
+Do not create or require these as new defaults:
+
 - `TODO.md`
 - `HANDOFF.md`
 - `notes/experiment-log.md`
 - `notes/writing-notes.md`
-
-Optional `sync`-owned machine-readable files may live under `sync/`:
-
 - `sync/sync_state.json`
 - `sync/sessions.log`
 
-These are owned by this skill only. They should not replace or overwrite state files owned by another workflow skill.
+Old files may still be read for compatibility when they already exist, but new projects should not be initialized around them.
 
-If they do not exist, offer to create them from:
+## Initialization workflow
 
-- `references/project-yaml-template.yaml`
-- `references/todo-template.md`
-- `references/handoff-template.md`
-- `references/experiment-log-template.md`
-- `references/writing-notes-template.md`
+When asked to initialize a research project, create only the default working set: `configs/`, `output/current/`, `output/archived_runs/`, `notes/analysis_log.md`, and `notes/manuscript_log.md`.
+
+Add `.codex/project.yaml` only when the project needs non-default paths.
 
 ## Ownership boundaries
 
-Before creating, cleaning, or updating sync files, inspect whether the project contains state files from other workflow skills. Do not treat them as duplicate `sync` files.
-
-Known examples:
-
-- `handoff.json`, `memory/MEMORY.md`, and `harness/logs/sessions.log` are NORA checkpoint files when the `nora` skill is in use.
-- `paper_framework_figure/` and `output/figures/` are figure-workflow files when `paper-framework-figure` or NORA figure generation is in use.
-- `.checkpoints/` can be a workflow checkpoint archive and should not be deleted during sync cleanup.
-
-Default behavior:
-
 - `sync` may read other skill-owned files to reconstruct context.
-- `sync` should not write, overwrite, move, rename, or delete other skill-owned files unless the user explicitly asks for compatibility output or cleanup.
-- If machine-readable `sync` state is useful, write it under `sync/`, not into another skill's root-level files.
-- If compatibility output is requested, clearly label it as a mirror and preserve the other skill's expected schema.
-
-## First-pass decision rule
-
-Classify the current request before doing anything else.
-
-Send the task to the coding machine if it requires:
-
-- running code, tests, notebooks, benchmarks, or long jobs
-- editing implementation across multiple files
-- environment setup or dependency debugging
-- deep repo inspection that depends on local tooling
-
-Send the task to the writing machine if it requires:
-
-- drafting or revising prose
-- synthesizing papers, notes, or experiment results
-- planning, outlining, or reviewer-response writing
-- light code reading without execution
-
-If mixed, split it into two phases:
-
-1. coding machine produces artifacts, notes, or results
-2. writing machine converts them into prose, plans, or summaries
+- `sync` should not write into another skill's private state schema unless the user explicitly asks for compatibility output.
+- `sync` should not delete `.checkpoints/`, figure-workflow folders, or other skill-owned archives during cleanup.
+- `sync` should place its own initialized docs under the project structure above, not under a separate `sync/` state tree.
 
 ## Resume workflow
 
-When resuming work on a different machine:
+When resuming on another machine:
 
-1. Read `.codex/project.yaml` first if present and resolve all workflow paths from it.
-2. Read the resolved `TODO.md` and `HANDOFF.md` paths.
-3. Inspect recent repository state:
-   - latest commits
-   - current uncommitted changes
-   - any experiment or notes files referenced by `HANDOFF.md`
-   - relevant skill-owned state files, read-only, when `HANDOFF.md` points to them or the requested workflow needs them
-4. Reconstruct:
+1. Inspect recent commits and current uncommitted changes.
+2. Read active config files under `configs/`.
+3. Inspect `output/current/` and the newest folders or files under `output/archived_runs/`.
+4. Read `notes/analysis_log.md` and `notes/manuscript_log.md`.
+5. If `.codex/project.yaml` exists, use it to resolve non-standard paths.
+6. Reconstruct:
    - current task
-   - completed work
+   - what changed recently
+   - why it changed
+   - most recent outputs
    - next step
-   - constraints and known risks
-   - file ownership boundaries that must be preserved
-5. Continue only after that reconstruction is explicit.
-
-If `HANDOFF.md` is missing, infer state from the repo and create one before substantial new work.
+   - machine recommendation if relevant
 
 ## End-of-session workflow
 
 Before switching devices or ending a substantial work block:
 
-1. Resolve workflow paths from `.codex/project.yaml` if present.
-2. Update the resolved `TODO.md`
-3. Update the resolved `HANDOFF.md`
-4. Record any experiment results in the resolved experiment log path.
-5. Record any reusable writing language or interpretation in the resolved writing notes path.
-6. If another skill's checkpoint is required, run or invoke that skill's checkpoint process separately instead of editing its state files from `sync`.
+1. Archive important completed outputs into `output/archived_runs/`.
+2. Leave still-active artifacts in `output/current/`.
+3. Update `notes/analysis_log.md` for analysis runs, parameters, decisions, failures, or next experiments.
+4. Update `notes/manuscript_log.md` for manuscript revisions, submission packaging, reviewer responses, or writing next steps.
+5. Mention the relevant configs and output paths explicitly.
+6. If `.codex/project.yaml` is in use, update path keys only when the project structure actually changed.
 
-Keep handoff updates short and operational. Do not turn them into narrative diaries.
+Keep logs short, operational, and decision-oriented.
 
 ## Output contract
 
 When using this skill, the assistant should produce one or more of:
 
 - a machine recommendation for the task
-- a reconstructed project state summary
-- initialized handoff files
-- an updated cross-device handoff
-- a split plan separating coding and writing phases
+- a reconstructed research-project state summary
+- initialized research-project folders and templates
+- an updated analysis or manuscript log
+- a split coding-machine versus writing-machine handoff
 
-## File conventions
+## Naming rules
 
-### `.codex/project.yaml`
+Do not recommend vague names such as `final.docx`, `final_v2.docx`, `real_final.docx`, `latest`, `updated`, or `test`.
 
-- project-level source of truth for workflow paths
-- stores semantic path names, not skill-specific instructions
-- every skill should prefer it before using built-in defaults
-- add new path keys here when a workflow needs persistent artifacts
-- do not use it to claim ownership of another skill's private state schema
-- for writing projects, may include `paths.manuscript` with Markdown source, DOCX exchange output, bibliography, style template, and LaTeX readiness
+Prefer:
 
-### `sync/`
+- `YYYY-MM-DD_vNN_filetype_short_description.ext`
+- readable analysis labels such as `v02_add_clinical_covariates`
 
-- use for `sync`-owned helper scripts, `sync_state.json`, and `sessions.log`
-- do not mirror another skill's state here unless it is clearly labeled as read-only context or compatibility output
-- do not make `sync/` the primary human resume location when root-level `HANDOFF.md` exists
+Examples: `2026-05-12_v02_manuscript_main_after_coauthor_comments.docx`, `2026-05-20_v03_Table2_model_performance.xlsx`, `2026-05-20_v03_Figure3_calibration_plot.pdf`.
 
-### `TODO.md`
+## Templates
 
-- active checklist only
-- short, concrete items
-- mark ownership or machine only when useful
+For initialization or cleanup, use `references/project-yaml-template.yaml`, `references/analysis-log-template.md`, `references/manuscript-log-template.md`, `references/archived-run-readme-template.md`, and `references/research-project-tree.md`.
 
-### `HANDOFF.md`
-
-Must contain:
-
-- current task
-- what was done
-- current status
-- next steps
-- constraints
-
-### `notes/experiment-log.md`
-
-Use for:
-
-- parameters
-- result summaries
-- failures worth remembering
-- file paths to outputs
-
-### `notes/writing-notes.md`
-
-Use for:
-
-- paragraph-ready claims
-- figure interpretations
-- wording for methods/results/discussion
-- reviewer-response fragments
-
-## Prompt patterns
-
-For resume on the coding machine:
-
-```text
-Use the sync workflow. Read .codex/project.yaml if present, then read the resolved TODO and HANDOFF files, recent commits, and current uncommitted changes. Reconstruct the current implementation state, then continue the next coding step without repeating completed work.
-```
-
-For resume on the writing machine:
-
-```text
-Use the sync workflow. Read .codex/project.yaml if present, then read the resolved TODO, HANDOFF, experiment log, and writing notes files. Reconstruct the current project state, then turn it into writing-ready summaries, outlines, or prose.
-```
-
-For end-of-session handoff:
-
-```text
-Use the sync workflow. Based on the current repo state and this session's work, update TODO.md, HANDOFF.md, and any relevant notes files so the project can be resumed cleanly on another machine.
-```
+Do not initialize the old `todo`, `handoff`, `experiment-log`, or `writing-notes` templates for new projects.
 
 ## Limits
 
 - This skill does not assume shared local chat state across devices.
 - This skill should not claim continuity of conversation history when only files were synced.
-- This skill should prefer explicit handoff files over inferred memory.
-- This skill should preserve other skills' checkpoint files as separate state layers.
-- This skill should not collapse NORA, figure-generation, experiment, or manuscript-pipeline state into its own handoff files.
+- This skill should not require `.codex/project.yaml` for simple projects.
+- This skill should preserve other skills' checkpoint files as separate layers.
+- This skill should not collapse another workflow's private state into a new `sync/` state tree.

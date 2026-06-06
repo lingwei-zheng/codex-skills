@@ -42,6 +42,7 @@ Do not rewrite numbers into words unless the surrounding house style demands it.
 - use `we` only when it suits the discipline and document type
 - keep nominalisation useful, not excessive
 - keep the prose impersonal where appropriate, but do not force lifelessness
+- avoid unnecessary defensive disclaimers in claim-heavy positions such as contribution sentences, abstract implications, introduction turns, and conclusion closes
 
 ## Sentence and paragraph checks
 
@@ -76,6 +77,7 @@ Safer replacements:
 - do not alter quantitative values unless correcting an obvious typo requested by the user
 - do not upgrade association to causation
 - do not imply broader generalisability than the study supports
+- do not foreground speculative weaknesses unless they are needed for correct interpretation in that section
 
 ## AI boundary
 
