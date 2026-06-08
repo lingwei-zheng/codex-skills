@@ -1,0 +1,11 @@
+{
+  "name": "good-question",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/good-question/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/Rimagination/good-question.git"
+  }
+}
