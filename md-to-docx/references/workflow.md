@@ -11,6 +11,9 @@
   - converts HTML `<img ...>` tags to Pandoc image syntax;
   - normalizes image paths to `/`;
   - attempts `.emf/.wmf -> .png` conversion for Word compatibility;
+  - converts fenced ````math` blocks to Pandoc `$$...$$` display math;
+  - removes code backticks incorrectly nested inside `$...$`;
+  - removes empty `^{}` and `_{}` scripts from normalized equations;
   - warns when HTML tables or `rowspan/colspan` are detected;
 - builds a temporary `.docx` with Pandoc and `--citeproc`;
 - post-processes `word/document.xml` so tables keep thesis-style top and bottom borders.
@@ -67,3 +70,6 @@ For style-related paths, the priority order is:
 - If the project has no `reference_docx`, the bundled default template is used automatically.
 - If the project has no `docx_blank_line_filter`, the bundled default filter is used automatically.
 - If the bibliography path is missing, Pandoc still runs without it.
+- If Pandoc reports `Could not convert TeX math`, inspect the Markdown for
+  ````math` fences, `$`code``$`, unmatched delimiters, or invalid TeX. The
+  preflight fixes the first two forms without modifying the source file.

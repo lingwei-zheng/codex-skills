@@ -99,6 +99,53 @@ function Convert-EmfWmfToPng {
   return $pngPath
 }
 
+function Normalize-TeXExpression {
+  param([string]$Expression)
+
+  return ($Expression -replace '\^\{\}', '' -replace '_\{\}', '')
+}
+
+function Normalize-PandocMath {
+  param(
+    [string]$Content,
+    $Warnings,
+    $Fixes
+  )
+
+  $fencedMathPattern = '(?ms)^[ \t]*```[ \t]*math[ \t]*\r?\n(?<expr>.*?)(?:\r?\n)[ \t]*```[ \t]*$'
+  $Content = [regex]::Replace(
+    $Content,
+    $fencedMathPattern,
+    [System.Text.RegularExpressions.MatchEvaluator]{
+      param($match)
+      $expression = Normalize-TeXExpression -Expression $match.Groups['expr'].Value.Trim()
+      $Fixes.Add('Converted a fenced ``` math block to Pandoc display math.')
+      return '$$' + [Environment]::NewLine + $expression + [Environment]::NewLine + '$$'
+    }
+  )
+
+  $inlineCodeMathPattern = '\$`(?<expr>[^`\r\n]+)`\$'
+  $Content = [regex]::Replace(
+    $Content,
+    $inlineCodeMathPattern,
+    [System.Text.RegularExpressions.MatchEvaluator]{
+      param($match)
+      $expression = Normalize-TeXExpression -Expression $match.Groups['expr'].Value
+      $Fixes.Add('Removed code backticks from an inline TeX expression.')
+      return '$' + $expression + '$'
+    }
+  )
+
+  if ($Content -match '(?m)^[ \t]*```[ \t]*math[ \t]*$') {
+    $Warnings.Add('Unconverted fenced math remains. Use $$...$$ for Word equations.')
+  }
+  if ($Content -match '\$`|`\$') {
+    $Warnings.Add('Malformed inline math remains. Do not place code backticks inside $...$.')
+  }
+
+  return $Content
+}
+
 function Prepare-MarkdownForPandoc {
   param(
     [string]$SourcePath,
@@ -111,6 +158,8 @@ function Prepare-MarkdownForPandoc {
 
   $warnings = New-Object System.Collections.Generic.List[string]
   $fixes = New-Object System.Collections.Generic.List[string]
+
+  $content = Normalize-PandocMath -Content $content -Warnings $warnings -Fixes $fixes
 
   if ($content -match '(?is)<table\b') {
     $warnings.Add('Detected HTML <table> blocks. Prefer Pandoc Markdown tables for stable Word output.')
@@ -162,6 +211,25 @@ function Prepare-MarkdownForPandoc {
       $replacement += "{${($attrs -join ' ')}}"
     }
     $content = $content.Replace($tag, $replacement)
+  }
+
+  $mdImagePattern = '!\[(?<alt>[^\]]*)\]\((?<path>[^)\s]+)\)(?<attrs>\{[^}]+\})?'
+  $mdMatches = [regex]::Matches($content, $mdImagePattern)
+  foreach ($m in $mdMatches) {
+    $full = $m.Value
+    $alt = $m.Groups['alt'].Value
+    $candidate = $m.Groups['path'].Value
+    $attrs = $m.Groups['attrs'].Value
+    $resolved = Convert-MdImagePath -Candidate $candidate -WorkspaceRoot $WorkspaceRoot -SourceDir $sourceDir
+    if ($resolved) {
+      $normalizedAbs = ($resolved -replace '\\', '/')
+      $replacement = "![$alt]($normalizedAbs)$attrs"
+      if ($replacement -ne $full) {
+        $content = $content.Replace($full, $replacement)
+      }
+    } elseif ($candidate -notmatch '^[A-Za-z]+:') {
+      $warnings.Add("Markdown image path not found: '$candidate'")
+    }
   }
 
   if ($content -ne $raw) {
@@ -292,8 +360,13 @@ if (-not $resolvedFilter -or -not (Test-Path -LiteralPath $resolvedFilter)) {
   throw "Could not resolve LuaFilterPath."
 }
 
- $prepared = Prepare-MarkdownForPandoc -SourcePath $resolvedSource -WorkspaceRoot $WorkspaceRoot
- $pandocSource = $prepared.Path
+$prepared = Prepare-MarkdownForPandoc -SourcePath $resolvedSource -WorkspaceRoot $WorkspaceRoot
+$pandocSource = $prepared.Path
+$pandocSourceDir = [System.IO.Path]::GetDirectoryName($pandocSource)
+$resourcePath = $WorkspaceRoot
+if (-not [string]::IsNullOrWhiteSpace($pandocSourceDir) -and $pandocSourceDir -ne $WorkspaceRoot) {
+  $resourcePath = "$WorkspaceRoot;$pandocSourceDir"
+}
  foreach ($f in $prepared.Fixes) {
   Write-Host "[preflight/fix] $f"
  }
@@ -324,7 +397,7 @@ if ($resolvedBibliography -and (Test-Path -LiteralPath $resolvedBibliography)) {
     '--standalone' `
     '--citeproc' `
     "--bibliography=$resolvedBibliography" `
-    "--resource-path=$WorkspaceRoot" `
+    "--resource-path=$resourcePath" `
     "--reference-doc=$resolvedReference" `
     "--lua-filter=$resolvedFilter" `
     '--output' $buildOutput
@@ -335,7 +408,7 @@ if ($resolvedBibliography -and (Test-Path -LiteralPath $resolvedBibliography)) {
     '--to' 'docx' `
     '--standalone' `
     '--citeproc' `
-    "--resource-path=$WorkspaceRoot" `
+    "--resource-path=$resourcePath" `
     "--reference-doc=$resolvedReference" `
     "--lua-filter=$resolvedFilter" `
     '--output' $buildOutput
