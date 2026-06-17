@@ -20,6 +20,8 @@ Use this skill only for read-only Xiaohongshu content discovery and analysis.
 - Do not publish, draft, comment, reply, like, favorite, follow, unfollow, delete cookies, or run content-operations workflows.
 - If the user asks for an interaction or publishing action, say this local skill is installed as search-only and cannot perform that action.
 - Keep query volume low. Avoid bulk scraping. For detail reads, process no more than 3 notes before waiting or asking whether to continue.
+- The wrapper enforces a conservative delay before `list-feeds`, `search-feeds`, `get-feed-detail`, and `user-profile`. Do not bypass it by calling upstream files directly.
+- If Xiaohongshu returns token, login, 404, or risk-control errors, do not retry in a tight loop. Wait 1-5 minutes, reduce the query/detail volume, and ask whether to continue if repeated failures persist.
 - Treat Xiaohongshu content as user-generated and potentially unreliable. Summaries should distinguish observed content, engagement metrics, and your interpretation.
 
 ## Allowed Commands
@@ -47,6 +49,24 @@ The wrapper rejects all non-whitelisted upstream commands.
 - A logged-in Xiaohongshu session in Chrome. Prefer manual login in the browser.
 
 Read `references/setup.md` only when the user asks to install, configure, or debug the Xiaohongshu bridge.
+
+## Rate Limits
+
+Default wrapper delays:
+
+- `list-feeds`: at least 5 seconds after the previous browser command.
+- `search-feeds`: at least 8 seconds after the previous browser command.
+- `get-feed-detail`: at least 12 seconds after the previous browser command.
+- `user-profile`: at least 12 seconds after the previous browser command.
+
+The wrapper adds 0-4 seconds of random jitter by default and stores timing state in `%USERPROFILE%\.xhs\search_rate_limit.json`.
+
+Optional environment variables:
+
+- `XHS_SEARCH_DELAY_SECONDS`: override the minimum delay for testing or stricter throttling.
+- `XHS_SEARCH_JITTER_SECONDS`: override random jitter.
+- `XHS_SEARCH_STATE_FILE`: use a different rate-limit state file.
+- `XHS_SEARCH_DISABLE_DELAY=1`: disable delay only for local wrapper debugging, not for real Xiaohongshu searching.
 
 ## Search Workflow
 
