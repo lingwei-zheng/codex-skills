@@ -1,0 +1,4 @@
+interface:
+  display_name: "XHS Search"
+  short_description: "Search and read Xiaohongshu content without publishing or interacting."
+  default_prompt: "Use $xhs-search to search Xiaohongshu for a topic and summarize visible content patterns."

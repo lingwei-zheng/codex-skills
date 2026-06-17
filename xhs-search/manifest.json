@@ -1,0 +1,23 @@
+{
+  "name": "xhs-search",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/xhs-search/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/autoclaw-cc/xiaohongshu-skills.git"
+  },
+  "local_policy": {
+    "mode": "search_only",
+    "blocked_actions": [
+      "publish",
+      "draft",
+      "comment",
+      "reply",
+      "like",
+      "favorite",
+      "delete-cookies"
+    ]
+  }
+}
