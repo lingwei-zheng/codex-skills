@@ -14,7 +14,8 @@ Use this skill when the workspace is Markdown-first and the user wants a Word ex
 3. If the project does not define `reference_docx` or `docx_blank_line_filter`, fall back to bundled assets in `assets/`.
 4. Run `scripts/build_md_to_docx.ps1`.
 5. Review preflight fixes and warnings, especially malformed math, HTML tables, and missing images.
-6. Keep generated `.docx` files as outputs, not as the canonical manuscript.
+6. Review hyphen/en dash usage before submission: use hyphens for compound adjectives and reserve en dashes for value, date, page, or similar ranges.
+7. Keep generated `.docx` files as outputs, not as the canonical manuscript.
 
 ## Guardrails
 
@@ -25,5 +26,6 @@ Use this skill when the workspace is Markdown-first and the user wants a Word ex
 - Prefer Pandoc-native Markdown images (`![](...)`) and tables over raw HTML blocks to avoid layout drift in Word exports.
 - Use `$...$` for inline equations and `$$...$$` for display equations. Do not use ````math` fences or place code backticks inside `$...$`.
 - Verify important equations are Word OMML objects when Pandoc reports a TeX conversion warning.
+- Treat `letter–letter` en dash patterns as review warnings, not automatic replacements. Likely compound adjectives should use hyphens, valid ranges should keep en dashes, and reference titles or fixed terms should be inspected manually.
 
 For parameter details and project-path fallback rules, read [workflow.md](references/workflow.md).

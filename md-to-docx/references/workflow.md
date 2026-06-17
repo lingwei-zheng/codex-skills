@@ -18,6 +18,16 @@
 - builds a temporary `.docx` with Pandoc and `--citeproc`;
 - post-processes `word/document.xml` so tables keep thesis-style top and bottom borders.
 
+## Hyphen and en dash QA
+
+Before or after DOCX export, scan the Markdown source and, when available, the exported DOCX text for suspicious `letter–letter` en dash patterns.
+
+- Use a hyphen to connect words that form a compound adjective, such as `mobility-based`, `trajectory-based`, or `view-based`.
+- Use an en dash only for ranges of values, dates, pages, or similar intervals, such as `2021–2023`, `10–20 m`, or `pp. 45–52`.
+- Treat `letter–letter` en dash matches as warnings, not automatic replacements. Some may appear in reference titles, quoted text, or fixed terms.
+- Review matches in three categories: likely compound adjectives to convert to hyphens, valid ranges to keep as en dashes, and reference titles or fixed terms to inspect manually.
+- A future report mode may list counts and surrounding snippets without editing the source or bibliography automatically.
+
 ## Default path rules
 
 When `.codex/project.yaml` exists, the script prefers these keys:

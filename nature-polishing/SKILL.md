@@ -23,6 +23,8 @@ the curated article-pattern reference. The wording layer should come from
 - Do not let AI draft the paper's core scientific argument from scratch.
 - If the draft is Chinese or structurally rough, reconstruct the logic first and the prose second.
 - Avoid em dashes in polished output by default. Prefer commas, parentheses, or full stops. Use colons sparingly unless the user explicitly asks to preserve dash-based punctuation or wants a colon-led style.
+- Use hyphens, not en dashes, to connect words that form compound adjectives. Reserve en dashes for ranges of values, dates, pages, or similar intervals, such as `2021–2023`, `10–20 m`, or `pp. 45–52`.
+- During polishing, avoid producing `letter–letter` en dash forms such as `mobility–based`, `trajectory–based`, `indoor–outdoor`, or `view–based` unless the source is a fixed title, quoted text, or another form that should be preserved.
 - Default to positive, information-dense claim sentences. Do not lead with low-value defensive disclaimers such as `we do not claim`, `this does not mean`, or `our purpose is not ... but ...` when a direct statement of what the paper does is enough.
 - Keep limitation language only when it changes the correct interpretation of evidence, method validity, identification strength, generalisability, or scope. Do not surface weak points early in contribution-heavy positions when they do not need to be foregrounded there.
 
