@@ -10,15 +10,17 @@ Optimize a skill folder for clarity, concision, and maintainability.
 ## Workflow
 
 1. Inspect `SKILL.md`, `agents/openai.yaml`, `references/`, `scripts/`, and `assets/`.
-2. Remove duplicate or overlapping instructions first.
-3. Keep only core trigger info and the shortest usable workflow in `SKILL.md`.
-4. Move detail into `references/` and repeatable logic into `scripts/`.
-5. Delete docs that exist only for human convenience.
-6. Recheck the folder with the audit script after every non-trivial edit.
+2. Strictly parse `SKILL.md` frontmatter as YAML before judging discoverability.
+3. Remove duplicate or overlapping instructions first.
+4. Keep only core trigger info and the shortest usable workflow in `SKILL.md`.
+5. Move detail into `references/` and repeatable logic into `scripts/`.
+6. Delete docs that exist only for human convenience.
+7. Recheck the folder with the audit script after every non-trivial edit.
 
 ## Keep In `SKILL.md`
 
 - Trigger conditions in frontmatter `description`.
+- YAML-safe frontmatter. If `description` contains `: `, use quotes or a `>-` block scalar.
 - One short workflow.
 - Any essential guardrails that change how Codex should act.
 

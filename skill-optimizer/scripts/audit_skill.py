@@ -9,6 +9,11 @@ from collections import Counter
 from pathlib import Path
 from typing import Iterable
 
+try:
+    import yaml
+except ImportError:  # pragma: no cover - keeps the script usable in bare Python envs.
+    yaml = None
+
 
 FORBIDDEN_DOCS = {
     "README.md",
@@ -21,12 +26,13 @@ FORBIDDEN_DOCS = {
 
 
 def extract_frontmatter(text: str) -> str:
-    if not text.startswith("---\n"):
+    normalized = text.replace("\r\n", "\n")
+    if not normalized.startswith("---\n"):
         return ""
-    parts = text.split("\n---\n", 1)
+    parts = normalized.split("\n---\n", 1)
     if len(parts) < 2:
         return ""
-    return parts[0]
+    return parts[0].removeprefix("---\n")
 
 
 def count_lines(path: Path) -> int:
@@ -53,6 +59,43 @@ def frontmatter_keys(frontmatter: str) -> set[str]:
         if key and not key.startswith("#"):
             keys.add(key)
     return keys
+
+
+def validate_skill_frontmatter(frontmatter: str) -> tuple[dict, list[str]]:
+    """Strictly validate SKILL.md YAML frontmatter.
+
+    Codex slash discovery depends on valid YAML. Plain string scans can miss
+    invalid descriptions such as `read-only: it must...`, where the colon starts
+    an accidental mapping and causes the whole skill to be skipped.
+    """
+    issues: list[str] = []
+    if not frontmatter.strip():
+        return {}, ["SKILL.md must start with YAML frontmatter delimited by ---"]
+
+    if yaml is None:
+        if re.search(r"^[A-Za-z0-9_-]+: .+?:\s+", frontmatter, flags=re.MULTILINE):
+            issues.append(
+                "SKILL.md frontmatter may contain an unquoted colon; use a quoted string or >- block scalar"
+            )
+        parsed = {key: True for key in frontmatter_keys(frontmatter)}
+        return parsed, issues
+
+    try:
+        parsed = yaml.safe_load(frontmatter)
+    except Exception as exc:
+        return {}, [
+            f"SKILL.md frontmatter is not valid YAML: {type(exc).__name__}: {exc}",
+            "Use quoted strings or `description: >-` when the description contains `: `.",
+        ]
+
+    if not isinstance(parsed, dict):
+        return {}, ["SKILL.md frontmatter must parse to a YAML mapping"]
+
+    for key in ("name", "description"):
+        value = parsed.get(key)
+        if not isinstance(value, str) or not value.strip():
+            issues.append(f"SKILL.md frontmatter.{key} must be a non-empty string")
+    return parsed, issues
 
 
 def parse_simple_yaml(text: str) -> dict:
@@ -114,9 +157,9 @@ def audit_skill_dir(root: Path, profile: str = "strict") -> list[str]:
     else:
         text = skill_md.read_text(encoding="utf-8")
         frontmatter = extract_frontmatter(text)
-        keys = frontmatter_keys(frontmatter)
-        if not has_yaml_key(frontmatter, "name") or not has_yaml_key(frontmatter, "description"):
-            issues.append("SKILL.md frontmatter must include name and description")
+        parsed_frontmatter, frontmatter_issues = validate_skill_frontmatter(frontmatter)
+        issues.extend(frontmatter_issues)
+        keys = set(parsed_frontmatter) if parsed_frontmatter else frontmatter_keys(frontmatter)
         base_allowed = {"name", "description"}
         compat_allowed = {
             "metadata",

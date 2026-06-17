@@ -5,10 +5,30 @@ Use these rules when slimming a skill folder.
 ## Keep
 
 - Trigger wording in `SKILL.md` frontmatter.
+- Strictly valid YAML frontmatter. Prefer `description: >-` for long descriptions or any text containing `: `.
 - The shortest workflow that still lets Codex do the job.
 - One example only when it removes ambiguity.
 - Deterministic logic in `scripts/`.
 - Stable reference material in `references/`.
+
+## Validate Discoverability
+
+Before treating a skill as slash-callable, parse the frontmatter with a real YAML parser.
+Do not rely only on string checks for `name:` and `description:`.
+
+Common failure:
+
+```yaml
+description: This skill is read-only: it must not publish.
+```
+
+The `: ` after `read-only` can break YAML parsing and cause Codex to skip the skill.
+Use:
+
+```yaml
+description: >-
+  This skill is read-only and must not publish.
+```
 
 ## Move Out
 
