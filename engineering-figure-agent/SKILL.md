@@ -1,6 +1,14 @@
 ---
 name: engineering-figure-agent
-description: Use when the user needs to execute an already scoped engineering or research-paper figure brief: system architecture diagrams, algorithm workflows, hardware schematics, benchmark charts, ablation plots, redraws, image edits, or exact publication-style plots from numeric data. Covers Gemini, Nano Banana, OpenAI image models, and local plotting workflows. For conceptual framework or experiment-design figures whose theory, variables, mechanisms, or claim-evidence boundaries are not yet reviewed, use conceptual-figure-workflow first.
+description: >-
+  Use when the user needs to execute an already scoped engineering or
+  research-paper figure brief, including system architecture diagrams,
+  algorithm workflows, hardware schematics, benchmark charts, ablation plots,
+  redraws, image edits, or exact publication-style plots from numeric data.
+  Covers Gemini, Nano Banana, OpenAI image models, and local plotting workflows.
+  For conceptual framework or experiment-design figures whose theory,
+  variables, mechanisms, or claim-evidence boundaries are not yet reviewed, use
+  conceptual-figure-workflow first.
 ---
 
 # Engineering Figure Agent

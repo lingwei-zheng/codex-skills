@@ -1,0 +1,11 @@
+{
+  "name": "engineering-figure-agent",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/engineering-figure-agent/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/heyu-233/engineering-figure-agent.git"
+  }
+}
