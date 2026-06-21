@@ -1,8 +1,0 @@
-{
-  "name": "academic-supervisor",
-  "generated_for": "codex",
-  "packaging": {
-    "type": "single_codex_skill",
-    "entrypoint": "skills/academic-supervisor/SKILL.md"
-  }
-}

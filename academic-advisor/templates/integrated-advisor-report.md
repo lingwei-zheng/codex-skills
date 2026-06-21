@@ -1,4 +1,4 @@
-# Integrated Academic Supervisor Report
+# Integrated Academic Advisor Report
 
 ## 1. Bottom-line verdict
 

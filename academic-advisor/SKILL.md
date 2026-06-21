@@ -1,18 +1,18 @@
 ---
-name: academic-supervisor
+name: academic-advisor
 description: >-
   Use when evaluating a research proposal, rough idea, paper concept,
-  manuscript, pre-submission package, or journal targeting strategy through a
-  supervisor-style assessment. Triggers include proposal review, idea
+  manuscript, pre-submission package, or journal targeting strategy through an
+  advisor-style assessment. Triggers include proposal review, idea
   evaluation, research supervision, manuscript pre-submission audit, journal
   targeting, 投稿建议, 研究想法评估, 论文投稿路线, and 投稿期刊选择. Combines
   good-question, academic-research, Zotero evidence, and web literature checks
   into one integrated report.
 ---
 
-# Academic Supervisor
+# Academic Advisor
 
-Provide supervisor-style evaluation for proposals, rough ideas, research plans, manuscripts, and journal targeting decisions. The output is one integrated report, not separate sub-skill reports.
+Provide advisor-style evaluation for proposals, rough ideas, research plans, manuscripts, and journal targeting decisions. The output is one integrated report, not separate sub-skill reports.
 
 ## Defaults
 
@@ -24,7 +24,7 @@ Provide supervisor-style evaluation for proposals, rough ideas, research plans, 
 
 ## Routing Boundaries
 
-- Use `academic-supervisor` for author-side project diagnosis, pre-submission audit, and journal strategy.
+- Use `academic-advisor` for author-side project diagnosis, pre-submission audit, and journal strategy.
 - Use `good-question` logic for question quality, falsifiability, pilot design, and strongest reviewer rejection risk.
 - Use `academic-research` logic for literature positioning, research design, manuscript structure, contribution, and ARS-style paper/reviewer workflows.
 - Use `zotero:Zotero` for local-library evidence search, citation metadata, and full text only when needed.
@@ -42,11 +42,11 @@ Provide supervisor-style evaluation for proposals, rough ideas, research plans, 
    - Good-question lens: importance, tractability, falsifier, pilot, hidden assumptions, reviewer risk.
    - Academic-research lens: literature gap, design fit, methods, claim-evidence boundary, contribution, structure, and manuscript readiness.
 5. If a journal list is supplied, treat it as an active constraint and ranking pool, not an appendix. Read `references/journal-fit-rubric.md`.
-6. Produce one integrated report using `templates/integrated-supervisor-report.md`.
+6. Produce one integrated report using `templates/integrated-advisor-report.md`.
 
 ## Reference Loading
 
-- Read `references/supervisor-rubric.md` for proposal, idea, manuscript, and revision evaluation.
+- Read `references/advisor-rubric.md` for proposal, idea, manuscript, and revision evaluation.
 - Read `references/evidence-triangulation.md` before making novelty, literature-gap, or target-journal claims.
 - Read `references/journal-fit-rubric.md` when the user provides a journal list or asks where to submit.
 
