@@ -1,63 +1,67 @@
-# Integrated Academic Advisor Report
+# Academic Advisor 综合评估报告
 
-## 1. Bottom-line verdict
+## 1. 核心判断
 
-- Verdict:
-- Recommended paper route:
-- Highest viable target:
-- Main reason to proceed / revise / re-scope:
+- 总体判断：
+- 建议论文路线：
+- 最高可冲击目标：
+- 需要推进/修改/重设范围的主要理由：
 
-## 2. Project or manuscript diagnosis
+## 2. 项目/论文诊断
 
-- Current material:
-- Task type:
-- Core claim:
-- Strongest asset:
-- Weakest bottleneck:
+- 当前材料：
+- 任务类型：
+- 核心主张：
+- 最强资产：
+- 最大瓶颈：
 
-## 3. Evidence base and source ledger
+## 3. 证据基础与来源台账
 
-**Source-backed**
+**来源支持（Source-backed）**
 - 
 
-**Inference**
+**推断（Inference）**
 - 
 
-**Unknown / needs verification**
+**未知/待核查（Unknown）**
 - 
 
-## 4. Research question and contribution audit
+**Zotero 状态**
+- 可用 / 不可用 / 结果稀疏：
+- 若不可用，blocker：
 
-- Research question quality:
-- Falsifier or kill criterion:
-- Competing explanations:
-- Contribution type:
-- Strongest reviewer objection:
+## 4. 研究问题与贡献审查
 
-## 5. Literature and method fit
+- 研究问题质量：
+- 可证伪点或终止条件：
+- 竞争性解释：
+- 贡献类型：
+- 最强审稿人质疑：
 
-- Direct literature neighbors:
-- Missing anchors:
-- Method/design fit:
-- Claim-evidence boundary:
-- Minimum evidence repair:
+## 5. 文献与方法适配
 
-## 6. Journal ladder
+- 直接相邻文献：
+- 缺失的关键文献锚点：
+- 方法/设计适配：
+- 主张-证据边界：
+- 最小证据修复：
 
-| Route | Journal | Fit rationale | Required article shape | Main risk | Minimum revision | Confidence |
+## 6. 投稿期刊梯度
+
+| 路线 | 期刊 | 适配理由 | 需要塑造的文章形态 | 主要风险 | 最小修改路线 | 置信度 |
 |---|---|---|---|---|---|---|
-| High target |  |  |  |  |  |  |
-| Realistic target |  |  |  |  |  |  |
-| Fallback target |  |  |  |  |  |  |
+| 冲高目标 |  |  |  |  |  |  |
+| 现实目标 |  |  |  |  |  |  |
+| 保底目标 |  |  |  |  |  |  |
 
-## 7. Revision or development roadmap
+## 7. 修改或推进路线图
 
 1. 
 2. 
 3. 
 
-## 8. Immediate next actions
+## 8. 立即行动
 
-- Next 48 hours:
-- Next two weeks:
-- Decision gate:
+- 未来 48 小时：
+- 未来两周：
+- 决策门槛：
