@@ -300,6 +300,254 @@ function Set-Border {
   }
 }
 
+function Ensure-RunProperty {
+  param($Run, $Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  $rPr = $Run.SelectSingleNode('w:rPr', $NamespaceManager)
+  if ($null -eq $rPr) {
+    $rPr = $Doc.CreateElement('w', 'rPr', $NamespaceUri)
+    if ($Run.HasChildNodes) {
+      [void]$Run.InsertBefore($rPr, $Run.FirstChild)
+    } else {
+      [void]$Run.AppendChild($rPr)
+    }
+  }
+  return $rPr
+}
+
+function Set-RunToggle {
+  param($RunProperty, [string]$LocalName, [bool]$Enabled, $Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  $node = $RunProperty.SelectSingleNode("w:$LocalName", $NamespaceManager)
+  if ($Enabled) {
+    if ($null -eq $node) {
+      $node = $Doc.CreateElement('w', $LocalName, $NamespaceUri)
+      [void]$RunProperty.AppendChild($node)
+    }
+  } elseif ($null -ne $node) {
+    [void]$RunProperty.RemoveChild($node)
+  }
+}
+
+function Set-ParagraphJustification {
+  param($Paragraph, [string]$Value, $Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  $pPr = $Paragraph.SelectSingleNode('w:pPr', $NamespaceManager)
+  if ($null -eq $pPr) {
+    $pPr = $Doc.CreateElement('w', 'pPr', $NamespaceUri)
+    if ($Paragraph.HasChildNodes) {
+      [void]$Paragraph.InsertBefore($pPr, $Paragraph.FirstChild)
+    } else {
+      [void]$Paragraph.AppendChild($pPr)
+    }
+  }
+  $jc = $pPr.SelectSingleNode('w:jc', $NamespaceManager)
+  if ($null -eq $jc) {
+    $jc = $Doc.CreateElement('w', 'jc', $NamespaceUri)
+    [void]$pPr.AppendChild($jc)
+  }
+  [void]$jc.SetAttribute('val', $NamespaceUri, $Value)
+}
+
+function Add-TextPrefixToParagraph {
+  param($Paragraph, [string]$Prefix, $Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  if ([string]::IsNullOrWhiteSpace($Prefix)) {
+    return
+  }
+
+  $firstText = $Paragraph.SelectSingleNode('.//w:t', $NamespaceManager)
+  if ($null -ne $firstText) {
+    $firstText.InnerText = $Prefix + $firstText.InnerText
+    return
+  }
+
+  $run = $Doc.CreateElement('w', 'r', $NamespaceUri)
+  $text = $Doc.CreateElement('w', 't', $NamespaceUri)
+  $text.InnerText = $Prefix
+  [void]$run.AppendChild($text)
+  [void]$Paragraph.AppendChild($run)
+}
+
+function Convert-HeadingsToMinimalBody {
+  param($Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  $converted = 0
+  $firstHeading = $true
+  $sectionCounters = @(0, 0, 0, 0, 0, 0)
+  $numberingActive = $true
+  foreach ($p in @($Doc.SelectNodes('//w:p', $NamespaceManager))) {
+    $pStyle = $p.SelectSingleNode('w:pPr/w:pStyle', $NamespaceManager)
+    if ($null -eq $pStyle) {
+      continue
+    }
+
+    $styleId = $pStyle.GetAttribute('val', $NamespaceUri)
+    $level = $null
+    if ($styleId -match '^(Heading)?([1-6])$') {
+      $level = [int]$Matches[2]
+    } elseif ($styleId -match '^heading([1-6])$') {
+      $level = [int]$Matches[1]
+    }
+    if ($null -eq $level) {
+      continue
+    }
+
+    $paragraphText = ''
+    foreach ($t in @($p.SelectNodes('.//w:t', $NamespaceManager))) {
+      $paragraphText += $t.InnerText
+    }
+    $paragraphText = $paragraphText.Trim()
+
+    $bold = $false
+    $italic = $false
+    $numberPrefix = ''
+    $isDocumentTitle = $firstHeading
+    if ($isDocumentTitle) {
+      $bold = $true
+      Set-ParagraphJustification -Paragraph $p -Value 'center' -Doc $Doc -NamespaceManager $NamespaceManager -NamespaceUri $NamespaceUri
+      $firstHeading = $false
+    } elseif ($paragraphText -match '^(Abstract|References|Supplementary Material)$') {
+      $bold = $true
+      if ($paragraphText -match '^(References|Supplementary Material)$') {
+        $numberingActive = $false
+      }
+    } elseif ($level -eq 1) {
+      $bold = $true
+    } elseif ($level -eq 2) {
+      $bold = $true
+      $italic = $true
+    } else {
+      $italic = $true
+    }
+
+    if ((-not $isDocumentTitle) -and $numberingActive -and $paragraphText -notmatch '^(Abstract|References|Supplementary Material)$' -and $paragraphText -notmatch '^\d+(\.\d+)*\.?\s+') {
+      $sectionCounters[$level - 1] += 1
+      for ($counterIndex = $level; $counterIndex -lt $sectionCounters.Count; $counterIndex++) {
+        $sectionCounters[$counterIndex] = 0
+      }
+      $activeNumbers = @()
+      for ($counterIndex = 0; $counterIndex -lt $level; $counterIndex++) {
+        if ($sectionCounters[$counterIndex] -gt 0) {
+          $activeNumbers += [string]$sectionCounters[$counterIndex]
+        }
+      }
+      if ($activeNumbers.Count -gt 0) {
+        $numberPrefix = ($activeNumbers -join '.') + '. '
+      }
+    }
+
+    $pPr = $p.SelectSingleNode('w:pPr', $NamespaceManager)
+    [void]$pPr.RemoveChild($pStyle)
+    Add-TextPrefixToParagraph -Paragraph $p -Prefix $numberPrefix -Doc $Doc -NamespaceManager $NamespaceManager -NamespaceUri $NamespaceUri
+
+    foreach ($r in @($p.SelectNodes('w:r', $NamespaceManager))) {
+      $rPr = Ensure-RunProperty -Run $r -Doc $Doc -NamespaceManager $NamespaceManager -NamespaceUri $NamespaceUri
+      Set-RunToggle -RunProperty $rPr -LocalName 'b' -Enabled $bold -Doc $Doc -NamespaceManager $NamespaceManager -NamespaceUri $NamespaceUri
+      Set-RunToggle -RunProperty $rPr -LocalName 'i' -Enabled $italic -Doc $Doc -NamespaceManager $NamespaceManager -NamespaceUri $NamespaceUri
+    }
+    $converted += 1
+  }
+  return $converted
+}
+
+function Clear-MinimalCaptionJustification {
+  param($Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  $cleared = 0
+  foreach ($p in @($Doc.SelectNodes('//w:p', $NamespaceManager))) {
+    $text = ''
+    foreach ($t in @($p.SelectNodes('.//w:t', $NamespaceManager))) {
+      $text += $t.InnerText
+    }
+    if ($text -match '^\s*(Figure|Table)\s+[A-Za-z0-9]+\.') {
+      $jc = $p.SelectSingleNode('w:pPr/w:jc', $NamespaceManager)
+      if ($null -ne $jc) {
+        [void]$jc.ParentNode.RemoveChild($jc)
+        $cleared += 1
+      }
+    }
+  }
+  return $cleared
+}
+
+function Apply-LegacyBibliographyFormatting {
+  param($Doc, $NamespaceManager, [string]$NamespaceUri)
+
+  $formatted = 0
+  $inReferences = $false
+  foreach ($p in @($Doc.SelectNodes('//w:p', $NamespaceManager))) {
+    $text = ''
+    foreach ($t in @($p.SelectNodes('.//w:t', $NamespaceManager))) {
+      $text += $t.InnerText
+    }
+    $text = $text.Trim()
+    if ($text -eq 'References') {
+      $inReferences = $true
+      continue
+    }
+    if (-not $inReferences -or [string]::IsNullOrWhiteSpace($text)) {
+      continue
+    }
+
+    $pPr = $p.SelectSingleNode('w:pPr', $NamespaceManager)
+    if ($null -eq $pPr) {
+      $pPr = $Doc.CreateElement('w', 'pPr', $NamespaceUri)
+      if ($p.HasChildNodes) {
+        [void]$p.InsertBefore($pPr, $p.FirstChild)
+      } else {
+        [void]$p.AppendChild($pPr)
+      }
+    }
+
+    $spacing = $pPr.SelectSingleNode('w:spacing', $NamespaceManager)
+    if ($null -eq $spacing) {
+      $spacing = $Doc.CreateElement('w', 'spacing', $NamespaceUri)
+      [void]$pPr.AppendChild($spacing)
+    }
+    [void]$spacing.SetAttribute('line', $NamespaceUri, '480')
+    [void]$spacing.SetAttribute('lineRule', $NamespaceUri, 'auto')
+
+    $ind = $pPr.SelectSingleNode('w:ind', $NamespaceManager)
+    if ($null -eq $ind) {
+      $ind = $Doc.CreateElement('w', 'ind', $NamespaceUri)
+      [void]$pPr.AppendChild($ind)
+    }
+    [void]$ind.SetAttribute('left', $NamespaceUri, '720')
+    [void]$ind.SetAttribute('hanging', $NamespaceUri, '720')
+    $formatted += 1
+  }
+  return $formatted
+}
+
+function Set-ModernWordCompatibilityMode {
+  param([string]$PackageRoot)
+
+  $settingsPath = Join-Path $PackageRoot 'word\settings.xml'
+  if (-not (Test-Path -LiteralPath $settingsPath)) {
+    return 'missing-settings'
+  }
+
+  $settingsText = Get-Content -Raw -Encoding UTF8 -LiteralPath $settingsPath
+  $pattern = '(<w:compatSetting\b(?=[^>]*\bw:name="compatibilityMode")[^>]*\bw:val=")([^"]*)(")'
+  $match = [regex]::Match($settingsText, $pattern)
+  if ($match.Success) {
+    $previous = $match.Groups[2].Value
+    $settingsText = [regex]::Replace($settingsText, $pattern, '${1}15${3}', 1)
+    Set-Content -LiteralPath $settingsPath -Value $settingsText -Encoding UTF8 -NoNewline
+    return "$previous-to-15"
+  }
+
+  $insert = '<w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="15"/>'
+  if ($settingsText -match '</w:compat>') {
+    $settingsText = $settingsText -replace '</w:compat>', "$insert</w:compat>"
+  } else {
+    $settingsText = $settingsText -replace '</w:settings>', "<w:compat>$insert</w:compat></w:settings>"
+  }
+  Set-Content -LiteralPath $settingsPath -Value $settingsText -Encoding UTF8 -NoNewline
+  return 'set-to-15'
+}
+
 if ([string]::IsNullOrWhiteSpace($WorkspaceRoot)) {
   $WorkspaceRoot = Resolve-WorkspaceRoot -StartPath '.'
   if ($null -eq $WorkspaceRoot) {
@@ -477,7 +725,12 @@ try {
     }
   }
 
+  $minimalBodyHeadings = Convert-HeadingsToMinimalBody -Doc $doc -NamespaceManager $nsm -NamespaceUri $wNs
+  $minimalCaptions = Clear-MinimalCaptionJustification -Doc $doc -NamespaceManager $nsm -NamespaceUri $wNs
+  $legacyBibliography = Apply-LegacyBibliographyFormatting -Doc $doc -NamespaceManager $nsm -NamespaceUri $wNs
+
   $doc.Save($documentPath)
+  $compatibilityMode = Set-ModernWordCompatibilityMode -PackageRoot $tmp
 
   if (Test-Path -LiteralPath $OutputPath) {
     Remove-Item -LiteralPath $OutputPath -Force
@@ -502,6 +755,10 @@ try {
   Move-Item -LiteralPath $buildOutput -Destination $OutputPath -Force
   Write-Host "Built $OutputPath"
   Write-Host "Styled tables: $($tables.Count)"
+  Write-Host "Converted headings to minimal body text: $minimalBodyHeadings"
+  Write-Host "Cleared caption centering: $minimalCaptions"
+  Write-Host "Formatted bibliography paragraphs: $legacyBibliography"
+  Write-Host "Word compatibility mode: $compatibilityMode"
 } finally {
   if ($prepared -and $prepared.TempDir -and (Test-Path -LiteralPath $prepared.TempDir)) {
     Remove-Item -LiteralPath $prepared.TempDir -Recurse -Force

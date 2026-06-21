@@ -16,7 +16,9 @@
   - removes empty `^{}` and `_{}` scripts from normalized equations;
   - warns when HTML tables or `rowspan/colspan` are detected;
 - builds a temporary `.docx` with Pandoc and `--citeproc`;
-- post-processes `word/document.xml` so tables keep thesis-style top and bottom borders.
+- post-processes `word/document.xml` so tables keep minimal academic-paper top and bottom borders;
+- converts Word Heading-style paragraphs to Normal/body paragraphs with direct bold/italic formatting, matching the minimal academic-paper template.
+- sets `word/settings.xml` compatibility mode to `15` so modern OMML equations do not trigger Word's older-format Compatibility Checker warning.
 
 ## Hyphen and en dash QA
 
@@ -41,6 +43,21 @@ When `.codex/project.yaml` exists, the script prefers these keys:
 If `reference_docx` is missing, the script falls back to:
 
 - `assets/default_reference.docx` inside the skill folder
+
+The bundled default is the standard minimal academic-paper reference template.
+The older thesis-style reference is retained as `assets/legacy_thesis_reference.docx`
+and should be used only through an explicit `ReferenceDocPath` or project YAML
+override.
+
+For the minimal template, the generated `.docx` should not depend on Word Heading
+styles. The post-processing step converts Pandoc heading paragraphs to body text:
+the title and first-level headings are bold, second-level headings are bold italic,
+and third-level or lower headings are italic. Main-text section numbers are inserted
+as plain text prefixes, such as `1.`, `2.1.`, and `2.1.1.`. The document title,
+`Abstract`, `Supplementary Material`, and `References` are not numbered. Figure
+and table captions are kept as body text with default paragraph alignment.
+Reference-list paragraphs use the legacy thesis-style hanging indent
+(`left=720`, `hanging=720`) and double line spacing (`line=480`).
 
 If `docx_blank_line_filter` is missing, the script falls back to:
 
@@ -77,9 +94,13 @@ For style-related paths, the priority order is:
 
 - If the target `.docx` is open in Word, the script should fail rather than silently corrupting the file.
 - If project YAML is missing, the script falls back to explicit parameters.
-- If the project has no `reference_docx`, the bundled default template is used automatically.
+- If the project has no `reference_docx`, the bundled minimal academic-paper template is used automatically.
 - If the project has no `docx_blank_line_filter`, the bundled default filter is used automatically.
 - If the bibliography path is missing, Pandoc still runs without it.
 - If Pandoc reports `Could not convert TeX math`, inspect the Markdown for
   ````math` fences, `$`code``$`, unmatched delimiters, or invalid TeX. The
   preflight fixes the first two forms without modifying the source file.
+- If Word warns that equations will be converted to images when saving, inspect
+  `word/settings.xml`. A reference `.docx` saved as `compatibilityMode=11`
+  can cause this with modern OMML equations; exported files should be upgraded
+  to `compatibilityMode=15`.
