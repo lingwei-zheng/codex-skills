@@ -5,6 +5,11 @@ This template provides the section-by-section skeleton for an empirical research
 
 Replace all `[bracketed text]` with your content. Delete instructional comments after use.
 
+Do not add a standalone Literature Review unless the user explicitly requests
+one or verified target-journal instructions require one. By default, place
+gap-setting literature in the Introduction and interpretive literature in the
+Discussion.
+
 ---
 
 # [Paper Title in Title Case]
@@ -58,110 +63,86 @@ The following research questions guide this study:
 
 ---
 
-## 2. Literature Review
+## 2. Methodology
 
-### 2.1 Theoretical Framework
-[What theory/framework underpins this study?]
-[1-2 paragraphs with citations]
-
-### 2.2 [Theme 1 Title]
-[Review relevant literature on theme 1.]
-[2-3 paragraphs with citations]
-
-### 2.3 [Theme 2 Title]
-[Review relevant literature on theme 2.]
-[2-3 paragraphs with citations]
-
-### 2.4 [Theme 3 Title]
-[Review relevant literature on theme 3.]
-[2-3 paragraphs with citations]
-
-### 2.5 Summary and Conceptual Framework
-[Synthesize the themes. Present conceptual framework if applicable.]
-[1-2 paragraphs]
-
----
-
-## 3. Methodology
-
-### 3.1 Research Design
+### 2.1 Research Design
 [Describe the overall research design and justify the choice.]
 [1 paragraph]
 
-### 3.2 Participants / Sample
+### 2.2 Participants / Sample
 [Who/what was studied? How were they selected? Sample size and characteristics.]
 [1-2 paragraphs]
 
-### 3.3 Data Collection
+### 2.3 Data Collection
 [What data were collected? How? When? By whom?]
 [1-2 paragraphs]
 
-### 3.4 Instruments / Measures
+### 2.4 Instruments / Measures
 [What instruments were used? Reliability and validity evidence.]
 [1-2 paragraphs]
 
-### 3.5 Data Analysis
+### 2.5 Data Analysis
 [What analytical methods were applied? Software used?]
 [1 paragraph]
 
-### 3.6 Validity and Reliability
+### 2.6 Validity and Reliability
 [How were quality criteria ensured?]
 [1 paragraph]
 
-### 3.7 Ethical Considerations
+### 2.7 Ethical Considerations
 [IRB approval, informed consent, data protection.]
 [1 paragraph]
 
 ---
 
-## 4. Results / Findings
+## 3. Results / Findings
 
-### 4.1 Descriptive Overview
+### 3.1 Descriptive Overview
 [Present descriptive statistics or overview of data.]
 [Include Table 1: Descriptive Statistics if applicable]
 
-### 4.2 [Finding for RQ1]
+### 3.2 [Finding for RQ1]
 [Present results addressing RQ1.]
 [Include tables/figures as needed]
 
-### 4.3 [Finding for RQ2]
+### 3.3 [Finding for RQ2]
 [Present results addressing RQ2.]
 [Include tables/figures as needed]
 
-### 4.4 [Finding for RQ3] *(if applicable)*
+### 3.4 [Finding for RQ3] *(if applicable)*
 [Present results addressing RQ3.]
 
 ---
 
-## 5. Discussion
+## 4. Discussion
 
-### 5.1 Summary of Key Findings
+### 4.1 Summary of Key Findings
 [Brief overview of main results.]
 [1 paragraph]
 
-### 5.2 Interpretation and Comparison with Literature
+### 4.2 Interpretation and Comparison with Literature
 [What do the findings mean? How do they compare with prior studies?]
 [2-3 paragraphs with citations]
 
-### 5.3 Theoretical Implications
+### 4.3 Theoretical Implications
 [How do findings advance theory?]
 [1-2 paragraphs]
 
-### 5.4 Practical Implications
+### 4.4 Practical Implications
 [How can practitioners, policymakers, or institutions use these findings?]
 [1-2 paragraphs]
 
-### 5.5 Limitations
+### 4.5 Limitations
 [Be honest about study limitations.]
 [1 paragraph, typically 3-5 limitations]
 
-### 5.6 Future Research Directions
+### 4.6 Future Research Directions
 [What should future studies investigate?]
 [1 paragraph]
 
 ---
 
-## 6. Conclusion
+## 5. Conclusion
 [Summarize the paper's contribution in 1-2 paragraphs. End with a strong closing statement.]
 
 ---

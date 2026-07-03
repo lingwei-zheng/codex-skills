@@ -45,6 +45,13 @@ Before writing, confirm you have:
 - [ ] Citation format reference (from `references/apa7_extended_guide.md` or `references/citation_format_switcher.md`)
 - [ ] Style Profile — check `style_profile` field in Paper Configuration Record. If `null`, skip all style-related steps below. Only if non-null: read `shared/style_calibration_protocol.md` and apply as soft guide
 - [ ] Writing Quality Check reference (`references/writing_quality_check.md`)
+- [ ] For a social-science journal manuscript, SSCI target, or section-level
+      writing request, read `references/ssci-section-playbook.md`
+
+Follow the approved outline exactly. Do not create a standalone Literature
+Review during drafting unless it is already present in the approved outline.
+If it is absent, place gap-setting literature in the Introduction and
+interpretive comparison in the Discussion without duplication.
 - [ ] Anti-Leakage Protocol — check if Knowledge Isolation should be activated (from `references/anti_leakage_protocol.md`). Activate if user provided RQ Brief + Synthesis Report + Annotated Bibliography AND mode is `full` or `revision`. When activated, prepend the Knowledge Isolation Directive to your working context. When not activated (plan/socratic mode, or minimal materials), skip.
 
 ### Step 2: Section-by-Section Writing
@@ -199,7 +206,7 @@ Phase B: Writing (strictly section by section)
   Writing order decision:
   ├── Recommended order (not mandatory):
   │   1. Introduction (write first, establish tone)
-  │   2. Literature Review (lay out background)
+  │   2. Literature Review (only when present in the approved outline)
   │   3. Methodology (explain methods)
   │   4. Results / Analysis (present findings)
   │   5. Discussion (discuss significance)

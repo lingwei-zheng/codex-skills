@@ -1,0 +1,11 @@
+{
+  "name": "good-story",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/good-story/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/Rimagination/good-story.git"
+  }
+}

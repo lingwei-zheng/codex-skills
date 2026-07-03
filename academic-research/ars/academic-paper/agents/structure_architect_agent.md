@@ -35,7 +35,18 @@ If downstream work is needed, return control to the caller with a recommendation
 
 ## Structure Selection
 
-Reference: `references/paper_structure_patterns.md`
+References:
+
+- `references/paper_structure_patterns.md`
+- `references/ssci-section-playbook.md` for social-science journal manuscripts,
+  SSCI targets, or section-level planning
+
+Before selecting or expanding a structure, set
+`standalone_literature_review = true` only when the user explicitly requests a
+Literature Review section or verified target-journal instructions require one.
+Generic paper, outline, IMRaD, SSCI, or literature-search requests leave it
+`false`. If journal instructions require the section without a user request,
+state that requirement before adding it.
 
 Based on the Paper Configuration Record, select from 6 patterns:
 
@@ -76,17 +87,19 @@ For each section, provide:
 
 ### Step 4: Allocate Word Counts
 
-#### IMRaD Default Allocation (for 6,000-word paper)
+#### IMRaD Default Allocation Without Standalone Literature Review
 | Section | % | Words |
 |---------|---|-------|
 | Abstract | — | 250 |
-| Introduction | 15% | 900 |
-| Literature Review | 25% | 1,500 |
-| Methodology | 15% | 900 |
-| Results | 20% | 1,200 |
-| Discussion | 20% | 1,200 |
+| Introduction | 20% | 1,200 |
+| Methodology | 20% | 1,200 |
+| Results | 25% | 1,500 |
+| Discussion | 30% | 1,800 |
 | Conclusion | 5% | 300 |
 | References | — | (not counted) |
+
+When `standalone_literature_review = true`, use the explicit-review allocation
+in `references/paper_structure_patterns.md`.
 
 #### Literature Review Default Allocation (for 8,000-word paper)
 | Section | % | Words |
@@ -124,6 +137,8 @@ For each section boundary, specify:
 ## Paper Outline
 
 ### Structure Pattern: [IMRaD / Lit Review / Theoretical / Case Study / Policy Brief / Conference]
+
+### Standalone Literature Review: [No / Yes — user request / Yes — verified journal requirement]
 
 ### Overview
 [1-paragraph summary of the paper's flow]
@@ -189,6 +204,8 @@ OUTPUT: Target word count per section
 
 Step 1: Get base proportions
   -> Retrieve section percentages from default Allocation table by paper_type
+  -> For IMRaD, use the no-review allocation unless
+     standalone_literature_review = true
 
 Step 2: Scale by total word count
   -> section_words = round(total_word_count x section_percentage)
@@ -213,11 +230,11 @@ Step 5: Output
 | Section | IMRaD | Lit Review | Theoretical | Case Study | Policy Brief | Conference |
 |------|-------|-----------|-------------|-----------|-------------|-----------|
 | Abstract | 250 fixed | 250 fixed | 250 fixed | 250 fixed | — | 150 fixed |
-| Introduction | 15% | 10% | 12% | 12% | 10% | 15% |
-| Literature / Background | 25% | Distributed to themes | 20% | 15% | 15% | 20% |
-| Framework / Method | 15% | — | 30% | 10% | — | 15% |
-| Analysis / Results | 20% | — | 25% | 30% | 30% | 25% |
-| Discussion | 20% | — | — | 20% | — | 20% |
+| Introduction | 20% default; 15% explicit | 10% | 12% | 12% | 10% | 15% |
+| Literature / Background | 0% default; 25% explicit | Distributed to themes | 20% | 15% | 15% | 20% |
+| Framework / Method | 20% default; 15% explicit | — | 30% | 10% | — | 15% |
+| Analysis / Results | 25% default; 20% explicit | — | 25% | 30% | 30% | 25% |
+| Discussion | 30% default; 20% explicit | — | — | 20% | — | 20% |
 | Thematic Sections | — | 60% (equally divided) | — | — | — | — |
 | Synthesis & Gaps | — | 15% | — | — | — | — |
 | Recommendations | — | — | — | — | 30% | — |

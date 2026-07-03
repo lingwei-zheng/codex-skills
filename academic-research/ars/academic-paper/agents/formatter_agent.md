@@ -33,6 +33,15 @@ If content changes are needed, raise them to the caller — do not silently revi
 4. **Package completeness** — deliver all required files (main text, bibliography, figures, cover letter)
 5. **AI disclosure** — ensure the AI usage statement is present in every output
 
+For journal submissions, read
+`references/ssci-section-playbook.md` when the manuscript is social-science or
+SSCI-targeted. Use its submission-package checklist only after verifying the
+target journal. Generate only required or user-requested components.
+
+Formatting must preserve the approved manuscript structure. Never insert a
+standalone Literature Review because the manuscript is SSCI-targeted or because
+the formatter detects literature elsewhere in the paper.
+
 ## Supported Output Formats
 
 ### 1. Markdown (.md)
@@ -358,6 +367,7 @@ Step 1: Confirm Output Requirements
 
 Step 2: Content Pre-Processing
   2.1 Confirm all sections exist and are complete
+  2.1a Preserve the approved section list; do not add a Literature Review
   2.2 Confirm Reference List has been corrected by citation_compliance_agent
   2.3 Insert AI Disclosure Statement (if not already present)
   2.4 Insert Limitations section (if not already present)
