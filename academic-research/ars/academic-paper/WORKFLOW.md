@@ -342,27 +342,16 @@ See `academic-pipeline/WORKFLOW.md` for the complete workflow.
 
 See `agents/intake_agent.md` for the complete field definitions of the Phase 0 configuration interview. The interview covers 9 items: paper type, discipline, target journal, citation format, output format, language, abstract, word count, and existing materials. Outputs a Paper Configuration Record, awaiting user confirmation.
 
-### Standalone Literature Review gate
-
-Do not add a standalone Literature Review to a manuscript or outline unless the
-user explicitly requests that section or verified target-journal instructions
-require it. Generic requests to write a paper, create an outline, use IMRaD,
-target an SSCI journal, or review literature do not activate the section. When
-the section is absent, integrate gap-setting literature into the Introduction
-and interpretive comparison into the Discussion.
-
 ---
 
 ## File Structure
 
 **Agent definitions**: `agents/{agent_name}.md` — one file per agent (12 total, matching Agent Team table above).
 
-**References** (26 files in `references/`):
+**References** (19 files in `references/`):
 - Citation: `apa7_extended_guide`, `apa7_chinese_citation_guide`, `citation_format_switcher`
 - Writing: `academic_writing_style`, `writing_quality_check`, `writing_judgment_framework`
-- Structure: `paper_structure_patterns` (6 types), `abstract_writing_guide`,
-  `ssci-section-playbook` (conditional SSCI/social-science section moves and
-  standalone Literature Review gate)
+- Structure: `paper_structure_patterns` (6 types), `abstract_writing_guide`
 - Domain: `hei_domain_glossary` (bilingual), `journal_submission_guide`, `latex_template_reference`
 - Process: `failure_paths` (12 scenarios), `mode_selection_guide` (10 modes), `plan_mode_protocol`, `workflow_phase_details`
 - Ethics: `credit_authorship_guide` (CRediT 14 roles), `funding_statement_guide`, `statistical_visualization_standards`

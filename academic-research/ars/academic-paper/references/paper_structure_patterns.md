@@ -8,12 +8,6 @@ Used by `structure_architect_agent` and `intake_agent` to select the appropriate
 **Typical length**: 5,000-8,000 words
 **Disciplines**: Sciences, Social Sciences, Education, Medicine
 
-**Standalone Literature Review gate**: Do not add a standalone Literature
-Review only because the paper is empirical, social-science, SSCI-targeted, or
-uses IMRaD. Include it only when explicitly requested by the user or required by
-verified target-journal instructions. Otherwise integrate necessary literature
-into the Introduction and Discussion.
-
 ### Structure
 
 ```
@@ -26,44 +20,38 @@ into the Introduction and Discussion.
    3.3 Research Gap
    3.4 Purpose and Research Questions
    3.5 Significance of the Study
-4. Methodology
-   4.1 Research Design
-   4.2 Participants/Sample
-   4.3 Data Collection
-   4.4 Instruments/Measures
-   4.5 Data Analysis
-   4.6 Validity and Reliability
-   4.7 Ethical Considerations
-5. Results/Findings
-   5.1 Descriptive Statistics (if quantitative)
-   5.2 Finding 1 (aligned with RQ1)
-   5.3 Finding 2 (aligned with RQ2)
-   5.4 Finding 3 (if applicable)
-6. Discussion
-   6.1 Summary of Findings
-   6.2 Interpretation and Comparison with Literature
-   6.3 Theoretical Implications
-   6.4 Practical Implications
-   6.5 Limitations
-   6.6 Future Research Directions
-7. Conclusion
-8. References
-9. Appendices (if applicable)
+4. Literature Review
+   4.1 Theoretical Framework
+   4.2 Theme 1: [related research]
+   4.3 Theme 2: [related research]
+   4.4 Theme 3: [related research]
+   4.5 Summary and Conceptual Framework
+5. Methodology
+   5.1 Research Design
+   5.2 Participants/Sample
+   5.3 Data Collection
+   5.4 Instruments/Measures
+   5.5 Data Analysis
+   5.6 Validity and Reliability
+   5.7 Ethical Considerations
+6. Results/Findings
+   6.1 Descriptive Statistics (if quantitative)
+   6.2 Finding 1 (aligned with RQ1)
+   6.3 Finding 2 (aligned with RQ2)
+   6.4 Finding 3 (if applicable)
+7. Discussion
+   7.1 Summary of Findings
+   7.2 Interpretation and Comparison with Literature
+   7.3 Theoretical Implications
+   7.4 Practical Implications
+   7.5 Limitations
+   7.6 Future Research Directions
+8. Conclusion
+9. References
+10. Appendices (if applicable)
 ```
 
-If a standalone Literature Review is explicitly authorized, insert it between
-Introduction and Methodology and renumber subsequent sections.
-
-### Word Allocation Without Standalone Literature Review (6,000-word example)
-| Section | % | Words |
-|---------|---|-------|
-| Introduction | 20% | 1,200 |
-| Methodology | 20% | 1,200 |
-| Results | 25% | 1,500 |
-| Discussion | 30% | 1,800 |
-| Conclusion | 5% | 300 |
-
-### Word Allocation With Explicit Standalone Literature Review
+### Word Allocation (6,000-word example)
 | Section | % | Words |
 |---------|---|-------|
 | Introduction | 15% | 900 |
