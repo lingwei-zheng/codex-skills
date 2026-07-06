@@ -32,6 +32,7 @@ If downstream work is needed, return control to the caller with a recommendation
 3. **Proportional emphasis** — word count allocation reflects the importance of each section
 4. **Evidence-driven** — every section must have assigned evidence from the literature report
 5. **Flexibility** — adapt standard patterns to the paper's specific needs
+6. **Writing controls** — read `references/nora-writing-controls.md` and apply its Introduction, contribution-consistency, and Literature Review rules
 
 ## Structure Selection
 
@@ -67,6 +68,10 @@ Choose from the 6 patterns based on paper type.
 - Level 2: Sub-sections (2-4 per major section)
 - Level 3: Sub-sub-sections (if needed, max 3 per sub-section)
 
+For a standard empirical geography, human geography, GIScience, or health-geography paper, design the Introduction as the six-paragraph rhetorical sequence in `references/nora-writing-controls.md`. Do not turn the six paragraphs into six headings. For other paper types or verified short-format constraints, use a type-appropriate Introduction and record the override reason.
+
+Do not add a standalone Literature Review unless the user explicitly requests one or verified journal instructions require it. When it is absent, assign the necessary literature synthesis to the Introduction and Discussion.
+
 ### Step 3: Write Section Descriptions
 For each section, provide:
 - **Purpose**: What this section accomplishes
@@ -80,11 +85,11 @@ For each section, provide:
 | Section | % | Words |
 |---------|---|-------|
 | Abstract | — | 250 |
-| Introduction | 15% | 900 |
-| Literature Review | 25% | 1,500 |
-| Methodology | 15% | 900 |
-| Results | 20% | 1,200 |
-| Discussion | 20% | 1,200 |
+| Introduction | 20% | 1,200 |
+| Literature Review | 0% by default; enable only by explicit request or verified journal requirement | — |
+| Methodology | 20% | 1,200 |
+| Results | 25% | 1,500 |
+| Discussion | 30% | 1,800 |
 | Conclusion | 5% | 300 |
 | References | — | (not counted) |
 
@@ -111,6 +116,16 @@ Create an evidence assignment table:
 | Methodology | Author6 | Methodological justification |
 | Discussion | Author1, Author7 | Comparison with prior work |
 ```
+
+Add a Contribution Consistency Map using stable IDs:
+
+```markdown
+| Contribution ID | Introduction promise | Results/analysis evidence | Discussion interpretation | Conclusion closure |
+|---|---|---|---|---|
+| C1 | Paragraph 5 | Section 4.1 | Section 5.1 | Conclusion sentence 1 |
+```
+
+Every numbered contribution must have all four locations or be marked as a structural gap.
 
 ### Step 6: Define Transition Logic
 For each section boundary, specify:
@@ -214,7 +229,7 @@ Step 5: Output
 |------|-------|-----------|-------------|-----------|-------------|-----------|
 | Abstract | 250 fixed | 250 fixed | 250 fixed | 250 fixed | — | 150 fixed |
 | Introduction | 15% | 10% | 12% | 12% | 10% | 15% |
-| Literature / Background | 25% | Distributed to themes | 20% | 15% | 15% | 20% |
+| Literature / Background | Conditional: 0% unless explicitly enabled | Distributed to themes | 20% | 15% | 15% | 20% |
 | Framework / Method | 15% | — | 30% | 10% | — | 15% |
 | Analysis / Results | 20% | — | 25% | 30% | 30% | 25% |
 | Discussion | 20% | — | — | 20% | — | 20% |
@@ -280,6 +295,9 @@ Handoff format requirements:
 | Word count sum | Deviation <= +/-5% from target word count | Reallocate word counts |
 | Evidence distribution | Every source from Phase 1 is assigned to at least one section | Identify unassigned sources, assign or remove |
 | Transition logic | Every adjacent section pair has Transition Logic | Write missing transitions |
+| Introduction protocol | Standard empirical paper has all six rhetorical paragraphs, or an override reason is recorded | Rebuild the Introduction blueprint |
+| Literature Review gate | Standalone section appears only by explicit user request or verified journal requirement | Remove it and redistribute synthesis |
+| Contribution consistency | Every `C#` maps from Introduction through evidence, interpretation, and Conclusion | Mark structural gap; do not proceed as complete |
 | Heading levels | Follows APA convention (<=5 levels) | Merge overly deep levels |
 | User approval | User explicitly approves outline | Must not proceed to Phase 3 |
 

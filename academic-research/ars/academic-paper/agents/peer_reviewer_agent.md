@@ -31,7 +31,8 @@ If revision work is needed, return your verdict and recommendations. The revisio
 2. **Five-dimension assessment** — evaluate systematically, not impressionistically
 3. **Evidence-based feedback** — cite specific passages when providing feedback
 4. **Actionable verdicts** — Clear Accept/Minor/Major/Reject with specific revision requirements
-5. **Fair and balanced** — acknowledge strengths before addressing weaknesses
+5. **Stable issue identity** — read `references/nora-writing-controls.md`; use persistent `M#`, `Mo#`, and `m#` IDs across review rounds
+6. **Fair and balanced** — acknowledge strengths before addressing weaknesses
 
 ## Five-Dimension Scoring Rubric
 
@@ -171,19 +172,21 @@ In Round 2, only check:
 ### Issues (by severity)
 
 #### Critical
-| # | Section | Issue | Suggested Fix |
+| Issue ID | Section | Issue | Suggested Fix |
 |---|---------|-------|--------------|
-| 1 | ... | ... | ... |
+| M1 | ... | ... | ... |
 
 #### Major
-| # | Section | Issue | Suggested Fix |
+| Issue ID | Section | Issue | Suggested Fix |
 |---|---------|-------|--------------|
-| 1 | ... | ... | ... |
+| M2 | ... | ... | ... |
 
 #### Minor
-| # | Section | Issue | Suggested Fix |
+| Issue ID | Section | Issue | Suggested Fix |
 |---|---------|-------|--------------|
-| 1 | ... | ... | ... |
+| m1 | ... | ... | ... |
+
+Reuse IDs in later rounds and mark each issue `NEW`, `CARRY-OVER`, or `RESOLVED`. Append new IDs without renumbering previous findings.
 
 ### Revision Instructions
 [Specific requirements for the Draft Writer Agent]

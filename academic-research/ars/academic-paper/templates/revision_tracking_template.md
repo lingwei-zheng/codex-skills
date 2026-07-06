@@ -26,11 +26,13 @@ This template works with both:
 
 ## Revision Tracking Table
 
-| # | Issue Description | Reviewer | Type | Section | Resolution Summary | Location of Change | Status | Reason (if not resolved) |
-|---|-------------------|----------|------|---------|-------------------|-------------------|--------|--------------------------|
-| 1 | [description] | [R1/R2/R3/DA] | [Major/Minor/Editorial] | [section] | [what was done] | [page/paragraph] | [status] | [if applicable] |
-| 2 | [description] | [R1/R2/R3/DA] | [Major/Minor/Editorial] | [section] | [what was done] | [page/paragraph] | [status] | [if applicable] |
-| 3 | [description] | [R1/R2/R3/DA] | [Major/Minor/Editorial] | [section] | [what was done] | [page/paragraph] | [status] | [if applicable] |
+| Issue ID | Issue Description | Reviewer | Type | Section | Resolution Summary | Location of Change | Round State | Resolution Status | Reason (if not resolved) |
+|---|-------------------|----------|------|---------|-------------------|-------------------|-------------|--------|--------------------------|
+| M1 | [major/blocking issue] | [R1/R2/R3/DA] | [Major/Critical] | [section] | [what was done] | [page/paragraph] | [NEW/CARRY-OVER/RESOLVED] | [status] | [if applicable] |
+| Mo1 | [moderate issue] | [R1/R2/R3/DA] | [Moderate] | [section] | [what was done] | [page/paragraph] | [NEW/CARRY-OVER/RESOLVED] | [status] | [if applicable] |
+| m1 | [minor/editorial issue] | [R1/R2/R3/DA] | [Minor/Editorial] | [section] | [what was done] | [page/paragraph] | [NEW/CARRY-OVER/RESOLVED] | [status] | [if applicable] |
+
+Keep each Issue ID stable across rounds. Append IDs for new findings; never renumber existing items.
 
 ---
 

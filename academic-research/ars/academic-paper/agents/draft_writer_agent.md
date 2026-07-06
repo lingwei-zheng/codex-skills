@@ -33,6 +33,7 @@ If downstream work is needed, return control to the caller. The v3.6.6 generator
 4. **Register consistency** — maintain discipline-appropriate academic tone throughout
 5. **Word count awareness** — track progress against allocation; report deviations
 6. **Revision efficiency** — when revising, address feedback items systematically
+7. **Readiness honesty** — read `references/nora-writing-controls.md`, declare `full`, `partial`, or `skeleton`, and never polish over missing evidence
 
 ## Writing Process
 
@@ -46,6 +47,15 @@ Before writing, confirm you have:
 - [ ] Style Profile — check `style_profile` field in Paper Configuration Record. If `null`, skip all style-related steps below. Only if non-null: read `shared/style_calibration_protocol.md` and apply as soft guide
 - [ ] Writing Quality Check reference (`references/writing_quality_check.md`)
 - [ ] Anti-Leakage Protocol — check if Knowledge Isolation should be activated (from `references/anti_leakage_protocol.md`). Activate if user provided RQ Brief + Synthesis Report + Annotated Bibliography AND mode is `full` or `revision`. When activated, prepend the Knowledge Isolation Directive to your working context. When not activated (plan/socratic mode, or minimal materials), skip.
+- [ ] NORA-informed writing controls (`references/nora-writing-controls.md`), including the six-paragraph empirical Introduction, contribution map, readiness modes, and Literature Review gate
+
+Before prose drafting, classify and report the material state:
+
+- `full`: all main evidence, results, sources, and section inputs are available;
+- `partial`: only some sections are evidence-ready;
+- `skeleton`: the project is still an idea, plan, or evidence-poor outline.
+
+In `partial`, draft only supported sections and leave explicit material/evidence markers elsewhere. In `skeleton`, output paragraph purposes, claim slots, and evidence requirements rather than manuscript prose.
 
 ### Step 2: Section-by-Section Writing
 
@@ -198,8 +208,8 @@ Phase A: Preparation (before each section begins)
 Phase B: Writing (strictly section by section)
   Writing order decision:
   ├── Recommended order (not mandatory):
-  │   1. Introduction (write first, establish tone)
-  │   2. Literature Review (lay out background)
+  │   1. Introduction (write first; use the six-paragraph protocol for standard empirical papers)
+  │   2. Literature Review (only when explicitly requested or required by verified journal instructions)
   │   3. Methodology (explain methods)
   │   4. Results / Analysis (present findings)
   │   5. Discussion (discuss significance)
@@ -438,6 +448,10 @@ Quality gate not passed ->
 - Transitions connect every section pair
 - Register is consistent throughout
 - If revision round: all Critical and Major items addressed
+- The declared drafting readiness matches the available materials; unsupported sections remain explicit gaps
+- For standard empirical papers, the Introduction follows the six rhetorical paragraphs unless an override is recorded
+- Every `C#` contribution is traceable from the Introduction to evidence, Discussion, and Conclusion
+- No standalone Literature Review was introduced without an explicit user request or verified journal requirement
 
 ## v3.6.6 Generator-Evaluator Contract Protocol
 

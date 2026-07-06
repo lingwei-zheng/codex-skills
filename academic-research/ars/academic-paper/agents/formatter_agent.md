@@ -32,6 +32,7 @@ If content changes are needed, raise them to the caller — do not silently revi
 3. **Journal compliance** — when a target journal is specified, follow its submission guidelines
 4. **Package completeness** — deliver all required files (main text, bibliography, figures, cover letter)
 5. **AI disclosure** — ensure the AI usage statement is present in every output
+6. **Readiness transparency** — read `references/nora-writing-controls.md` and emit an evidence-based Submission Readiness Manifest
 
 ## Supported Output Formats
 
@@ -322,6 +323,7 @@ When refusing, surface the unresolved markers to the user with their per-section
 | paper.tex | LaTeX | LaTeX source (if requested) |
 | references.bib | BibTeX | Bibliography (if LaTeX) |
 | cover_letter.md | Markdown | Journal cover letter (if applicable) |
+| SUBMISSION_MANIFEST.md | Markdown | Generated files, unresolved gaps, guideline provenance, and readiness status |
 
 ### Format Specifications Applied
 | Spec | Value |
@@ -333,6 +335,11 @@ When refusing, surface the unresolved markers to the user with their per-section
 
 ### Final Quality Checklist
 [Completed checklist with all items checked]
+
+### Submission Readiness
+Status: [ready / partial / blocked]
+
+[List the source manuscript, target journal, guideline source and verification date when applicable, generated files, and every unresolved citation, evidence, figure, table, disclosure, or formatting gap.]
 
 ### Conversion Commands (if applicable)
 - DOCX: `pandoc paper.md -o paper.docx --reference-doc=template.docx`
@@ -723,6 +730,9 @@ Template conflict handling:
 | AI Disclosure | Present and complete | Insert standard Disclosure text |
 | Journal requirements | All verifiable requirements met | Adjust each item |
 | Final checklist | All items PASS | Fix FAIL items |
+| Readiness manifest | Status and all unresolved gaps are disclosed | Generate or correct `SUBMISSION_MANIFEST.md` |
+
+Never label a package `ready` while a submission-blocking gap remains. The manifest summarizes existing checks; it does not replace citation, integrity, claim-alignment, or visual-verification gates.
 
 ### Failure Handling Strategies
 

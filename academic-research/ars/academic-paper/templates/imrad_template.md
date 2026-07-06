@@ -30,139 +30,103 @@ Replace all `[bracketed text]` with your content. Delete instructional comments 
 
 ## 1. Introduction
 
-### 1.1 Context and Background
-[Establish the broader context. What is the landscape? Why does this topic matter?]
-[2-3 paragraphs with citations]
+[Paragraph 1 - Broad problem: establish the problem and why it matters.]
 
-### 1.2 Problem Statement
-[What specific problem or gap exists? Why is it important to address?]
-[1-2 paragraphs with citations]
+[Paragraph 2 - Geographic/domain framing: locate the problem in geography, human geography, GIScience, health geography, or the relevant domain.]
 
-### 1.3 Research Gap
-[What have previous studies missed or not adequately addressed?]
-[1 paragraph summarizing the gap based on literature]
+[Paragraph 3 - Current approaches: synthesize only the literature threads needed to position the study.]
 
-### 1.4 Purpose and Research Questions
-[State the purpose clearly. List research questions.]
+[Paragraph 4 - Gap or tension: state the precise unresolved problem.]
 
-The purpose of this study is to [verb] [object] in [context].
+[Paragraph 5 - Study and contributions: state the research purpose/questions and list contributions as C1, C2, ... .]
 
-The following research questions guide this study:
-1. **RQ1**: [Question 1]?
-2. **RQ2**: [Question 2]?
-3. **RQ3**: [Question 3]? *(if applicable)*
+[Paragraph 6 - Roadmap: summarize the remaining paper structure.]
 
-### 1.5 Significance of the Study
-[Why does this research matter? Who benefits?]
-[1 paragraph]
+Do not add a standalone Literature Review unless the user explicitly requests it or verified journal instructions require it. Otherwise integrate necessary literature synthesis here and in the Discussion.
 
 ---
 
-## 2. Literature Review
+## 2. Methodology
 
-### 2.1 Theoretical Framework
-[What theory/framework underpins this study?]
-[1-2 paragraphs with citations]
-
-### 2.2 [Theme 1 Title]
-[Review relevant literature on theme 1.]
-[2-3 paragraphs with citations]
-
-### 2.3 [Theme 2 Title]
-[Review relevant literature on theme 2.]
-[2-3 paragraphs with citations]
-
-### 2.4 [Theme 3 Title]
-[Review relevant literature on theme 3.]
-[2-3 paragraphs with citations]
-
-### 2.5 Summary and Conceptual Framework
-[Synthesize the themes. Present conceptual framework if applicable.]
-[1-2 paragraphs]
-
----
-
-## 3. Methodology
-
-### 3.1 Research Design
+### 2.1 Research Design
 [Describe the overall research design and justify the choice.]
 [1 paragraph]
 
-### 3.2 Participants / Sample
+### 2.2 Participants / Sample
 [Who/what was studied? How were they selected? Sample size and characteristics.]
 [1-2 paragraphs]
 
-### 3.3 Data Collection
+### 2.3 Data Collection
 [What data were collected? How? When? By whom?]
 [1-2 paragraphs]
 
-### 3.4 Instruments / Measures
+### 2.4 Instruments / Measures
 [What instruments were used? Reliability and validity evidence.]
 [1-2 paragraphs]
 
-### 3.5 Data Analysis
+### 2.5 Data Analysis
 [What analytical methods were applied? Software used?]
 [1 paragraph]
 
-### 3.6 Validity and Reliability
+### 2.6 Validity and Reliability
 [How were quality criteria ensured?]
 [1 paragraph]
 
-### 3.7 Ethical Considerations
+### 2.7 Ethical Considerations
 [IRB approval, informed consent, data protection.]
 [1 paragraph]
 
 ---
 
-## 4. Results / Findings
+## 3. Results / Findings
 
-### 4.1 Descriptive Overview
+### 3.1 Descriptive Overview
 [Present descriptive statistics or overview of data.]
 [Include Table 1: Descriptive Statistics if applicable]
 
-### 4.2 [Finding for RQ1]
+### 3.2 [Finding for RQ1]
 [Present results addressing RQ1.]
 [Include tables/figures as needed]
 
-### 4.3 [Finding for RQ2]
+### 3.3 [Finding for RQ2]
 [Present results addressing RQ2.]
 [Include tables/figures as needed]
 
-### 4.4 [Finding for RQ3] *(if applicable)*
+### 3.4 [Finding for RQ3] *(if applicable)*
 [Present results addressing RQ3.]
 
 ---
 
-## 5. Discussion
+## 4. Discussion
 
-### 5.1 Summary of Key Findings
+### 4.1 Summary of Key Findings
 [Brief overview of main results.]
 [1 paragraph]
 
-### 5.2 Interpretation and Comparison with Literature
+### 4.2 Interpretation and Comparison with Literature
 [What do the findings mean? How do they compare with prior studies?]
 [2-3 paragraphs with citations]
 
-### 5.3 Theoretical Implications
+### 4.3 Theoretical Implications
 [How do findings advance theory?]
 [1-2 paragraphs]
 
-### 5.4 Practical Implications
+### 4.4 Practical Implications
 [How can practitioners, policymakers, or institutions use these findings?]
 [1-2 paragraphs]
 
-### 5.5 Limitations
+### 4.5 Limitations
 [Be honest about study limitations.]
 [1 paragraph, typically 3-5 limitations]
 
-### 5.6 Future Research Directions
+### 4.6 Future Research Directions
 [What should future studies investigate?]
 [1 paragraph]
 
 ---
 
-## 6. Conclusion
-[Summarize the paper's contribution in 1-2 paragraphs. End with a strong closing statement.]
+## 5. Conclusion
+[Close contributions C1, C2, ... using only evidence established in Results and interpreted in Discussion. End with a bounded strong statement.]
 
 ---
 

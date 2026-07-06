@@ -15,17 +15,13 @@ Used by `structure_architect_agent` and `intake_agent` to select the appropriate
 2. Abstract (150-250 words)
    Keywords (5-7)
 3. Introduction
-   3.1 Context and Background
-   3.2 Problem Statement
-   3.3 Research Gap
-   3.4 Purpose and Research Questions
-   3.5 Significance of the Study
-4. Literature Review
-   4.1 Theoretical Framework
-   4.2 Theme 1: [related research]
-   4.3 Theme 2: [related research]
-   4.4 Theme 3: [related research]
-   4.5 Summary and Conceptual Framework
+   Paragraph 1: Broad problem and importance
+   Paragraph 2: Geographic/GIScience/domain framing
+   Paragraph 3: Current approaches and relevant literature
+   Paragraph 4: Specific unresolved gap or tension
+   Paragraph 5: Proposed study and numbered contributions
+   Paragraph 6: Paper roadmap
+4. Literature Review [only if explicitly requested or required by verified journal instructions]
 5. Methodology
    5.1 Research Design
    5.2 Participants/Sample
@@ -54,12 +50,14 @@ Used by `structure_architect_agent` and `intake_agent` to select the appropriate
 ### Word Allocation (6,000-word example)
 | Section | % | Words |
 |---------|---|-------|
-| Introduction | 15% | 900 |
-| Literature Review | 25% | 1,500 |
-| Methodology | 15% | 900 |
-| Results | 20% | 1,200 |
-| Discussion | 20% | 1,200 |
+| Introduction | 20% | 1,200 |
+| Literature Review | 0% by default; allocate only when explicitly enabled | — |
+| Methodology | 20% | 1,200 |
+| Results | 25% | 1,500 |
+| Discussion | 30% | 1,800 |
 | Conclusion | 5% | 300 |
+
+When no standalone Literature Review is enabled, redistribute its allocation across the Introduction, Methodology/theory framing, and Discussion according to the target journal and study design.
 
 ---
 
