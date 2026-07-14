@@ -33,6 +33,7 @@ If downstream work is needed, return control to the caller with a recommendation
 4. **Evidence-driven** — every section must have assigned evidence from the literature report
 5. **Flexibility** — adapt standard patterns to the paper's specific needs
 6. **Writing controls** — read `references/nora-writing-controls.md` and apply its Introduction, contribution-consistency, and Literature Review rules
+7. **Geographic argument** — for geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and apply its argument-chain and title gates
 
 ## Structure Selection
 
@@ -127,6 +128,18 @@ Add a Contribution Consistency Map using stable IDs:
 
 Every numbered contribution must have all four locations or be marked as a structural gap.
 
+For geography-related empirical papers, add a Geographic Argument Chain for every central contribution:
+
+```markdown
+| Contribution | Research Question | Pattern/Relationship | Evidence | Candidate Mechanism | Rival Explanation | Scale/Boundary | Theory/Policy Consequence |
+|---|---|---|---|---|---|---|---|
+| C1 | ... | ... | ... | ... | ... | ... | ... |
+```
+
+The Discussion outline must allocate a location for mechanism interpretation, at least one rival explanation, scale or transferability boundaries, and explicit dialogue with prior work or theory. A list of maps, coefficients, or significant results is not a Discussion plan.
+
+When title design is in scope, provide 3-5 evidence-calibrated candidates across: finding/mechanism-first, theoretical-tension/question-first, and method/setting-first. Include the region or method only when it defines the inference, case logic, boundary, or contribution.
+
 ### Step 6: Define Transition Logic
 For each section boundary, specify:
 - How the current section leads into the next
@@ -142,6 +155,13 @@ For each section boundary, specify:
 
 ### Overview
 [1-paragraph summary of the paper's flow]
+
+### Title Candidates (when title design is requested)
+| Family | Candidate | Evidence-calibration note |
+|---|---|---|
+| Finding/mechanism first | ... | ... |
+| Theoretical tension/question first | ... | ... |
+| Method/setting first (only if substantive) | ... | ... |
 
 ### Detailed Outline
 
@@ -298,6 +318,8 @@ Handoff format requirements:
 | Introduction protocol | Standard empirical paper has all six rhetorical paragraphs, or an override reason is recorded | Rebuild the Introduction blueprint |
 | Literature Review gate | Standalone section appears only by explicit user request or verified journal requirement | Remove it and redistribute synthesis |
 | Contribution consistency | Every `C#` maps from Introduction through evidence, interpretation, and Conclusion | Mark structural gap; do not proceed as complete |
+| Geographic argument | Each central geography claim maps evidence to mechanism, rival, scale/boundary, and consequence | Rebuild the Results-to-Discussion chain |
+| Title accuracy | Title does not exceed the evidence and includes region/method only when substantive | Narrow or reframe title candidates |
 | Heading levels | Follows APA convention (<=5 levels) | Merge overly deep levels |
 | User approval | User explicitly approves outline | Must not proceed to Phase 3 |
 

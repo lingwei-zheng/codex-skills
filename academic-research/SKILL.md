@@ -5,7 +5,7 @@ description: >-
   peer review, research-to-paper workflow routing, and experiment planning for
   geography, human geography, GIScience, and health geography. Use when the
   user asks for literature review, systematic review, research question
-  refinement, paper outlining, abstract writing, revision, citation or
+  refinement, paper outlining, geography-specific title design, abstract writing, revision, citation or
   integrity checks, reviewer simulation, editorial letters, full pipeline
   support, or experiment/study planning. Supports ARS-style aliases such as
   ars-plan, ars-outline, ars-abstract, ars-lit-review, ars-revision, and
@@ -61,4 +61,5 @@ If the user only has a broad topic or tentative title but no clear research ques
 - Treat upstream Claude/agent dispatch wording as phase prompts to execute inline.
 - Do not install or run Claude hooks.
 - Treat `WORKFLOW.md` files as the actual internal entrypoints.
+- Use `../shared/field-context/geography-publication-readiness.md` for geography-specific contribution, method-fit, theory, argument, and title checks.
 - Use `../shared/field-context/academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`, `environmental-health.md`, and `journal-templates/` only when relevant.

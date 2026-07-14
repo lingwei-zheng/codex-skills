@@ -43,6 +43,20 @@ For manuscripts and mature proposals, require:
 - Discussion that explains boundary conditions without unnecessary self-undermining.
 - A contribution paragraph that can survive a skeptical editor's desk screen.
 
+## Geography Publication Lens
+
+For geography, human geography, GIScience, GeoAI, remote sensing, spatial analysis, environmental-health, or health-geography work, read `../../shared/field-context/geography-publication-readiness.md` and report:
+
+| Gate | Verdict | Evidence | Minimum Repair |
+|---|---|---|---|
+| Geographic contribution | pass / repair / block | ... | ... |
+| Question-method-scale fit | pass / repair / block | ... | ... |
+| Theory-mechanism fit | pass / repair / block | ... | ... |
+| Geographic argument chain | pass / repair / block | ... | ... |
+| Title accuracy | pass / repair / block | ... | ... |
+
+Name the weakest gate in the bottom-line verdict and make its minimum repair an explicit roadmap item. Do not average away a blocked central question, design, or evidence chain.
+
 ## Verdict Scale
 
 - `Proceed`: idea/manuscript is coherent; recommend journal route and targeted improvements.

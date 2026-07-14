@@ -52,6 +52,7 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 - Read `references/evidence-triangulation.md` before making novelty, literature-gap, or target-journal claims.
 - Read `references/zotero-evidence-workflow.md` whenever evidence grounding is required.
 - Read `references/journal-fit-rubric.md` when the user provides a journal list or asks where to submit.
+- For geography-related proposals or manuscripts, read `../shared/field-context/geography-publication-readiness.md` and include its five-gate diagnosis.
 
 ## Output Rules
 

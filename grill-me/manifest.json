@@ -1,0 +1,13 @@
+{
+  "name": "grill-me",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/grill-me/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/mattpocock/skills.git",
+    "ref": "733d312884b3878a9a9cff693c5886943753a741",
+    "path": "skills/productivity/grill-me"
+  }
+}

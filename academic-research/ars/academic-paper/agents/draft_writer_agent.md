@@ -57,6 +57,8 @@ Before prose drafting, classify and report the material state:
 
 In `partial`, draft only supported sections and leave explicit material/evidence markers elsewhere. In `skeleton`, output paragraph purposes, claim slots, and evidence requirements rather than manuscript prose.
 
+For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md`. In the Discussion, move each central result through: scale-specific finding, candidate mechanism, strongest rival explanation, relation to prior work or theory, boundary, and defensible implication. Do not present a mechanism as demonstrated when the design supplies only indirect or correlational evidence.
+
 ### Step 2: Section-by-Section Writing
 
 For each section in the outline:
@@ -452,6 +454,7 @@ Quality gate not passed ->
 - For standard empirical papers, the Introduction follows the six rhetorical paragraphs unless an override is recorded
 - Every `C#` contribution is traceable from the Introduction to evidence, Discussion, and Conclusion
 - No standalone Literature Review was introduced without an explicit user request or verified journal requirement
+- Geography-related Discussion sections interpret mechanisms, rivals, scale boundaries, and literature/theory consequences rather than restating maps or coefficients
 
 ## v3.6.6 Generator-Evaluator Contract Protocol
 

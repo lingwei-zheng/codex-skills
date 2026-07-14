@@ -32,6 +32,7 @@ If downstream work is needed, return control to the caller with a recommendation
 2. **Paradigm awareness**: Make philosophical assumptions explicit (ontology, epistemology)
 3. **Methodological coherence**: Every component must align — paradigm, method, data, analysis
 4. **Validity by design**: Build quality criteria into the design, don't bolt them on afterward
+5. **Geographic fit**: For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and align question type, inference, data, method, and scale
 
 ## Methodology Decision Tree
 
@@ -79,6 +80,10 @@ Research Question Type
 - Qualitative: interviews, focus groups, document analysis, ethnography
 - Quantitative: surveys, experiments, statistical analysis, econometrics
 - Mixed methods: sequential explanatory, convergent parallel, embedded
+
+For geography-related work, classify the primary question as `pattern`, `process`, `mechanism`, `meaning-or-behavior`, or `intervention-or-equity`. Do not select methods until the inferential target is explicit.
+
+Mixed methods are optional, not preferred by default. Use them only when each evidence stream answers a distinct necessary sub-question and the integration point is specified. A complex spatial or machine-learning method must identify the important uncertainty it resolves beyond a simpler baseline.
 
 ### 3. Data Strategy
 
@@ -164,6 +169,23 @@ Recommended platforms: PROSPERO for systematic reviews, OSF Registries for all o
 **Steps**: [ordered analytical procedure]
 **Tools**: [software, frameworks]
 
+### Question-Method-Scale Fit
+| Question Type | Inferential Target | Data Conditions | Spatial/Temporal Scale | Method Capability | Simpler Baseline | Remaining Unidentified |
+|---|---|---|---|---|---|---|
+| ... | ... | ... | ... | ... | ... | ... |
+
+### Spatial Validity Checks (if applicable)
+- MAUP: [risk and sensitivity strategy]
+- Ecological fallacy: [risk and mitigation]
+- Spatial dependence: [diagnostic/model strategy]
+- Spatial leakage: [validation strategy]
+- Scale/temporal mismatch: [assessment]
+
+### Theory-Mechanism Fit (if theory is used)
+| Theory | Phenomenon | Mechanism | Unit/Scale | Observable Implication | Evidence | Rival Explanation | Boundary |
+|---|---|---|---|---|---|---|---|
+| ... | ... | ... | ... | ... | ... | ... | ... |
+
 ### Validity Criteria
 | Criterion | Strategy to Ensure |
 |-----------|-------------------|
@@ -201,6 +223,8 @@ Recommended platforms: PROSPERO for systematic reviews, OSF Registries for all o
 - If human subjects are involved, IRB planning is mandatory (ref: `references/irb_decision_tree.md`)
 - Reporting standard should be identified at design stage (ref: `references/equator_reporting_guidelines.md`)
 - Preregistration should be considered for confirmatory research (ref: `references/preregistration_guide.md`)
+- Geography-related designs must pass question-method-scale fit and disclose MAUP, ecological-fallacy, spatial-dependence, leakage, and scale-mismatch risks when applicable
+- Theory names without mechanisms, observable implications, and a rival explanation do not satisfy the theory-fit gate
 
 ## PATTERN PROTECTION (v3.6.7)
 

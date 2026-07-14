@@ -9,3 +9,7 @@ environmental exposure, or health geography grounding.
 
 Default language for Chinese notes and reports is Simplified Chinese unless the
 user explicitly requests Traditional Chinese.
+
+Use `geography-publication-readiness.md` for domain-specific contribution,
+question-method-scale fit, theory-mechanism fit, argument progression, title
+accuracy, and desk-reject risk checks.

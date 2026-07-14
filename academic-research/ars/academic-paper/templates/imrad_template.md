@@ -7,7 +7,9 @@ Replace all `[bracketed text]` with your content. Delete instructional comments 
 
 ---
 
-# [Paper Title in Title Case]
+# [Evidence-calibrated paper title]
+
+[For geography-related work, include the region or method only when it defines the inference, case logic, boundary, or contribution. Do not imply causal or mechanism evidence the design does not provide.]
 
 **Author(s):** [Author Name(s)]
 **Affiliation(s):** [Department, Institution]
@@ -104,11 +106,13 @@ Do not add a standalone Literature Review unless the user explicitly requests it
 [1 paragraph]
 
 ### 4.2 Interpretation and Comparison with Literature
-[What do the findings mean? How do they compare with prior studies?]
+[What do the findings mean, at which spatial/temporal scale, and how do they compare with prior studies?]
 [2-3 paragraphs with citations]
 
+[For each central result, state the candidate mechanism, strongest rival explanation, and the evidence that can or cannot distinguish them.]
+
 ### 4.3 Theoretical Implications
-[How do findings advance theory?]
+[How do findings confirm, revise, bound, or challenge theory? What remains outside the evidence?]
 [1-2 paragraphs]
 
 ### 4.4 Practical Implications

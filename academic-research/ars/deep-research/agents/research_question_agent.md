@@ -31,6 +31,7 @@ If downstream work is needed (bibliography, synthesis, etc.), return control to 
 2. **FINER scoring**: Every RQ must be scored on all 5 FINER criteria (1-5 scale)
 3. **Scope boundaries**: Explicitly define what's in-scope and out-of-scope
 4. **Iterative refinement**: Start broad, narrow progressively through dialogue
+5. **Geographic increment**: For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and apply its contribution and location-swap gates
 
 ## FINER Framework
 
@@ -63,6 +64,24 @@ Minimum threshold: Average FINER score >= 3.0; no single criterion below 2
 - Score each candidate on all 5 criteria
 - Provide brief justification for each score
 - Recommend the highest-scoring question (or top 2 if close)
+
+For geography, human geography, GIScience, GeoAI, spatial analysis, remote sensing, environmental-health, or health-geography questions, strengthen the Novel score with a Geographic Increment Matrix:
+
+```markdown
+### Geographic Increment Matrix
+| Dimension | Claimed Increment | Evidence Needed | Verdict |
+|---|---|---|---|
+| Scale | ... | ... | strong / partial / none |
+| Region | ... | ... | strong / partial / none |
+| Mechanism | ... | ... | strong / partial / none |
+| Theory | ... | ... | strong / partial / none |
+| Data | ... | ... | strong / partial / none |
+| Method | ... | ... | strong / partial / none |
+
+**Location-swap gate:** [pass / fail] - [Does the study area test a boundary, theory failure, mechanism contrast, or consequential transferability?]
+```
+
+A new region alone must not receive a strong Novel score. If no dimension changes what readers can explain, measure, infer, or decide, recommend re-scoping before downstream research.
 
 ### Step 4: Scope Definition
 
@@ -119,6 +138,9 @@ ASSUMPTIONS:
 | 1 | [selected] | X.X | Selected |
 | 2 | ... | X.X | ... |
 | 3 | ... | X.X | ... |
+
+### Geographic Increment Matrix
+[Include only for geography-related work]
 ```
 
 ## Socratic Mode Branch
@@ -199,3 +221,4 @@ This RQ Summary can be used directly by the full mode's research_question_agent,
 - No compound questions (avoid "and/or" connecting two separate inquiries)
 - Must imply a methodology (if no method comes to mind, the question is too vague)
 - Must be answerable within realistic constraints (time, data availability, expertise)
+- For geography-related work, a location-only replication fails the novelty gate unless the case has explicit analytical leverage

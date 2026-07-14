@@ -78,6 +78,9 @@ Preserve independent reviewer perspectives before synthesis:
 For geography/GIScience/health geography manuscripts, consult the minimum
 needed field-context files:
 
+- `geography-publication-readiness.md` for contribution, question-method-scale
+  fit, theory-mechanism fit, argument progression, title accuracy, and
+  desk-reject risk.
 - `spatial-methods.md` for spatial unit, scale, MAUP, autocorrelation, and
   spatial validity.
 - `environmental-health.md` for exposure, vulnerability, access, and outcome
@@ -86,6 +89,10 @@ needed field-context files:
 - `journal-templates/` for venue fit.
 
 Use a devil's-advocate pass to identify the strongest rejection-risk issue.
+For geography-related manuscripts, explicitly test whether the paper merely
+changes location, stacks methods without inferential gain, uses theory as a
+label, restates Results in the Discussion, or promises more in the title than
+the evidence supports.
 
 ### 4. Issue Triage
 
@@ -146,4 +153,5 @@ Before finalizing, verify:
 - The critical revision is truly one issue.
 - Important and minor revisions obey the requested count limits.
 - The journal-submission-ready report has no per-point subheadings.
+- Geography-related manuscripts were checked against all five publication-readiness gates.
 - Existing user-edited files are not overwritten unintentionally.
