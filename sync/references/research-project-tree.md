@@ -2,6 +2,10 @@
 
 ```text
 project/
+  README.md
+  AGENTS.md
+  CLAUDE.md
+  .gitignore
   data/
     raw/
     clean/
@@ -34,4 +38,3 @@ Conventions:
 - `output/current/` is the active working set.
 - `output/archived_runs/` stores dated versioned outputs.
 - `notes/*.md` explains why the project changed and what comes next.
-

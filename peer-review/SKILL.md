@@ -3,155 +3,86 @@ name: peer-review
 description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with critical, important, and minor revisions. This skill uses ARS as the main reviewer framework, local geography/GIScience/health geography field context when relevant, and pdf/docx tools for manuscript and visual-material inspection. Chinese outputs default to Simplified Chinese.
 ---
 
-# Journal Peer Review Workflow
+# Journal Peer Review
 
-Use this skill to produce rigorous journal peer reviews from a manuscript PDF,
-DOCX, Markdown draft, extracted text, and optional supplementary materials.
+Produce a rigorous external-reviewer assessment from the manuscript and all
+available supplementary materials.
 
-## Review Lenses
+## Review Stack
 
-Use `../academic-research/SKILL.md` as the main review framework. Route to ARS
-`academic-paper-reviewer` for reviewer calibration, methodology review, domain
-review, devil's-advocate stress testing, and editorial synthesis.
+1. Read `../academic-research/SKILL.md` and use its ARS
+   `academic-paper-reviewer` workflow as the main review framework.
+2. Use `../shared/field-context/` only for geography, human geography,
+   GIScience, GeoAI, remote sensing, spatial analysis, environmental exposure,
+   or health geography. Do not assume NORA is installed.
+3. Use the active PDF and DOCX skills for extraction, media inspection,
+   rendering, and visual review.
+4. Read [references/report-structure.md](references/report-structure.md) before
+   drafting the final reports.
 
-Use `../shared/field-context/` only when the manuscript falls within geography,
-human geography, GIScience, GeoAI, spatial analysis, remote sensing,
-environmental exposure, or health geography. Do not call or assume a NORA skill
-is installed.
+## Non-Negotiable Visual Rule
 
-Use the existing `pdf` and `docx` skills for file inspection, extraction, and
-rendered visual checks when the input format requires them.
+Do not finalize a review from extracted text alone when figures, maps, diagrams,
+tables, equations, statistical charts, or supplementary visuals support the
+claims. Attempt visual inspection first. If it cannot be performed, disclose
+exactly what was not inspected and how that limits the review.
 
-## Core Rule
-
-Do not produce a final review from extracted text alone if the manuscript
-contains figures, maps, diagrams, tables, clustering plots, statistical charts,
-or supplementary visual materials. First attempt visual inspection. If visual
-inspection is not possible, state that limitation clearly in the report.
-
-Chinese working outputs default to Simplified Chinese. Use Traditional Chinese
-only when the user explicitly requests it.
+Chinese working reports default to Simplified Chinese. Use Traditional Chinese
+only when explicitly requested.
 
 ## Workflow
 
-### 1. Intake And File Discovery
+### 1. Discover Materials
 
-1. Identify the main manuscript and all supplementary files in the user-specified
-   folder or attachment set.
-2. Read `.codex/project.yaml` if present to respect project paths.
-3. Record reviewed materials explicitly:
-   - main manuscript PDF, DOCX, Markdown, or extracted text
-   - rendered pages or figures
-   - supplementary DOCX/PDF/images/tables
-   - any materials that could not be inspected
+- Identify the main manuscript and every supplementary file.
+- Read `.codex/project.yaml` when present.
+- Record what was reviewed, rendered, visually inspected, or unavailable.
 
-### 2. Text And Visual Inspection
+### 2. Inspect Text And Evidence
 
-Use available local tools in this order:
+- For PDFs, combine text extraction with rendered-page inspection.
+- For DOCX, inspect OOXML and embedded media when relevant.
+- Inspect central figures, maps, tables, plots, diagrams, equations, and
+  supplementary evidence supporting key claims.
+- Track whether each concern arises from text, captions, visual evidence,
+  supplements, methods, statistics, or domain reasoning.
 
-1. For PDFs, use text extraction plus rendered-page inspection when layout,
-   tables, figures, maps, or equations matter.
-2. For DOCX, use the `docx` skill for extraction and OOXML/media inspection.
-3. For supplementary DOCX media, inspect embedded images under `word/media/`.
-4. Render and inspect central figures, maps, statistical plots, diagrams, and
-   supplementary figures supporting key claims.
+### 3. Run Independent Review Lenses
 
-Internal notes should distinguish whether each issue is based on manuscript
-text, figure captions, actual visual inspection, supplementary material,
-methodological logic, or domain context.
+Assess field and journal fit, research question, contribution, method validity,
+reproducibility, sampling, representativeness, statistical assumptions,
+figure/table evidence, claim-evidence alignment, causal language, limitations,
+ethics, and data access. Preserve independent lenses before synthesis.
 
-### 3. ARS Review Pass
+For relevant geography manuscripts, read only the needed field references:
 
-Read `../academic-research/SKILL.md`, then route to ARS `academic-paper-reviewer`.
-Preserve independent reviewer perspectives before synthesis:
-
-- field and journal fit
-- research question and contribution
-- method validity and reproducibility
-- data representativeness and sampling bias
-- statistical assumptions and reporting
-- figure/table evidence quality
-- claim-to-evidence alignment
-- overinterpretation and causal language
-- limitations, ethics, and data access
-
-For geography/GIScience/health geography manuscripts, consult the minimum
-needed field-context files:
-
-- `geography-publication-readiness.md` for contribution, question-method-scale
-  fit, theory-mechanism fit, argument progression, title accuracy, and
+- `geography-publication-readiness.md` for the five publication gates and
   desk-reject risk.
-- `spatial-methods.md` for spatial unit, scale, MAUP, autocorrelation, and
-  spatial validity.
-- `environmental-health.md` for exposure, vulnerability, access, and outcome
-  pathways.
-- `geoai-domain.md` for GeoAI and geospatial ML review.
+- `spatial-methods.md` for scale, spatial units, MAUP, dependence, and validity.
+- `environmental-health.md` for exposure and outcome pathways.
+- `geoai-domain.md` for GeoAI or geospatial machine learning.
 - `journal-templates/` for venue fit.
 
-Use a devil's-advocate pass to identify the strongest rejection-risk issue.
-For geography-related manuscripts, explicitly test whether the paper merely
-changes location, stacks methods without inferential gain, uses theory as a
-label, restates Results in the Discussion, or promises more in the title than
-the evidence supports.
+Use a devil's-advocate pass to identify the strongest rejection risk. Explicitly
+test location-only novelty, method stacking without inferential gain,
+theory-as-label, Discussion restatement, and title overpromise when relevant.
 
-### 4. Issue Triage
+### 4. Triage And Draft
 
-Default issue hierarchy:
+Separate the single highest-risk critical issue from important and minor issues.
+Follow user-specified counts when provided; otherwise use the defaults in
+[references/report-structure.md](references/report-structure.md). Base the
+editorial recommendation on fixability, not tone or preference.
 
-1. **Critical revision**: exactly one issue. Choose the single highest-risk issue
-   that could plausibly lead to rejection if unresolved. Do not bundle unrelated
-   issues under one heading.
-2. **Important revisions**: one to five issues that affect editorial decision,
-   including theory, logic, methods, evidence, statistical rigor, interpretation,
-   or journal fit.
-3. **Minor revisions**: one to five issues for language, terminology,
-   formatting, figure captions, repetition, or presentation.
+### 5. Verify
 
-If the user gives a different issue-count template, follow the user's counts.
+Before delivery, confirm that visual inspection or its limitation is disclosed,
+the critical issue is singular, issue counts are respected, geography gates were
+applied when relevant, and user-edited files were not overwritten.
 
-### 5. Outputs
+## Output
 
-When creating files, place outputs in the manuscript folder unless the user
-specifies otherwise.
-
-Recommended file set:
-
-- `中文审稿报告.md`: Simplified Chinese working report.
-- `English_Peer_Review_Report.md`: English working report synchronized to the
-  Chinese report.
-- `期刊提交审稿意见.md`: concise English journal-submission-ready review.
-
-For journal-submission-ready reviews:
-
-- Start with one paragraph summarizing what the paper studies, its strengths,
-  its main weakness, and the decision.
-- Use only three section headings:
-  - `## 1. Critical Revision`
-  - `## 2. Important Revisions`
-  - `## 3. Minor Revisions`
-- Do not use subheadings for individual points.
-- Write in natural referee-report style, not as a checklist.
-- Keep the tone firm, specific, and constructive.
-
-## Decision Guidance
-
-Use **Major Revision** when the manuscript is promising and fixable, but a core
-method, evidence chain, interpretation, or robustness issue must be addressed.
-
-Use **Reject** only when the core contribution is unsupported, unfixable with
-available data, outside the journal scope, or methodologically invalid in a way
-that revision cannot reasonably solve.
-
-Use **Minor Revision** only when methods and evidence are sound and remaining
-issues are mainly clarification, framing, or presentation.
-
-## Final Check Before Delivery
-
-Before finalizing, verify:
-
-- Visual inspection was performed or its absence was disclosed.
-- The critical revision is truly one issue.
-- Important and minor revisions obey the requested count limits.
-- The journal-submission-ready report has no per-point subheadings.
-- Geography-related manuscripts were checked against all five publication-readiness gates.
-- Existing user-edited files are not overwritten unintentionally.
+Create only the report set the user needs. Use
+[references/report-structure.md](references/report-structure.md) as the source of
+truth for filenames, section structure, issue hierarchy, decision standards,
+tone, and final report checks.
