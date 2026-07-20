@@ -644,7 +644,7 @@ CI: invoked from `.github/workflows/spec-consistency.yml` (or matching workflow)
 
 ## 7. TDD test plan
 
-Tests written BEFORE production code per `superpowers:test-driven-development`. Order:
+Tests are written BEFORE production code, in this order:
 
 ### 7.1 Schema validation tests (`tests/test_claim_audit_schema.py`)
 

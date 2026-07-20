@@ -134,7 +134,7 @@ Pure additive — existing v3.7.3 ingest-time entries (which don't carry this fi
 
 ## 6. Test discipline
 
-Per `superpowers:test-driven-development`:
+Following strict test-driven development:
 
 **Resolver tests (`test_contamination_signals.py`):**
 

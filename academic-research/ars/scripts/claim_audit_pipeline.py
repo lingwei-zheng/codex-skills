@@ -1262,8 +1262,7 @@ def run_audit_pipeline(
             # synthesis substitution shipped pre-v3.8.2 was silently
             # suppressing HIGH-WARN constraint checks on transient judge
             # outage — see spec §3.6 + §4 step 9 fourth bullet for routing,
-            # and the design memo at docs/superpowers/plans/2026-05-17-issue-118-*
-            # for the option 1-4 trade-off analysis.
+            # and the local design memo for the option 1-4 trade-off analysis.
             try:
                 judge_result = _invoke_judge(
                     judge_fn,

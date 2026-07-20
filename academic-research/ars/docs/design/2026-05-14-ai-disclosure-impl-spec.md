@@ -93,7 +93,7 @@ Each row cites whether the resolution is **user-chosen** (decided via AskUserQue
 
 ## 4. Test discipline (TDD)
 
-Per `superpowers:test-driven-development`, every protocol-encoded behaviour and every validator rule MUST have a failing test first.
+Following strict test-driven development, every protocol-encoded behaviour and every validator rule MUST have a failing test first.
 
 ### 4.1 Per-anchor verbatim quote tests
 

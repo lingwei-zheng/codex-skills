@@ -3,7 +3,6 @@
  *
  * 仅在 chrome.storage.local.netlogEnabled === true 时记录。
  * 环形缓冲 500 条；每 10 条 / 关键事件触发写入 storage。
- * 详细设计：docs/superpowers/specs/2026-05-19-xhs-netlogger-design.md
  */
 
 const NETLOG_MAX_ENTRIES   = 500;
