@@ -1,40 +1,55 @@
 # Research Project Tree
 
+## Minimal single-analysis paper project (preferred)
+
 ```text
 project/
   README.md
-  AGENTS.md
-  CLAUDE.md
+  AGENTS.md                         # optional local instructions
   .gitignore
-  data/
-    raw/
-    clean/
-  code/
-    analysis/
-    scripts/
-  configs/
-  htc/
-  output/
-    current/
-    archived_runs/
+  analysis/
+    config.yaml
+    01_*.py or 01_*.R
+    02_*.R
+    ...
+    07_validate.py                  # when validation is available
   paper/
-    manuscript/
-      current/
-      versions/
-    supplement/
-      current/
-      versions/
-    response_to_reviewers/
-  notes/
-    analysis_log.md
-    manuscript_log.md
+    methods_results.md
+    research_assessment.md
+    writing_outline.md
+  results/
+    machine-readable outputs
+    run registries
+    validation verdict
 ```
 
 Conventions:
 
-- `data/raw/` is immutable source data.
-- `code/analysis/` is ordered project workflow code.
-- `code/scripts/` is reusable helper code.
-- `output/current/` is the active working set.
-- `output/archived_runs/` stores dated versioned outputs.
-- `notes/*.md` explains why the project changed and what comes next.
+- `analysis/` is the only active analysis flow; numeric prefixes define order.
+- `analysis/config.yaml` is the active computational and writing contract.
+- `paper/methods_results.md` is the factual methods/results ledger.
+- `paper/research_assessment.md` is the positioning and journal-fit ledger.
+- `paper/writing_outline.md` is the story, structure, terminology, and claim-boundary ledger.
+- `results/` contains generated outputs and validation artifacts; do not edit them by hand.
+- `README.md` is the short entry point and reproduction command list.
+
+## Expanded multi-branch project (compatibility)
+
+```text
+project/
+  README.md
+  data/raw/
+  code/analysis/
+  code/scripts/
+  configs/
+  output/current/
+  output/archived_runs/
+  paper/manuscript/current/
+  paper/manuscript/versions/
+  notes/analysis_log.md
+  notes/manuscript_log.md
+```
+
+Use the expanded profile only when multiple active branches, dated archives, or
+review packages make the minimal tree insufficient. Never recreate it during a
+minimal-project resume without an explicit user request.

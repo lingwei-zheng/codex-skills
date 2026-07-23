@@ -63,3 +63,7 @@ If the user only has a broad topic or tentative title but no clear research ques
 - Treat `WORKFLOW.md` files as the actual internal entrypoints.
 - Use `../shared/field-context/geography-publication-readiness.md` for geography-specific contribution, method-fit, theory, argument, and title checks.
 - Use `../shared/field-context/academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`, `environmental-health.md`, and `journal-templates/` only when relevant.
+- For projects that use dynamic greenspace exposure and Space-Time Constraints,
+  read `references/space-time-greenspace-terminology.md` before drafting,
+  revising, or auditing terminology. Treat it as a project/domain calibration
+  reference, not a universal replacement for field-standard wording.

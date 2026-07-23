@@ -3,20 +3,30 @@ version: 1
 project:
   name: ""
   root: "."
+  profile: "minimal-paper" # minimal-paper or expanded
 
 paths:
-  configs_dir: "configs"
-  output_current: "output/current"
-  output_archived_runs: "output/archived_runs"
-  analysis_log: "notes/analysis_log.md"
-  manuscript_log: "notes/manuscript_log.md"
-  manuscript_current_dir: "paper/manuscript/current"
-  manuscript_versions_dir: "paper/manuscript/versions"
-  supplement_current_dir: "paper/supplement/current"
-  supplement_versions_dir: "paper/supplement/versions"
-  response_to_reviewers_dir: "paper/response_to_reviewers"
+  analysis_dir: "analysis"
+  analysis_config: "analysis/config.yaml"
+  paper_dir: "paper"
+  methods_results: "paper/methods_results.md"
+  research_assessment: "paper/research_assessment.md"
+  writing_outline: "paper/writing_outline.md"
+  results_dir: "results"
+  validation_verdict: "results/representativeness_main_validation_v04.json"
 
 compatibility:
   optional_only: true
   preserve_other_skill_state: true
-  note: "Use this file only when the project needs non-default paths."
+  expanded_profile_paths:
+    configs_dir: "configs"
+    output_current: "output/current"
+    output_archived_runs: "output/archived_runs"
+    analysis_log: "notes/analysis_log.md"
+    manuscript_log: "notes/manuscript_log.md"
+    manuscript_current_dir: "paper/manuscript/current"
+    manuscript_versions_dir: "paper/manuscript/versions"
+    supplement_current_dir: "paper/supplement/current"
+    supplement_versions_dir: "paper/supplement/versions"
+    response_to_reviewers_dir: "paper/response_to_reviewers"
+  note: "Use this file only when paths cannot be inferred from the project tree."
