@@ -81,8 +81,8 @@
   "runtime_notes": [
     "Claude Code agent-team wording is adapted by SKILL.md into Codex inline role-prompt usage.",
     "The maintainer's local ARS checkout was not used as a write target.",
-    "Upstream slash commands are vendored as prompt recipes and emulated through the Codex SKILL.md alias router; Codex does not register native slash commands.",
-    "Vendored upstream workflow entry files are renamed from SKILL.md to WORKFLOW.md in this Codex package so Codex registers only the root ARS router skill.",
+    "Upstream slash commands are vendored as internal mode recipes. Use /academic-research with mode=<mode>; legacy ars-* tokens are not registered as separate slash skills.",
+    "Vendored upstream workflow entry files are renamed from SKILL.md to WORKFLOW.md in this Codex package so Codex registers only the root academic-research router skill.",
     "Vague paper-topic requests without a clear research question are routed to deep-research socratic mode before outline, drafting, or full pipeline execution.",
     "Upstream maintainer-only development-plan directories are intentionally excluded because their workflow-specific sub-skills do not exist in the Codex runtime.",
     "User-facing setup docs include reinstall, /skills verification, and Codex CLI smoke-test guidance for existing-session cache behavior.",

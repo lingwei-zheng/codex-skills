@@ -1,7 +1,7 @@
 interface:
   display_name: "Engineering Figure Agent"
   short_description: "Provider-neutral engineering figures and exact plots."
-  default_prompt: "Use $engineering-figure-agent to create a provider-neutral engineering paper figure workflow: start from a figure brief, choose image or exact plot mode, preserve numeric truth, and generate the prompt, plot request, or rendered output."
+  default_prompt: "Use $engineering-figure-agent to execute a reviewed engineering or research schematic with the official OpenAI image path by default, while preserving claim and numeric boundaries."
 
 policy:
   allow_implicit_invocation: true

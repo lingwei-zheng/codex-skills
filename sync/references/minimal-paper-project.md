@@ -16,6 +16,17 @@ the three core Markdown files, and `results/`.
 | `results/` | Generated tables, registries, manifests, and validation verdict | Analysis is rerun or validated |
 | `README.md` | Short project entry point and reproduction commands | The active flow or top-line conclusion changes |
 
+## Language contract
+
+The three governance documents are a single language-controlled set. Infer the
+documentation language from the user request and the project configuration. If
+the project language is Chinese, keep all prose and headings in Simplified
+Chinese in `paper/methods_results.md`, `paper/research_assessment.md`, and
+`paper/writing_outline.md`. Keep technical identifiers, code, file paths,
+journal names, citation keys, URLs, and necessary abbreviations unchanged, but
+translate their surrounding explanations. Check all three files together after
+any language or structure change.
+
 ## Resume protocol
 
 1. Read `README.md` to identify the one active question and reproduction order.

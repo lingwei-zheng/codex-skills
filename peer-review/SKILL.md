@@ -1,6 +1,6 @@
 ---
 name: peer-review
-description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with critical, important, and minor revisions. This skill uses ARS as the main reviewer framework, local geography/GIScience/health geography field context when relevant, and pdf/docx tools for manuscript and visual-material inspection. Chinese outputs default to Simplified Chinese.
+description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with critical, important, and minor revisions. This skill uses the academic-research reviewer workflow, local geography/GIScience/health geography field context when relevant, and pdf/docx tools for manuscript and visual-material inspection. Chinese outputs default to Simplified Chinese.
 ---
 
 # Journal Peer Review
@@ -10,7 +10,7 @@ available supplementary materials.
 
 ## Review Stack
 
-1. Read `../academic-research/SKILL.md` and use its ARS
+1. Read `../academic-research/SKILL.md` and use its
    `academic-paper-reviewer` workflow as the main review framework.
 2. Use `../shared/field-context/` only for geography, human geography,
    GIScience, GeoAI, remote sensing, spatial analysis, environmental exposure,
@@ -74,11 +74,18 @@ Follow user-specified counts when provided; otherwise use the defaults in
 [references/report-structure.md](references/report-structure.md). Base the
 editorial recommendation on fixability, not tone or preference.
 
+Bind every critical and important issue to an inspectable evidence pointer:
+page, section, paragraph, figure, table, equation, supplement, or exact claim.
+State whether the concern is directly observed, inferred from the manuscript, or
+cannot be verified from the available files. Do not use a vague topic label as
+the evidence for a major criticism.
+
 ### 5. Verify
 
 Before delivery, confirm that visual inspection or its limitation is disclosed,
 the critical issue is singular, issue counts are respected, geography gates were
-applied when relevant, and user-edited files were not overwritten.
+applied when relevant, every critical and important issue has an evidence
+pointer, and user-edited files were not overwritten.
 
 ## Output
 

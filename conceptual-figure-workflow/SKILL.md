@@ -1,6 +1,6 @@
 ---
 name: conceptual-figure-workflow
-description: Use when the user wants a conceptual framework figure, experiment design diagram, thesis framework, research mechanism diagram, theoretical model figure, variable relationship diagram, or paper overview schematic. This skill first uses ARS to review the theory structure, research question, variables, mechanisms, hypotheses, and claim-evidence boundaries, then produces a figure brief for engineering-figure-agent to execute.
+description: Use when the user wants a conceptual framework figure, experiment design diagram, thesis framework, research mechanism diagram, theoretical model figure, variable relationship diagram, or paper overview schematic. This skill first uses academic-research to review the theory structure, research question, variables, mechanisms, hypotheses, and claim-evidence boundaries, then produces a figure brief for engineering-figure-agent to execute.
 ---
 
 # Conceptual Figure Workflow
@@ -26,7 +26,7 @@ publication plots and multi-panel empirical figures.
 ## Workflow
 
 1. Read `../academic-research/SKILL.md` and route the research-logic review to the smallest
-   relevant ARS workflow, normally `academic-paper`, `deep-research`, or
+   relevant internal workflow, normally `academic-paper`, `deep-research`, or
    `experiment-agent`.
 2. If the figure is geography, human geography, GIScience, GeoAI, spatial
    analysis, environmental exposure, or health geography work, optionally read
@@ -48,9 +48,10 @@ publication plots and multi-panel empirical figures.
    - label language, normally English unless the user asks otherwise
    - prohibited visual implications
    - caption draft or caption logic
-5. Hand the brief to `engineering-figure-agent` for image, prompt, SVG, or plot
-   execution. Do not ask `engineering-figure-agent` to reinterpret the theory
-   from scratch.
+5. Hand the brief to `engineering-figure-agent` for prompt, schematic, image,
+   redraw, or editable-figure execution. Use `nature-figure` separately for
+   quantitative or statistical panels. Do not ask either execution skill to
+   reinterpret the theory from scratch.
 
 ## Output Contract
 

@@ -39,6 +39,10 @@ For `human-final-pass`:
 - Do not upgrade association to causation or broaden generalisability.
 - Do not alter verified quantitative values, citations, formulas, or terminology.
 - Do not hide a weak core argument under fluent prose. State material gaps plainly.
+- If the central research question, evidence interpretation, or paper story needs
+  substantive redesign, diagnose the problem and hand it to `academic-research`
+  or `good-story`; do not solve it by silently changing the science during
+  polishing.
 - Prefer direct, information-dense claims over `we do not claim`, `this does not
   mean`, or `our purpose is not ... but ...`.
 - Keep a limitation when removing it would overstate the evidence. Place it where
@@ -58,9 +62,12 @@ For `human-final-pass`:
    reference for a narrow sentence-level request.
 4. **Rewrite at the highest necessary level.** Rebuild section or paragraph logic
    when needed; otherwise make the smallest wording change that solves the problem.
-5. **Preserve the evidence contract.** Keep claim strength aligned with the source,
+5. **Keep document-level state when needed.** For a whole manuscript, multiple
+   sections, or repeated revision rounds, read `references/document-consistency.md`
+   and maintain terminology and claim-strength ledgers.
+6. **Preserve the evidence contract.** Keep claim strength aligned with the source,
    retain necessary uncertainty, and distinguish observation from interpretation.
-6. **Run a final check.** Verify meaning, citations, numbers, terminology, section
+7. **Run a final check.** Verify meaning, citations, numbers, terminology, section
    function, overclaim, defensive phrasing, punctuation, and target-journal fit.
 
 ## Reference Router
@@ -73,6 +80,7 @@ For `human-final-pass`:
 | [references/phrasebank-playbook.md](references/phrasebank-playbook.md) | Hedging, transitions, evidence, comparison, limitation, or implication wording is needed |
 | [references/style-guardrails.md](references/style-guardrails.md) | Mechanics, register, articles, numbers, sentence checks, integrity, or AI boundaries need review |
 | [references/defensive-phrasing.md](references/defensive-phrasing.md) | Defensive disclaimers must be retained, compressed, or rewritten |
+| [references/document-consistency.md](references/document-consistency.md) | A whole manuscript, multiple sections, or repeated rounds need stable terminology and claim strength |
 | [references/human-final-pass-policy.md](references/human-final-pass-policy.md) | `human-final-pass` is active |
 | [references/human-final-pass-targeting.md](references/human-final-pass-targeting.md) | Section eligibility or protected content is uncertain |
 | [references/human-final-pass-calibration.md](references/human-final-pass-calibration.md) | Naturalness intensity or explicit grammar-error mode needs calibration |
@@ -109,3 +117,5 @@ Unless the user requests another format, provide:
    evidence or argument gap.
 
 For side-by-side requests, use `Original`, `Polished`, and `Why changed`.
+For document-level work, report only unresolved terminology or claim-strength
+conflicts unless the user asks to see the full ledgers.

@@ -1,20 +1,20 @@
 ---
 name: academic-research
 description: >-
-  Academic research, literature review, paper drafting, manuscript revision,
-  peer review, research-to-paper workflow routing, and experiment planning for
-  geography, human geography, GIScience, and health geography. Use when the
-  user asks for literature review, systematic review, research question
-  refinement, paper outlining, geography-specific title design, abstract writing, revision, citation or
-  integrity checks, reviewer simulation, editorial letters, full pipeline
-  support, or experiment/study planning. Supports ARS-style aliases such as
-  ars-plan, ars-outline, ars-abstract, ars-lit-review, ars-revision, and
-  ars-full.
+  Academic research, literature review, research design, paper drafting,
+  manuscript revision, research-to-paper workflow routing, and experiment
+  planning for geography, human geography, GIScience, and health geography.
+  Use when the user asks for literature review, systematic review, paper
+  outlining, geography-specific title design, abstract writing, revision,
+  citation or integrity checks, full pipeline support, or experiment/study
+  planning. Use good-question when research-question quality is the primary
+  task, peer-review for a formal referee report, good-story for an evidence-led
+  manuscript story, and academic-advisor for submission strategy.
 ---
 
 # Academic Research
 
-This is the Codex entry router for the vendored ARS suite under `ars/`.
+This is the Codex entry router for the vendored research suite under `ars/`.
 
 ## Defaults
 
@@ -25,6 +25,18 @@ This is the Codex entry router for the vendored ARS suite under `ars/`.
 ## First rule
 
 Do not load the whole suite by default. Start from one workflow entry file and then load only the needed agent, reference, or template files.
+
+## Routing boundaries
+
+- Use `good-question` when the main decision is whether a question is important,
+  tractable, falsifiable, or worth pursuing.
+- Use `good-story` when results or manuscript materials already exist and the
+  main task is to organize them into an evidence-supported narrative.
+- Use `academic-advisor` for proposal diagnosis, pre-submission assessment, and
+  journal targeting.
+- Use `peer-review` for a formal external-reviewer report.
+- Keep the internal question-refinement and reviewer workflows available only
+  when the user explicitly invokes this skill or needs an end-to-end pipeline.
 
 ## Workflow router
 
@@ -39,22 +51,28 @@ Do not load the whole suite by default. Start from one workflow entry file and t
 - Experiment planning, statistical interpretation, reproducibility, human study protocol:
   `ars/experiment-agent/WORKFLOW.md`
 
-## Alias routing
+## Mode routing
 
-Treat these as mode shortcuts inside this skill:
+Prefer `/academic-research mode=<mode>` or the equivalent natural-language
+request. Supported modes include:
 
-- `ars-plan`
-- `ars-outline`
-- `ars-abstract`
-- `ars-lit-review`
-- `ars-citation-check`
-- `ars-disclosure`
-- `ars-format-convert`
-- `ars-revision-coach`
-- `ars-revision`
-- `ars-full`
+- `plan`
+- `outline`
+- `abstract`
+- `lit-review`
+- `citation-check`
+- `disclosure`
+- `format-convert`
+- `revision-coach`
+- `revision`
+- `full`
 
-If the user only has a broad topic or tentative title but no clear research question, route to `ars/deep-research/WORKFLOW.md` in Socratic narrowing mode before outlining or drafting.
+Legacy `ars-*` tokens may be interpreted as these internal modes when supplied
+after `/academic-research`; they are not separate slash-callable skills.
+
+If the user only has a broad topic or tentative title but no clear research
+question, use `good-question` first unless the user explicitly requests the
+end-to-end academic-research pipeline.
 
 ## Codex mapping
 

@@ -4,10 +4,12 @@ Use this reference when configuring or choosing an image backend.
 
 ## Public Stance
 
-- Treat the official Google Gemini endpoint as the public reference setup.
-- Treat relays and custom providers as optional compatibility paths.
+- Use the official OpenAI Image API as the default image-generation path.
+- Use the official Google Gemini endpoint only when the user explicitly selects
+  Gemini or Nano Banana.
+- Treat relays and custom providers as explicit opt-in compatibility paths.
 - Never hardcode personal relay endpoints or private billing details into shared docs.
-- OpenAI Image API is a first-class backend for conceptual figures and edits.
+- Do not switch away from OpenAI because another provider is configured locally.
 
 ## Provider Matrix
 
@@ -17,6 +19,9 @@ Use this reference when configuring or choosing an image backend.
 | OpenAI Image API | `https://api.openai.com/v1` | bearer | not needed | optional `OPENAI_IMAGE_HIGHRES_MODEL` |
 | Gemini-compatible relay | provider-specific | usually bearer | usually required | provider-specific |
 | OpenAI-compatible relay | provider-specific | usually bearer | usually required | provider-specific |
+
+When no provider is specified, select `openai`. Do not ask the user to choose a
+provider when the official OpenAI path is available.
 
 ## Gemini / Banana Environment
 

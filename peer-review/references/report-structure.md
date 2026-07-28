@@ -43,9 +43,16 @@ evidence-linked, and constructive.
 Each substantive issue should identify:
 
 1. the manuscript claim or component at risk
-2. why it matters for validity or interpretation
-3. the evidence supporting the concern
-4. a feasible repair or the reason it is not repairable
+2. its location: page, section, paragraph, figure, table, equation, or supplement
+3. why it matters for validity or interpretation
+4. the evidence supporting the concern and whether it is observed, inferred, or
+   unavailable for verification
+5. a feasible repair or the reason it is not repairable
+
+Critical and important issues must include a location and evidence pointer. If
+the source format prevents precise pagination or paragraph identification, use
+the narrowest available section, quotation fragment, figure, table, or
+supplement pointer and disclose the limitation.
 
 ## Recommendation Standard
 
@@ -69,4 +76,5 @@ major revision to avoid naming an unfixable validity failure.
 - Use no per-point subheadings in the submission-ready report.
 - Keep claims synchronized across language versions.
 - Apply all five geography publication-readiness gates when relevant.
+- Bind every critical and important issue to a location and evidence pointer.
 - Do not overwrite an existing user-edited report without explicit permission.

@@ -106,7 +106,10 @@ Use these tests aggressively:
 
 ## Default Output
 
-When the user gives materials and asks for a story, return these sections. Localize section labels to the user's language; for Chinese, use the heading translations in `references/terminology-style.md`.
+When the user gives materials and asks for a story, use the stable handoff in
+`references/handoff-contract.md`. Localize visible section labels to the user's
+language; for Chinese, use the heading translations in
+`references/terminology-style.md`.
 
 1. `Best story`: one sharp paragraph.
 2. `Why this story works`: tension, turn, evidence, audience, implication.
@@ -126,6 +129,8 @@ Load only what is needed:
 - Read `references/terminology-style.md` when answering in Chinese, translating story diagnostics, or when output would otherwise mix English writing-framework jargon into Chinese prose.
 - Read `references/framework-governance.md` when multiple writing frameworks conflict, when the story risks hype, or when the user explicitly emphasizes truth, evidence, limitations, overclaiming, or reviewer resistance.
 - Read `references/overclaim-calibration.md` when evaluating whether a story is too strong, rewriting claims, preparing abstracts, cover letters, discussions, rebuttals, or high-impact journal framing.
+- Read `references/handoff-contract.md` when another skill or later work block
+  must consume the story diagnosis without reinterpreting it.
 - Read `references/cross-domain-transfer.md` when users from any field need to use the skill well, when using the skill outside an already calibrated domain, comparing fields, building a new domain calibration pack, or explaining how the same story logic applies to examples such as ecology, remote sensing, AI4Science, social science, biomedical research, materials, geoscience, or humanities.
 - Read `references/ecology-story-exemplars.md` when the user asks for ecology examples, biodiversity/ecosystem-function stories, conservation ecology stories, or an ecology calibration pack.
 - Read `references/exemplar-paper-patterns.md` when the user asks for high-impact examples, paper archetypes, or why famous papers are memorable.

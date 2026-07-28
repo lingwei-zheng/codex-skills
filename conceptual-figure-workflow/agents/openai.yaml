@@ -1,6 +1,6 @@
 interface:
   display_name: "Conceptual Figure Workflow"
-  short_description: "Review research logic with ARS before producing a figure brief."
+  short_description: "Review research logic before producing a figure brief."
   default_prompt: "Use $conceptual-figure-workflow to review my conceptual framework and turn it into a figure brief."
 
 policy:

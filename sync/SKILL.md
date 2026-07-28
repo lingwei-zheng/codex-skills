@@ -5,67 +5,46 @@ description: Use when the user wants to resume a research or paper project acros
 
 # Sync
 
-Standardize file-based continuity for research and paper projects across Codex
-devices. Do not assume that chat history is shared.
+Maintain file-based continuity for research and paper projects across Codex
+devices. Do not assume chat history is shared.
 
-## Core Contract
+## Sources Of Truth
 
-Use the smallest set of sources of truth that matches the project profile:
+Use the smallest set that matches the project:
 
-- `git` records what changed.
-- The active analysis configuration records which settings were used.
-- The active result directory records current outputs and validation.
-- The paper governance documents record methods/results, research assessment, and
-  writing rules.
+- Git records what changed.
+- The active configuration records which settings were used.
+- The active results directory records outputs and validation.
+- Project governance documents record methods, results, assessment, story, and
+  writing boundaries.
 
-For a single active paper analysis, prefer the minimal tree described in
-`references/research-project-tree.md`. Do not recreate deleted `configs/`,
-`output/`, `notes/`, or nested manuscript directories merely because an older
-template used them. Retain the expanded tree only when the project already has
-multiple analysis branches, archives, or review packages.
+## Project Profiles
 
-## Minimal Paper Profile
+Read [references/research-project-tree.md](references/research-project-tree.md)
+before creating directories.
 
-Recognize `minimal-paper` when these paths exist:
+- `minimal-paper`: one active analysis flow using `analysis/`, `results/`, and
+  three governance files under `paper/`. Read
+  [references/minimal-paper-project.md](references/minimal-paper-project.md).
+- `expanded-research`: multiple analysis branches, archived runs, manuscript
+  versions, supplements, or reviewer packages. Retain the expanded tree only
+  when the project already needs it or the user explicitly requests it.
+- `legacy`: read existing `TODO.md`, `HANDOFF.md`, logs, and `sync/` state for
+  compatibility, but do not extend them as the new default.
 
-```text
-README.md
-analysis/config.yaml
-analysis/01_*.py or analysis/01_*.R
-paper/methods_results.md
-paper/research_assessment.md
-paper/writing_outline.md
-results/
-```
-
-Treat the three files under `paper/` as one governance set:
-
-- `methods_results.md`: ordered methods and results; use it for factual analysis
-  state and claim-evidence boundaries.
-- `research_assessment.md`: advisor assessment, evidence ledger, contribution
-  risks, and journal ladder; use it for positioning and submission decisions.
-- `writing_outline.md`: story spine, section order, figure/table plan, terminology,
-  and inference rules; use it for manuscript drafting.
-
-The minimal profile has one analysis flow. Read scripts in numeric order and do
-not introduce a second active route without updating all three governance files
-and `README.md`.
+Do not recreate deleted `configs/`, `output/`, `notes/`, or nested manuscript
+directories merely because an older template used them.
 
 ## Workflow
 
 ### Initialize
 
-1. Read [references/research-project-tree.md](references/research-project-tree.md).
-2. Detect the project profile. For `minimal-paper`, create only `analysis/`,
-   `paper/`, and `results/`; do not create legacy logs or archive folders unless
-   the user explicitly asks for them.
-3. Read [references/minimal-paper-project.md](references/minimal-paper-project.md)
-   when the project has the three core documents.
-4. Read [references/naming-and-archiving.md](references/naming-and-archiving.md)
-   before creating a dated archive or changing result names. A minimal project
-   may keep one active `results/` directory without archiving.
-5. Add `.codex/project.yaml` only when paths are non-standard or cannot be
-   inferred from the minimal tree.
+1. Detect the project profile and existing conventions.
+2. Create only the directories and governance files required by that profile.
+3. Protect raw data and existing user files.
+4. Add `.codex/project.yaml` only when non-standard paths cannot be inferred.
+5. Apply [references/naming-and-archiving.md](references/naming-and-archiving.md)
+   only when naming outputs or creating an archive.
 
 ### Resume
 
@@ -73,72 +52,64 @@ Inspect state in this order:
 
 1. Git status and recent commits.
 2. `README.md` for the active question and reproduction order.
-3. `analysis/config.yaml` and numeric analysis scripts.
-4. `paper/methods_results.md`, then `paper/research_assessment.md`, then
-   `paper/writing_outline.md`.
-5. `results/`, prioritizing the validation verdict and run registries.
-6. `.codex/project.yaml`, only when the project uses it.
+3. Active configuration and numerically ordered analysis scripts.
+4. Project governance documents in their declared order.
+5. Current results, validation verdicts, and run registries.
+6. `.codex/project.yaml` only when present.
 
-For the minimal profile, reconstruct the current task, last validated result,
-writing boundaries, next step, and any blocker from those files. Existing legacy
-logs may be read for compatibility, but do not extend them as the new default.
+Reconstruct the current task, last validated result, writing boundaries, next
+step, and blockers. Identify every file used as a source of truth.
 
 ### End A Work Block
 
-1. Keep active analysis artifacts in `results/` and keep the three governance
-   documents synchronized with any material change.
-2. Run the project's validation script when available and record its verdict in
-   `results/`; do not claim completion from a prose note alone.
-3. Update `methods_results.md` when methods or numerical results change,
-   `research_assessment.md` when contribution or journal fit changes, and
-   `writing_outline.md` when story, section order, figures, terminology, or
-   inference boundaries change.
+1. Keep active artifacts in the profile's current results directory.
+2. Run the project validation command when available and record its verdict.
+3. Update only the governance documents affected by material changes.
 4. Keep `README.md` as the short entry point with the active flow and commands.
-5. Archive only when requested or when a reproducible submission checkpoint needs
-   preservation; follow [references/naming-and-archiving.md](references/naming-and-archiving.md).
-6. Change `.codex/project.yaml` only when path structure changes.
+5. Preserve the project's documentation language and terminology policy.
+6. Archive only when requested or when a reproducible submission checkpoint
+   needs preservation.
+7. Change `.codex/project.yaml` only when path structure changes.
 
 ## Optional Path Map
 
-`.codex/project.yaml` is a small optional path index, not a workflow log. When
-present, resolve non-standard manuscript, config, export, or data paths from it.
-Use [references/project-yaml-template.yaml](references/project-yaml-template.yaml)
-for initialization. Do not require it for simple projects.
+`.codex/project.yaml` is a small path index, not a workflow log. Use
+[references/project-yaml-template.yaml](references/project-yaml-template.yaml)
+only when manuscript, configuration, export, data, or results paths are
+non-standard.
 
 ## Machine Split
 
-- Prefer the coding machine for code, models, figures, batch exports, environment
-  debugging, and validation.
-- Prefer the writing machine for prose, reviewer responses, outlines, synthesis,
-  and reading completed results.
-- For mixed work, let the coding machine produce artifacts, configs, and validated
-  outputs before the writing machine turns them into manuscript text.
+- Prefer the coding machine for code, models, figures, batch exports,
+  environments, and validation.
+- Prefer the writing machine for prose, outlines, synthesis, reviewer responses,
+  and reading validated results.
+- For mixed work, let the coding machine produce traceable artifacts before the
+  writing machine converts them into manuscript text.
 
-## Ownership And Safety
+## Safety
 
-- Treat `data/raw/` as immutable source data.
-- Keep minimal project workflows in `analysis/`; use `code/analysis/` only for the
-  expanded legacy profile.
-- Treat `results/` as generated analysis state and do not rewrite registries by hand.
-- Read other skill-owned files when needed for recovery, but do not rewrite their
-  private state schemas.
-- Preserve `.checkpoints/`, figure-workflow folders, and other skill-owned archives.
-- Do not claim conversation continuity when only project files were synchronized.
+- Treat raw source data as immutable.
+- Do not introduce a second active analysis route without updating the project
+  entry point and governance documents.
+- Do not rewrite generated registries or private state schemas by hand.
+- Preserve `.checkpoints/`, figure-workflow folders, and skill-owned archives.
+- Do not claim conversation continuity when only files were synchronized.
 
 ## Reference Router
 
 | Reference | Use |
 |---|---|
-| [references/research-project-tree.md](references/research-project-tree.md) | Minimal and expanded directory structures |
-| [references/minimal-paper-project.md](references/minimal-paper-project.md) | Three-document governance and resume protocol |
-| [references/naming-and-archiving.md](references/naming-and-archiving.md) | Output names and optional archive batches |
+| [references/research-project-tree.md](references/research-project-tree.md) | Minimal and expanded directory profiles |
+| [references/minimal-paper-project.md](references/minimal-paper-project.md) | Three-document governance, language, and resume protocol |
+| [references/naming-and-archiving.md](references/naming-and-archiving.md) | Output names and archive batches |
 | [references/analysis-log-template.md](references/analysis-log-template.md) | Legacy expanded-profile analysis log |
 | [references/manuscript-log-template.md](references/manuscript-log-template.md) | Legacy expanded-profile writing log |
-| [references/archived-run-readme-template.md](references/archived-run-readme-template.md) | Archive-batch provenance note |
+| [references/archived-run-readme-template.md](references/archived-run-readme-template.md) | Archive provenance note |
 | [references/project-yaml-template.yaml](references/project-yaml-template.yaml) | Optional non-standard path map |
 
 ## Output
 
 Produce the smallest useful result: an initialized structure, reconstructed
-project-state summary, validation status, machine recommendation, or two-machine
-handoff. Always identify the files used as the source of truth.
+state summary, validation status, machine recommendation, or cross-device
+handoff. Always identify the source-of-truth files.

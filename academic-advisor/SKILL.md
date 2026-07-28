@@ -7,7 +7,8 @@ description: >-
   evaluation, research supervision, manuscript pre-submission audit, journal
   targeting, 投稿建议, 研究想法评估, 论文投稿路线, and 投稿期刊选择. Produces one
   integrated Simplified Chinese report by combining good-question,
-  academic-research, Zotero evidence, and web literature checks.
+  good-story, academic-research, Zotero evidence, and web literature checks as
+  appropriate to the task.
 ---
 
 # Academic Advisor
@@ -26,7 +27,11 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 
 - Use `academic-advisor` for author-side project diagnosis, pre-submission audit, and journal strategy.
 - Use `good-question` logic for question quality, falsifiability, pilot design, and strongest reviewer rejection risk.
-- Use `academic-research` logic for literature positioning, research design, manuscript structure, contribution, and ARS-style paper/reviewer workflows.
+- Use `good-story` logic for completed manuscripts whose evidence, figure order,
+  central claim, or narrative spine needs diagnosis.
+- Use `academic-research` logic for literature positioning, research design,
+  manuscript structure, contribution, and its internal paper or reviewer
+  workflows.
 - Use `zotero:Zotero` for local-library evidence search, citation metadata, and full text only when needed. If the plugin skill is not automatically loaded, follow `references/zotero-evidence-workflow.md` to locate and run the current Zotero helper without hard-coding a cache hash.
 - Use `peer-review` instead for formal referee reports, external manuscript review, or journal-style reviewer comments not tied to the user's author strategy.
 
@@ -40,9 +45,18 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
    - Browse the web for latest papers, journal scope, author guidelines, recent special issues, and representative target-journal articles only when Zotero is unavailable, sparse, outdated, or insufficient for the decision.
    - Maintain an evidence ledger with `来源支持 Source-backed`, `推断 Inference`, and `未知/待核查 Unknown`.
    - If Zotero is unavailable, do not silently skip it; report the exact blocker in the evidence ledger.
-4. Evaluate with both lenses:
-   - Good-question lens: importance, tractability, falsifier, pilot, hidden assumptions, reviewer risk.
-   - Academic-research lens: literature gap, design fit, methods, claim-evidence boundary, contribution, structure, and manuscript readiness.
+4. Select only the lenses needed for the classified task:
+   - `idea-proposal`: good-question for importance, tractability, falsifier,
+     pilot, hidden assumptions, and reviewer risk; academic-research for
+     literature positioning, design, methods, and contribution.
+   - `manuscript-pre-submission`: good-story for the central claim, evidence
+     ladder, figure order, and narrative risks; academic-research for structure,
+     methods, claim-evidence boundaries, and readiness.
+   - `journal-targeting-only`: journal-fit and evidence-triangulation rubrics;
+     add good-story only when manuscript materials are available and story
+     shape affects fit.
+   - `revision-strategy`: load only the question, story, research, or journal
+     lens implicated by the requested revision.
 5. If a journal list is supplied, treat it as an active constraint and ranking pool, not an appendix. Read `references/journal-fit-rubric.md`.
 6. Produce one integrated report using `templates/integrated-advisor-report.md`.
 
@@ -52,6 +66,8 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 - Read `references/evidence-triangulation.md` before making novelty, literature-gap, or target-journal claims.
 - Read `references/zotero-evidence-workflow.md` whenever evidence grounding is required.
 - Read `references/journal-fit-rubric.md` when the user provides a journal list or asks where to submit.
+- For a completed manuscript whose story affects submission readiness, read
+  `../good-story/SKILL.md` and preserve its stable story handoff.
 - For geography-related proposals or manuscripts, read `../shared/field-context/geography-publication-readiness.md` and include its five-gate diagnosis.
 
 ## Output Rules

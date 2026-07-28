@@ -112,6 +112,7 @@ Write-Output 'Checking required product files...'
   'CONTRIBUTING.md',
   'CHANGELOG.md',
   'agents\openai.yaml',
+  'references\handoff-contract.md',
   'examples\README.md',
   'examples\before-after.md',
   'examples\field-mini-cases.md',
@@ -172,6 +173,7 @@ Write-Output 'Checking skill on-demand loading...'
   'examples/field-mini-cases.md',
   'references/cross-domain-transfer.md',
   'references/overclaim-calibration.md',
+  'references/handoff-contract.md',
   'Source Depth Rule'
 ) | ForEach-Object { Assert-Contains -RelativePath 'SKILL.md' -Pattern $_ }
 
