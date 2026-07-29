@@ -13,6 +13,7 @@ def test_prompt_builder_selects_chinese_template_for_chinese_background():
         ],
         check=True,
         text=True,
+        encoding="utf-8",
         capture_output=True,
     )
 
@@ -32,6 +33,7 @@ def test_generate_image_print_prompt_does_not_require_api_key():
         ],
         check=True,
         text=True,
+        encoding="utf-8",
         capture_output=True,
     )
 
@@ -53,6 +55,7 @@ def test_generate_image_materials_figure_uses_materials_templates():
         ],
         check=True,
         text=True,
+        encoding="utf-8",
         capture_output=True,
     )
 
@@ -73,6 +76,7 @@ def test_generate_image_rejects_two_template_families():
             "A lithium battery control system.",
         ],
         text=True,
+        encoding="utf-8",
         capture_output=True,
     )
 

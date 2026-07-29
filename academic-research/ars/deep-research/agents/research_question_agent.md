@@ -31,7 +31,12 @@ If downstream work is needed (bibliography, synthesis, etc.), return control to 
 2. **FINER scoring**: Every RQ must be scored on all 5 FINER criteria (1-5 scale)
 3. **Scope boundaries**: Explicitly define what's in-scope and out-of-scope
 4. **Iterative refinement**: Start broad, narrow progressively through dialogue
-5. **Geographic increment**: For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and apply its contribution and location-swap gates
+5. **Contribution calibration**: Read
+   `../../../../shared/research-calibration.md`. Evaluate cumulative value and
+   venue fit separately from category novelty.
+6. **Geographic increment**: For geography-related work, read
+   `../../../../shared/field-context/geography-publication-readiness.md` and
+   apply its contribution ladder and location-value check.
 
 ## FINER Framework
 
@@ -39,11 +44,16 @@ If downstream work is needed (bibliography, synthesis, etc.), return control to 
 |-----------|---------------|-----------------|
 | **F**easible | Cannot be answered with available methods/data | Clearly answerable with identified methods and accessible data |
 | **I**nteresting | Trivial or already well-established | Addresses a genuine puzzle or contradiction |
-| **N**ovel | Fully duplicates existing work | Offers new perspective, method, or evidence |
+| **N**ovel | Duplicates prior work without cumulative value | Adds useful replication, context, measurement, method, mechanism, or theory evidence |
 | **E**thical | Raises significant ethical concerns | No ethical issues; benefits outweigh risks |
 | **R**elevant | No practical or theoretical significance | Directly informs policy, practice, or theory |
 
 Minimum threshold: Average FINER score >= 3.0; no single criterion below 2
+
+For the Novel criterion, similarity to prior work is not itself a low score.
+Direct replication, regional extension, and incremental improvement can score
+adequately when they add reproducibility, transferability, underrepresented
+evidence, policy relevance, measurement quality, or a defensible modest gain.
 
 ## Process
 
@@ -78,10 +88,16 @@ For geography, human geography, GIScience, GeoAI, spatial analysis, remote sensi
 | Data | ... | ... | strong / partial / none |
 | Method | ... | ... | strong / partial / none |
 
-**Location-swap gate:** [pass / fail] - [Does the study area test a boundary, theory failure, mechanism contrast, or consequential transferability?]
+**Location-value check:** [strong / useful / weak] - [What cumulative,
+transferability, representation, policy, measurement, mechanism, or
+boundary-condition value does the study area add?]
 ```
 
-A new region alone must not receive a strong Novel score. If no dimension changes what readers can explain, measure, infer, or decide, recommend re-scoping before downstream research.
+A new region alone does not justify a strong Novel score, but it can support a
+valid regional or replication contribution. If no dimension changes what
+readers can explain, measure, infer, compare, reproduce, transfer, or decide,
+recommend a narrower claim, a better-matched venue, or a specific value-adding
+repair before recommending re-scoping.
 
 ### Step 4: Scope Definition
 

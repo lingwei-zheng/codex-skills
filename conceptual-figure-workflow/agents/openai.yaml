@@ -1,7 +1,7 @@
 interface:
   display_name: "Conceptual Figure Workflow"
-  short_description: "Review research logic before producing a figure brief."
-  default_prompt: "Use $conceptual-figure-workflow to review my conceptual framework and turn it into a figure brief."
+  short_description: "Review research logic and lock a semantic figure contract."
+  default_prompt: "Use $conceptual-figure-workflow to review my framework and create a scale-aware semantic and visual figure contract."
 
 policy:
   allow_implicit_invocation: true

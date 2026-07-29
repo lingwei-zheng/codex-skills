@@ -1,16 +1,32 @@
 # Editable Figure Handoff
 
-Use this reference when the user asks for editable SVG or mentions AutoFigure-Edit.
+Use this reference when the user asks for an editable conceptual figure, native
+Draw.io source, or editable SVG.
 
 ## Positioning
 
-AutoFigure-Edit can be an optional local post-processing path after a raster draft has been generated. Treat it as a local integration hook, not a guaranteed built-in conversion feature.
+Use the installed official `drawio` skill as the default editable backend.
+Prefer native object structure from the beginning instead of reconstructing a
+raster after generation.
 
-## What It Can Help With
+## Draw.io-First Route
 
-- Generating or refining editable SVG scientific figures.
-- Reconstructing structure, placeholders, and icon regions.
-- Keeping a figure editable after a first-pass draft.
+1. Pass the locked semantic graph, render graph, visible-text allowlist, and
+   negative constraints to `drawio`.
+2. Author a native `.drawio` file, using XML when precise placement or styling
+   is required.
+3. Preserve the `.drawio` source as the primary artifact.
+4. Export SVG, PNG, or PDF with embedded diagram XML when the local Draw.io
+   Desktop CLI is available.
+5. Without the Desktop CLI, deliver the native `.drawio` file or URL route
+   supported by the official skill. Do not flatten the figure merely because
+   export tooling is unavailable.
+
+## Optional Raster Reconstruction
+
+AutoFigure-Edit remains an optional local post-processing route when the only
+available source is a raster image. Treat it as a compatibility hook, not the
+default editable workflow.
 
 ## Limitation
 
@@ -25,13 +41,27 @@ The upstream AutoFigure-Edit workflow is primarily `method text -> draft figure 
 
 ## Handoff Artifacts
 
-- `figure.png`
-- `prompt.txt`
-- `method.txt`
-- optional `handoff.json` with language, figure type, output paths, and editable-output intent
+- `figure.drawio`
+- optional `figure.drawio.svg`, `figure.drawio.png`, or `figure.drawio.pdf`
+- `figure-brief.json`
+- `semantic-audit.md`
+- `issue-ledger.md`
+- for raster reconstruction only:
+  - `figure.png`
+  - `prompt.txt`
+  - `method.txt`
+  - optional `handoff.json`
 
-## Conservative Wording
+## Source-of-Truth Rule
+
+The reviewed figure brief defines meaning. The `.drawio` file defines editable
+layout. Exported raster or PDF files are delivery artifacts and must not become
+the only editable source.
+
+## Conservative AutoFigure Wording
 
 Use wording like:
 
-`This figure can optionally be handed off to a local AutoFigure-Edit deployment for editable SVG reconstruction or refinement if that pipeline is available on this machine.`
+`This raster figure can optionally be handed off to a local AutoFigure-Edit deployment for editable SVG reconstruction or refinement if that pipeline is available on this machine.`
+
+Do not describe raster-to-SVG reconstruction as guaranteed.

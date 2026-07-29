@@ -4,7 +4,7 @@ description: >-
   Use when the user needs to execute an already scoped engineering or
   research-paper figure brief, including system architecture diagrams,
   algorithm workflows, hardware schematics, mechanism diagrams, graphical
-  abstracts, redraws, or image edits.
+  abstracts, editable Draw.io diagrams, redraws, or image edits.
   Uses the official OpenAI image path by default, with Gemini, Nano Banana, and
   other providers retained as explicit opt-in compatibility paths.
   For conceptual framework or experiment-design figures whose theory,
@@ -25,6 +25,8 @@ Good fit:
 
 - Turn a figure brief into a conceptual diagram, workflow figure, schematic,
   graphical abstract, redraw, or edited image.
+- Produce an editable `.drawio` figure when labels, arrows, topology, or later
+  manual revision must remain exact.
 - Build prompts, generate conceptual panels, and refine existing briefs.
 - Assemble already rendered quantitative panels with a schematic when the panel
   contract is fixed.
@@ -46,10 +48,16 @@ or invoke them in normal routing; send numeric-data figure work to
 
 ## Core Decision
 
-- `image` mode: conceptual figures, architecture diagrams, algorithm workflows,
-  graphical abstracts, schematics, and reference-inspired redraws.
+- `openai-image` mode: illustrative conceptual figures, graphical abstracts,
+  reference-inspired redraws, and image edits where visual synthesis matters
+  more than object-level editability.
+- `drawio` mode: label-heavy conceptual frameworks, mechanism diagrams,
+  architecture/workflow figures, or any figure requiring exact nodes, arrows,
+  topology, and editable vector-like objects. Route execution to the installed
+  `drawio` skill while preserving this skill's reviewed figure contract.
 - `mixed` mode: use `nature-figure` to produce quantitative panels, then use this
-  skill only for the conceptual panels or final schematic-led composition.
+  skill only for conceptual panels or final schematic-led composition. Use
+  Draw.io when the final composition must remain editable.
 
 Never use image generation for exact values, axes, or benchmark geometry.
 
@@ -57,26 +65,41 @@ Never use image generation for exact values, axes, or benchmark geometry.
 
 1. Inspect the user input and decide whether a figure brief is already present.
 2. If needed, create a brief using `references/figure-brief-spec.md`.
-3. Choose `image` or `mixed` mode.
-4. For conceptual figures, prefer the prompt-builder scripts; read template references only when you need to inspect or customize template wording.
-5. For a mixed figure, obtain quantitative panels from `nature-figure` without
+3. Lock the semantic contract before rendering: nodes, directed relationships,
+   evidence status, visible-text allowlist, prohibited implications, and any
+   unresolved issue ledger.
+4. Choose `openai-image`, `drawio`, or `mixed` mode. Prefer Draw.io when a
+   mislabeled arrow or generated-text error would change the scientific claim.
+5. For image execution, prefer the prompt-builder scripts; read template
+   references only when template wording needs customization.
+6. For Draw.io execution, hand the semantic and render contracts to `drawio`.
+   Keep the `.drawio` source as the primary editable artifact.
+7. For a mixed figure, obtain quantitative panels from `nature-figure` without
    asking image generation to redraw their values, axes, or geometry.
-6. Keep labels short, claims source-grounded, and outputs publication-oriented.
-7. Save prompt/spec/output paths when files are produced.
-8. Before finishing, run only the checks needed for the touched path.
+8. When the brief selects `explore`, create 2-4 structurally distinct low-cost
+   candidates, compare them against one issue ledger, then refine only 1-2
+   directions. Do not use candidate exploration by default.
+9. Audit the final figure against the semantic contract. Reject unsupported
+   arrows, unapproved visible text, reversed flows, duplicated concepts, and
+   decorative elements that imply evidence not present in the brief.
+10. Save prompt/spec/source/output paths when files are produced, then run only
+   the checks needed for the touched path.
 
 ## Reference Loading
 
 Read only what is needed:
 
 - `references/figure-brief-spec.md`: brief structure and mode rules.
+- `references/semantic-render-audit.md`: semantic graph, render graph, text
+  allowlist, candidate comparison, and final audit.
 - `references/publication-figure-design.md`: publication styling defaults.
 - `references/provider-selection.md`: OpenAI-first setup and optional
   Gemini/Banana compatibility.
 - `references/highres-policy.md`: high-resolution and fail-closed rules.
 - `references/chinese-labels.md`: Chinese label readability rules.
 - `references/engineering-figure-templates.md` and `references/materials-science-figure-template.md`: template wording when script output needs customization.
-- `references/editable-figure-handoff.md`: optional editable SVG handoff.
+- `references/editable-figure-handoff.md`: Draw.io-first editable handoff and
+  optional SVG reconstruction.
 
 ## Scripts
 
@@ -106,6 +129,10 @@ python scripts/efa.py check
 
 - Do not fabricate measurements, benchmark values, hardware specs, or unsupported causal claims.
 - Keep arrows, reading order, and module hierarchy explicit.
+- Treat every arrow as a scientific assertion. Match it to an approved semantic
+  edge and preserve direction, relation type, and certainty.
+- Render only allowlisted visible text. Do not let image generation invent
+  acronyms, metrics, stages, captions, or explanatory labels.
 - Favor white backgrounds, publication-style spacing, and readable labels.
 - Use prompt-first workflows when layout fidelity matters.
 - Use the official OpenAI image path by default. Use Gemini, Banana, relays, or

@@ -8,7 +8,14 @@
     "figure_type",
     "mode",
     "panels",
+    "semantic_nodes",
+    "semantic_edges",
+    "render_graph",
+    "visible_text_allowlist",
     "must_keep_labels",
+    "negative_constraints",
+    "issue_ledger",
+    "candidate_mode",
     "data",
     "style_constraints",
     "output_formats",
@@ -18,7 +25,11 @@
     "figure_goal": {"type": "string"},
     "paper_claim": {"type": "string"},
     "figure_type": {"type": "string"},
-    "mode": {"type": "string", "enum": ["image", "plot", "mixed"]},
+    "mode": {
+      "type": "string",
+      "enum": ["openai-image", "drawio", "mixed", "image", "plot"],
+      "description": "Use openai-image, drawio, or mixed. image and plot are accepted only for legacy briefs."
+    },
     "panels": {
       "type": "array",
       "items": {
@@ -33,7 +44,49 @@
         "additionalProperties": true
       }
     },
+    "semantic_nodes": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {"type": "string"},
+          {
+            "type": "object",
+            "required": ["id", "label"],
+            "properties": {
+              "id": {"type": "string"},
+              "label": {"type": "string"},
+              "construct_type": {"type": "string"},
+              "evidence_status": {"type": "string"},
+              "spatial_scale": {"type": "string"},
+              "temporal_scale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "semantic_edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "relation", "evidence_status", "causal"],
+        "properties": {
+          "source": {"type": "string"},
+          "target": {"type": "string"},
+          "relation": {"type": "string"},
+          "evidence_status": {"type": "string"},
+          "causal": {"type": "boolean"},
+          "certainty": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "render_graph": {"type": "object"},
+    "visible_text_allowlist": {"type": "array", "items": {"type": "string"}},
     "must_keep_labels": {"type": "array", "items": {"type": "string"}},
+    "negative_constraints": {"type": "array", "items": {"type": "string"}},
+    "issue_ledger": {"type": "array"},
+    "candidate_mode": {"type": "string", "enum": ["single", "explore"]},
     "data": {"type": "object"},
     "style_constraints": {"type": "array", "items": {"type": "string"}},
     "output_formats": {"type": "array", "items": {"type": "string"}},

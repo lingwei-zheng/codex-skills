@@ -292,7 +292,7 @@ F8 (Non-convergence) → May evolve into F10 (abandonment)
 | Cause | Diagnostic Signs | Recovery Strategy |
 |-------|-----------------|-------------------|
 | **Scope Mismatch** | Editor states "outside journal scope" or "not aligned with journal aims" | Re-analyze journal scope using `top_journals_by_field.md`; identify 3 alternative journals; may need to reframe the paper's contribution |
-| **Insufficient Novelty** | "Incremental contribution" or "well-established findings" | Strengthen the novelty claim in introduction; consider additional analysis or a new dataset; reposition the paper's unique contribution |
+| **Contribution-venue mismatch** | Contribution magnitude is overstated or poorly matched to the venue | State the contribution level honestly; explain replication, regional, measurement, policy, or transferability value; add analysis only when it resolves a material gap; retarget the venue when appropriate |
 | **Formatting Non-Compliance** | Immediate rejection for template/length/style violations | Review target journal's author guidelines; use `formatter_agent` to reformat; resubmit (often same journal accepts after formatting fix) |
 | **Poor Opening** | No specific reason given; likely the abstract/introduction failed to hook | Rewrite abstract with the CARS model (Create A Research Space); lead with the gap, not the background; have `peer_reviewer_agent` evaluate the new opening |
 

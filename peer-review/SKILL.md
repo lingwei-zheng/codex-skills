@@ -8,6 +8,11 @@ description: Use when reviewing an academic journal manuscript, referee report, 
 Produce a rigorous external-reviewer assessment from the manuscript and all
 available supplementary materials.
 
+This is a submission-stage external review and therefore uses comprehensive
+rigor. Do not export its full robustness burden backward into exploratory or
+first-draft workflows; those are calibrated by
+`../shared/research-calibration.md`.
+
 ## Review Stack
 
 1. Read `../academic-research/SKILL.md` and use its
@@ -64,7 +69,9 @@ For relevant geography manuscripts, read only the needed field references:
 - `journal-templates/` for venue fit.
 
 Use a devil's-advocate pass to identify the strongest rejection risk. Explicitly
-test location-only novelty, method stacking without inferential gain,
+test whether a location change has cumulative, transferability, policy,
+measurement, or boundary-condition value; do not reject it for similarity
+alone. Also test method stacking without inferential gain,
 theory-as-label, Discussion restatement, and title overpromise when relevant.
 
 ### 4. Triage And Draft

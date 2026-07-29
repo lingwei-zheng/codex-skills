@@ -8,10 +8,15 @@ Use this card after a domain brief when the user works in one of these familiar 
 2. Translate the user's rough idea into that domain's evidence norms.
 3. Add at least one domain-specific reviewer objection to the Good Question Card.
 4. If the claim depends on current literature, mark it as source-backed, inference, or unknown.
+5. Calibrate expectations with `../../shared/research-calibration.md`. Treat
+   incremental and regional contributions as valid when their added value and
+   venue fit are explicit.
 
 ## Ecology
 
-**Common weak forms:** descriptive pattern hunting, single-site novelty, "biodiversity is important" without a mechanism or decision.
+**Common weak forms:** descriptive pattern hunting with no cumulative,
+management, measurement, or local-decision value; relying on single-site
+newness alone; "biodiversity is important" without a useful question.
 
 **Stronger question forms:**
 - Which mechanism best explains the pattern across environmental gradients, disturbance, or management regimes?
@@ -24,14 +29,21 @@ Use this card after a domain brief when the user works in one of these familiar 
 
 ## Remote Sensing
 
-**Common weak forms:** applying a new model to a new region, benchmark improvement without ground-truth value, visual products without decision relevance.
+**Common weak forms:** treating a new region as self-justifying without naming
+replication, transferability, underrepresentation, measurement, or decision
+value; benchmark improvement without ground-truth value; visual products
+without an evidentiary use.
 
 **Stronger question forms:**
 - What uncertainty does the sensor/model resolve that simpler baselines cannot?
 - Where does transfer fail across regions, seasons, sensors, or management contexts?
 - How much uncertainty is acceptable for the intended decision?
 
-**Evidence norms:** ground truth quality, spatial/temporal scale mismatch, baseline comparison, domain shift, uncertainty calibration, leakage checks.
+**Evidence norms:** ground truth quality, spatial/temporal scale mismatch,
+baseline comparison, domain shift, uncertainty calibration, and leakage checks.
+For a first draft, prioritize leakage, one simple baseline, and the single
+scale/validation issue most likely to change the result; defer exhaustive
+robustness work.
 
 **Reviewer objections:** weak validation data, no simple baseline, model learns site artifacts, accuracy gain does not change any decision.
 
@@ -44,7 +56,10 @@ Use this card after a domain brief when the user works in one of these familiar 
 - Which simpler model or mechanistic baseline must the method beat to matter?
 - What would make improved prediction scientifically informative rather than only operationally useful?
 
-**Evidence norms:** leakage control, out-of-distribution tests, ablations, baseline strength, uncertainty calibration, interpretability tied to a scientific claim.
+**Evidence norms:** leakage control, baseline strength, uncertainty,
+interpretability, and out-of-distribution or ablation tests when they address
+the paper's main claim. Do not require the entire suite for an exploratory or
+first-draft analysis.
 
 **Reviewer objections:** benchmark is disconnected from the scientific question, data leakage, insufficient baseline, no insight beyond prediction.
 

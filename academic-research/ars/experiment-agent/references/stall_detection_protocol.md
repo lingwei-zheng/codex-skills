@@ -27,6 +27,19 @@ Defines monitoring thresholds for code_runner_agent. All thresholds are user-ove
 - **Override**: User sets `memory_multiplier_limit`
 - **Action**: ADVISORY — possible memory leak, suggest investigation
 
+### LOW_UTILIZATION
+
+- **What**: A long, parallelizable task uses little available CPU/GPU while
+  throughput remains poor
+- **Detection**: utilization remains below 35% of the relevant device for 3
+  checks and measured throughput is below the pilot or early-run expectation
+- **Exceptions**: I/O-bound work, network waits, serial algorithms, deliberate
+  laptop-safe settings, or small tasks where parallel overhead dominates
+- **Action**: ADVISORY — identify likely serial loop, worker configuration,
+  small batch, repeated I/O, data copy, or accelerator mismatch
+- **Do not**: add workers before checking memory pressure, I/O wait, and task
+  granularity
+
 ### SLOW_PROGRESS (etl and simulation types)
 
 - **What**: Experiment progressing slower than expected
@@ -34,6 +47,18 @@ Defines monitoring thresholds for code_runner_agent. All thresholds are user-ove
 - **Default threshold**: Actual rate < 50% of expected rate (calculated from first 10% of progress)
 - **Override**: User sets `progress_rate_threshold`
 - **Action**: ADVISORY — show current rate, revised ETA
+
+Apply the same logic to analysis and training when units processed, batches,
+folds, tiles, files, or iterations can be observed.
+
+### THROUGHPUT_REGRESSION
+
+- **What**: Units processed per minute fall substantially after the pilot or
+  early stable period
+- **Default threshold**: current rate < 50% of pilot or early-run rate for 3
+  checks
+- **Action**: ADVISORY — show ETA and inspect memory pressure, cache misses,
+  data growth, checkpoint overhead, thermal throttling, and worker imbalance
 
 ### HARD_TIMEOUT
 
@@ -48,6 +73,9 @@ Defines monitoring thresholds for code_runner_agent. All thresholds are user-ove
 - Override: User sets `check_interval_seconds`
 - Minimum: 10 seconds (to avoid excessive polling overhead)
 - Maximum: 300 seconds (5 minutes — longer gaps risk missing transient failures)
+
+For tasks shorter than five minutes, prefer one pilot measurement and final
+runtime reporting over continuous monitoring.
 
 ## Alert Behavior
 

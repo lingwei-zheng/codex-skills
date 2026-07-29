@@ -13,6 +13,11 @@ draft into a question that is important, tractable, falsifiable, and defensible.
 - Prefer one sharp question over many decorative ideas.
 - Separate the topic, problem, hypothesis, and project plan.
 - Treat novelty as insufficient unless the question also matters.
+- Separate novelty from contribution. Direct replication, regional extension,
+  and modest data, measurement, implementation, or method improvements are
+  valid when their value and venue fit are stated honestly.
+- Do not reject a question merely because it resembles prior work. Identify
+  what becomes more credible, transferable, measurable, or useful.
 - Make hidden assumptions and competing explanations explicit.
 - Do not let a preferred method create the research problem.
 - Never turn "I do not know of work on X" into "nobody has studied X."
@@ -42,7 +47,8 @@ draft into a question that is important, tractable, falsifiable, and defensible.
 ## Workflow
 
 1. **Check information sufficiency.** Read
-   [references/question-workflow.md](references/question-workflow.md). Retrieve
+   [references/question-workflow.md](references/question-workflow.md) and
+   `../shared/research-calibration.md`. Retrieve
    current evidence before field-specific ideation when novelty, literature
    consensus, reviewer expectations, journal fit, or technical feasibility
    affects the recommendation.
@@ -52,8 +58,10 @@ draft into a question that is important, tractable, falsifiable, and defensible.
 3. **Generate candidates.** Use a small mix of importance, assumption challenge,
    strong inference, boundary probing, structural analogy, simplicity, and
    stakeholder lenses. Keep candidates comparable and falsifiable.
-4. **Converge.** Score importance, feasibility, falsifiability, evidence leverage,
-   originality, and downside learning. Drop questions that fail a kill rule.
+4. **Converge.** Score importance, feasibility, falsifiability, evidence
+   leverage, contribution value, venue fit, and downside learning. Classify the
+   contribution level instead of demanding maximal originality. Drop questions
+   only when they fail a fatal rule.
 5. **Stress-test finalists.** Name competing hypotheses, a discriminating test,
    the strongest reviewer objection, and what evidence would kill the idea.
 6. **Deliver a decision.** Produce one to three Good Question Cards and, when the

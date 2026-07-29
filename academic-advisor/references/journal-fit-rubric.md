@@ -4,7 +4,10 @@ Use this whenever the user asks for journal targeting or provides a journal list
 
 ## Ranking Default
 
-Default to ambitious targeting: identify the strongest high-impact route first, then realistic and fallback routes. Do not pretend the high target is ready if the manuscript requires major repositioning.
+Lead with the strongest credible route. Match venue ambition to the paper's
+contribution level, evidence maturity, readership, and revision budget. Add a
+stretch route only when the minimum upgrade is plausible; do not invent a high
+target to complete a three-tier template.
 
 ## Journal List Handling
 
@@ -19,6 +22,7 @@ Default to ambitious targeting: identify the strongest high-impact route first, 
 |---|---|
 | Scope | Does the journal publish this problem, method, geography, or audience? |
 | Contribution form | Does the paper offer the type of contribution the journal rewards? |
+| Contribution magnitude | Does the journal welcome replication, regional extension, incremental improvement, or require a broader mechanism/theory advance? |
 | Evidence level | Does the design meet the journal's evidentiary expectations? |
 | Readership | Would the journal's readers care without excessive translation? |
 | Method norm | Are data, models, spatial units, causality claims, and uncertainty reporting acceptable? |
@@ -27,11 +31,15 @@ Default to ambitious targeting: identify the strongest high-impact route first, 
 
 ## Required Journal Ladder
 
-Return at least three route classes when possible:
+Return up to three route classes when useful:
 
-- `High target`: ambitious venue, strongest payoff, explicit minimum reframe required.
+- `Stretch target`: ambitious but plausible venue, with an explicit minimum
+  evidence or framing upgrade.
 - `Realistic target`: best fit if current evidence/design is mostly retained.
 - `Fallback target`: credible route with lower transformation cost.
+
+For a sound incremental or regional paper, a specialist or regional journal can
+be the primary recommendation rather than a fallback.
 
 For each journal include:
 
@@ -44,6 +52,8 @@ For each journal include:
 ## Do Not
 
 - Rank only by impact factor.
-- Recommend a top journal without saying what must change.
+- Recommend a stretch journal without a plausible upgrade path.
+- Penalize a paper merely for being incremental when the contribution matches
+  the venue and is stated accurately.
 - Treat a journal list as a passive appendix.
 - Claim fit based only on title keywords.

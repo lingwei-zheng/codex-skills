@@ -30,7 +30,9 @@ publication plots and multi-panel empirical figures.
    `experiment-agent`.
 2. If the figure is geography, human geography, GIScience, GeoAI, spatial
    analysis, environmental exposure, or health geography work, optionally read
-   only the relevant files in `../shared/field-context/`.
+   only the relevant files in `../shared/field-context/`. Read
+   `../shared/field-context/geography-conceptual-figure-patterns.md` when
+   selecting the figure structure.
 3. Review the proposed figure logic before design:
    - research question and central claim
    - theoretical constructs or variables
@@ -38,20 +40,31 @@ publication plots and multi-panel empirical figures.
    - spatial and temporal units when relevant
    - claim-evidence boundaries and likely reviewer objections
    - what must not be implied by the figure
-4. Produce a figure brief with:
+4. Build a semantic contract before choosing layout:
+   - approved nodes with construct type and evidence status
+   - approved directed or undirected relationships
+   - relation type, certainty, and causal status for every edge
+   - spatial and temporal scale attached to the relevant nodes or edges
+   - competing explanations and unresolved decisions in an issue ledger
+5. Produce a figure brief using
+   `../engineering-figure-agent/references/figure-brief-spec.md`, including:
    - one-sentence figure purpose
    - audience and paper section
    - central claim or argument
-   - node list and relationship list
-   - panel or layer plan
-   - visual hierarchy and reading order
+   - semantic graph and render graph
+   - panel, region, container, or layer plan
+   - visual hierarchy, reading order, and edge ports
+   - exact visible-text allowlist
    - label language, normally English unless the user asks otherwise
-   - prohibited visual implications
+   - negative constraints and prohibited visual implications
+   - `candidate_mode: single` or, only when structure is genuinely ambiguous,
+     `candidate_mode: explore`
    - caption draft or caption logic
-5. Hand the brief to `engineering-figure-agent` for prompt, schematic, image,
-   redraw, or editable-figure execution. Use `nature-figure` separately for
-   quantitative or statistical panels. Do not ask either execution skill to
-   reinterpret the theory from scratch.
+6. Hand the brief to `engineering-figure-agent`. Use its OpenAI image route for
+   illustrative synthesis and its `drawio` route for exact, editable,
+   label-heavy frameworks. Use `nature-figure` separately for quantitative or
+   statistical panels. Do not ask an execution skill to reinterpret the theory
+   from scratch.
 
 ## Output Contract
 
@@ -61,10 +74,18 @@ When the user asks to create the figure, first return or save the brief, then us
 `engineering-figure-agent` to execute it. Preserve the brief as the reviewable
 source of truth for later iterations.
 
+For `candidate_mode: explore`, keep the semantic graph fixed while comparing
+2-4 structural candidates. Refine only 1-2 selected directions. Use one issue
+ledger across candidates so rejected problems do not silently return.
+
 ## Quality Rules
 
 - Do not invent theory, mechanisms, variables, hypotheses, data, or citations.
 - Separate confirmed evidence from design interpretation.
+- Treat every arrow as a claim and record its relation type, direction,
+  certainty, and causal status before rendering.
+- Do not merge constructs merely to simplify layout. Simplify the render graph,
+  not the semantic graph.
 - Avoid causal arrows unless causality is part of the study design or theory.
 - For spatial work, state the spatial unit and avoid implying scale-free effects.
 - For health geography, separate exposure, vulnerability, access, outcome, and

@@ -1,7 +1,7 @@
 interface:
   display_name: "Engineering Figure Agent"
-  short_description: "Provider-neutral engineering figures and exact plots."
-  default_prompt: "Use $engineering-figure-agent to execute a reviewed engineering or research schematic with the official OpenAI image path by default, while preserving claim and numeric boundaries."
+  short_description: "Execute reviewed schematics with OpenAI or Draw.io."
+  default_prompt: "Use $engineering-figure-agent to execute my reviewed figure brief with an OpenAI image or editable Draw.io backend while preserving its semantic contract."
 
 policy:
   allow_implicit_invocation: true

@@ -73,6 +73,25 @@ Help me design an experiment to test whether AI tools improve QA officer product
 | Wants to figure out what experiment to do | `plan` |
 | Ambiguous | Ask: "Are you running code or managing a human study?" |
 
+## Calibration Profile
+
+Before `plan`, `run`, or `validate`, read
+`../../../shared/research-calibration.md` and infer:
+
+- `research_stage`
+- `rigor_profile`
+- `contribution_profile`
+- `compute_profile`
+
+For ordinary analysis development with no stated stage, use
+`first-draft + proportionate + incremental-allowed + balanced`.
+
+In `first-draft`, prioritize the primary analysis, one simple baseline, the
+single most consequential diagnostic, and at most two additional checks tied to
+a named risk. Record other checks as deferred rather than running them
+automatically. Submission, systematic-review, causal, high-stakes, and
+review-response tasks may require stronger profiles.
+
 ---
 
 ## Routing
@@ -95,7 +114,12 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 2. **INTERPRET** — Item-by-item analysis. See `references/statistical_interpretation_guide.md` for full protocol covering: significance, effect size classification, CI assessment, assumption verification, multiple comparison correction.
 
-3. **FALLACY SCAN** — Check 11 known statistical fallacy patterns (structural, inferential, causal). See `references/statistical_interpretation_guide.md` for the full checklist. All 11 must be checked; report coverage in output.
+3. **RISK-CALIBRATED FALLACY SCAN** — Use
+   `references/statistical_interpretation_guide.md` as the available checklist,
+   not as an automatic first-draft workload. Check every pattern relevant to the
+   design and claim. Full 11-type coverage is required only for formal
+   validation, submission-readiness, or when the user explicitly asks for a
+   comprehensive audit. Report checked, deferred, and not-applicable items.
 
 4. **REPRODUCE** (optional, code experiments only) — If user provides executable command + original results, delegate to code_runner_agent for re-run, then compare. See `references/reproducibility_protocol.md`. Not applicable to human studies or non-rerunnable external systems.
 
@@ -117,7 +141,13 @@ Socratic dialogue to help users design experiments before running them. plan mod
 4. **Method selection** — Based on RQ + design, suggest appropriate methods
 5. **Sample** — Population, sampling strategy, power analysis for sample size
 6. **Analysis strategy** — Which statistical tests? What are the assumptions?
-7. **Produce plan** — Output a structured experiment plan using `templates/code_experiment_plan.md` or `templates/study_protocol.md`
+7. **Rigor budget** — Separate immediate validity checks from deferred
+   robustness checks according to research stage and claim risk.
+8. **Performance contract** — For code work, define pilot size, expected
+   bottleneck, worker strategy, caching/checkpointing, utilization monitoring,
+   and ETA before a long run.
+9. **Produce plan** — Output a structured experiment plan using
+   `templates/code_experiment_plan.md` or `templates/study_protocol.md`
 
 One question at a time. Multiple choice preferred. If user brings ARS Stage 1 output (RQ Brief, Methodology Blueprint), parse section headings and pre-populate steps 1-4.
 
@@ -143,8 +173,9 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | Standard | Requirement |
 |----------|-------------|
 | Monitoring coverage | Every code experiment must have at least process-alive + timeout monitoring |
-| Statistical rigor | All 11 fallacy types must be checked in validate mode; coverage reported |
+| Statistical rigor | Proportionate to stage and claim risk; full 11-type coverage only for comprehensive validation |
 | Reproducibility | Deterministic experiments: exact match required. Stochastic: < 5% relative diff default |
+| Runtime efficiency | Long code runs require a pilot estimate, utilization monitoring, and bottleneck-aware execution |
 | ARS compatibility | All outputs include Material Passport with required fields per ARS Schema 9 |
 | User sovereignty | All anomaly detections are ADVISORY; only hard timeout auto-kills |
 
@@ -154,7 +185,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 
 | # | Rule |
 |---|------|
-| 1 | Only execute user-specified commands — never auto-generate or modify scripts |
+| 1 | Never silently change scientific parameters. Performance refactoring is allowed when requested or needed to execute the user's analysis, but verify equivalence on a small sample first |
 | 2 | Never auto-retry crashed experiments — notify user, user decides |
 | 3 | Never auto-kill except hard timeout — notify before kill |
 | 4 | Monitor only user-specified output paths |
@@ -174,8 +205,9 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | 1 | Auto-modifying user's experiment code | Violates safety rule 1; user owns their code |
 | 2 | Silently retrying a crashed run | Masks the real error; wastes compute |
 | 3 | Reporting p < .05 as "the result is significant" without effect size | Statistical significance without practical significance is misleading |
-| 4 | Skipping fallacy scan because "results look clean" | Fallacies are invisible without systematic checking |
+| 4 | Running every possible robustness or fallacy check on a first draft | Wastes time and obscures the main result; use stage- and risk-triggered checks |
 | 5 | Making editorial recommendations in validate mode | That's the reviewer's job, not ours |
+| 6 | Letting a long process run at low utilization without profiling | Completion monitoring is not performance management |
 
 ---
 
@@ -189,6 +221,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | `references/reproducibility_protocol.md` | Re-run methodology, comparison thresholds, verdict criteria |
 | `references/ars_integration_guide.md` | ARS Material Passport, handoff format, pipeline bridging |
 | `templates/output_formats.md` | Complete Markdown output templates for all three output types |
+| `../../../shared/research-calibration.md` | Research stage, rigor budget, contribution ladder, and compute profile |
 
 ---
 

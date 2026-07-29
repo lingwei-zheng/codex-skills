@@ -14,7 +14,7 @@ What claim, method contribution, or result does the figure support?
 
 ## Mode
 
-`image` / `plot` / `mixed`
+`openai-image` / `drawio` / `mixed`
 
 ## Panels
 
@@ -22,9 +22,48 @@ What claim, method contribution, or result does the figure support?
 |---|---|---|---|
 | A |  |  |  |
 
+## Semantic Graph
+
+### Nodes
+
+| ID | Exact label | Construct type | Evidence status | Spatial/temporal scale |
+|---|---|---|---|---|
+|  |  |  |  |  |
+
+### Edges
+
+| Source | Target | Relation | Evidence status | Causal? | Certainty |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+
+## Render Graph
+
+- Reading order:
+- Containers or layers:
+- Edge ports and routing:
+- Visual encodings:
+
+## Visible-Text Allowlist
+
+-
+
 ## Must-Keep Labels
 
 - 
+
+## Negative Constraints
+
+-
+
+## Issue Ledger
+
+| ID | Open issue | Scientific or visual? | Status |
+|---|---|---|---|
+|  |  |  |  |
+
+## Candidate Mode
+
+`single` / `explore`
 
 ## Data
 
@@ -48,6 +87,9 @@ What claim, method contribution, or result does the figure support?
 ## Verification Checklist
 
 - [ ] The figure supports the stated paper claim.
+- [ ] Every rendered node and arrow maps to the semantic graph.
+- [ ] Every visible label appears in the allowlist and is spelled exactly.
+- [ ] Negative constraints are satisfied and open issues remain disclosed.
 - [ ] All labels are readable at intended paper size.
 - [ ] No unsupported numeric or scientific claims are shown.
-- [ ] Plot values, axes, and legends are exact when plot mode is used.
+- [ ] Quantitative panels from `nature-figure` preserve exact values, axes, and legends.

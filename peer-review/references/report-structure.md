@@ -66,6 +66,10 @@ supplement pointer and disclose the limitation.
 
 Do not recommend rejection merely because revision is substantial. Do not use
 major revision to avoid naming an unfixable validity failure.
+Do not recommend rejection merely because the contribution is incremental,
+replicative, or regionally bounded. Judge whether that contribution is useful,
+accurately framed, and suitable for the journal; reject only when the claimed
+contribution is unsupported or the venue mismatch is decisive.
 
 ## Final Report Check
 

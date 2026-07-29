@@ -16,6 +16,13 @@ metadata:
 
 Universal deep research tool — a domain-agnostic 13-agent team for rigorous academic research on any topic.
 
+> **Local calibration:** Read `../../../shared/research-calibration.md` before
+> scoping. Default to `first-draft`, `proportionate`,
+> `incremental-allowed`, and `balanced` unless the user or project state
+> indicates otherwise. Similar prior work does not invalidate a question when
+> the replication, regional extension, measurement improvement, or modest
+> method gain has explicit value and venue fit.
+
 **v2.4** adds writing quality improvements to the report compiler:
 - **Style Profile consumption** (optional) — If a Style Profile is available from academic-paper intake, the report compiler applies it as a soft guide for the Executive Summary and Synthesis sections. Discipline conventions and report objectivity take priority.
 - **Writing Quality Check** — The report compiler runs a writing quality checklist before finalizing: flags AI-typical overused terms, checks sentence/paragraph length variation, removes throat-clearing openers. See `academic-paper/references/writing_quality_check.md`.

@@ -23,6 +23,9 @@ Before executing anything, extract from the user's request:
 | `timeout` | No | Max duration before kill (default: 30 minutes) |
 | `monitor_files` | No | Files to watch for progress (e.g., log files) |
 | `experiment_type` | No | Override auto-detection (see below) |
+| `research_stage` | No | `exploratory`, `first-draft`, `submission`, or `review-response` |
+| `compute_profile` | No | `quick`, `balanced` (default), or `max-throughput` |
+| `expected_units` | No | Rows, files, iterations, tiles, models, or other progress denominator |
 
 **Auto-detect experiment type** from command and file patterns:
 
@@ -36,14 +39,35 @@ Before executing anything, extract from the user's request:
 
 If auto-detection is uncertain, ask the user. User can always override.
 
-### 2. EXECUTE — Start the Process
+### 2. PROFILE — Estimate Before A Long Run
 
-1. Confirm the command with the user: "I'm about to run: `[command]` in `[dir]`. Proceed?"
+Read `../../../../shared/research-calibration.md`. For work likely to run longer
+than a few minutes:
+
+1. Detect available CPU cores, memory, GPU, and relevant runtime limits.
+2. Run a 1-5% pilot or one representative work unit when feasible.
+3. Measure elapsed time, throughput, peak memory, CPU/GPU utilization, and I/O
+   behavior.
+4. Estimate full-run duration and name the likely bottleneck.
+5. Choose a worker count, chunk/batch size, caching, checkpoint, and output
+   strategy appropriate to `compute_profile`.
+6. When changing implementation for speed, compare optimized and reference
+   outputs on the pilot. Preserve scientific parameters.
+
+Skip the pilot when its setup cost exceeds the likely full run, but still record
+the expected bottleneck.
+
+### 3. EXECUTE — Start the Process
+
+1. Confirm the command only when it is expensive, destructive, or materially
+   different from the user's requested analysis. Routine diagnostics and pilot
+   runs do not require a separate confirmation.
 2. Start via Bash tool in background mode
-3. Record: start timestamp, PID, initial RSS memory
+3. Record: start timestamp, PID, initial RSS memory, CPU/GPU utilization,
+   worker count, and pilot throughput when available
 4. Set timeout timer
 
-### 3. MONITOR — Watch for Problems
+### 4. MONITOR — Watch for Problems
 
 Run monitoring checks every 30 seconds (configurable). See `references/stall_detection_protocol.md` for full threshold definitions.
 
@@ -55,6 +79,8 @@ Run monitoring checks every 30 seconds (configurable). See `references/stall_det
 | Process alive | PID no longer running + exit code == 0 | → COMPLETED |
 | Output stall | Monitored files unchanged for 3 consecutive checks (90s) | → STALL_SUSPECTED (ADVISORY) |
 | Resource anomaly | RSS memory > 3x initial | → RESOURCE_ALERT (ADVISORY) |
+| Low utilization | Poor throughput with persistently low CPU/GPU use for a parallelizable task | → LOW_UTILIZATION (ADVISORY) |
+| Throughput regression | Units/time falls below 50% of pilot or early-run rate | → SLOW_PROGRESS (ADVISORY) |
 | Hard timeout | Duration exceeds timeout | → Kill process, report |
 
 **Type-specific checks (only if user provided log path/format):**
@@ -64,9 +90,13 @@ Run monitoring checks every 30 seconds (configurable). See `references/stall_det
 | Metric plateau | training | Last K steps metric change < 0.1% | ADVISORY: suggest early stop |
 | Slow progress | etl, simulation | Progress < 50% expected rate | ADVISORY: show ETA |
 
+Do not equate high CPU usage with efficiency. Check I/O wait, memory pressure,
+task granularity, worker oversubscription, and whether the workload is actually
+parallelizable before adding workers.
+
 All detections except hard timeout are **ADVISORY** — notify user with options (continue / kill / adjust), never auto-act.
 
-### 4. DECIDE — Handle Anomalies
+### 5. DECIDE — Handle Anomalies
 
 When an anomaly is detected, present to user:
 
@@ -84,25 +114,34 @@ D. [Type-specific suggestion, e.g., "Try early stopping"]
 
 Wait for user response. If user doesn't respond within 2 checks, repeat the alert once. After that, continue silently (do not spam).
 
-### 5. COLLECT — Gather Results
+For `LOW_UTILIZATION` or `SLOW_PROGRESS`, include one bottleneck diagnosis and a
+specific optimization option such as vectorization, larger batches, fewer
+copies, cached reads, parallel workers, or a different storage format. Do not
+change the scientific specification.
+
+### 6. COLLECT — Gather Results
 
 After the process ends (any reason):
 
 1. Collect exit code and final stderr (last 50 lines)
 2. List all files in expected output paths with sizes
 3. If output is structured (CSV/JSON/parquet): produce summary stats (row count, column names, basic descriptives)
-4. Compile `experiment_result` in Markdown format (see SKILL.md Output Formats)
-5. Suggest: "Results collected. Run `validate` mode to check statistical integrity?"
+4. Report elapsed time, average throughput, peak memory, and utilization when measured
+5. Compile `experiment_result` in Markdown format (see SKILL.md Output Formats)
+6. Suggest only the validation depth appropriate to the active research stage
 
 ---
 
 ## Safety Rules
 
-1. **Never modify the user's command** — execute exactly as given
+1. **Never silently change scientific parameters.** Command or implementation
+   changes for performance are allowed only when they preserve the scientific
+   specification and pass a pilot equivalence check
 2. **Never auto-retry** — if it crashes, report and let user decide
 3. **Never auto-kill** — only hard timeout kills. Always notify first.
 4. **Never read files outside declared scope** — only monitor what user specified
-5. **Confirm before execution** — always show the command and ask for go-ahead
+5. **Confirm expensive or consequential execution** — routine pilots and
+   diagnostics may proceed as part of the requested task
 
 These are in addition to SKILL.md Safety Rules (which apply to all modes).
 

@@ -129,7 +129,9 @@ Check ALL 11 types for every validation. Report coverage in output ("11/11 check
 
 **9. Garden of Forking Paths**
 - **What**: Many researcher degrees of freedom (outlier removal criteria, variable transformations, model specifications) but only one path reported
-- **Detection**: No pre-registration; analysis described only in final form; no robustness checks
+- **Detection**: Undisclosed researcher degrees of freedom, selective reporting,
+  or a confirmatory claim that depends on one unmotivated specification.
+  Absence of exhaustive robustness checks is not itself a first-draft failure.
 - **When to suspect**: Complex analyses with many decision points
 - **Severity if found**: NOTE if exploratory; CAUTION if presented as confirmatory
 

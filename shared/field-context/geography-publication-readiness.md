@@ -4,6 +4,10 @@ Use this domain gate for geography, human geography, GIScience, GeoAI, remote se
 
 This is an evaluation aid, not a journal rule. Verified author guidelines and the actual study design take priority. Do not infer additional rules beyond these five checks.
 
+Read `../research-calibration.md` first. Calibrate the verdict to research stage,
+claim strength, contribution level, and target venue. A first draft is not
+expected to satisfy every submission-stage repair.
+
 ## 1. Geographic Contribution
 
 Assess increment across six dimensions:
@@ -17,7 +21,24 @@ Assess increment across six dimensions:
 | Data | Makes a previously unobservable process testable | Uses a newer dataset for the same claim |
 | Method | Resolves an important inferential or measurement failure | Uses a more complex model for prestige |
 
-Apply the **location-swap gate**: changing only the study area is low novelty unless the place is an analytically necessary case that tests a boundary condition, a theory failure, a mechanism contrast, or consequential transferability.
+Classify the contribution using the shared five-level ladder: direct
+replication, contextual/regional extension, incremental improvement,
+mechanism/boundary contribution, or theory/method advance. Do not treat the
+first three levels as invalid; evaluate whether they add credible and useful
+evidence and whether the venue fits their magnitude.
+
+Apply a **location-value check**, not a location-swap veto. A new study area can
+support a valid contribution through:
+
+- underrepresented populations or places
+- local policy, planning, service, or environmental-health relevance
+- independent replication and cumulative evidence
+- improved data coverage, temporal depth, or measurement
+- transferability assessment across institutions, regions, or spatial regimes
+- a consequential comparison even without a new theory
+
+If none applies, recommend a narrower contribution claim or a better-fitting
+venue. Do not block the study merely because its advance is incremental.
 
 Do not treat an empty cell in a literature matrix as sufficient novelty. State what belief, explanation, measurement, or decision changes if the gap is filled.
 
@@ -37,7 +58,10 @@ For each proposed method, state: what uncertainty it resolves, what evidence it 
 
 - Method complexity is not novelty. A complex method must resolve an important uncertainty that the simpler baseline cannot.
 - Mixed methods are not the default. Use them only when each evidence stream answers a distinct, necessary, complementary part of the question and the integration point is explicit.
-- Check MAUP, ecological fallacy, spatial dependence, spatial leakage, scale mismatch, temporal mismatch, and cross-region transfer before approving the design.
+- Classify MAUP, ecological fallacy, spatial dependence, spatial leakage, scale
+  mismatch, temporal mismatch, and cross-region transfer by relevance to the
+  main claim. For a first draft, run only the checks that could invalidate the
+  primary result; defer the rest with explicit triggers.
 
 ## 3. Theory-Mechanism Fit
 
@@ -84,3 +108,7 @@ A title should expose the object and central contribution without promising more
 ## Five-Gate Verdict
 
 Report each gate as `pass`, `repair`, or `block`, with one-sentence evidence and the minimum repair. The weakest gate controls readiness when it threatens the paper's central contribution. Presentation quality cannot compensate for a blocked question, design, or evidence chain.
+
+Use `block` only for a fatal question, design, evidence, or claim mismatch at the
+current decision stage. Incremental contribution alone warrants honest framing
+and venue calibration, not a block.

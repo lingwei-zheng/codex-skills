@@ -4,6 +4,10 @@ Read this reference when running the full question-development workflow. It is
 the source of truth for information sufficiency, intake, scoring, kill rules,
 card structure, onboarding, and response order.
 
+Also read `../../shared/research-calibration.md`. Default to
+`incremental-allowed` unless the user or target venue explicitly requires a
+larger contribution.
+
 ## Information Sufficiency Gate
 
 Proceed without retrieval when:
@@ -52,6 +56,8 @@ Extract or ask for:
 - available data, methods, collaborators, time, equipment, and access;
 - target output: thesis, paper, grant, pilot, rebuttal angle, or long-term
   direction;
+- acceptable contribution ambition: replication, contextual extension,
+  incremental improvement, mechanism/boundary, or theory/method advance;
 - venue, ethics, sample size, field site, compute, seasonality, and other hard
   constraints.
 
@@ -85,13 +91,15 @@ Score promising candidates from one to five:
 | Feasibility | Credible evidence is possible with available resources |
 | Falsifiability | Observable results could weaken or kill the idea |
 | Evidence leverage | A small pilot can change belief meaningfully |
-| Originality | The question challenges assumptions or combines fields non-trivially |
+| Contribution value | The work adds credible replication, transferability, measurement, method, mechanism, theory, or decision value |
+| Venue fit | The contribution magnitude and evidence match a plausible outlet |
 | Downside learning | A negative result remains useful or publishable |
 
 Drop or park candidates when:
 
 - no clear beneficiary, theoretical stake, or practical consequence exists;
-- novelty is only "nobody has done X";
+- novelty is only "nobody has done X" and no credible replication,
+  transferability, measurement, policy, or cumulative-evidence value is named;
 - no plausible falsifier can be named;
 - required resources exceed the user's constraints;
 - the method appears before the problem;
@@ -101,7 +109,9 @@ Drop or park candidates when:
 
 For the strongest one to three candidates:
 
-1. Name at least two competing explanations.
+1. Name competing explanations when the claim is explanatory or causal. For
+   replication or descriptive work, name the benchmark, prior estimate, or
+   transferability expectation being tested.
 2. Identify an observation or experiment that distinguishes them.
 3. State what result would weaken or kill the preferred explanation.
 4. Design a two-week pilot or the smallest feasible evidence test.
@@ -122,6 +132,8 @@ Use this stable schema:
 **Competing hypotheses:**
 **Discriminating observation or experiment:**
 **What would falsify it:**
+**Contribution level:**
+**What this adds beyond prior work:**
 **Two-week pilot:**
 **Data/resources needed:**
 **Strongest reviewer objection:**
@@ -140,6 +152,8 @@ For Chinese responses, use:
 **竞争性解释：**
 **关键判别证据或实验：**
 **什么结果会推翻它：**
+**贡献层级：**
+**相较既有研究增加了什么：**
 **两周内可做的 pilot：**
 **需要的数据/资源：**
 **最强评审质疑：**

@@ -17,10 +17,20 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 
 ## Defaults
 
-- Always perform deep evidence grounding: read `references/zotero-evidence-workflow.md`, check Zotero readiness, search Zotero first, then use web literature or journal searches when Zotero is unavailable, sparse, or insufficient for current evidence, target-journal fit, or novelty claims.
+- Read `../shared/research-calibration.md` and infer the research stage,
+  contribution level, rigor profile, and compute profile before judging the
+  project. If the user does not specify them, use the shared defaults.
+- Ground decisive recommendations in evidence: read
+  `references/zotero-evidence-workflow.md`, check Zotero readiness, and search
+  Zotero first. For rough ideas and first drafts, use a targeted search around
+  the decision-critical claims; reserve comprehensive novelty and journal
+  benchmarking for submission or explicit deep-evaluation requests.
 - Default report language: Simplified Chinese. English manuscripts, English journal names, and English source metadata do not change the report language. Use English only when the user explicitly asks for an English report or when a specific submission-ready English passage is requested.
 - Default domain baseline: geography, human geography, GIScience, health geography, spatial analysis, and environmental or health geography when relevant.
-- Journal strategy defaults to ambitious targeting: recommend a high-impact route first, then realistic and fallback options with explicit risk.
+- Match journal ambition to the contribution and evidence already present.
+  Include a stretch route only when its minimum upgrade is plausible; do not
+  treat specialist, regional, replication, or incremental venues as inferior
+  when they are the best scholarly fit.
 - Do not edit the proposal or manuscript by default. Produce a separate assessment report unless the user explicitly asks for rewriting.
 
 ## Routing Boundaries
@@ -39,13 +49,21 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 
 1. Intake the provided proposal, idea file, manuscript, and optional journal list.
 2. Classify the task as `idea-proposal`, `manuscript-pre-submission`, `journal-targeting-only`, or `revision-strategy`.
-3. Build evidence before giving a mature recommendation:
+3. Apply the shared calibration profile:
+   - Name the research stage and contribution level.
+   - Separate checks needed now from checks that can be deferred.
+   - Do not penalize a first draft for omitting submission-stage robustness
+     unless the omission makes the current result invalid or misleading.
+4. Build evidence before giving a mature recommendation:
    - Read `references/zotero-evidence-workflow.md`.
    - Run a Zotero readiness check and search Zotero for core theory, methods, adjacent papers, target-journal examples, and missing references.
-   - Browse the web for latest papers, journal scope, author guidelines, recent special issues, and representative target-journal articles only when Zotero is unavailable, sparse, outdated, or insufficient for the decision.
+   - Scale search depth to the decision: targeted evidence is enough for an
+     early-stage diagnosis; journal scope, current guidelines, recent special
+     issues, and representative articles require current web verification when
+     recommending a submission route.
    - Maintain an evidence ledger with `来源支持 Source-backed`, `推断 Inference`, and `未知/待核查 Unknown`.
    - If Zotero is unavailable, do not silently skip it; report the exact blocker in the evidence ledger.
-4. Select only the lenses needed for the classified task:
+5. Select only the lenses needed for the classified task:
    - `idea-proposal`: good-question for importance, tractability, falsifier,
      pilot, hidden assumptions, and reviewer risk; academic-research for
      literature positioning, design, methods, and contribution.
@@ -57,8 +75,8 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
      shape affects fit.
    - `revision-strategy`: load only the question, story, research, or journal
      lens implicated by the requested revision.
-5. If a journal list is supplied, treat it as an active constraint and ranking pool, not an appendix. Read `references/journal-fit-rubric.md`.
-6. Produce one integrated report using `templates/integrated-advisor-report.md`.
+6. If a journal list is supplied, treat it as an active constraint and ranking pool, not an appendix. Read `references/journal-fit-rubric.md`.
+7. Produce one integrated report using `templates/integrated-advisor-report.md`.
 
 ## Reference Loading
 
@@ -66,6 +84,8 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 - Read `references/evidence-triangulation.md` before making novelty, literature-gap, or target-journal claims.
 - Read `references/zotero-evidence-workflow.md` whenever evidence grounding is required.
 - Read `references/journal-fit-rubric.md` when the user provides a journal list or asks where to submit.
+- Read `../shared/research-calibration.md` for stage, rigor, contribution, and
+  compute defaults.
 - For a completed manuscript whose story affects submission readiness, read
   `../good-story/SKILL.md` and preserve its stable story handoff.
 - For geography-related proposals or manuscripts, read `../shared/field-context/geography-publication-readiness.md` and include its five-gate diagnosis.
@@ -76,6 +96,12 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 - Separate source-backed claims from inferences and unknowns using the Chinese evidence ledger labels.
 - Do not output the final integrated report in full English unless the user explicitly requests English.
 - Do not claim "nobody has studied this" unless the evidence search supports that claim.
+- State the contribution level without demanding category uniqueness.
+  Replication, regional extension, measurement improvement, and modest method
+  gains are viable when their value and venue fit are explicit.
 - For manuscripts, inspect actual text structure and, when figures or tables carry claims, use `pdf` or `docx` visual/document tools as appropriate.
-- For journal ladders, include `high target`, `realistic target`, and `fallback target`, with the minimum changes required for each.
+- For journal ladders, lead with the strongest credible route. Include
+  `stretch target`, `realistic target`, and `fallback target` when all three
+  are useful; omit a performative stretch route when no plausible upgrade path
+  exists.
 - Keep the final report directly reusable as a project document.

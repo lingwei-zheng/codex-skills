@@ -1,6 +1,10 @@
-# Supervisor Rubric
+# Advisor Rubric
 
 Use this rubric to produce a demanding but author-side assessment.
+
+Read `../../shared/research-calibration.md` first. Evaluate an early-stage idea
+as an early-stage idea, not as a submitted manuscript. Name the stage,
+contribution level, checks needed now, and checks that can be deferred.
 
 ## Task Classification
 
@@ -14,9 +18,12 @@ Use this rubric to produce a demanding but author-side assessment.
 ## Evaluation Dimensions
 
 - Research question: stake, scope, falsifiability, hidden assumptions, two-week pilot.
-- Contribution: theoretical, empirical, methodological, policy/practice, and what would be lost if the paper did not exist.
+- Contribution: classify direct replication, regional/contextual extension,
+  incremental improvement, mechanism/boundary advance, or theory/method
+  advance; then judge whether its value matches the intended venue.
 - Literature position: direct neighbors, missing anchors, rival explanations, overstated gaps.
-- Design and evidence: data fit, identification logic, measurement, spatial/temporal scale, robustness, reproducibility.
+- Design and evidence: data fit, identification logic, measurement,
+  spatial/temporal scale, stage-appropriate robustness, and reproducibility.
 - Claim-evidence boundary: which claims are supported, plausible but under-evidenced, or currently unsafe.
 - Manuscript readiness: title/abstract, introduction turn, methods transparency, results logic, discussion restraint, figure/table alignment.
 - Reviewer risk: likely desk-reject reason, strongest reviewer objection, minimum repair path.
@@ -41,7 +48,9 @@ For manuscripts and mature proposals, require:
 - Methods that answer the question rather than decorate it.
 - Results whose interpretation does not outrun the design.
 - Discussion that explains boundary conditions without unnecessary self-undermining.
-- A contribution paragraph that can survive a skeptical editor's desk screen.
+- A contribution paragraph calibrated to the intended venue. Do not require
+  category-level uniqueness when a replication, regional extension, or modest
+  improvement has cumulative, policy, measurement, or transferability value.
 
 ## Geography Publication Lens
 
@@ -56,6 +65,9 @@ For geography, human geography, GIScience, GeoAI, remote sensing, spatial analys
 | Title accuracy | pass / repair / block | ... | ... |
 
 Name the weakest gate in the bottom-line verdict and make its minimum repair an explicit roadmap item. Do not average away a blocked central question, design, or evidence chain.
+Reserve `block` for a fatal mismatch in the question, design, evidence, or
+claim. Incremental contribution alone is not a block; it changes the journal
+route and the strength of the contribution language.
 
 ## Verdict Scale
 
@@ -63,3 +75,6 @@ Name the weakest gate in the bottom-line verdict and make its minimum repair an 
 - `Revise before targeting`: core direction is viable but framing/design/story is not yet submission-ready.
 - `Re-scope`: question, method, or evidence boundary must be narrowed before a paper route is credible.
 - `Park or kill`: current version lacks stake, falsifiability, feasible evidence, or plausible venue fit.
+
+Do not use `Park or kill` merely because similar studies exist. Use it only
+when the project lacks a defensible cumulative value or feasible evidence path.

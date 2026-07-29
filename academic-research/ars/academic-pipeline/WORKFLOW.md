@@ -18,6 +18,13 @@ metadata:
 
 A lightweight orchestrator that manages the complete academic pipeline from research exploration to final manuscript. It does not perform substantive work — it only detects stages, recommends modes, dispatches skills, manages transitions, and tracks state.
 
+> **Local calibration:** Before dispatch, read
+> `../../../shared/research-calibration.md`. Exploratory and first-draft work
+> uses a proportional rigor budget and permits cumulative incremental
+> contributions. Submission, systematic-review, and review-response gates
+> remain comprehensive. Do not let later-stage review requirements expand an
+> earlier stage by default.
+
 > **Routing discipline (v3.9.2):** see `.claude/CLAUDE.md` "Routing Discipline (v3.9.2)" + `shared/references/intent_clarification_protocol.md` for cross-skill routing rules. This skill assumes routing has already settled — ambiguous cross-phase materials should have been clarified upstream.
 
 **v3.6.3 (opt-in):** Set `ARS_PASSPORT_RESET=1` to promote FULL checkpoints to context-reset boundaries. Use `resume_from_passport=<hash>` in a fresh session to continue from the recorded stage. See [`references/passport_as_reset_boundary.md`](references/passport_as_reset_boundary.md).

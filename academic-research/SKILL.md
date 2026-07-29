@@ -21,6 +21,14 @@ This is the Codex entry router for the vendored research suite under `ars/`.
 - Domain default: geography, human geography, GIScience, and health geography.
 - Chinese default: Simplified Chinese. Use Traditional Chinese only when the user explicitly asks for it.
 - NORA is not an installed skill here. Use `../shared/field-context/` only as a local reference pack when domain grounding is needed.
+- Read `../shared/research-calibration.md` for analysis planning, experiment
+  execution, question evaluation, or manuscript-readiness decisions. When the
+  user is developing an analysis or manuscript and gives no stage, default to
+  `first-draft + proportionate rigor + incremental-allowed contribution +
+  balanced compute`.
+- Do not import submission, formal peer-review, systematic-review, or
+  reviewer-response standards into first-draft analysis unless a named validity
+  risk makes them immediately necessary.
 
 ## First rule
 
@@ -80,6 +88,8 @@ end-to-end academic-research pipeline.
 - Do not install or run Claude hooks.
 - Treat `WORKFLOW.md` files as the actual internal entrypoints.
 - Use `../shared/field-context/geography-publication-readiness.md` for geography-specific contribution, method-fit, theory, argument, and title checks.
+- Apply `../shared/research-calibration.md` before interpreting contribution
+  magnitude, deciding robustness scope, or scheduling expensive analysis.
 - Use `../shared/field-context/academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`, `environmental-health.md`, and `journal-templates/` only when relevant.
 - For projects that use dynamic greenspace exposure and Space-Time Constraints,
   read `references/space-time-greenspace-terminology.md` before drafting,

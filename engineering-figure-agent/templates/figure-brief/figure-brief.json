@@ -2,7 +2,7 @@
   "figure_goal": "",
   "paper_claim": "",
   "figure_type": "system-architecture",
-  "mode": "image",
+  "mode": "openai-image",
   "panels": [
     {
       "name": "A",
@@ -11,7 +11,18 @@
       "evidence_or_data": ""
     }
   ],
+  "semantic_nodes": [],
+  "semantic_edges": [],
+  "render_graph": {
+    "reading_order": "left-to-right",
+    "containers": [],
+    "edge_routing": ""
+  },
+  "visible_text_allowlist": [],
   "must_keep_labels": [],
+  "negative_constraints": [],
+  "issue_ledger": [],
+  "candidate_mode": "single",
   "data": {
     "not_applicable": true
   },

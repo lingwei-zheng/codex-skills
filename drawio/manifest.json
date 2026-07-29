@@ -1,0 +1,13 @@
+{
+  "name": "drawio",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/drawio/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/jgraph/drawio-mcp.git",
+    "path": "plugins/codex/drawio/skills/drawio",
+    "ref": "e85fbfe712fd426df0e4899c84e851f03bffe6c3"
+  }
+}
