@@ -41,8 +41,10 @@ that the measure represents a complete 24-hour exposure.
   tables, figures, and later prose.
 - Keep `residential greenspace exposure` distinct from the daytime mobility-based
   estimate. Neither is automatically a gold-standard or “true exposure” measure.
-- Keep observational association language separate from causal, mediation, or
-  mechanism claims unless the design supports those claims.
+- Use association language when the design does not support causal, mediation,
+  or mechanism claims. Identify the observational design at first definition
+  or where a design contrast matters; do not repeat `observational` or
+  `exploratory` before every association.
 
 ## Audit checklist
 

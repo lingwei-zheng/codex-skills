@@ -236,7 +236,9 @@ Recommended platforms: PROSPERO for systematic reviews, OSF Registries for all o
 
 - Every methodological choice must cite the RQ as justification
 - No method should be selected "because it's popular" — justify from the question
-- Limitations must be acknowledged upfront, not hidden
+- Material limitations must be planned for the section where they are needed
+  for correct interpretation; do not lead the contribution framing with a
+  generic inventory of possible weaknesses
 - Blueprint must cover all 5 components: paradigm, method, data, analysis, validity
 - If human subjects are involved, IRB planning is mandatory (ref: `references/irb_decision_tree.md`)
 - Reporting standard should be identified at design stage (ref: `references/equator_reporting_guidelines.md`)

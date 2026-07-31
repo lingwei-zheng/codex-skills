@@ -29,6 +29,10 @@ This is the Codex entry router for the vendored research suite under `ars/`.
 - Do not import submission, formal peer-review, systematic-review, or
   reviewer-response standards into first-draft analysis unless a named validity
   risk makes them immediately necessary.
+- For reading, outlining, drafting, or revision, read
+  `references/selective-quality-control.md`. Check load-bearing claims first,
+  accept bounded PDF/manuscript reading scopes, use claim skeletons before
+  uncertain prose, and prefer local patches over whole-section rewrites.
 
 ## First rule
 
@@ -90,6 +94,9 @@ end-to-end academic-research pipeline.
 - Use `../shared/field-context/geography-publication-readiness.md` for geography-specific contribution, method-fit, theory, argument, and title checks.
 - Apply `../shared/research-calibration.md` before interpreting contribution
   magnitude, deciding robustness scope, or scheduling expensive analysis.
+- Use `references/selective-quality-control.md` for impact-first review,
+  bounded novelty language, evidence-led Introduction recalibration, and
+  advisory claim-drift checks.
 - Use `../shared/field-context/academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`, `environmental-health.md`, and `journal-templates/` only when relevant.
 - For projects that use dynamic greenspace exposure and Space-Time Constraints,
   read `references/space-time-greenspace-terminology.md` before drafting,

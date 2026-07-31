@@ -64,7 +64,7 @@ Bad:
 
 Better:
 
-- `This study examines the association between X and Y under the observed conditions.`
+- `This study examines the association between X and Y.`
 
 Bad:
 
@@ -85,3 +85,18 @@ Better:
 ## Section reminder
 
 State the claim first. Attach the boundary only if it changes how the claim should be read.
+
+## Causal-boundary economy
+
+`Associated with`, `correlated with`, and `related to` already avoid a causal
+claim. Do not routinely add `exploratory`, `observational`, `non-causal`, or
+`under the observed conditions` to the same sentence. That stacking repeats one
+boundary several times and makes ordinary findings sound apologetic.
+
+Keep the extra label only when it carries additional information:
+
+- `exploratory` distinguishes post hoc or non-preregistered analysis from a
+  confirmatory analysis;
+- `observational` identifies or contrasts the study design;
+- a no-causality statement responds to a real ambiguity in a central
+  interpretation, preferably once in Discussion or Limitations.

@@ -161,7 +161,7 @@ function Require-MinFileCount {
 
 Push-Location $RepoRoot
 try {
-    $DiffCheck = & git diff --check 2>&1
+    $DiffCheck = & git diff --check -- . 2>$null
     if ($LASTEXITCODE -ne 0) {
         Add-Failure "git diff --check failed:`n$DiffCheck"
     }
@@ -177,12 +177,16 @@ Require-File "references\domain-brief-template.md"
 Require-File "references\editor-desk-reject.md"
 Require-File "references\question-patterns.md"
 Require-File "references\question-workflow.md"
+Require-File "references\first-principles-lens.md"
 Require-File "evals\pressure-cases.md"
 
 Require-Text "SKILL.md" '^---\s*\r?\nname:\s*good-question' "frontmatter name"
 Require-Text "SKILL.md" 'description:\s*Use when' "frontmatter description starts with Use when"
 Require-Text "SKILL.md" 'references/question-workflow\.md' "workflow protocol reference"
 Require-Text "SKILL.md" 'references/source-audit\.md' "source-audit reference"
+Require-Text "SKILL.md" 'references/first-principles-lens\.md' "first-principles calibration reference"
+Require-Text "references\first-principles-lens.md" 'calibration layer' "first principles remains a calibration layer"
+Require-Text "references\first-principles-lens.md" 'source audit' "first principles does not bypass source audit"
 Require-Text "references\question-workflow.md" '## Good Question Card' "English card template"
 Require-Text "references\question-workflow.md" 'pilot' "pilot field in card templates"
 Require-Text "references\question-workflow.md" 'Evidence ledger' "evidence ledger requirement"

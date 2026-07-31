@@ -30,6 +30,21 @@ description: >-
   This skill is read-only and must not publish.
 ```
 
+## Validate Scripts
+
+For any skill containing executable scripts:
+
+1. Parse Python scripts before running them.
+2. Reject `eval`, `exec`, `os.system`, and `subprocess(..., shell=True)` unless
+   the user explicitly accepts a documented need.
+3. Flag hardcoded user-specific Windows, macOS, or Linux home paths.
+4. Avoid script names that shadow Python standard-library modules.
+5. Require at least one deterministic test, self-test, or validation script and
+   run it.
+6. Check local Markdown links and nested `SKILL.md` files.
+
+See [script-contract.md](script-contract.md) for the executable contract.
+
 ## Move Out
 
 - Long examples.

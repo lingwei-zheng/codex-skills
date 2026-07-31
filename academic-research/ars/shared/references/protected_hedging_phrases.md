@@ -20,11 +20,19 @@ Words and phrases that mark a claim as conditional, tentative, or under-evidence
 
 **Examples:**
 - "may," "might," "could" (modal hedges on causal or predictive claims)
-- "tentative," "preliminary," "exploratory" (status hedges on findings)
+- "tentative" or "preliminary" when provisional status changes interpretation
+- "exploratory" only when post hoc or non-preregistered status must be
+  distinguished from confirmatory analysis
 - "suggests," "indicates," "is consistent with" (inferential hedges, distinct from "demonstrates," "proves," "establishes")
 - "in our sample," "for this cohort," "under the conditions tested" (scope hedges)
 
 **Why protected:** A reader who acts on an unconditional version of the claim takes on more risk than the evidence justifies. In academic abstracts this is overclaim; in policy abstracts this is misinformation.
+
+`Observational` is normally a study-design label, not a hedge that must travel
+with every result. Likewise, `associated with` already expresses a non-causal
+claim. Do not protect `exploratory association`, `observational association`,
+or a no-causality disclaimer as a compound phrase unless each element changes
+the claim independently.
 
 ### 2. Reflexivity / positionality markers
 
@@ -61,9 +69,9 @@ Upstream calibration runs at the end of paper drafting, after the body text is s
 ```yaml
 protected_hedges:
   epistemic:
-    - phrase: "may"
+    - phrase: "in this cohort"
       anchored_at: "Section 4, claim about institutional adoption rate"
-      why: "claim is observational, not causal"
+      why: "the estimate is bounded to the sampled population"
     - phrase: "tentative"
       anchored_at: "Section 5, conclusion about policy effect"
       why: "n=12 sites, no comparison group"
@@ -79,7 +87,9 @@ protected_hedges:
 
 ### Calibration rules
 
-1. **Conservative inclusion.** When in doubt, include the phrase. Calibration cannot recover a hedge it did not list — the compiler treats every entry on the list as non-negotiable, so omitting a phrase removes that protection regardless of intent.
+1. **Minimal sufficient inclusion.** Protect a phrase only when removing it
+   changes the truth, scope, confirmatory status, or interpretation of the
+   claim. Do not protect rhetorical caution or duplicate boundary signals.
 2. **Anchor every entry.** Each protected phrase must cite where in the paper it operates and one-line why. Without the anchor, the abstract compiler cannot judge replacement-vs-preservation when budget is tight.
 3. **No duplicates.** One entry per phrase. The compiler counts protected phrases against the budget once.
 4. **Calibration is mode-specific.** Deep-research INSIGHT abstracts and academic-paper journal abstracts have different convention (see `word_count_conventions.md`). Calibration runs once per target mode, not once per paper.

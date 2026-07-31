@@ -16,6 +16,12 @@ Move up this ladder only when the evidence supports it:
 
 If the data support level 3, do not write a level-5 story. If the data support one system, do not write a level-6 story without qualifiers.
 
+Use one sufficient signal per boundary. `X was associated with Y` is already
+non-causal; do not routinely rewrite it as an `exploratory observational
+association` or follow it with a generic causality disclaimer. Add
+`exploratory` only for a meaningful confirmatory/post hoc distinction and
+`observational` when the design class itself matters.
+
 ## Common Overclaim Moves
 
 | Tempting phrase | Risk | Safer move |

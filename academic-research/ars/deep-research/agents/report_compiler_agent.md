@@ -311,7 +311,7 @@ Canonical example (single manifest with one MNC and one claim-level NC):
     }
   ],
   "manifest_negative_constraints": [
-    {"constraint_id": "MNC-1", "rule": "No unqualified causal language across the report."}
+    {"constraint_id": "MNC-1", "rule": "Use causal verbs only where supported; plain association language needs no extra exploratory or observational disclaimer."}
   ]
 }
 ```

@@ -34,6 +34,7 @@ If downstream work is needed, return control to the caller. The v3.6.6 generator
 5. **Word count awareness** — track progress against allocation; report deviations
 6. **Revision efficiency** — when revising, address feedback items systematically
 7. **Readiness honesty** — read `references/nora-writing-controls.md`, declare `full`, `partial`, or `skeleton`, and never polish over missing evidence
+8. **Selective quality control** — read `../../../references/selective-quality-control.md`; use a claim skeleton when logic is unsettled, check high-impact claims first, and revise the smallest coherent unit
 
 ## Writing Process
 
@@ -48,6 +49,7 @@ Before writing, confirm you have:
 - [ ] Writing Quality Check reference (`references/writing_quality_check.md`)
 - [ ] Anti-Leakage Protocol — check if Knowledge Isolation should be activated (from `references/anti_leakage_protocol.md`). Activate if user provided RQ Brief + Synthesis Report + Annotated Bibliography AND mode is `full` or `revision`. When activated, prepend the Knowledge Isolation Directive to your working context. When not activated (plan/socratic mode, or minimal materials), skip.
 - [ ] NORA-informed writing controls (`references/nora-writing-controls.md`), including the six-paragraph empirical Introduction, contribution map, readiness modes, and Literature Review gate
+- [ ] Selective quality control (`../../../references/selective-quality-control.md`), including impact-first checks, claim skeleton, final Introduction recalibration, and local-patch revision
 
 Before prose drafting, classify and report the material state:
 
@@ -56,6 +58,11 @@ Before prose drafting, classify and report the material state:
 - `skeleton`: the project is still an idea, plan, or evidence-poor outline.
 
 In `partial`, draft only supported sections and leave explicit material/evidence markers elsewhere. In `skeleton`, output paragraph purposes, claim slots, and evidence requirements rather than manuscript prose.
+
+When the argument is not yet stable, create the compact claim skeleton before
+prose. For empirical papers, the first Introduction draft is provisional:
+revisit it after the Results and central evidence stabilize so the gap,
+contributions, and roadmap do not promise more than the paper delivers.
 
 For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md`. In the Discussion, move each central result through: scale-specific finding, candidate mechanism, strongest rival explanation, relation to prior work or theory, boundary, and defensible implication. Do not present a mechanism as demonstrated when the design supplies only indirect or correlational evidence.
 
@@ -79,13 +86,13 @@ Combine all sections into a coherent document with:
 - Reference list placeholder (citation_compliance_agent will finalize)
 - **Full Writing Quality Check sweep** — run the complete checklist from `references/writing_quality_check.md` against the assembled draft:
   - Flag and replace any AI high-frequency terms (25-term list)
-  - Check em dash count (≤3 total across the paper)
-  - Check semicolon density (≤2 per 1000 words)
-  - Remove all throat-clearing openers
-  - Verify sentence length variation (burstiness) — flag 5+ consecutive same-length sentences
-  - Vary paragraph length by function — short paragraphs mark emphasis, longer ones carry argument
-  - Check binary contrast usage (≤2 per paper)
-  - Fix all violations before handoff to citation_compliance_agent
+  - Remove throat-clearing openers that add no information
+  - Check punctuation, sentence rhythm, and paragraph length by function rather
+    than enforcing global character quotas
+  - Flag repetitive binary contrasts or template phrases when they are
+    noticeable, not merely because they exceed a fixed count
+  - Fix material clarity and consistency problems before handoff; treat style
+    preferences as advisory
 
 ## Writing Style Guidelines
 
@@ -210,19 +217,19 @@ Phase A: Preparation (before each section begins)
 Phase B: Writing (strictly section by section)
   Writing order decision:
   ├── Recommended order (not mandatory):
-  │   1. Introduction (write first; use the six-paragraph protocol for standard empirical papers)
+  │   1. Provisional Introduction (use the six-paragraph protocol for standard empirical papers)
   │   2. Literature Review (only when explicitly requested or required by verified journal instructions)
   │   3. Methodology (explain methods)
   │   4. Results / Analysis (present findings)
   │   5. Discussion (discuss significance)
   │   6. Conclusion (summarize)
-  │   7. Abstract (write last, since it needs to summarize the whole paper)
+  │   7. Recalibrate the Introduction against stable Results, then write the Abstract
   └── Exception: user requests writing a specific section first -> follow user
 
   Writing flow for each section:
   1. Write Opening paragraph (introduction + section preview)
   2. Write Body paragraphs following CER chain
-  3. Each paragraph follows TEEL structure (see below)
+  3. Each paragraph has a clear function and evidence path; use TEEL only when helpful
   4. Write Closing paragraph (summary + transition to next section)
   5. Calculate word count -> compare against target
   6. IF deviation > +/-15% -> adjust immediately (trim or expand)
@@ -234,9 +241,10 @@ Phase C: Assembly
   4. Calculate total word count and produce Draft Metadata
 ```
 
-### Paragraph Structure Rules (TEEL Framework)
+### Paragraph Structure Guide
 
-Each Body paragraph must contain 4 components:
+TEEL is one useful diagnostic for claim-evidence-explanation flow, not a
+mandatory template. Use it when a paragraph lacks a clear function:
 
 ```
 T — Topic Sentence
@@ -262,9 +270,9 @@ L — Link
     -> Use transition words/phrases
 ```
 
-**Paragraph length standard**: Each paragraph 120-200 words (EN) or 200-350 characters (zh-TW)
-**Minimum per section**: At least 3 TEEL paragraphs
-**Exceptions**: The first paragraph of Introduction and the last paragraph of Conclusion need not strictly follow TEEL
+Paragraph length and count follow rhetorical function, evidence density, and
+target-journal style. Do not pad a section to reach a fixed number of TEEL
+paragraphs or add a link sentence when the transition is already clear.
 
 ### Academic Writing Register Adjustment
 
@@ -452,6 +460,7 @@ Quality gate not passed ->
 - If revision round: all Critical and Major items addressed
 - The declared drafting readiness matches the available materials; unsupported sections remain explicit gaps
 - For standard empirical papers, the Introduction follows the six rhetorical paragraphs unless an override is recorded
+- After Results stabilize, the final Introduction is recalibrated to the evidence actually delivered
 - Every `C#` contribution is traceable from the Introduction to evidence, Discussion, and Conclusion
 - No standalone Literature Review was introduced without an explicit user request or verified journal requirement
 - Geography-related Discussion sections interpret mechanisms, rivals, scale boundaries, and literature/theory consequences rather than restating maps or coefficients
@@ -578,7 +587,7 @@ Canonical example (single manifest with one MNC and one claim-level NC):
     }
   ],
   "manifest_negative_constraints": [
-    {"constraint_id": "MNC-1", "rule": "No unqualified causal language across the draft."}
+    {"constraint_id": "MNC-1", "rule": "Use causal verbs only where supported; plain association language needs no extra exploratory or observational disclaimer."}
   ]
 }
 ```

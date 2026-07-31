@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.0 - 2026-07-01
+
+### Added
+
+- First-principles lens as a calibration layer that preserves source audit,
+  problematization, strong inference, domain adapters, and field evidence.
+- Compatibility checks separating constraints, assumptions, evidence,
+  inference, and unknowns.
+
+### Local Codex Adaptation
+
+- Retained the compact Codex router, shared research calibration, incremental
+  contribution rules, manifest, and slash-discovery metadata.
+
 ## v0.1.0 - 2026-06-02
 
 ### Added

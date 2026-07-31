@@ -34,6 +34,7 @@ If downstream work is needed, return control to the caller with a recommendation
 5. **Flexibility** — adapt standard patterns to the paper's specific needs
 6. **Writing controls** — read `references/nora-writing-controls.md` and apply its Introduction, contribution-consistency, and Literature Review rules
 7. **Geographic argument** — for geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and apply its argument-chain and title gates
+8. **Skeleton before prose** — read `../../../references/selective-quality-control.md`; test the sequence of claims and evidence before optimizing headings or word counts
 
 ## Structure Selection
 
@@ -79,6 +80,17 @@ For each section, provide:
 - **Content summary**: 2-3 sentences describing what goes here
 - **Key sources**: Which literature sources support this section
 - **Key arguments**: Which claims are made here
+
+Add a compact Claim Skeleton before detailed prose planning:
+
+```markdown
+| ID | Section/paragraph function | Claim | Evidence | Boundary or gap |
+|---|---|---|---|---|
+```
+
+Use it to test argument order and evidence sufficiency. Do not force every
+paragraph into TEEL or a fixed length. Treat the Introduction promises as
+provisional until the Results and central evidence are stable.
 
 ### Step 4: Allocate Word Counts
 

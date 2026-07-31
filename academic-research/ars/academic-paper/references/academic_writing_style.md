@@ -85,14 +85,24 @@ Example: "Patients receiving the intervention showed a 40% reduction in readmiss
 
 ### When to Hedge
 - Results that need replication
-- Causal claims from correlational data
+- Interpretations whose uncertainty is not already expressed by the claim verb
 - Generalizations from limited samples
 - Interpretations with alternative explanations
+
+For correlational data, first choose the correct verb: `was associated with`,
+`correlated with`, or `predicted`, as appropriate. This usually resolves the
+causal boundary without adding `exploratory association`, `observational
+association`, or a repeated statement that causality cannot be inferred.
+
+Use `exploratory` only to distinguish post hoc or non-preregistered analysis
+from confirmatory analysis. Use `observational` primarily to identify the study
+design, not as a modifier attached to every result.
 
 ### When NOT to Hedge
 - Reporting factual data: "The response rate was 78%." (not "appeared to be")
 - Describing methodology: "We used thematic analysis." (not "we attempted to use")
 - Well-established facts: "Earth orbits the Sun." (not "may orbit")
+- Reporting an association with an already accurate associational verb
 
 ## Transition Words and Phrases
 

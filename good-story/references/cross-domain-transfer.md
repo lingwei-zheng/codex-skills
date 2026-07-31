@@ -29,6 +29,9 @@ The calibration layer specifies the local vocabulary, accepted evidence, causal 
    - Use the strongest verb the evidence supports.
    - Downgrade causal, universal, mechanistic, or normative language when the design cannot support it.
    - Preserve field-specific qualifiers instead of smoothing them away.
+   - Preserve only qualifiers that add independent information. An accurate
+     associational verb does not need repeated `exploratory`, `observational`,
+     or no-causality framing.
 
 4. Localize the consequence.
    - Consequence may be practical, mechanistic, predictive, conceptual, ethical, historical, clinical, technical, or policy-relevant.

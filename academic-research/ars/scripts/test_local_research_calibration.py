@@ -57,3 +57,59 @@ def test_geography_uses_location_value_not_location_veto():
     assert "location-value check" in readiness.lower()
     assert "location-value check" in question_agent.lower()
     assert "location-swap gate" not in question_agent.lower()
+
+
+def test_association_language_uses_one_sufficient_boundary():
+    calibration = read("shared/research-calibration.md")
+    polishing = read("nature-polishing/SKILL.md")
+    protected = read(
+        "academic-research/ars/shared/references/"
+        "protected_hedging_phrases.md"
+    )
+    assert "Causal Language Economy" in calibration
+    assert "accurate associational verb as a sufficient causal boundary" in polishing
+    assert "Minimal sufficient inclusion" in protected
+    assert "Conservative inclusion." not in protected
+
+
+def test_spatial_diagnostics_are_claim_triggered():
+    calibration = read("shared/research-calibration.md")
+    spatial = read("shared/field-context/spatial-methods.md")
+    stats = read(
+        "academic-research/ars/experiment-agent/references/"
+        "statistical_interpretation_guide.md"
+    )
+    assert "Diagnostics are a menu" in calibration
+    assert "coordinates alone do not require a spatial model" in spatial
+    assert "MGWR is not inherently preferable to GWR" in spatial
+    assert "Check ALL 11 types" not in stats
+    assert "Triggered Fallacy Scan" in stats
+
+
+def test_selective_quality_control_is_loaded():
+    router = read("academic-research/SKILL.md")
+    quality = read("academic-research/references/selective-quality-control.md")
+    writer = read(
+        "academic-research/ars/academic-paper/agents/draft_writer_agent.md"
+    )
+    reviewer = read("peer-review/SKILL.md")
+    report = read("peer-review/references/report-structure.md")
+    assert "selective-quality-control.md" in router
+    assert "Impact-First Checks" in quality
+    assert "recalibrate the final Introduction" in quality
+    assert "TEEL is one useful diagnostic" in writer
+    assert "do not manufacture one" in reviewer
+    assert "zero or one issue" in report
+
+
+def test_upstream_selective_backports_are_present():
+    good_question = read("good-question/SKILL.md")
+    first_principles = read(
+        "good-question/references/first-principles-lens.md"
+    )
+    nature_figure = read("nature-figure/SKILL.md")
+    legend = read("nature-figure/references/figure-legend-contract.md")
+    assert "first-principles-lens.md" in good_question
+    assert "calibration layer" in first_principles
+    assert "figure-legend-contract.md" in nature_figure
+    assert "Source Data Wording" in legend

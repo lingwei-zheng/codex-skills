@@ -4,10 +4,13 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 from typing import Iterable
+from urllib.parse import unquote
 
 try:
     import yaml
@@ -148,6 +151,93 @@ def validate_openai_yaml(path: Path) -> list[str]:
     return issues
 
 
+def script_validation_files(root: Path) -> list[Path]:
+    patterns = (
+        "test_*.py",
+        "*_test.py",
+        "validate_*.py",
+        "check_*.py",
+        "verify_*.py",
+        "test_*.ps1",
+        "validate_*.ps1",
+        "validate-*.ps1",
+        "check_*.ps1",
+        "check-*.ps1",
+        "verify_*.ps1",
+        "verify-*.ps1",
+    )
+    found: set[Path] = set()
+    for pattern in patterns:
+        found.update(root.rglob(pattern))
+    return sorted(path for path in found if ".git" not in path.parts)
+
+
+def python_script_issues(path: Path) -> list[str]:
+    issues: list[str] = []
+    text = path.read_text(encoding="utf-8")
+
+    try:
+        tree = ast.parse(text, filename=str(path))
+    except SyntaxError as exc:
+        return [f"{path.name} does not parse: line {exc.lineno}: {exc.msg}"]
+
+    stdlib_names = getattr(sys, "stdlib_module_names", set())
+    if path.stem in stdlib_names:
+        issues.append(f"{path.name} shadows a Python standard-library module")
+
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        if isinstance(node.func, ast.Name) and node.func.id in {"eval", "exec"}:
+            issues.append(f"{path.name}:{node.lineno} uses unsafe {node.func.id}()")
+        if (
+            isinstance(node.func, ast.Attribute)
+            and isinstance(node.func.value, ast.Name)
+            and node.func.value.id == "os"
+            and node.func.attr == "system"
+        ):
+            issues.append(f"{path.name}:{node.lineno} uses unsafe os.system()")
+        if (
+            isinstance(node.func, ast.Attribute)
+            and isinstance(node.func.value, ast.Name)
+            and node.func.value.id == "subprocess"
+            and any(
+                keyword.arg == "shell"
+                and isinstance(keyword.value, ast.Constant)
+                and keyword.value.value is True
+                for keyword in node.keywords
+            )
+        ):
+            issues.append(
+                f"{path.name}:{node.lineno} uses subprocess with shell=True"
+            )
+
+    if re.search(
+        r"(?i)(?:[a-z]:[\\/](?:users|documents and settings)[\\/][^\\/\s]+|"
+        r"/(?:users|home)/[^/\s]+)",
+        text,
+    ):
+        issues.append(f"{path.name} contains a hardcoded user-specific home path")
+    return issues
+
+
+def markdown_link_issues(path: Path) -> list[str]:
+    issues: list[str] = []
+    text = path.read_text(encoding="utf-8")
+    text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+    for match in re.finditer(r"\[[^\]]+\]\(([^)]+)\)", text):
+        target = match.group(1).strip().strip("<>")
+        if not target or target.startswith("#"):
+            continue
+        if re.match(r"^[a-z][a-z0-9+.-]*:", target, flags=re.IGNORECASE):
+            continue
+        local = unquote(target.split("#", 1)[0])
+        candidate = (path.parent / local).resolve()
+        if not candidate.exists():
+            issues.append(f"{path.name} has a broken local link: {target}")
+    return issues
+
+
 def audit_skill_dir(root: Path, profile: str = "strict") -> list[str]:
     issues: list[str] = []
     skill_md = root / "SKILL.md"
@@ -194,10 +284,21 @@ def audit_skill_dir(root: Path, profile: str = "strict") -> list[str]:
         dupes = [line for line, n in Counter(lines).items() if n > 1 and len(line) > 40]
         if dupes and profile == "strict":
             issues.append(f"Repeated lines detected: {min(len(dupes), 3)}+ likely duplicates")
+        issues.extend(markdown_link_issues(skill_md))
 
-    for name in FORBIDDEN_DOCS:
-        if (root / name).exists():
-            issues.append(f"Remove unnecessary document: {name}")
+    nested_skills = [
+        path for path in root.rglob("SKILL.md") if path.resolve() != skill_md.resolve()
+    ]
+    if nested_skills:
+        issues.append(
+            "Nested SKILL.md files may register duplicate skills: "
+            + ", ".join(str(path.relative_to(root)) for path in nested_skills[:3])
+        )
+
+    if profile == "strict":
+        for name in FORBIDDEN_DOCS:
+            if (root / name).exists():
+                issues.append(f"Remove unnecessary document: {name}")
 
     openai_yaml = root / "agents" / "openai.yaml"
     if openai_yaml.exists():
@@ -211,13 +312,43 @@ def audit_skill_dir(root: Path, profile: str = "strict") -> list[str]:
                 issues.append(f"{path.name} is long and lacks a clear top-level structure")
             if path.name.lower() in {"readme.md", "notes.md", "todo.md"}:
                 issues.append(f"{path.name} is too human-centric for a skill reference")
+            issues.extend(markdown_link_issues(path))
 
     scripts = root / "scripts"
     if scripts.exists():
+        executable_scripts = [
+            path
+            for path in scripts.iterdir()
+            if path.is_file()
+            and path.suffix.lower() in {".py", ".ps1", ".sh", ".js", ".ts"}
+            and not path.name.startswith(
+                (
+                    "test_",
+                    "test-",
+                    "validate_",
+                    "validate-",
+                    "check_",
+                    "check-",
+                    "verify_",
+                    "verify-",
+                )
+            )
+            and not path.stem.endswith("_test")
+        ]
+        if (
+            profile == "strict"
+            and executable_scripts
+            and not script_validation_files(root)
+        ):
+            issues.append(
+                "scripts/ contains executable helpers but no deterministic test "
+                "or validation script"
+            )
         for path in scripts.glob("*.py"):
-            max_script_lines = 350 if profile == "strict" else 2000
+            max_script_lines = 500 if profile == "strict" else 2000
             if count_lines(path) > max_script_lines:
                 issues.append(f"{path.name} is large; consider splitting or simplifying")
+            issues.extend(python_script_issues(path))
 
     asset_dir = root / "assets"
     if asset_dir.exists() and not any(asset_dir.iterdir()):

@@ -69,9 +69,13 @@ user asks for a recommendation or backend details.
    dimensions, colors, and export settings traceable.
 5. **Integrate the layout.** Use one restrained visual vocabulary, stable method
    colors, readable hierarchy, and direct labels when they reduce eye travel.
-6. **Export with the selected backend.** Produce the requested editable and
+6. **Write the legend when in scope.** Read
+   [references/figure-legend-contract.md](references/figure-legend-contract.md)
+   and keep the title, panel descriptions, statistics, and source-data wording
+   aligned with the actual evidence and target journal.
+7. **Export with the selected backend.** Produce the requested editable and
    raster formats at final dimensions.
-7. **Verify.** Read [references/qa-contract.md](references/qa-contract.md) and
+8. **Verify.** Read [references/qa-contract.md](references/qa-contract.md) and
    inspect the rendered outputs at final size.
 
 ## Quality Rules
@@ -97,6 +101,7 @@ user asks for a recommendation or backend details.
 | [references/backend-selection.md](references/backend-selection.md) | Select or troubleshoot Python/R |
 | [references/r-workflow.md](references/r-workflow.md) | Use R, ggplot2, patchwork, or ComplexHeatmap |
 | [references/geospatial-figure-contract.md](references/geospatial-figure-contract.md) | Build a static map or spatial evidence figure |
+| [references/figure-legend-contract.md](references/figure-legend-contract.md) | Write or audit figure/table legends and statistical caption details |
 | [references/qa-contract.md](references/qa-contract.md) | Export and final visual/statistical checks |
 | [references/design-theory.md](references/design-theory.md) | Typography, color, layout, and export rationale |
 | [references/api.md](references/api.md) | Python helpers, palettes, and validation APIs |
@@ -105,6 +110,9 @@ user asks for a recommendation or backend details.
 | [references/tutorials.md](references/tutorials.md) | End-to-end examples |
 | [references/chart-types.md](references/chart-types.md) | Less common chart patterns |
 | [references/demos.md](references/demos.md) | Bundled figures4papers demos and previews |
+
+Load only the references needed for the selected backend and current figure
+task. Do not open the entire reference collection by default.
 
 For geography, GIScience, health geography, or GeoAI work, load only the relevant
 files from `../shared/field-context/`.

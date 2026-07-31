@@ -115,11 +115,11 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 2. **INTERPRET** — Item-by-item analysis. See `references/statistical_interpretation_guide.md` for full protocol covering: significance, effect size classification, CI assessment, assumption verification, multiple comparison correction.
 
 3. **RISK-CALIBRATED FALLACY SCAN** — Use
-   `references/statistical_interpretation_guide.md` as the available checklist,
-   not as an automatic first-draft workload. Check every pattern relevant to the
-   design and claim. Full 11-type coverage is required only for formal
-   validation, submission-readiness, or when the user explicitly asks for a
-   comprehensive audit. Report checked, deferred, and not-applicable items.
+   `references/statistical_interpretation_guide.md` as a diagnostic menu.
+   Check every pattern triggered by the design and claim. Submission stage may
+   increase depth, but it does not make inapplicable checks mandatory or turn an
+   "11/11" count into evidence of validity. Report checked, deferred, and
+   not-applicable items.
 
 4. **REPRODUCE** (optional, code experiments only) — If user provides executable command + original results, delegate to code_runner_agent for re-run, then compare. See `references/reproducibility_protocol.md`. Not applicable to human studies or non-rerunnable external systems.
 

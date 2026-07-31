@@ -20,6 +20,9 @@ draft into a question that is important, tractable, falsifiable, and defensible.
   what becomes more credible, transferable, measurable, or useful.
 - Make hidden assumptions and competing explanations explicit.
 - Do not let a preferred method create the research problem.
+- Treat first-principles reasoning as a calibration lens for constraints,
+  assumptions, rivals, falsifiers, and evidence boundaries. It cannot override
+  field evidence, source audit, domain norms, or competing explanations.
 - Never turn "I do not know of work on X" into "nobody has studied X."
 - Do not recommend a mature question without a stake, falsifier, feasible pilot,
   and strongest rejection risk.
@@ -52,6 +55,9 @@ draft into a question that is important, tractable, falsifiable, and defensible.
    current evidence before field-specific ideation when novelty, literature
    consensus, reviewer expectations, journal fit, or technical feasibility
    affects the recommendation.
+   When the user invokes first principles, fundamental assumptions, or root
+   constraints, also read
+   [references/first-principles-lens.md](references/first-principles-lens.md).
 2. **Diagnose the starting point.** Identify the field, current idea, available
    resources, target output, hard constraints, and largest uncertainty. Ask at
    most one short clarifying question when an essential input is missing.
@@ -86,6 +92,9 @@ draft into a question that is important, tractable, falsifiable, and defensible.
   problem choice, research taste, and method-first traps.
 - [references/platt-strong-inference.md](references/platt-strong-inference.md):
   mechanisms, competing hypotheses, and decisive tests.
+- [references/first-principles-lens.md](references/first-principles-lens.md):
+  distinguish constraints, assumptions, evidence, inference, and unknowns
+  without bypassing field evidence or source audit.
 - [references/problematization.md](references/problematization.md): assumption
   challenges and theory-oriented questions.
 - [references/heilmeier-catechism.md](references/heilmeier-catechism.md): grants,

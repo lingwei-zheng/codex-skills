@@ -41,6 +41,12 @@ Use stable IDs such as `C1`, `C2`, and `C3`. Record:
 - upgrades that are not supported, such as association to causation or sample
   findings to universal generalisation.
 
+Record only qualifiers that change interpretation. Do not turn a study-level
+design label into a phrase that must be repeated with every claim. When
+`associated with` already sets the correct evidence level, leave
+`Required qualifier` empty unless scope, timing, population, post hoc status, or
+another independent boundary matters.
+
 ## Cross-Section Check
 
 Before delivery:

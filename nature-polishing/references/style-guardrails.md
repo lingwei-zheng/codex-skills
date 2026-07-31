@@ -43,6 +43,8 @@ Do not rewrite numbers into words unless the surrounding house style demands it.
 - keep nominalisation useful, not excessive
 - keep the prose impersonal where appropriate, but do not force lifelessness
 - avoid unnecessary defensive disclaimers in claim-heavy positions such as contribution sentences, abstract implications, introduction turns, and conclusion closes
+- avoid qualifier stacking: a plain associational verb normally does not need
+  `exploratory`, `observational`, and a no-causality disclaimer around it
 
 ## Sentence and paragraph checks
 
@@ -76,6 +78,8 @@ Safer replacements:
 - do not invent references
 - do not alter quantitative values unless correcting an obvious typo requested by the user
 - do not upgrade association to causation
+- do not weaken accurate association language merely to advertise that it is
+  non-causal
 - do not imply broader generalisability than the study supports
 - do not foreground speculative weaknesses unless they are needed for correct interpretation in that section
 

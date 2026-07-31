@@ -5,8 +5,9 @@ drafting working and journal-submission-ready reports.
 
 ## Default Issue Hierarchy
 
-1. **Critical revision**: exactly one issue. Select the single highest-risk
-   problem that could plausibly cause rejection. Do not bundle unrelated concerns.
+1. **Critical revision**: zero or one issue. Use it only for the single
+   highest-risk problem that could plausibly determine rejection or invalidate a
+   central inference. Do not invent one for symmetry or bundle unrelated concerns.
 2. **Important revisions**: one to five issues affecting theory, logic, methods,
    evidence, statistics, interpretation, reproducibility, or journal fit.
 3. **Minor revisions**: one to five issues involving language, terminology,
@@ -75,7 +76,8 @@ contribution is unsupported or the venue mismatch is decisive.
 
 - State which manuscript and supplementary files were reviewed.
 - Confirm visual inspection, or disclose the exact missing visual check.
-- Keep exactly one critical issue unless the user specifies another structure.
+- Keep at most one critical issue unless the user specifies another structure;
+  a strong manuscript may have none.
 - Respect important and minor issue limits.
 - Use no per-point subheadings in the submission-ready report.
 - Keep claims synchronized across language versions.

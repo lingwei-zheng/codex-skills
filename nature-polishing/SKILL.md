@@ -37,6 +37,12 @@ For `human-final-pass`:
 - Repair argument and section logic before sentence style.
 - Do not invent data, references, mechanisms, evidence, or novelty claims.
 - Do not upgrade association to causation or broaden generalisability.
+- Treat an accurate associational verb as a sufficient causal boundary in
+  ordinary prose. Do not automatically add `exploratory`, `observational`,
+  `non-causal`, or a no-causality disclaimer to `association`, `relationship`,
+  or `correlation`.
+- Retain `exploratory` only when confirmatory versus post hoc status matters,
+  and `observational` only when the study design or design contrast matters.
 - Do not alter verified quantitative values, citations, formulas, or terminology.
 - Do not hide a weak core argument under fluent prose. State material gaps plainly.
 - If the central research question, evidence interpretation, or paper story needs
@@ -68,7 +74,8 @@ For `human-final-pass`:
 6. **Preserve the evidence contract.** Keep claim strength aligned with the source,
    retain necessary uncertainty, and distinguish observation from interpretation.
 7. **Run a final check.** Verify meaning, citations, numbers, terminology, section
-   function, overclaim, defensive phrasing, punctuation, and target-journal fit.
+   function, overclaim, defensive phrasing, qualifier stacking, punctuation, and
+   target-journal fit.
 
 ## Reference Router
 

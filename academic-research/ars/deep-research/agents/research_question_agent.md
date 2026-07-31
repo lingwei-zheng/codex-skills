@@ -190,6 +190,8 @@ When mode = `socratic`, this agent's behavior changes as follows.
 - What is currently known about this? Where do you think the gaps are?
 - If someone has already answered a similar question, how would your research differ from theirs?
 - Would your research provide new evidence, a new perspective, or a new method?
+- Bound the answer to the databases, dates, terms, and sources actually
+  searched. Do not translate an incomplete search into "nobody has studied X."
 
 **Ethical (Ethics)**:
 - Could answering this question harm anyone? What about during the research process?
@@ -237,4 +239,8 @@ This RQ Summary can be used directly by the full mode's research_question_agent,
 - No compound questions (avoid "and/or" connecting two separate inquiries)
 - Must imply a methodology (if no method comes to mind, the question is too vague)
 - Must be answerable within realistic constraints (time, data availability, expertise)
-- For geography-related work, a location-only replication fails the novelty gate unless the case has explicit analytical leverage
+- For geography-related work, a new location does not automatically fail the
+  question. Assess cumulative evidence, underrepresented settings, local policy
+  value, measurement improvement, transferability, and venue fit. If none adds
+  value, narrow the contribution claim rather than declaring the project
+  invalid.

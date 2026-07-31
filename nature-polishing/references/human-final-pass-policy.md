@@ -8,7 +8,8 @@ Make an already polished academic paper sound less mechanical while keeping it c
 
 Before editing, adopt the posture of a human author doing a final pass on an already polished manuscript while the experiment context is still fresh. A human author:
 
-- Writes with uneven confidence: some claims are bold, others are hedged or tentative.
+- Writes with evidence-calibrated confidence: stronger and weaker claims sound
+  different because their evidence differs, not because hedges are added for texture.
 - Occasionally over-explains a point, then cuts back.
 - Uses varied paragraph lengths, not uniform block structures.
 - Sometimes starts a sentence with a conjunction or a short observation, breaking template rhythm.
@@ -27,8 +28,10 @@ Use restrained natural phrasing such as:
 - Moderate use of "we" when the paper already uses first-person academic style.
 - Sentence-opening variation: alternate between "We", "This", "The", "A", "When", "If", "Because", "In", "For", "Our", "These", "Such", "While", "Although", "As", "To".
 - Active/passive alternation: mix "we observe that X increases" with "an increase in X was observed".
-- Occasional qualification stacking: "this somewhat surprising but not entirely unexpected result", "a simple but effective heuristic".
-- Mild hedging asymmetry: use "suggests", "indicates", "appears to" alongside confident "demonstrates", "confirms".
+- Occasional compact qualification where it conveys real contrast: "a simple
+  but effective heuristic".
+- Confidence variation should follow the evidence. Do not add `exploratory`,
+  `observational`, `appears to`, or similar hedges merely to make prose look human.
 - Local redundancy for emphasis: repeat a key term in consecutive sentences rather than always using pronouns.
 
 Avoid:

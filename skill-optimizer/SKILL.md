@@ -15,7 +15,10 @@ Optimize a skill folder for clarity, concision, and maintainability.
 4. Keep only core trigger info and the shortest usable workflow in `SKILL.md`.
 5. Move detail into `references/` and repeatable logic into `scripts/`.
 6. Delete docs that exist only for human convenience.
-7. Recheck the folder with the audit script after every non-trivial edit.
+7. For any skill with executable scripts, read
+   [references/script-contract.md](references/script-contract.md), require a
+   deterministic test or validator, and run it.
+8. Recheck the folder with the audit script after every non-trivial edit.
 
 ## Keep In `SKILL.md`
 
@@ -38,6 +41,8 @@ Optimize a skill folder for clarity, concision, and maintainability.
 - Prefer one `SKILL.md`, one `agents/openai.yaml`, a small `scripts/` set, and only the references you actually need.
 - Avoid adding `README.md`, `CHANGELOG.md`, or similar support docs unless a user explicitly asks for them.
 - Keep references one level deep from `SKILL.md`.
+- Require script-bearing skills to parse cleanly, avoid unsafe dynamic
+  execution and hardcoded local paths, and include runnable validation.
 - See [repo_profile.md](references/repo_profile.md) for the default shape this repo expects.
 
 ## Output Standard

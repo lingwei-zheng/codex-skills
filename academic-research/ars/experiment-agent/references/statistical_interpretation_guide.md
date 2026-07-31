@@ -21,9 +21,12 @@ If unstructured: ask user to highlight key numbers.
 For each statistical result, assess:
 
 **Significance:**
-- Report exact p-value (not just "significant" or "not significant")
-- Flag if p is borderline (.04-.05): "marginal significance — interpret with caution"
-- Flag if many tests run without correction: "N tests without multiple comparison correction"
+- Report exact p-values when available instead of replacing them with a binary label.
+- Do not create a special "marginal" category merely because a p-value lies
+  near .05. Interpret the estimate, interval, effect magnitude, design, and
+  decision context together.
+- Flag multiple testing only when tests form a family for which selective
+  reporting or inflated error is relevant.
 
 **Effect Size:**
 
@@ -34,8 +37,9 @@ For each statistical result, assess:
 | r (correlation) | .10 | .30 | .50 |
 | Odds Ratio | 1.5 | 2.5 | 4.3 |
 
-- Always report: "statistically significant with [small/medium/large] effect"
-- Warn if significant but small effect: "statistically significant but practically small — consider whether this difference matters in context"
+- Use conventional small/medium/large labels only when they are meaningful in
+  the field; otherwise report the estimate in substantive units.
+- Distinguish statistical precision from practical importance in context.
 
 **Confidence Interval:**
 - Does CI include 0 (or 1 for OR)? → result is not significant regardless of p-value
@@ -54,11 +58,12 @@ For each statistical result, assess:
 | Correlation | Both variables continuous, linearity | Pearson used on ordinal data |
 
 **Multiple Comparisons:**
-- Count total number of statistical tests in the analysis
-- If > 3 tests and no correction reported:
-  - Suggest Bonferroni (conservative): adjusted alpha = .05 / N
-  - Suggest Benjamini-Hochberg FDR (less conservative): for exploratory analyses
-  - Report: which results survive correction, which don't
+- Identify the inferential family and whether conclusions depend on selecting
+  significant results from it.
+- Recommend an appropriate correction, hierarchical model, or explicit
+  exploratory labeling only when multiplicity threatens the reported claim.
+- Do not trigger correction from an arbitrary count such as more than three
+  tests.
 
 ### Step 3: Assign Confidence Level
 
@@ -70,9 +75,13 @@ For each statistical result, assess:
 
 ---
 
-## Part 2: Fallacy Scan (11 Types)
+## Part 2: Triggered Fallacy Scan (11-Type Menu)
 
-Check ALL 11 types for every validation. Report coverage in output ("11/11 checked").
+The 11 types below are a diagnostic menu. Check a type when its detection or
+`When to suspect` condition is present. Report triggered checks, findings, and
+material `N/A` decisions; do not claim quality from an "11/11 checked" count.
+For first-draft work, prioritize the one failure most capable of invalidating
+the main result and at most two additional named risks.
 
 ### Structural Fallacies (Data Level)
 
@@ -142,12 +151,18 @@ Check ALL 11 types for every validation. Report coverage in output ("11/11 check
 - **Detection**: Study design is cross-sectional, correlational, or observational, but language includes "caused", "led to", "resulted in", "improved", "reduced"
 - **When to suspect**: Always check in non-experimental designs
 - **Severity if found**: CAUTION
-- **Reporting note**: flag the specific causal language and note that the study design does not support causal inference. Example associational alternatives exist ("was associated with", "correlated with") but choosing phrasing is an editorial decision for the reviewer.
+- **Reporting note**: flag the specific causal verb and replace or recommend an
+  accurate associational alternative such as `was associated with` or
+  `correlated with`. Once the verb is corrected, do not require `exploratory`,
+  `observational`, or a repeated no-causality disclaimer unless that additional
+  information is independently relevant.
 
 **11. Reverse Causality**
 - **What**: The assumed direction of causation may be backwards
 - **Detection**: Cross-sectional data with directional claims; no temporal precedence established
-- **When to suspect**: "X predicts Y" in cross-sectional design (maybe Y causes X)
+- **When to suspect**: directional causal interpretation from cross-sectional
+  data. The statistical verb `predicts` may describe model performance without
+  claiming temporal or causal priority; inspect the surrounding interpretation.
 - **Severity if found**: CAUTION
 
 ---

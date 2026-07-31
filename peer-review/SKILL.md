@@ -58,6 +58,10 @@ Assess field and journal fit, research question, contribution, method validity,
 reproducibility, sampling, representativeness, statistical assumptions,
 figure/table evidence, claim-evidence alignment, causal language, limitations,
 ethics, and data access. Preserve independent lenses before synthesis.
+Treat plain association language as already non-causal. Request a causal
+correction only when the manuscript uses causal verbs, mechanisms, mediation,
+or policy effects beyond the design; do not demand `exploratory association`,
+`observational association`, or repeated no-causality disclaimers.
 
 For relevant geography manuscripts, read only the needed field references:
 
@@ -68,15 +72,24 @@ For relevant geography manuscripts, read only the needed field references:
 - `geoai-domain.md` for GeoAI or geospatial machine learning.
 - `journal-templates/` for venue fit.
 
-Use a devil's-advocate pass to identify the strongest rejection risk. Explicitly
-test whether a location change has cumulative, transferability, policy,
+Use a devil's-advocate pass to test the strongest plausible rejection risk, but
+do not manufacture one. If no material critical risk is supported, say so and
+keep the issue at the appropriate lower severity. Explicitly test whether a
+location change has cumulative, transferability, policy,
 measurement, or boundary-condition value; do not reject it for similarity
 alone. Also test method stacking without inferential gain,
 theory-as-label, Discussion restatement, and title overpromise when relevant.
 
+Apply spatial diagnostics only when the paper's claims or method assumptions
+trigger them. Mark MAUP, residual spatial dependence, alternative weights,
+GWR/MGWR, spatial CV, transfer, or boundary checks `N/A` with a reason when they
+do not apply; their absence is not automatically a weakness.
+
 ### 4. Triage And Draft
 
-Separate the single highest-risk critical issue from important and minor issues.
+Review central claims, primary figures/tables, and load-bearing method choices
+before lower-impact details. Separate zero or one highest-risk critical issue
+from important and minor issues.
 Follow user-specified counts when provided; otherwise use the defaults in
 [references/report-structure.md](references/report-structure.md). Base the
 editorial recommendation on fixability, not tone or preference.
@@ -90,7 +103,7 @@ the evidence for a major criticism.
 ### 5. Verify
 
 Before delivery, confirm that visual inspection or its limitation is disclosed,
-the critical issue is singular, issue counts are respected, geography gates were
+there is at most one critical issue, issue counts are respected, geography gates were
 applied when relevant, every critical and important issue has an evidence
 pointer, and user-edited files were not overwritten.
 
