@@ -113,3 +113,22 @@ def test_upstream_selective_backports_are_present():
     assert "calibration layer" in first_principles
     assert "figure-legend-contract.md" in nature_figure
     assert "Source Data Wording" in legend
+
+
+def test_journal_targeting_loads_local_reference_by_default():
+    advisor = read("academic-advisor/SKILL.md")
+    protocol = read(
+        "academic-advisor/references/local-journal-reference.md"
+    )
+    rubric = read("academic-advisor/references/journal-fit-rubric.md")
+    template = read("academic-advisor/templates/integrated-advisor-report.md")
+    project_yaml = read("sync/references/project-yaml-template.yaml")
+    assert "local-journal-reference.md" in advisor
+    assert "../others/journal_ai_reference.md" in protocol
+    assert "CODEX_JOURNAL_REFERENCE" in protocol
+    assert "Windows-only fallback" in protocol
+    assert "resolve_journal_reference.py" in advisor
+    assert "resolve_journal_reference.py" in protocol
+    assert "local-journal-reference.md" in rubric
+    assert "本地期刊参考" in template
+    assert "journal_reference" in project_yaml

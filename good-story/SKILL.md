@@ -52,6 +52,11 @@ When diagnosing a story, do not optimize only for drama or only for completeness
 
 `good-story` is a general research-writing skill, not an ecology skill or a fixed list of supported domains. Its core story logic can be used by researchers from any evidence-based field once the field's materials, evidence hierarchy, claim verbs, audience contract, and review risks are calibrated.
 
+Use this skill to diagnose how a story fits an audience or journal family. When
+the user asks for concrete journal names, a ranked submission list, or a
+journal ladder, route that decision through `academic-advisor`; it loads the
+user's local journal reference and verifies current journal information.
+
 Domain examples are domain calibration packs (领域校准包), not skill boundaries. Ecology, remote sensing, AI4Science, social science, biomedical research, and other examples tune the shared story grammar to a field's vocabulary, stakes, evidentiary standards, causal norms, review risks, and legitimate scope of implication. They do not change the core rule, and they must not smuggle field-specific assumptions into another domain.
 
 ## Quick Workflow

@@ -12,6 +12,7 @@ paths:
   methods_results: "paper/methods_results.md"
   research_assessment: "paper/research_assessment.md"
   writing_outline: "paper/writing_outline.md"
+  journal_reference: "" # optional; relative to project.root, e.g. ../others/journal_ai_reference.md
   results_dir: "results"
   validation_verdict: "results/representativeness_main_validation_v04.json"
 

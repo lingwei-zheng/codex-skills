@@ -7,7 +7,8 @@
   },
   "source_repository": {
     "url": "https://github.com/mattpocock/skills.git",
-    "ref": "733d312884b3878a9a9cff693c5886943753a741",
+    "ref": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
     "path": "skills/productivity/grill-me"
-  }
+  },
+  "codex_adaptation": "Inlines the upstream grilling primitive to avoid an unreliable nested-skill dependency while preserving explicit-only invocation."
 }

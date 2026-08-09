@@ -1,4 +1,6 @@
 interface:
   display_name: "Grill Me"
-  short_description: "Pressure-test a plan one decision at a time."
-  default_prompt: "Use $grill-me to pressure-test this plan one question at a time and recommend an answer for each decision."
+  short_description: "Sharpen a plan through a decision-tree interview."
+  default_prompt: "Use $grill-me to map this idea as a decision tree, question the current frontier in rounds, and recommend an answer for each decision without acting until I confirm shared understanding."
+policy:
+  allow_implicit_invocation: false

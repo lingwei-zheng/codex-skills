@@ -5,10 +5,12 @@ Use this before making novelty, literature-gap, field-trend, or journal-fit clai
 ## Evidence Order
 
 1. User-provided proposal, manuscript, journal list, figures, tables, and notes.
-2. Zotero local library: known papers, saved PDFs, tags, collections, citation metadata. Follow `zotero-evidence-workflow.md` for the execution protocol.
-3. Web literature search: recent papers, review articles, methods papers, journal scopes, author guidelines, special issues. Use this when Zotero is unavailable, sparse, outdated, or insufficient for the decision.
-4. Inference from evidence: allowed only when labeled.
-5. Unknown: leave unresolved when evidence is missing.
+2. For journal targeting, the user-maintained local journal reference resolved
+   through `local-journal-reference.md`.
+3. Zotero local library: known papers, saved PDFs, tags, collections, citation metadata. Follow `zotero-evidence-workflow.md` for the execution protocol.
+4. Web literature search: recent papers, review articles, methods papers, journal scopes, author guidelines, special issues. Use this when Zotero is unavailable, sparse, outdated, or insufficient for the decision.
+5. Inference from evidence: allowed only when labeled.
+6. Unknown: leave unresolved when evidence is missing.
 
 ## Zotero Search Pattern
 
@@ -51,6 +53,11 @@ Every mature report must include this Simplified Chinese ledger:
 **Zotero 状态**
 - 可用 / 不可用 / 结果稀疏：
 - 若不可用，blocker：
+
+**本地期刊参考（涉及投稿建议时）**
+- 已加载 / 未找到 / 读取失败：
+- 解析来源与文件更新时间：
+- 当前外部核查状态：
 ```
 
 ## Claim Discipline

@@ -11,10 +11,17 @@ target to complete a three-tier template.
 
 ## Journal List Handling
 
+- Before ranking, load the default local journal reference through
+  [local-journal-reference.md](local-journal-reference.md).
 - Treat a supplied journal list as the active ranking pool.
 - Extract journal name, field, scope notes, tier, impact factor, CAS/JCR class, acceptance tendency, and user notes when available.
 - If the list is incomplete, still rank available journals and flag missing metadata.
 - Do not replace the user's list with generic recommendations unless asked.
+
+When no list is supplied, use the readable local reference as the initial
+candidate pool. Verify current journal scope, author guidance, status, and any
+unstable ranking or metric before making a mature recommendation. Failure to
+locate the file must be disclosed but does not block a web-grounded fallback.
 
 ## Fit Dimensions
 

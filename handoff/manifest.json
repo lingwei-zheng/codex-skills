@@ -1,0 +1,14 @@
+{
+  "name": "handoff",
+  "generated_for": "codex",
+  "packaging": {
+    "type": "single_codex_skill",
+    "entrypoint": "skills/handoff/SKILL.md"
+  },
+  "source_repository": {
+    "url": "https://github.com/mattpocock/skills.git",
+    "ref": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+    "path": "skills/productivity/handoff"
+  },
+  "codex_adaptation": "Uses Codex explicit-invocation metadata and distinguishes temporary conversation handoff from the durable research-project sync workflow."
+}

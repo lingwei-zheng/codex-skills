@@ -31,6 +31,11 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
   Include a stretch route only when its minimum upgrade is plausible; do not
   treat specialist, regional, replication, or incremental venues as inferior
   when they are the best scholarly fit.
+- Before naming or ranking journals, read
+  `references/local-journal-reference.md` and attempt to load the user's local
+  `journal_ai_reference.md`. Use it as the default candidate pool and preference
+  ledger, then verify current scope, guidelines, and unstable metrics from
+  primary journal or publisher sources.
 - Do not edit the proposal or manuscript by default. Produce a separate assessment report unless the user explicitly asks for rewriting.
 
 ## Routing Boundaries
@@ -75,7 +80,18 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
      shape affects fit.
    - `revision-strategy`: load only the question, story, research, or journal
      lens implicated by the requested revision.
-6. If a journal list is supplied, treat it as an active constraint and ranking pool, not an appendix. Read `references/journal-fit-rubric.md`.
+6. For every journal-targeting task:
+   - Read `references/local-journal-reference.md` and run its path-resolution
+     sequence before recommending journals. Prefer
+     `python scripts/resolve_journal_reference.py --project-root <project>`;
+     pass `.codex/project.yaml`'s `paths.journal_reference` value through
+     `--configured` when present.
+   - Record whether the local reference was loaded, its visible update date,
+     and which resolver found it. Do not silently skip an unreadable file.
+   - If the user supplies another journal list, treat that list as the active
+     constraint; use the local reference to enrich it, not replace it.
+   - Read `references/journal-fit-rubric.md` and verify current external facts
+     that could change the recommendation.
 7. Produce one integrated report using `templates/integrated-advisor-report.md`.
 
 ## Reference Loading
@@ -84,6 +100,8 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 - Read `references/evidence-triangulation.md` before making novelty, literature-gap, or target-journal claims.
 - Read `references/zotero-evidence-workflow.md` whenever evidence grounding is required.
 - Read `references/journal-fit-rubric.md` when the user provides a journal list or asks where to submit.
+- Read `references/local-journal-reference.md` before every concrete journal
+  recommendation or ranking.
 - Read `../shared/research-calibration.md` for stage, rigor, contribution, and
   compute defaults.
 - For a completed manuscript whose story affects submission readiness, read
