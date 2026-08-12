@@ -33,6 +33,20 @@ Image-integrity notes:
 Reviewer risk:
 ```
 
+For an interaction or moderation figure, append:
+
+```text
+Model class and formula:
+Focal predictor:
+Moderator and displayed values:
+Second moderator/facets, if any:
+Prediction scale: response or link
+Other-covariate handling:
+Mixed-model prediction: fixed effects or conditional
+Uncertainty method:
+Observed-support check:
+```
+
 Do not start from a favorite template. Start from the conclusion, then choose the
 minimum set of panels that make the conclusion clear and defensible.
 
@@ -53,6 +67,7 @@ minimum set of panels that make the conclusion clear and defensible.
 | Archetype | Use when | Hero panel | Supporting panels |
 |---|---|---|---|
 | `quantitative grid` | The claim is mainly numerical comparison | Optional; often a dominant summary metric | Shared axes, aligned scales, compact legends |
+| `interaction/moderation` | The claim is that an association or prediction changes across a moderator | Conditional prediction or simple-slope panel | Observed support, Johnson-Neyman, or a second moderator only when claim-bearing |
 | `schematic-led composite` | A workflow, mechanism, device, or experimental design must be understood first | Left or top schematic, 35-60% of area | 2-4 quantitative validation panels |
 | `image plate + quant` | Microscopy, imaging, histology, spatial overlays, segmentation, or blots lead the evidence | Image plate or representative image | Scale bars, overlays, crops, quantification |
 | `asymmetric mixed-modality figure` | The figure combines schematic, raster images, heatmaps, and quantitative plots | One panel spans rows/columns | Smaller panels ranked by evidence value |

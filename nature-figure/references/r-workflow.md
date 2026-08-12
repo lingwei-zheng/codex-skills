@@ -22,11 +22,17 @@ image/vector outputs or alter visual layout.
 | Task | Preferred packages |
 |---|---|
 | Bars, boxplots, violins, dot plots, lines, volcano plots | `ggplot2`, `ggrepel`, `dplyr`, `tidyr` |
+| Interaction and moderation results | `interactions`; use its returned `ggplot2` objects for styling and export |
 | Multi-panel assembly | `patchwork`; use `cowplot` only when inset alignment requires it |
 | Rich omics heatmaps | `ComplexHeatmap`, `circlize`, `grid` |
 | Survival and clinical subgroup plots | `survival`, `survminer`, `forestplot`, `ggplot2` |
 | Circular/genome plots | `circlize`, `ggtree`, `gggenes`, domain-specific packages |
 | Export | `svglite`, `grDevices::cairo_pdf`, `ragg` |
+
+For interaction or moderation plots, read
+`interaction-moderation-track.md`. Do not introduce `sjPlot`, `ggeffects`,
+`emmeans`, or another interaction plotting interface into that track unless the
+user explicitly overrides the package choice.
 
 ## Contract scaffold
 

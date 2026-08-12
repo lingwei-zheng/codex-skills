@@ -30,6 +30,7 @@ submission. The values below are conservative defaults for Nature-family style w
 | Color | No rainbow color maps; red/green is not the only encoding; grayscale print remains interpretable |
 | Legend strategy | Shared or direct labels where possible; no repeated redundant legends |
 | Statistics | `n`, biological/technical repeat definition, center, spread, test, correction, and exact comparison are documented |
+| Interaction semantics | Predictor, moderator values, covariate handling, prediction scale, mixed-model level, interval, and observed support are documented |
 | Source data | Quantitative panels can be traced to a clean CSV/TSV/XLSX or script output |
 | Raster resolution | Photos/microscopy are high-resolution enough for final size; line art uses vector where possible |
 | Microscopy scale | Scale bar is present, calibrated, and not only a magnification factor |
@@ -60,6 +61,20 @@ number of seeds or folds:
 metric definition:
 confidence interval or variability definition:
 baseline definition:
+```
+
+For interaction or moderation figures, also capture:
+
+```text
+model class and formula:
+focal predictor:
+moderator and displayed values:
+second moderator, if any:
+response or link scale:
+other-covariate handling:
+fixed-effect or conditional prediction:
+confidence interval / variance estimator:
+observed data range and sparse-support warning:
 ```
 
 ## Image-integrity minimum

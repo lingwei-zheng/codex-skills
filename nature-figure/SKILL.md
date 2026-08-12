@@ -4,11 +4,13 @@ description: >-
   Submission-grade scientific figure workflow for Python or R. Use when the
   user asks to create, revise, audit, or polish empirical manuscript figures,
   statistical plots, static publication maps, multi-panel evidence figures, or
-  journal-ready SVG/PDF/TIFF outputs. Define the figure claim, evidence logic,
-  export contract, and review risks before plotting. If the user has not chosen
-  Python or R, ask "Python or R?" and stop. Use only the selected backend for
-  generation, previewing, exporting, and visual QA. Not for dashboards,
-  engineering schematics, or illustration-first infographics.
+  journal-ready SVG/PDF/TIFF outputs, including R interaction, moderation,
+  conditional-prediction, simple-slopes, and Johnson-Neyman plots. Define the
+  figure claim, evidence logic, export contract, and review risks before
+  plotting. If the user has not chosen Python or R, ask "Python or R?" and stop.
+  Use only the selected backend for generation, previewing, exporting, and
+  visual QA. Not for dashboards, engineering schematics, or illustration-first
+  infographics.
 ---
 
 # Nature Figure
@@ -50,6 +52,9 @@ After selection:
   guidance;
 - use the other language only for non-visual data inspection or conversion.
 
+Mentioning R code, an R model object, `lme4`, or the `interactions` package is an
+unambiguous R selection. Do not ask the backend question again.
+
 Read [references/backend-selection.md](references/backend-selection.md) when the
 user asks for a recommendation or backend details.
 
@@ -65,6 +70,9 @@ user asks for a recommendation or backend details.
    [references/r-workflow.md](references/r-workflow.md) for R. For a static map
    or spatial figure, also read
    [references/geospatial-figure-contract.md](references/geospatial-figure-contract.md).
+   For an interaction or moderation result, read
+   [references/interaction-moderation-track.md](references/interaction-moderation-track.md)
+   and use `interactions` as the only interaction-analysis plotting interface.
 4. **Build reproducibly.** Keep source data, plotting code, statistics, labels,
    dimensions, colors, and export settings traceable.
 5. **Integrate the layout.** Use one restrained visual vocabulary, stable method
@@ -100,6 +108,7 @@ user asks for a recommendation or backend details.
 | [references/figure-contract.md](references/figure-contract.md) | Define claim, evidence hierarchy, panel map, and reviewer risks |
 | [references/backend-selection.md](references/backend-selection.md) | Select or troubleshoot Python/R |
 | [references/r-workflow.md](references/r-workflow.md) | Use R, ggplot2, patchwork, or ComplexHeatmap |
+| [references/interaction-moderation-track.md](references/interaction-moderation-track.md) | Plot R interaction, moderation, conditional prediction, simple slopes, or Johnson-Neyman results with `interactions` |
 | [references/geospatial-figure-contract.md](references/geospatial-figure-contract.md) | Build a static map or spatial evidence figure |
 | [references/figure-legend-contract.md](references/figure-legend-contract.md) | Write or audit figure/table legends and statistical caption details |
 | [references/qa-contract.md](references/qa-contract.md) | Export and final visual/statistical checks |
