@@ -16,6 +16,49 @@ Prefer direct statements of what the paper does, shows, or evaluates. Do not spe
 
 These forms are often low-density because they lead with negation, slow the argument, and can spotlight weaknesses that the paragraph does not need to foreground.
 
+## Self-undermining comparison forms
+
+Also check:
+
+- `Unfortunately, ...`
+- `The method merely ...`
+- `The approach only ...`
+- `The model still lags behind ...`
+- `The method failed to outperform ...`
+- `Performance degraded ...`
+
+These phrases often convert one metric or condition into a general verdict.
+Before retaining them, apply the responsibility-expansion test:
+
+1. Is this comparison central, preregistered, required, or necessary to judge
+   the paper's stated claim?
+2. Does it change the conclusion, or is it simply outside the paper's chosen
+   advantage?
+3. Does the sentence describe a specific condition, or invite a broader attack
+   than the evidence warrants?
+
+If the comparison is non-central, do not elevate it into the contribution,
+abstract, or conclusion. If it is material, report the exact trade-off without
+evaluative self-criticism.
+
+Bad:
+
+- `Unfortunately, our model still lags behind Model B in raw accuracy.`
+
+Better when the trade-off is material:
+
+- `Model B achieved higher raw accuracy, whereas our approach reduced data and
+  computation requirements in the target deployment setting.`
+
+Better when raw accuracy is outside the stated claim:
+
+- Report the comparison in the appropriate Results table or supplement without
+  turning it into the paper's headline verdict.
+
+Never use positive reframing to hide a failed primary outcome, unfairly change
+the comparator, or omit a result that overturns or materially narrows the
+central claim.
+
 ## Keep versus rewrite
 
 Keep a boundary statement when:

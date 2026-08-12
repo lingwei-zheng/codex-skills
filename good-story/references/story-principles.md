@@ -48,18 +48,33 @@ Operational questions:
 - Which result would make the paper collapse if removed?
 - Which details are true but not story-bearing?
 
+## 1.25. Leading Advantage and Winning Arena
+
+Name the strongest honest advantage before designing the manuscript. It may be
+a new capability, mechanism, lower cost, greater scalability, practical value,
+or a modest but decision-relevant improvement. Then define the arena in which
+the evidence shows that advantage: the task, comparator, metric, population,
+scale, and application setting.
+
+The paper need not win every comparison. It must win a meaningful comparison
+fairly. Do not select outcomes after the fact to hide a failed primary endpoint,
+drop fair baselines, or redefine the task so narrowly that the victory becomes
+empty.
+
 ## 1.5. Audience Contract: Editor, Reviewer, Reader
 
 Good structure serves different decision-makers at the same time:
 
 - Editor: needs a fast judgment of significance, novelty, fit, and why the paper deserves scarce attention.
-- Reviewer: needs to verify that the central claim follows from the results, methods, controls, assumptions, and limitations.
+- Reviewer: needs to verify that the central claim follows from the results,
+  methods, relevant controls, assumptions, and material limitations.
 - Field reader: needs to remember the portable contribution and decide whether to read, cite, reuse, challenge, or build on it.
 
 Operational questions:
 
 - Editor question: Why should this paper be considered now, by this journal or audience?
-- Reviewer question: Which claim is most vulnerable, and where is the evidence or qualifier that protects it?
+- Reviewer question: Can the reader inspect the evidence and conditions needed
+  for the central claim without the author pre-writing every possible attack?
 - Reader question: What would a competent reader tell a colleague one year later?
 
 If a story excites the editor but makes review logic hard to inspect, it is hype-prone. If it satisfies reviewers but gives readers no memorable contribution, it is under-framed. If it is memorable but not verifiable, it is not a scientific story.
@@ -133,6 +148,14 @@ Autobiography check:
 - If the original question no longer matches the strongest answer, rebuild the introduction around the question the evidence can now answer.
 - If a negative or failed result changes the interpretation, keep it in the evidence map even if it complicates the story.
 
+### Experiment-job map
+
+Every prominent analysis or figure should establish the central effect, explain
+its source, demonstrate target-setting value, distinguish a plausible
+alternative, or define a material boundary. Supplement, defer, or remove work
+that has no argument job. Do not keep an analysis prominent because it was
+difficult or conventional.
+
 ## 7. Breadth-Narrow-Breadth
 
 High-impact scientific stories often move:
@@ -149,7 +172,7 @@ The narrow part protects credibility; the broad part creates significance.
 Storytelling in science is constrained by truth.
 
 - Mark speculation as speculation.
-- Do not hide negative results that affect the claim.
+- Do not hide negative results that overturn or materially narrow the claim.
 - Do not imply causality from association.
 - Do not turn limitations into vague future work; use them to define scope.
 - Preserve uncertainty when uncertainty is scientifically important.
@@ -158,13 +181,14 @@ The best story is not the prettiest possible story; it is the strongest honest s
 
 Nature Methods' caution is the governing principle: narrative is useful when it illuminates scientific information, but harmful when a perfect story becomes an end in itself. A clean narrative must never justify cherry-picking, obscuring failed experiments, hiding uncertainty, or making a result sound more resolved than it is.
 
-Narrative-risk questions:
+Materiality questions:
 
 - What evidence does not fit the clean version of the story?
 - Does that evidence merely distract, or does it change the conclusion's scope?
 - Are null, negative, failed, or unexplained results needed to judge the claim?
-- Would a skeptical reviewer accuse the story of selecting only convenient results?
-- What sentence can include the complication without destroying the central contribution?
+- Is the comparison preregistered, required, or central to the stated task?
+- Can a material complication be stated after the contribution is established,
+  as a specific condition rather than a general self-critique?
 
 ## 9. Useful Story Archetypes
 
@@ -188,10 +212,12 @@ Score each from 0-3:
 - Surprise: at least one belief-moving turn.
 - Scope: claims calibrated to evidence.
 - Portability: easy to retell outside the immediate subfield.
+- Advantage clarity: the reader can name what improves and under which conditions.
+- Arena fit: comparisons and metrics fairly represent the intended value.
 
 Total:
 
-- 20-24: strong story; polish delivery.
-- 14-19: viable story; strengthen gap, turn, or evidence order.
-- 8-13: scattered material; choose a central contribution.
-- 0-7: not yet a story; return to claims and evidence.
+- 26-30: strong story; polish delivery.
+- 19-25: viable story; strengthen the advantage, turn, or evidence order.
+- 10-18: scattered material; choose a central contribution and arena.
+- 0-9: not yet a story; return to claims and evidence.

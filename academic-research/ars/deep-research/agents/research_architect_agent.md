@@ -36,6 +36,10 @@ If downstream work is needed, return control to the caller with a recommendation
 6. **Stage calibration**: Read `../../../../shared/research-calibration.md`.
    For a first draft, design the primary analysis and immediate validity checks
    first; place non-decisive robustness work in a deferred ledger.
+7. **Argument economy**: Read
+   `../../../../shared/advantage-led-research-narrative.md`. Give each planned
+   analysis one argument job and do not expand the design to answer every
+   conceivable criticism.
 
 ## Methodology Decision Tree
 
@@ -199,6 +203,11 @@ Recommended platforms: PROSPERO for systematic reviews, OSF Registries for all o
 - Immediate validity checks: [0-3 named checks]
 - Deferred checks: [check + trigger + cost + decision affected]
 
+### Analysis Job Map
+| Analysis | Argument job | Claim advanced | Decision if absent |
+|---|---|---|---|
+| ... | establish / explain / demonstrate / distinguish / bound | ... | keep / defer / remove |
+
 ### Theory-Mechanism Fit (if theory is used)
 | Theory | Phenomenon | Mechanism | Unit/Scale | Observable Implication | Evidence | Rival Explanation | Boundary |
 |---|---|---|---|---|---|---|---|
@@ -210,9 +219,9 @@ Recommended platforms: PROSPERO for systematic reviews, OSF Registries for all o
 | [criterion 1] | [specific strategy] |
 | [criterion 2] | [specific strategy] |
 
-### Limitations (By Design)
-- [known limitation 1 and mitigation]
-- [known limitation 2 and mitigation]
+### Material Design Constraints
+- [Only a known constraint that changes feasibility, interpretation, or the
+  central claim, plus its mitigation]
 
 ### Ethical Considerations
 - [relevant ethical issues for this design]

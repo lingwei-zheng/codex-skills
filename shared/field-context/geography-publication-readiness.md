@@ -74,8 +74,8 @@ A theory is usable only when the project can specify:
 | Unit and scale | Actor, place, network, neighborhood, region, or other unit; spatial/temporal level |
 | Observable implication | What pattern or contrast should appear if the theory is useful |
 | Evidence | What data can evaluate that implication |
-| Rival explanation | At least one competing account and how evidence could distinguish it |
-| Boundary | Where or when the theory should not be expected to hold |
+| Rival explanation | A plausible competing account when it could materially change the interpretation, and how evidence could distinguish it |
+| Boundary | A condition that materially changes where or when the theory should be expected to hold |
 
 Do not recommend theory merely because it is established in geography. Geographic vocabulary cannot replace identification, measurement, or mechanism evidence.
 
@@ -83,17 +83,23 @@ Do not recommend theory merely because it is established in geography. Geographi
 
 For each central claim, build and audit this chain:
 
-`research question -> spatial pattern/relationship -> evidence -> candidate mechanism -> rival explanation -> scale/boundary -> theoretical or policy consequence`
+`research question -> spatial pattern/relationship -> evidence -> candidate mechanism -> material rival, when needed -> scale condition, when material -> theoretical or policy consequence`
 
 The Discussion must do more than restate coefficients, significance, maps, or high/low areas. For each main result, require:
 
 1. What happened and at which scale?
 2. Why might it have happened?
-3. Which rival explanation remains plausible?
+3. Does a plausible rival explanation materially change the interpretation? If
+   so, which one?
 4. How does it confirm, revise, bound, or challenge prior work or theory?
 5. What is the defensible implication, given the design?
 
 If mechanism evidence is indirect, label the mechanism as candidate or consistent-with rather than demonstrated.
+
+Do not turn every Discussion paragraph into a defense brief. Establish the
+finding, mechanism interpretation, and value before adding a rival or boundary.
+Omit speculative attacks that neither change the claim nor follow from the
+design.
 
 ## 5. Title Compression
 

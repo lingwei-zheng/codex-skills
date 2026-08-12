@@ -7,6 +7,8 @@ card structure, onboarding, and response order.
 Also read `../../shared/research-calibration.md`. Default to
 `incremental-allowed` unless the user or target venue explicitly requires a
 larger contribution.
+Read `../../shared/advantage-led-research-narrative.md` for author-side emphasis,
+winning-arena selection, and the materiality threshold for risk reporting.
 
 ## Information Sufficiency Gate
 
@@ -94,6 +96,8 @@ Score promising candidates from one to five:
 | Contribution value | The work adds credible replication, transferability, measurement, method, mechanism, theory, or decision value |
 | Venue fit | The contribution magnitude and evidence match a plausible outlet |
 | Downside learning | A negative result remains useful or publishable |
+| Advantage clarity | The study can name what becomes more credible, useful, measurable, transferable, or efficient |
+| Arena fit | The comparator, metric, population, and setting fairly reveal that value |
 
 Drop or park candidates when:
 
@@ -105,18 +109,23 @@ Drop or park candidates when:
 - the method appears before the problem;
 - complexity does not buy inferential value.
 
-## Stress Test
+## Decision Test
 
 For the strongest one to three candidates:
 
-1. Name competing explanations when the claim is explanatory or causal. For
+1. Name competing explanations when the claim is explanatory or causal and the
+   alternative could materially change the conclusion. For
    replication or descriptive work, name the benchmark, prior estimate, or
    transferability expectation being tested.
 2. Identify an observation or experiment that distinguishes them.
 3. State what result would weaken or kill the preferred explanation.
 4. Design a two-week pilot or the smallest feasible evidence test.
-5. Name the strongest reviewer or funder objection.
-6. Repair, park, or reject any candidate that fails a fatal gate.
+5. State the advantage hypothesis and the fair comparison, metric, population,
+   or setting in which it would matter.
+6. In `reviewer` or `grant` mode, for high-cost irreversible projects, or when a
+   material defect changes the decision, name the strongest reviewer or funder
+   objection. Otherwise keep speculative attacks out of the user-facing card.
+7. Repair, park, or reject any candidate that fails a fatal gate.
 
 ## Good Question Card
 
@@ -129,14 +138,16 @@ Use this stable schema:
 **Research question:**
 **Why it matters:**
 **Core assumption challenged:**
-**Competing hypotheses:**
+**Competing hypotheses (when relevant):**
 **Discriminating observation or experiment:**
 **What would falsify it:**
 **Contribution level:**
 **What this adds beyond prior work:**
+**Leading advantage:**
+**Winning arena or comparison:**
 **Two-week pilot:**
 **Data/resources needed:**
-**Strongest reviewer objection:**
+**Material decision risk (only when triggered):**
 **Best next action:**
 ```
 
@@ -149,14 +160,16 @@ For Chinese responses, use:
 **核心研究问题：**
 **为什么值得做：**
 **它挑战了什么默认假设：**
-**竞争性解释：**
+**竞争性解释（适用时）：**
 **关键判别证据或实验：**
 **什么结果会推翻它：**
 **贡献层级：**
 **相较既有研究增加了什么：**
+**领先优势：**
+**取胜场景或比较口径：**
 **两周内可做的 pilot：**
 **需要的数据/资源：**
-**最强评审质疑：**
+**实质决策风险（仅在触发时）：**
 **下一步动作：**
 ```
 
@@ -180,6 +193,6 @@ onboarding example is needed.
 4. Source audit when decisive claims require it.
 5. Candidate questions and chosen lenses.
 6. Ranked shortlist.
-7. Repair or rejection notes.
+7. Material repair or rejection notes, when triggered.
 8. Good Question Cards.
 9. Next action or pilot.

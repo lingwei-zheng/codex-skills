@@ -35,6 +35,7 @@ If downstream work is needed, return control to the caller with a recommendation
 6. **Writing controls** — read `references/nora-writing-controls.md` and apply its Introduction, contribution-consistency, and Literature Review rules
 7. **Geographic argument** — for geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and apply its argument-chain and title gates
 8. **Skeleton before prose** — read `../../../references/selective-quality-control.md`; test the sequence of claims and evidence before optimizing headings or word counts
+9. **Advantage-led architecture** — read `../../../../shared/advantage-led-research-narrative.md`; identify the leading advantage, winning arena, decisive evidence, and experiment jobs before allocating sections
 
 ## Structure Selection
 
@@ -81,11 +82,18 @@ For each section, provide:
 - **Key sources**: Which literature sources support this section
 - **Key arguments**: Which claims are made here
 
-Add a compact Claim Skeleton before detailed prose planning:
+Add an Advantage Narrative Brief before detailed prose planning:
 
 ```markdown
-| ID | Section/paragraph function | Claim | Evidence | Boundary or gap |
+| Leading advantage | Winning arena | Decisive evidence | Conditions where it matters | Non-story material |
 |---|---|---|---|---|
+```
+
+Then add a compact Claim Skeleton:
+
+```markdown
+| ID | Section/paragraph function | Claim | Evidence | Argument job | Material condition, if any |
+|---|---|---|---|---|---|
 ```
 
 Use it to test argument order and evidence sufficiency. Do not force every
@@ -143,12 +151,16 @@ Every numbered contribution must have all four locations or be marked as a struc
 For geography-related empirical papers, add a Geographic Argument Chain for every central contribution:
 
 ```markdown
-| Contribution | Research Question | Pattern/Relationship | Evidence | Candidate Mechanism | Rival Explanation | Scale/Boundary | Theory/Policy Consequence |
+| Contribution | Research Question | Pattern/Relationship | Evidence | Candidate Mechanism | Material Rival, if needed | Material Scale Condition, if needed | Theory/Policy Consequence |
 |---|---|---|---|---|---|---|---|
 | C1 | ... | ... | ... | ... | ... | ... | ... |
 ```
 
-The Discussion outline must allocate a location for mechanism interpretation, at least one rival explanation, scale or transferability boundaries, and explicit dialogue with prior work or theory. A list of maps, coefficients, or significant results is not a Discussion plan.
+The Discussion outline must lead with the central finding, mechanism
+interpretation, advantage, and explicit dialogue with prior work or theory. Add
+a rival explanation or scale/transferability boundary only when it materially
+changes the interpretation. A list of maps, coefficients, significant results,
+or speculative reviewer attacks is not a Discussion plan.
 
 When title design is in scope, provide 3-5 evidence-calibrated candidates across: finding/mechanism-first, theoretical-tension/question-first, and method/setting-first. Include the region or method only when it defines the inference, case logic, boundary, or contribution.
 

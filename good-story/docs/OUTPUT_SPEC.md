@@ -7,18 +7,20 @@ This file describes the expected output shape for `good-story`.
 Use this when the user provides materials and asks for story diagnosis.
 
 ```markdown
+## 领先优势
+
+## 取胜场景
+
 ## 最强故事
 
 ## 为什么这个故事成立
 
 ## 故事主线
 
-## 证据地图
+## 证据与实验任务地图
 
-| 结论 | 证据 | 边界 |
-|---|---|---|
-
-## 薄弱点
+| 结论 | 证据 | 论证职责 | 实质条件（如有） |
+|---|---|---|---|
 
 ## 重写目标
 ```
@@ -26,18 +28,20 @@ Use this when the user provides materials and asks for story diagnosis.
 For English users:
 
 ```markdown
+## Leading advantage
+
+## Winning arena
+
 ## Best story
 
 ## Why this story works
 
 ## Story spine
 
-## Evidence map
+## Evidence and experiment-job map
 
-| Claim | Evidence | Boundary |
-|---|---|---|
-
-## Weak points
+| Claim | Evidence | Argument job | Material condition, if any |
+|---|---|---|---|
 
 ## Rewrite targets
 ```
@@ -53,7 +57,7 @@ Use when the user is working across fields or asks whether the skill applies to 
 - 这个领域认什么证据：
 - 结论可以说到什么强度：
 - 这个领域的意义在哪里：
-- 主要审稿风险：
+- 改变结论或路线的实质约束（如有）：
 ```
 
 ## Candidate Story Add-On
@@ -63,7 +67,7 @@ Use for early projects.
 ```markdown
 ## 候选故事
 
-| 排名 | 故事 | 优点 | 风险 |
+| 排名 | 故事 | 领先优势 | 取胜场景 |
 |---|---|---|---|
 ```
 
@@ -97,6 +101,6 @@ Use when the user asks for reviewer resistance.
 
 - Do not invent evidence.
 - Do not turn correlation into causation.
-- Do not hide negative results or limitations.
+- Do not hide results or limitations that materially change the central claim.
 - Do not use stronger claim verbs than the evidence supports.
 - For Chinese users, avoid English framework labels unless they prevent ambiguity.

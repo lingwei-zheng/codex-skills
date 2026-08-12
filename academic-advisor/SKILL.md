@@ -20,6 +20,10 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 - Read `../shared/research-calibration.md` and infer the research stage,
   contribution level, rigor profile, and compute profile before judging the
   project. If the user does not specify them, use the shared defaults.
+- Read `../shared/advantage-led-research-narrative.md`. Lead the assessment with
+  the project's strongest honest advantage, the arena in which it can matter,
+  and the decisive evidence needed to establish it. Keep speculative reviewer
+  attacks out of the headline verdict.
 - Ground decisive recommendations in evidence: read
   `references/zotero-evidence-workflow.md`, check Zotero readiness, and search
   Zotero first. For rough ideas and first drafts, use a targeted search around
@@ -41,7 +45,9 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
 ## Routing Boundaries
 
 - Use `academic-advisor` for author-side project diagnosis, pre-submission audit, and journal strategy.
-- Use `good-question` logic for question quality, falsifiability, pilot design, and strongest reviewer rejection risk.
+- Use `good-question` logic for question quality, advantage hypothesis,
+  falsifiability, and pilot design. Add reviewer rejection analysis only for
+  pre-submission, revision, `reviewer`/`grant`-like, or materially risky cases.
 - Use `good-story` logic for completed manuscripts whose evidence, figure order,
   central claim, or narrative spine needs diagnosis.
 - Use `academic-research` logic for literature positioning, research design,
@@ -69,11 +75,13 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
    - Maintain an evidence ledger with `来源支持 Source-backed`, `推断 Inference`, and `未知/待核查 Unknown`.
    - If Zotero is unavailable, do not silently skip it; report the exact blocker in the evidence ledger.
 5. Select only the lenses needed for the classified task:
-   - `idea-proposal`: good-question for importance, tractability, falsifier,
-     pilot, hidden assumptions, and reviewer risk; academic-research for
+   - `idea-proposal`: good-question for importance, tractability, advantage
+     hypothesis, fair comparison, falsifier, pilot, and material assumptions;
+     academic-research for
      literature positioning, design, methods, and contribution.
    - `manuscript-pre-submission`: good-story for the central claim, evidence
-     ladder, figure order, and narrative risks; academic-research for structure,
+     ladder, leading advantage, winning arena, experiment jobs, and figure
+     order; academic-research for structure,
      methods, claim-evidence boundaries, and readiness.
    - `journal-targeting-only`: journal-fit and evidence-triangulation rubrics;
      add good-story only when manuscript materials are available and story
@@ -104,13 +112,16 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
   recommendation or ranking.
 - Read `../shared/research-calibration.md` for stage, rigor, contribution, and
   compute defaults.
+- Read `../shared/advantage-led-research-narrative.md` for author-side emphasis,
+  experiment purpose, winning-arena selection, and materiality triage.
 - For a completed manuscript whose story affects submission readiness, read
   `../good-story/SKILL.md` and preserve its stable story handoff.
 - For geography-related proposals or manuscripts, read `../shared/field-context/geography-publication-readiness.md` and include its five-gate diagnosis.
 
 ## Output Rules
 
-- Lead with a Chinese bottom-line verdict and the recommended paper route.
+- Lead with a Chinese bottom-line verdict, the paper's leading advantage, its
+  strongest credible route, and the evidence needed to make that route work.
 - Separate source-backed claims from inferences and unknowns using the Chinese evidence ledger labels.
 - Do not output the final integrated report in full English unless the user explicitly requests English.
 - Do not claim "nobody has studied this" unless the evidence search supports that claim.
@@ -123,3 +134,6 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
   are useful; omit a performative stretch route when no plausible upgrade path
   exists.
 - Keep the final report directly reusable as a project document.
+- Do not make a weakest-gate or reviewer-attack inventory mandatory. Surface a
+  constraint only when it changes the central claim, development plan, or
+  journal route.

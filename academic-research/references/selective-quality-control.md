@@ -39,10 +39,16 @@ Calibrate severity to field norms and consequence:
 
 ## Skeleton-First Drafting
 
-Before full prose, make a compact claim skeleton:
+Before full prose, read `../../shared/advantage-led-research-narrative.md` and
+make a compact narrative brief:
 
-| ID | Paragraph or section function | Claim | Evidence | Boundary or gap |
+| Leading advantage | Winning arena | Decisive evidence | Conditions where it matters | Non-story material |
 |---|---|---|---|---|
+
+Then make a compact claim skeleton:
+
+| ID | Paragraph or section function | Claim | Evidence | Argument job | Material condition, if any |
+|---|---|---|---|---|---|
 
 Use topic sentences or claim slots to test sequence and coherence before
 expanding prose. TEEL, CARS, or another rhetorical pattern may help a particular
@@ -58,6 +64,11 @@ Results and main evidence stabilize, recalibrate the final Introduction so that
 its gap, contribution, and roadmap promise only what the paper actually
 delivers. Preserve the six-paragraph geography Introduction unless a valid
 format or paper-type override applies.
+
+Order Results by final argument logic, not by the order in which analyses were
+attempted. Each prominent experiment, model, figure, or table must establish,
+explain, demonstrate, distinguish, or materially bound the central advantage.
+Defer or demote checks with no current argument job.
 
 ## Revision Economy
 
@@ -88,7 +99,7 @@ Report only:
 
 - active stage and review scope;
 - high-impact items checked;
-- material gaps or blocking defects;
+- material gaps or blocking defects, not speculative reviewer attacks;
 - local changes made;
 - deferred checks and their triggers;
 - any central claim drift requiring author confirmation.

@@ -18,14 +18,21 @@ draft into a question that is important, tractable, falsifiable, and defensible.
   valid when their value and venue fit are stated honestly.
 - Do not reject a question merely because it resembles prior work. Identify
   what becomes more credible, transferable, measurable, or useful.
-- Make hidden assumptions and competing explanations explicit.
+- Make hidden assumptions explicit. Name competing explanations when the
+  question is explanatory or causal and the alternative could materially
+  change the decision; do not invent rivals for descriptive or bounded
+  incremental work.
 - Do not let a preferred method create the research problem.
 - Treat first-principles reasoning as a calibration lens for constraints,
   assumptions, rivals, falsifiers, and evidence boundaries. It cannot override
   field evidence, source audit, domain norms, or competing explanations.
 - Never turn "I do not know of work on X" into "nobody has studied X."
 - Do not recommend a mature question without a stake, falsifier, feasible pilot,
-  and strongest rejection risk.
+  and a clear advantage hypothesis: what this study could make more credible,
+  useful, measurable, transferable, or efficient.
+- Do not make the strongest reviewer objection a mandatory author-side output.
+  Surface it in `reviewer` or `grant` mode, for high-cost irreversible choices,
+  or when a material flaw changes the decision.
 - Respond in Chinese when the user writes in Chinese unless asked otherwise.
 
 ## Boundaries
@@ -42,7 +49,7 @@ draft into a question that is important, tractable, falsifiable, and defensible.
 
 | Mode | Use when | Emphasis |
 |---|---|---|
-| `mentor` | Direction is early or uncertain | Compare options and expose assumptions |
+| `mentor` | Direction is early or uncertain | Compare options and identify the most promising advantage |
 | `reviewer` | The user wants criticism or stress testing | Rejection risks and repair paths |
 | `collaborator` | Data or resources are ready | Pilot, milestones, and decision gates |
 | `grant` | Proposal, fund, or pitch | Audience, success criteria, and kill criteria |
@@ -51,7 +58,8 @@ draft into a question that is important, tractable, falsifiable, and defensible.
 
 1. **Check information sufficiency.** Read
    [references/question-workflow.md](references/question-workflow.md) and
-   `../shared/research-calibration.md`. Retrieve
+   `../shared/research-calibration.md` plus
+   `../shared/advantage-led-research-narrative.md`. Retrieve
    current evidence before field-specific ideation when novelty, literature
    consensus, reviewer expectations, journal fit, or technical feasibility
    affects the recommendation.
@@ -68,8 +76,11 @@ draft into a question that is important, tractable, falsifiable, and defensible.
    leverage, contribution value, venue fit, and downside learning. Classify the
    contribution level instead of demanding maximal originality. Drop questions
    only when they fail a fatal rule.
-5. **Stress-test finalists.** Name competing hypotheses, a discriminating test,
-   the strongest reviewer objection, and what evidence would kill the idea.
+5. **Test finalists.** Name the advantage hypothesis, the fair comparison or
+   decision arena, a discriminating test, and what evidence would kill the
+   idea. Add competing hypotheses when the claim requires them. Add the
+   strongest reviewer objection only when the active mode or a material
+   decision requires it.
 6. **Deliver a decision.** Produce one to three Good Question Cards and, when the
    user wants execution, a short pilot with a decision gate.
 
@@ -109,11 +120,14 @@ draft into a question that is important, tractable, falsifiable, and defensible.
   field-specific grounding.
 - [references/question-patterns.md](references/question-patterns.md): convert
   topics, gaps, methods, and activities into questions.
-- [references/editor-desk-reject.md](references/editor-desk-reject.md): final
-  skeptical gate.
+- [references/editor-desk-reject.md](references/editor-desk-reject.md):
+  conditional skeptical gate for `reviewer`, `grant`, pre-submission, or
+  high-cost decisions; not a default final ritual.
 
 ## Output
 
 Lead with a brief diagnosis, then the evidence status when needed, ranked
-candidates, repair or rejection notes, one to three Good Question Cards, and the
-next action. Keep the tone constructive but demanding.
+candidates, one to three Good Question Cards, and the next action. Include
+repair or rejection notes only when they affect the decision. Keep the tone
+constructive and opportunity-seeking without relaxing the falsifier or evidence
+standard.

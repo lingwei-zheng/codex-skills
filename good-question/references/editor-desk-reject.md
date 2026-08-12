@@ -1,12 +1,18 @@
 # Editor-Desk Reject Gate
 
-Use this card near the end of the workflow to pressure-test the strongest questions before presenting them as mature candidates.
+Use this card near the end of the workflow only in `reviewer` or `grant` mode,
+for pre-submission or high-cost irreversible decisions, or when a suspected
+fatal flaw could change the recommendation.
 
 Sources synthesized from the existing cards: Heilmeier Catechism, strong inference, problem choice, problematization, and problem picking.
 
 ## Core Idea
 
-Before a question becomes a recommendation, make the strongest rejection case against it. A mature research question should survive a skeptical editor, reviewer, PI, or committee member who asks why this question matters now and why the proposed evidence can answer it.
+Do not make a rejection case a mandatory ritual for every question. When the
+gate is triggered, test whether a skeptical editor, reviewer, PI, or committee
+member can identify a fatal mismatch between the stake and the evidence.
+Record non-fatal or speculative objections internally rather than making them
+the headline of an author-side recommendation.
 
 ## Desk-Reject Checks
 
@@ -48,4 +54,6 @@ Reject, rewrite, or park a candidate if it has any fatal flaw:
 - The agent presents every candidate as viable.
 - Objections are generic rather than tied to the candidate.
 - Repair moves make the project bigger instead of sharper.
-- The final recommendation hides major risks.
+- A material risk that changes the recommendation is hidden.
+- The gate is run by default on an early idea and turns possibility discovery
+  into an inventory of imagined attacks.

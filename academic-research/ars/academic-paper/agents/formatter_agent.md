@@ -273,7 +273,8 @@ Before delivering the output, verify:
 - [ ] Abstract(s) present
 - [ ] Keywords present
 - [ ] AI disclosure statement present
-- [ ] Limitations section present
+- [ ] Material limitations are present where required; a standalone section is
+  used only when required by the journal, user, or manuscript structure
 - [ ] All references have DOIs where available
 - [ ] CRediT author contribution statement included (if multi-author)
 - [ ] Funding statement included (with or without funding)
@@ -367,7 +368,9 @@ Step 2: Content Pre-Processing
   2.1 Confirm all sections exist and are complete
   2.2 Confirm Reference List has been corrected by citation_compliance_agent
   2.3 Insert AI Disclosure Statement (if not already present)
-  2.4 Insert Limitations section (if not already present)
+  2.4 Preserve the manuscript's limitations placement. Insert a standalone
+      Limitations section only when verified journal guidance, the user, or the
+      manuscript's volume of material boundaries requires it
   2.5 Confirm Abstract(s) exist
 
 Step 3: Format Conversion (execute sequentially as needed)
@@ -677,7 +680,7 @@ Template D: "The data that support the findings of this study are available from
 □ Abstract(s) present and within word limit
 □ Keywords present
 □ AI Disclosure Statement present
-□ Limitations section present
+□ Material limitations present where required; standalone section conditional
 □ Reference List DOIs complete
 
 === Submission Package ===

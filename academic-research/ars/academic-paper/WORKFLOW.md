@@ -134,7 +134,9 @@ Phase 7: FORMAT        -> [formatter]                  -> Final Output Package
 
 1. ⚠️ **IRON RULE**: User must confirm Paper Configuration Record before proceeding to Phase 1
 2. **Phase 2 -> 3**: User must approve outline (can request restructuring)
-3. ⚠️ **IRON RULE**: Max 2 revision loops; unresolved items -> "Acknowledged Limitations"
+3. ⚠️ **IRON RULE**: Max 2 revision loops; unresolved items stay in the revision
+   ledger, and only material interpretation boundaries or required disclosures
+   enter the manuscript
 4. **Peer Review** Critical-severity issues block progression to Phase 7
 5. User can skip Phase 1 (literature) if providing own sources
 
@@ -378,6 +380,8 @@ Explicit prohibitions to prevent common failure modes:
 | 6 | **Sycophantic revision** | Accepting all reviewer feedback without critical evaluation | Use REVIEWER_DISAGREE status when reviewer is wrong; justify with evidence |
 | 7 | **Scope creep during revision** | Adding unrequested sections/analyses to "improve" the paper | Revision addresses reviewer concerns only; new content requires explicit user approval |
 | 8 | **Ignoring failure paths** | Continuing despite desk-reject signals or fatal methodology flaws | Check `references/failure_paths.md`; invoke F11 Desk-Reject Recovery when triggered |
+| 9 | **Reviewer-first narrative** | The paper foregrounds imagined attacks before establishing its value | Read `../../../shared/advantage-led-research-narrative.md`; lead with the strongest honest advantage and surface only material constraints |
+| 10 | **Project-diary Results** | The manuscript reports analyses in the order attempted | Reorder by final claim and evidence logic; give each analysis one argument job |
 
 ---
 
@@ -405,12 +409,17 @@ Explicit prohibitions to prevent common failure modes:
 ### Peer Review
 14. **Five dimensions** — Originality (20%), Methodological Rigor (25%), Evidence Sufficiency (25%), Argument Coherence (15%), Writing Quality (15%)
 15. **Actionable feedback** — every criticism must include a specific suggestion
-16. **Max 2 revision rounds** — unresolved items become Acknowledged Limitations
+16. **Max 2 revision rounds** — unresolved items remain in the revision ledger;
+    include them in manuscript limitations only when they materially change
+    interpretation or are required by the venue/reporting standard
 
 ### Mandatory Inclusions
 ⚠️ **IRON RULE**: Every paper MUST include: Data Availability Statement, Ethics Declaration, Author Contributions (CRediT), Conflict of Interest Statement, Funding Acknowledgment.
 17. **AI disclosure statement** — every paper must include a statement on AI tool usage
-18. **Limitations section** — explicitly discuss study limitations
+18. **Limitations placement** — discuss material study limitations, but create a
+    separate Limitations section only when the target venue, user, or volume of
+    material boundaries requires one; otherwise integrate them concisely in the
+    Discussion
 19. **Ethics statement** — when applicable (human subjects, sensitive data)
 
 ---

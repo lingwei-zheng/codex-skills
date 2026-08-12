@@ -266,7 +266,8 @@ Stage 3 (First REVIEW)
                   -> Stage 4.5 (go directly to final verification, no return to review)
 
 Maximum 1 round of RE-REVISE, no infinite loops.
-Unresolved issues -> Acknowledged Limitations.
+Unresolved issues -> revision ledger; material or required limitations enter
+the manuscript.
 ```
 
 ### Differences from v1.0

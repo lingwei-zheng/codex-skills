@@ -20,6 +20,8 @@ Classify the story before recommending structural changes:
 ## Story handoff
 
 **Status:** supported | candidate | blocked
+**Leading advantage:**
+**Winning arena:**
 **Central claim:**
 **Resolved tension:**
 **Decisive turn:**
@@ -33,15 +35,15 @@ Classify the story before recommending structural changes:
 4.
 5.
 
-### Evidence map
-| Claim or beat | Evidence location | Evidence strength | Caveat or competing explanation |
-|---|---|---|---|
+### Evidence and experiment-job map
+| Claim or beat | Evidence location | Argument job | Evidence strength | Material condition, if any |
+|---|---|---|---|---|
 
 ### Rewrite targets
 | Priority | Target | Required change | Evidence dependency |
 |---|---|---|---|
 
-### Open risks
+### Material constraints
 -
 
 ### Downstream boundary
@@ -58,6 +60,8 @@ Classify the story before recommending structural changes:
   source rather than describing evidence vaguely.
 - Mark a story `candidate` when a decisive evidence link is missing or only
   inferred.
+- Do not populate `Material constraints` with speculative attacks. Include only
+  an issue that changes the central claim, route, or required reporting.
 - Put manuscript, abstract, section-order, figure-order, and title changes under
   `Rewrite targets`; do not bury them in prose.
 - Carry `Must not claim` into later drafting, polishing, presentation, and

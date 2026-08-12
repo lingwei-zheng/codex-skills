@@ -366,11 +366,11 @@ That is why scientific-writing sources keep returning to story. Mensh & Kording 
 
 | Your situation | Use it to |
 |---|---|
-| Many results, no clear main line | Find the strongest central contribution and 2-4 candidate stories |
+| Many results, no clear main line | Find the leading advantage, winning arena, and 2-4 candidate stories |
 | Manuscript reads like lab chronology | Reorder Introduction, Results, Discussion, and figure order |
 | Abstract or title feels weak | Compress context, gap, key evidence, claim, and implication |
 | Figures do not carry the reader | Turn figures into an evidence ladder |
-| Aiming for a stronger journal | Test tension, turn, audience, field consequence, and review risk |
+| Aiming for a stronger journal | Test the advantage, fair comparison, audience, and field consequence |
 | Worried about overclaiming | Check whether causal, mechanistic, general, clinical, or policy language is supported |
 | Preparing submission, cover letter, or rebuttal | Surface likely reviewer objections and repair paths |
 | Writing across fields | Calibrate the field's artifacts, evidence standards, and claim verbs first |
@@ -380,11 +380,12 @@ That is why scientific-writing sources keep returning to story. Mensh & Kording 
 The usual output is a `Good Story Card`:
 
 ```markdown
+**Leading advantage:** ...
+**Winning arena:** ...
 **Best story:** ...
 **Why this story works:** ...
 **Story spine:** ...
-**Evidence map:** ...
-**Weak points:** ...
+**Evidence and experiment-job map:** ...
 **Rewrite targets:** ...
 ```
 
@@ -395,7 +396,7 @@ When cross-domain transfer matters, it can also include:
 **Native artifact:** ...
 **Local evidence standard:** ...
 **Claim verb level:** ...
-**Main review risk:** ...
+**Material route constraint (when triggered):** ...
 ```
 
 ### See Examples
@@ -478,11 +479,11 @@ It also tests the audience contract. Editors need to see the stakes, reviewers n
 
 ### How It Works
 
-1. Inventory the material: results, figures, methods, controls, negative results, limitations, and audience.
+1. Inventory the material and triage controls, negative results, and limitations by materiality.
 2. Generate candidate stories: protagonist, antagonist, turn, and resolution.
 3. Choose the strongest honest story, not the most dramatic one.
 4. Reorder evidence so every result advances the central claim.
-5. Check claim, evidence, warrant, qualifier, and rebuttal.
+5. Give every experiment one argument job and check only material alternatives.
 6. Return concrete rewrite targets for title, abstract, section order, figure order, or key paragraphs.
 
 ### What Counts As A Good Story
@@ -495,7 +496,8 @@ A good research story should pass these checks:
 4. **It has an evidence ladder.** Each result makes the central claim more credible.
 5. **It is calibrated.** The scope of the claim matches the scope of the evidence.
 6. **It is memorable.** A reader can carry it away in one sentence.
-7. **It survives review.** It handles limitations, rival explanations, and negative results.
+7. **It remains honest.** It preserves required reporting and results that
+   materially change the central claim without foregrounding speculative attacks.
 
 ### Installation
 

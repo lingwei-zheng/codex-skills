@@ -51,8 +51,16 @@ For `human-final-pass`:
   polishing.
 - Prefer direct, information-dense claims over `we do not claim`, `this does not
   mean`, or `our purpose is not ... but ...`.
+- Remove self-undermining comparison language such as `unfortunately`,
+  `merely`, `only`, `still lags behind`, `failed to outperform`, or broad
+  `performance degradation` when it turns a non-central comparison into a
+  general weakness. State a material trade-off neutrally and specifically.
 - Keep a limitation when removing it would overstate the evidence. Place it where
   it clarifies interpretation rather than leading a contribution-heavy sentence.
+- Do not create a new weakness, comparator, or burden of proof during polishing.
+  For whole-manuscript contribution, Results, or Discussion work, read
+  `../shared/advantage-led-research-narrative.md`; preserve its integrity floor
+  and do not hide a materially adverse result.
 - Avoid em dashes as prose punctuation unless the user requests them.
 - Use hyphens for compound modifiers and en dashes only for ranges or established
   forms. Do not create forms such as `mobility–based` or `indoor–outdoor`.
@@ -74,8 +82,8 @@ For `human-final-pass`:
 6. **Preserve the evidence contract.** Keep claim strength aligned with the source,
    retain necessary uncertainty, and distinguish observation from interpretation.
 7. **Run a final check.** Verify meaning, citations, numbers, terminology, section
-   function, overclaim, defensive phrasing, qualifier stacking, punctuation, and
-   target-journal fit.
+   function, overclaim, defensive phrasing, self-undermining comparison,
+   qualifier stacking, punctuation, and target-journal fit.
 
 ## Reference Router
 

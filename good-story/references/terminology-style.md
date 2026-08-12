@@ -17,10 +17,12 @@ When the user writes in Chinese:
 | English label | Chinese default |
 | --- | --- |
 | Best story | 最强故事 |
+| Leading advantage | 领先优势 |
+| Winning arena | 取胜场景 |
 | Why this story works | 这个故事为什么成立 |
 | Story spine | 故事主线 |
 | Evidence map | 证据地图 |
-| Weak points | 薄弱点 |
+| Material constraints | 实质约束 |
 | Rewrite targets | 重写目标 |
 | Story diagnostics | 故事诊断 |
 | Story integrity | 故事完整性 / 故事的证据边界 |
@@ -82,7 +84,8 @@ Check for avoidable English labels. Replace them:
 - `Why this story works` -> `这个故事为什么成立`
 - `Story spine` -> `故事主线`
 - `Evidence map` -> `证据地图`
-- `Weak points` -> `薄弱点`
+- `Leading advantage` -> `领先优势`
+- `Winning arena` -> `取胜场景`
 - `caveat` -> `限制`
 - `claim` -> `主张`
 - `turn` -> `关键转折`

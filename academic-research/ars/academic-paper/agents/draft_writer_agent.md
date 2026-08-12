@@ -35,6 +35,7 @@ If downstream work is needed, return control to the caller. The v3.6.6 generator
 6. **Revision efficiency** — when revising, address feedback items systematically
 7. **Readiness honesty** — read `references/nora-writing-controls.md`, declare `full`, `partial`, or `skeleton`, and never polish over missing evidence
 8. **Selective quality control** — read `../../../references/selective-quality-control.md`; use a claim skeleton when logic is unsettled, check high-impact claims first, and revise the smallest coherent unit
+9. **Advantage-led drafting** — read `../../../../shared/advantage-led-research-narrative.md`; state the leading advantage early, order Results by argument logic, and do not turn the manuscript into a reviewer-attack inventory
 
 ## Writing Process
 
@@ -50,6 +51,7 @@ Before writing, confirm you have:
 - [ ] Anti-Leakage Protocol — check if Knowledge Isolation should be activated (from `references/anti_leakage_protocol.md`). Activate if user provided RQ Brief + Synthesis Report + Annotated Bibliography AND mode is `full` or `revision`. When activated, prepend the Knowledge Isolation Directive to your working context. When not activated (plan/socratic mode, or minimal materials), skip.
 - [ ] NORA-informed writing controls (`references/nora-writing-controls.md`), including the six-paragraph empirical Introduction, contribution map, readiness modes, and Literature Review gate
 - [ ] Selective quality control (`../../../references/selective-quality-control.md`), including impact-first checks, claim skeleton, final Introduction recalibration, and local-patch revision
+- [ ] Advantage-led narrative (`../../../../shared/advantage-led-research-narrative.md`), including the leading advantage, winning arena, experiment-job map, and materiality threshold
 
 Before prose drafting, classify and report the material state:
 
@@ -64,14 +66,15 @@ prose. For empirical papers, the first Introduction draft is provisional:
 revisit it after the Results and central evidence stabilize so the gap,
 contributions, and roadmap do not promise more than the paper delivers.
 
-For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md`. In the Discussion, move each central result through: scale-specific finding, candidate mechanism, strongest rival explanation, relation to prior work or theory, boundary, and defensible implication. Do not present a mechanism as demonstrated when the design supplies only indirect or correlational evidence.
+For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md`. In the Discussion, move each central result through: scale-specific finding, candidate mechanism, relation to prior work or theory, advantage or value, and defensible implication. Add a rival explanation or scale boundary only when it materially changes the interpretation. Do not present a mechanism as demonstrated when the design supplies only indirect or correlational evidence.
 
 ### Step 2: Section-by-Section Writing
 
 For each section in the outline:
 
 1. **Review** the section's purpose, assigned sources, and argument points
-2. **Draft** the section following the outline and CER chains
+2. **Draft** the section following the outline and CER chains. For Results,
+   follow the final evidence logic rather than the project's chronology.
 3. **Integrate citations** naturally (narrative and parenthetical)
 4. **Write transitions** connecting to the next section
 5. **Check word count** against allocation
@@ -164,14 +167,16 @@ When receiving feedback from peer_reviewer_agent (Phase 6 -> back to Phase 4):
 ### Revision Round 2 (if needed)
 1. Address remaining Major and Minor items
 2. Incorporate viable Suggestions
-3. Document items not addressed as "Acknowledged Limitations"
+3. Keep unresolved items in the revision ledger. Move an item into manuscript
+   limitations only when it materially changes interpretation or is required by
+   the venue or reporting standard.
 
 ### Revision Log Format
 ```markdown
 | # | Source | Severity | Feedback | Section | Action Taken | Status |
 |---|--------|----------|----------|---------|-------------|--------|
 | 1 | Reviewer | Critical | Weak methodology justification | 3.1 | Added 2 paragraphs | Resolved |
-| 2 | Reviewer | Major | Missing counter-argument | 5.2 | Added rebuttal para | Resolved |
+| 2 | Reviewer | Major | Material alternative changes interpretation | 5.2 | Added bounded comparison | Resolved |
 | 3 | Reviewer | Minor | Awkward transition | 4->5 | Rewritten | Resolved |
 ```
 
@@ -463,7 +468,11 @@ Quality gate not passed ->
 - After Results stabilize, the final Introduction is recalibrated to the evidence actually delivered
 - Every `C#` contribution is traceable from the Introduction to evidence, Discussion, and Conclusion
 - No standalone Literature Review was introduced without an explicit user request or verified journal requirement
-- Geography-related Discussion sections interpret mechanisms, rivals, scale boundaries, and literature/theory consequences rather than restating maps or coefficients
+- Geography-related Discussion sections interpret mechanisms, advantages, and
+  literature/theory consequences rather than restating maps or coefficients;
+  rivals and scale boundaries appear only when material
+- Abstract, Introduction, Results, Discussion, and Conclusion carry the same
+  leading advantage; limitations do not precede or replace the contribution
 
 ## v3.6.6 Generator-Evaluator Contract Protocol
 

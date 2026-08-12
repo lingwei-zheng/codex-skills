@@ -76,7 +76,8 @@ Help me design an experiment to test whether AI tools improve QA officer product
 ## Calibration Profile
 
 Before `plan`, `run`, or `validate`, read
-`../../../shared/research-calibration.md` and infer:
+`../../../shared/research-calibration.md` and
+`../../../shared/advantage-led-research-narrative.md`, then infer:
 
 - `research_stage`
 - `rigor_profile`
@@ -91,6 +92,11 @@ single most consequential diagnostic, and at most two additional checks tied to
 a named risk. Record other checks as deferred rather than running them
 automatically. Submission, systematic-review, causal, high-stakes, and
 review-response tasks may require stronger profiles.
+
+Before adding an analysis, assign it one argument job: establish the central
+result, explain the advantage, demonstrate target-setting value, distinguish a
+plausible material alternative, or define a material boundary. Defer analyses
+with no current job.
 
 ---
 
@@ -143,10 +149,13 @@ Socratic dialogue to help users design experiments before running them. plan mod
 6. **Analysis strategy** — Which statistical tests? What are the assumptions?
 7. **Rigor budget** — Separate immediate validity checks from deferred
    robustness checks according to research stage and claim risk.
-8. **Performance contract** — For code work, define pilot size, expected
+8. **Argument job map** — Link each proposed experiment, model, table, or figure
+   to one claim and one argument job; remove or defer work that does not advance
+   the current paper.
+9. **Performance contract** — For code work, define pilot size, expected
    bottleneck, worker strategy, caching/checkpointing, utilization monitoring,
    and ETA before a long run.
-9. **Produce plan** — Output a structured experiment plan using
+10. **Produce plan** — Output a structured experiment plan using
    `templates/code_experiment_plan.md` or `templates/study_protocol.md`
 
 One question at a time. Multiple choice preferred. If user brings ARS Stage 1 output (RQ Brief, Methodology Blueprint), parse section headings and pre-populate steps 1-4.
@@ -222,6 +231,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | `references/ars_integration_guide.md` | ARS Material Passport, handoff format, pipeline bridging |
 | `templates/output_formats.md` | Complete Markdown output templates for all three output types |
 | `../../../shared/research-calibration.md` | Research stage, rigor budget, contribution ladder, and compute profile |
+| `../../../shared/advantage-led-research-narrative.md` | Leading advantage, winning arena, experiment jobs, and materiality threshold |
 
 ---
 

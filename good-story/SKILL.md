@@ -9,6 +9,11 @@ Motto: "story is all you need."
 
 Use this general scientific writing skill to extract the strongest research story that the evidence can honestly support, then show why that story works. Treat "story" as the organizing logic of a scientific or scholarly claim, not as decoration or hype. Story is all you need; truth is the boundary condition.
 
+For author-side work, read `../shared/advantage-led-research-narrative.md`.
+Organize the paper around its leading advantage and the arena in which that
+advantage is meaningful. Keep reviewer-risk analysis internal unless the user
+asks for it or a material defect changes the central claim or submission route.
+
 ## Core Rule
 
 A good scientific story is a resolved tension:
@@ -43,7 +48,9 @@ Lower layers may sharpen higher layers but may not override them.
 A good paper story must satisfy three different readers at once:
 
 - The editor needs to see why the contribution matters and why the paper deserves attention now.
-- The reviewer needs to see that every important claim is supported by evidence, logic, qualifiers, and answers to likely objections.
+- The reviewer needs an inspectable path from each important claim to its
+  evidence and necessary conditions; the author does not need to pre-answer
+  every imaginable objection in the main narrative.
 - The field reader needs to understand and remember the one thing they can now think, measure, predict, build, or do differently.
 
 When diagnosing a story, do not optimize only for drama or only for completeness. Make the story easy to notice, easy to evaluate, and hard to misread.
@@ -62,7 +69,12 @@ Domain examples are domain calibration packs (领域校准包), not skill bounda
 ## Quick Workflow
 
 1. Inventory the material.
-   - Extract the strongest claims, datasets, methods, contrasts, negative results, controls, limitations, and audience.
+   - Extract the strongest claims, datasets, methods, contrasts, and audience.
+   - Identify the leading advantage: new capability, clearer mechanism, lower
+     cost, better scalability, practical value, or a credible incremental gain.
+   - Triage negative results, controls, and limitations by materiality. Keep
+     prominent only those that change the central claim, its scope, or required
+     reporting.
    - Separate direct evidence from interpretation, speculation, and background.
    - If a manuscript, outline, figure list, or results table is present, map each part to its current narrative job.
    - Name the audience contract: what an editor, reviewer, and field reader each need from the paper.
@@ -74,7 +86,11 @@ Domain examples are domain calibration packs (领域校准包), not skill bounda
    - Draft 2-4 possible story spines before choosing one.
 
 3. Choose the winning story.
-   - Prefer the story with the clearest central contribution, strongest evidence chain, broadest honest consequence, and easiest retelling.
+   - Define the winning arena: task, comparator, metric, population, scale, and
+     application setting in which the contribution is both useful and fairly
+     evidenced.
+   - Prefer the story with the clearest leading advantage, strongest evidence
+     chain, broadest honest consequence, and easiest retelling.
    - Downgrade stories that require hidden assumptions, too many equal contributions, chronological lab-history logic, or an audience the evidence cannot satisfy.
 
 4. Build the paper around the story.
@@ -82,7 +98,10 @@ Domain examples are domain calibration packs (领域校准包), not skill bounda
    - Abstract: context, gap, approach, key evidence, claim, implication.
    - Introduction: make the reader care, narrow to the gap, show why the gap is solvable now.
    - Results: a sequence of claim-bearing steps, each supported by a figure or analysis.
-   - Discussion: answer the gap, state what changed, define scope, handle limitations, and point to the next useful question.
+   - Discussion: answer the gap, explain where and why the advantage matters,
+     then state only the boundaries that materially change interpretation.
+   - Assign each experiment, analysis, and figure one argument job: establish,
+     explain, demonstrate, distinguish, or bound the central advantage.
 
 5. Explain why it is good.
    - Name the tension it resolves.
@@ -90,7 +109,8 @@ Domain examples are domain calibration packs (领域校准包), not skill bounda
    - Name the audience it activates.
    - Name how the story serves the editor, the reviewer, and the field reader.
    - Name the retellable sentence a reader could carry away.
-   - Name any fragility: missing controls, weak causal link, narrow generality, or overclaim risk.
+   - Name a material constraint only when it changes the claim, interpretation,
+     or next decision. Do not append a generic weakness inventory.
 
 ## Story Diagnostics
 
@@ -103,9 +123,17 @@ Use these tests aggressively:
 - Antagonist test: Is there a real obstacle, contradiction, or uncertainty, not just "little is known"?
 - Causality test: Are causal words backed by causal evidence?
 - Scope test: Is the claim as general as the evidence, but no more?
+- Advantage test: What does this paper do better, newly, more cheaply, more
+  clearly, or more usefully, and under which conditions?
+- Battlefield test: Are the task, comparator, metric, and setting fair and
+  aligned with that advantage?
+- Experiment-job test: Does every prominent analysis strengthen, explain,
+  demonstrate, distinguish, or bound the central claim?
 - Audience contract test: Would an editor see stakes, a reviewer see warranted logic, and a reader remember the central contribution?
 - Autobiography test: Is the manuscript telling how the authors did the project, or how readers should come to believe the conclusion?
-- Narrative risk test: Has a clean story hidden negative results, limiting evidence, alternative explanations, or uncertainty the reader needs?
+- Materiality test: Has the story omitted evidence that would overturn or
+  materially narrow the central claim? Do not elevate non-material checks into
+  the main narrative merely to anticipate criticism.
 - Memory test: What phrase would a reader remember one year later?
 - Time-layer test: Is this paper strong because of modern framing craft, because of a naturally powerful classic problem, or because it has both?
 
@@ -116,12 +144,19 @@ When the user gives materials and asks for a story, use the stable handoff in
 language; for Chinese, use the heading translations in
 `references/terminology-style.md`.
 
-1. `Best story`: one sharp paragraph.
-2. `Why this story works`: tension, turn, evidence, audience, implication.
-3. `Story spine`: 5-7 beats from field context to consequence.
-4. `Evidence map`: claim -> evidence -> caveat.
-5. `Weak points`: what would make reviewers resist.
+1. `Leading advantage`: the value point that carries the paper.
+2. `Winning arena`: the task, comparator, metric, population, scale, or setting
+   in which that advantage matters.
+3. `Best story`: one sharp paragraph.
+4. `Story spine`: 5-7 beats from problem to consequence.
+5. `Evidence and experiment-job map`: claim -> evidence -> argument job ->
+   material condition, when one exists.
 6. `Rewrite targets`: title, abstract, section order, figure order, or key paragraphs as relevant.
+
+Add `Material constraint` only when it changes the central claim, route, or
+required reporting. Add a reviewer-risk section only when the user explicitly
+asks for reviewer resistance, rebuttal preparation, or pre-submission stress
+testing.
 
 For early projects, include alternate story candidates and rank them. For nearly finished manuscripts, focus on diagnosis and surgical edits.
 

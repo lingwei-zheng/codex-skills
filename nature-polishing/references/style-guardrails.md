@@ -45,6 +45,9 @@ Do not rewrite numbers into words unless the surrounding house style demands it.
 - avoid unnecessary defensive disclaimers in claim-heavy positions such as contribution sentences, abstract implications, introduction turns, and conclusion closes
 - avoid qualifier stacking: a plain associational verb normally does not need
   `exploratory`, `observational`, and a no-causality disclaimer around it
+- avoid evaluative self-weakening such as `unfortunately`, `merely`, `only`,
+  `still lags behind`, and `failed to outperform`; describe a material
+  comparison as a specific trade-off instead
 
 ## Sentence and paragraph checks
 
@@ -82,6 +85,8 @@ Safer replacements:
   non-causal
 - do not imply broader generalisability than the study supports
 - do not foreground speculative weaknesses unless they are needed for correct interpretation in that section
+- do not omit an adverse result that overturns or materially narrows the central
+  claim, and do not choose a post hoc metric merely to manufacture an advantage
 
 ## AI boundary
 

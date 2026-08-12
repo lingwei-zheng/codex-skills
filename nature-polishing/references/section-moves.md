@@ -140,10 +140,10 @@ Questions this section must answer:
 Preferred move order:
 
 1. restate the main finding
-2. explain plausible reasons
+2. explain where and why the advantage or value appears
 3. compare with earlier work
-4. note limitations
-5. state implications
+4. state implications
+5. note a material limitation only when it changes interpretation
 6. point to future work if needed
 
 Useful phrase families:
@@ -160,6 +160,8 @@ Avoid:
 - repeating the Results section in new words
 - claiming mechanism when only association was shown
 - letting boundary language overshadow the main interpretive claim
+- presenting a non-leading metric as a general failure before explaining the
+  paper's actual contribution
 
 ## Conclusion
 
@@ -174,7 +176,7 @@ Preferred move order:
 1. return to the aim
 2. summarize the decisive finding
 3. state contribution or significance
-4. give a boundary or forward look
+4. give a material boundary or forward look only when needed
 
 Useful phrase families:
 

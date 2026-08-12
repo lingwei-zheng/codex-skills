@@ -396,7 +396,8 @@ ASCII dashboard shown at FULL checkpoints to display pipeline progress.
 - Stage 3 (first review) -> Stage 4 (revision) -> Stage 3' (verification review) -> Stage 4' (re-revision, if needed) -> Stage 4.5 (final verification)
 - **Maximum 1 round of RE-REVISE** (Stage 4'): If Stage 3' gives Major, enter Stage 4' for revision then proceed directly to Stage 4.5 (no return to review)
 - **Pipeline overrides academic-paper's max 2 revision rule**: In the pipeline, revisions are limited to Stage 4 + Stage 4' (one round each), replacing academic-paper's max 2 rounds rule
-- Mark unresolved issues as Acknowledged Limitations
+- Keep unresolved issues in the revision ledger; move only material
+  interpretation boundaries or required disclosures into the manuscript
 - Provide cumulative revision history (each round's decision, items addressed, unresolved items)
 
 ### Early-Stopping Criterion (v3.2)
@@ -500,7 +501,7 @@ Explicit prohibitions to prevent common failure modes:
 | Stage 3 | Review result is Reject | Provide options: major restructuring (Stage 2) or abandon |
 | Stage 4 | Revision incomplete on all items | List unaddressed items; ask whether to continue |
 | Stage 3' | Verification still has major issues | Enter Stage 4' for final revision |
-| Stage 4' | Issues remain after revision | Mark as Acknowledged Limitations; proceed to Stage 4.5 |
+| Stage 4' | Issues remain after revision | Update revision ledger; add only material or required limitations; proceed to Stage 4.5 |
 | Stage 4.5 | Final verification FAIL | Fix and re-verify (max 3 rounds) |
 | Any | User leaves midway | Save pipeline state; can resume from breakpoint next time |
 | Any | Skill execution failure | Report error; suggest retry, pause, or mode switch. Do not skip mandatory integrity or failure-mode gates |

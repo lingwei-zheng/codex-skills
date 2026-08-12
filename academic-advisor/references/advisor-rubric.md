@@ -5,6 +5,8 @@ Use this rubric to produce a demanding but author-side assessment.
 Read `../../shared/research-calibration.md` first. Evaluate an early-stage idea
 as an early-stage idea, not as a submitted manuscript. Name the stage,
 contribution level, checks needed now, and checks that can be deferred.
+Read `../../shared/advantage-led-research-narrative.md` and evaluate author-side
+opportunity before reviewer-side resistance.
 
 ## Task Classification
 
@@ -17,26 +19,36 @@ contribution level, checks needed now, and checks that can be deferred.
 
 ## Evaluation Dimensions
 
+- Leading advantage: what the paper makes newly possible, clearer, cheaper,
+  more scalable, more transferable, or more useful.
+- Winning arena: the fair task, comparator, metric, population, scale, and
+  application setting in which that value is visible.
 - Research question: stake, scope, falsifiability, hidden assumptions, two-week pilot.
 - Contribution: classify direct replication, regional/contextual extension,
   incremental improvement, mechanism/boundary advance, or theory/method
   advance; then judge whether its value matches the intended venue.
-- Literature position: direct neighbors, missing anchors, rival explanations, overstated gaps.
+- Literature position: direct neighbors, missing anchors, and any material rival
+  explanation; do not inflate the gap by attacking adjacent work.
 - Design and evidence: data fit, identification logic, measurement,
   spatial/temporal scale, stage-appropriate robustness, and reproducibility.
 - Claim-evidence boundary: which claims are supported, plausible but under-evidenced, or currently unsafe.
 - Manuscript readiness: title/abstract, introduction turn, methods transparency, results logic, discussion restraint, figure/table alignment.
-- Reviewer risk: likely desk-reject reason, strongest reviewer objection, minimum repair path.
+- Material route risk: only a defect likely to change the core claim,
+  development decision, or journal route. Run a full reviewer-risk analysis for
+  pre-submission and revision tasks, not by default for early ideas.
 
 ## Good-Question Lens
 
 For proposals and ideas, require:
 
 - One sharp research question, not only a topic.
-- At least two competing explanations or hypotheses.
+- A plausible competing explanation when the question is explanatory or causal
+  and the alternative could change the decision. Descriptive, replication, and
+  bounded incremental questions need a fair benchmark, not two invented rivals.
 - A discriminating observation, pilot, or test.
 - A named falsifier or kill criterion.
 - A realistic next action that can change the decision.
+- A clear advantage hypothesis and fair comparison or application arena.
 
 If these are absent, recommend repair before literature expansion or paper drafting.
 
@@ -64,7 +76,9 @@ For geography, human geography, GIScience, GeoAI, remote sensing, spatial analys
 | Geographic argument chain | pass / repair / block | ... | ... |
 | Title accuracy | pass / repair / block | ... | ... |
 
-Name the weakest gate in the bottom-line verdict and make its minimum repair an explicit roadmap item. Do not average away a blocked central question, design, or evidence chain.
+Name a weak gate in the bottom-line verdict only when it blocks or materially
+reroutes the project, and make its minimum repair an explicit roadmap item. Do
+not average away a blocked central question, design, or evidence chain.
 Reserve `block` for a fatal mismatch in the question, design, evidence, or
 claim. Incremental contribution alone is not a block; it changes the journal
 route and the strength of the contribution language.

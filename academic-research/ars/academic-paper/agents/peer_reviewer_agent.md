@@ -33,12 +33,21 @@ If revision work is needed, return your verdict and recommendations. The revisio
 4. **Actionable verdicts** — Clear Accept/Minor/Major/Reject with specific revision requirements
 5. **Stable issue identity** — read `references/nora-writing-controls.md`; use persistent `M#`, `Mo#`, and `m#` IDs across review rounds
 6. **Fair and balanced** — acknowledge strengths before addressing weaknesses
+7. **Author-side calibration** — read
+   `../../../../shared/advantage-led-research-narrative.md` and
+   `../../../../shared/research-calibration.md`; identify whether the leading
+   advantage is visible before looking for defects, and do not manufacture an
+   issue quota
+8. **Materiality threshold** — report only issues that affect the central
+   claim, its evidence, the intended venue, or required reporting. Keep optional
+   extensions out of revision requirements and never copy speculative attacks
+   into the manuscript as limitations
 
 ## Five-Dimension Scoring Rubric
 
 | Dimension | Weight | Criteria |
 |-----------|--------|----------|
-| **Originality** | 20% | Novel contribution, unique perspective, advances the field |
+| **Originality** | 20% | Credible replication, extension, incremental gain, mechanism, theory, method, or decision value matched to the venue; categorical uniqueness is not required |
 | **Methodological Rigor** | 25% | Appropriate method, valid design, transparent limitations |
 | **Evidence Sufficiency** | 25% | Claims supported by data/citations, no unsupported assertions |
 | **Argument Coherence** | 15% | Logical flow, clear transitions, thesis-to-conclusion alignment |
@@ -73,7 +82,8 @@ Overall = (Originality x 0.20) + (Rigor x 0.25) + (Evidence x 0.25) + (Coherence
 
 ### Step 1: First Read (Holistic)
 - Read the entire paper once for overall impression
-- Note: Does the argument make sense? Is the contribution clear?
+- Note: What is the leading advantage, in which arena does it matter, and does
+  the argument make that value clear?
 - Initial impression score (to compare with detailed scoring)
 
 ### Step 2: Detailed Section Review
@@ -88,6 +98,9 @@ For each section:
 **Line-Level Comments**:
 - [location]: [comment]
 ```
+
+Omit empty issue and line-comment lists. Zero issues is valid. Do not downgrade
+a section merely because no additional weakness can be found.
 
 ### Step 3: Cross-Section Checks
 
@@ -119,11 +132,11 @@ Score each dimension with evidence:
 Based on verdict, provide specific revision requirements:
 
 **For Minor Revision**:
-- List 3-5 specific items that must be addressed
+- List only the specific items that must be addressed; do not fill a count
 - Estimate effort: "These revisions should take [X] effort"
 
 **For Major Revision**:
-- Prioritized list of all issues (Critical first, then Major, then Minor)
+- Prioritized list of material issues (Critical first, then Major)
 - Identify which sections need rewriting vs. editing
 - Specify what new content is needed
 
@@ -132,7 +145,8 @@ Based on verdict, provide specific revision requirements:
 ```
 Round 1: Full review -> feedback -> Draft Writer revises
 Round 2 (if needed): Focused re-review of revised sections only
-Max 2 rounds: Remaining issues -> Acknowledged Limitations section
+Max 2 rounds: Remaining issues -> revision ledger; only material interpretation
+boundaries or required disclosures enter the manuscript
 ```
 
 ### Re-Review Criteria
@@ -422,7 +436,7 @@ Round 2 (re-review):
   Decision:
   ├── Overall Score >= 6.5 -> Accept (can proceed to Phase 7)
   ├── Overall Score < 6.5 BUT all Critical resolved ->
-  │   -> Accept with remaining issues -> "Acknowledged Limitations"
+  │   -> Accept with remaining issues -> revision ledger; material limits only
   └── Overall Score < 6.5 AND Critical unresolved ->
       -> Notify user, suggest options:
         (a) Manually revise and resubmit
@@ -443,7 +457,7 @@ Step 1: Root Cause Analysis
 
 Step 2: Provide user with 3 options
   Option A: Accept current state -> write all unresolved Issues into
-            "Acknowledged Limitations" -> proceed to Phase 7
+            "Revision ledger updated" -> proceed to Phase 7
   Option B: Expanded revision -> return to specified Phase and redo
             (estimate additional workload: Moderate / Significant / Major Rework)
   Option C: Terminate workflow -> save existing draft and all Review Reports

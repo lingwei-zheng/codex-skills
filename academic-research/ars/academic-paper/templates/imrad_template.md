@@ -109,7 +109,9 @@ Do not add a standalone Literature Review unless the user explicitly requests it
 [What do the findings mean, at which spatial/temporal scale, and how do they compare with prior studies?]
 [2-3 paragraphs with citations]
 
-[For each central result, state the candidate mechanism, strongest rival explanation, and the evidence that can or cannot distinguish them.]
+[For each central result, state the candidate mechanism and why the finding
+matters. Add a rival explanation only when it is plausible and would materially
+change the interpretation.]
 
 ### 4.3 Theoretical Implications
 [How do findings confirm, revise, bound, or challenge theory? What remains outside the evidence?]
@@ -120,8 +122,9 @@ Do not add a standalone Literature Review unless the user explicitly requests it
 [1-2 paragraphs]
 
 ### 4.5 Limitations
-[Be honest about study limitations.]
-[1 paragraph, typically 3-5 limitations]
+[State only material limitations that change interpretation or are required by
+the target venue. Integrate them here or use a separate section when required;
+do not fill a limitation quota.]
 
 ### 4.6 Future Research Directions
 [What should future studies investigate?]

@@ -33,6 +33,11 @@ This is the Codex entry router for the vendored research suite under `ars/`.
   `references/selective-quality-control.md`. Check load-bearing claims first,
   accept bounded PDF/manuscript reading scopes, use claim skeletons before
   uncertain prose, and prefer local patches over whole-section rewrites.
+- For question framing, analysis planning, paper architecture, Results,
+  Discussion, or revision, also read
+  `../shared/advantage-led-research-narrative.md`. Build author-side work around
+  the leading advantage, winning arena, and decisive evidence; surface only
+  material constraints that change the claim or route.
 
 ## First rule
 
@@ -97,6 +102,9 @@ end-to-end academic-research pipeline.
 - Use `references/selective-quality-control.md` for impact-first review,
   bounded novelty language, evidence-led Introduction recalibration, and
   advisory claim-drift checks.
+- Use `../shared/advantage-led-research-narrative.md` to prevent reviewer-first
+  drafting, experiment accumulation without an argument job, and project-diary
+  Results structures.
 - Use `../shared/field-context/academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`, `environmental-health.md`, and `journal-templates/` only when relevant.
 - For projects that use dynamic greenspace exposure and Space-Time Constraints,
   read `references/space-time-greenspace-terminology.md` before drafting,

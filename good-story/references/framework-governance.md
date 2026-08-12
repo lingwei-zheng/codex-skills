@@ -29,7 +29,8 @@ Use storytelling to:
 If frameworks disagree, apply them in this order:
 
 1. Transparent reporting: include the information needed to evaluate the work.
-2. Evidence integrity: represent all story-relevant results, including negative or limiting results.
+2. Evidence integrity: represent all results that overturn, materially narrow,
+   or are required to evaluate the central claim.
 3. Claim logic: connect claim, evidence, warrant, qualifier, and rebuttal.
 4. Research space: show the field territory, the niche, and the contribution.
 5. Story arc: arrange context, tension, action, and resolution.
@@ -43,11 +44,18 @@ Narrative is a tool for illumination, not a license to simplify away scientific 
 
 Treat these as red flags:
 
-- The strongest sentence would be weakened by a negative, null, failed, or unexplained result that is currently hidden.
-- A figure, robustness check, subgroup, sensitivity analysis, or limitation is moved out of sight because it interrupts the arc.
+- The central claim would be overturned or materially narrowed by a negative,
+  null, failed, or unexplained result that is currently hidden.
+- A preregistered outcome, fair baseline, or result that materially changes the
+  conclusion is moved out of sight because it interrupts the arc.
 - The title or abstract implies a measurement, mechanism, causal path, or generality that the study did not directly test.
 - The discussion frames remaining uncertainty as routine future work when it actually changes the claim's scope.
 - The paper reads like a perfect resolution even though the evidence supports only a boundary condition, candidate mechanism, or partial explanation.
+
+Do not treat every omitted robustness check, subgroup, sensitivity analysis, or
+conceivable limitation as a red flag. First ask whether it changes the central
+claim or is required for transparent reporting. Non-material checks may remain
+in supplements, an internal ledger, or a later-stage plan.
 
 Repair move:
 
@@ -62,7 +70,7 @@ Before finalizing a story, test it against three contracts:
 | Audience | What they need | Failure mode |
 | --- | --- | --- |
 | Editor | Stakes, novelty, fit, and why the paper deserves attention now | Technically correct but not worth scarce attention |
-| Reviewer | Inspectable logic from claim to evidence, controls, qualifiers, and rebuttals | Memorable but under-supported or hard to verify |
+| Reviewer | Inspectable logic from claim to evidence, relevant controls, and material conditions | Memorable but under-supported or hard to verify |
 | Field reader | A portable sentence that changes what they think, measure, predict, build, or do | Complete but forgettable data report |
 
 Do not satisfy one audience by betraying another. A broad framing can attract an editor only if the reviewer can verify the narrower evidence path. A detailed evidence map can satisfy a reviewer only if the reader can still remember the central contribution.
@@ -87,7 +95,9 @@ Do not satisfy one audience by betraying another. A broad framing can attract an
 - OCAR wants a Resolution, but the data are mixed: make the resolution a boundary condition, revised model, or sharpened uncertainty.
 - CARS wants a niche, but the literature is broad: define the niche by audience, scale, method, system, mechanism, or decision need.
 - A high-impact framing wants broad relevance, but the evidence is narrow: use a narrow claim plus a carefully worded implication.
-- A clean results story omits a negative result that affects interpretation: include it in the main evidence map, even if briefly, and make it part of the scope.
+- A clean results story omits a negative result that materially affects
+  interpretation: include it in the evidence map, then state it as a precise
+  condition after the leading contribution is clear.
 - Methods/reporting requirements feel like they slow the story: keep the main text inferentially clean, but provide enough methods, checks, and supplementary detail for evaluation.
 
 ## Anti-Hype Checklist
@@ -98,10 +108,11 @@ Before accepting a story, answer:
 - What evidence supports it?
 - What warrant connects the evidence to the claim?
 - What qualifier belongs on the claim?
-- What alternative explanation would a tough reviewer raise?
-- Which negative, null, or limiting result changes the interpretation?
+- Which alternative explanation is both plausible and capable of changing the
+  central interpretation?
+- Which negative, null, or limiting result materially changes the interpretation?
 - Which word would be too strong: proves, demonstrates, reveals, universal, first, mechanism, causal, transformative?
-- Which result or limitation would make the story less clean but more honest?
+- Which result or limitation is required to keep the central story honest?
 - Would the editor, reviewer, and field reader each understand the same central contribution?
 - What is the strongest honest sentence, after those checks?
 

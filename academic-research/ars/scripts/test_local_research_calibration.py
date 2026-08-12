@@ -132,3 +132,55 @@ def test_journal_targeting_loads_local_reference_by_default():
     assert "local-journal-reference.md" in rubric
     assert "本地期刊参考" in template
     assert "journal_reference" in project_yaml
+
+
+def test_author_side_skills_use_advantage_led_narrative():
+    protocol = read("shared/advantage-led-research-narrative.md")
+    assert "Lead With the Advantage" in protocol
+    assert "Choose the Winning Arena" in protocol
+    assert "Give Every Analysis One Argument Job" in protocol
+    assert "Integrity Floor" in protocol
+
+    for path in (
+        "academic-research/SKILL.md",
+        "academic-advisor/SKILL.md",
+        "good-question/SKILL.md",
+        "good-story/SKILL.md",
+    ):
+        assert "advantage-led-research-narrative.md" in read(path), path
+
+
+def test_reviewer_risk_is_conditional_for_author_work():
+    question = read("good-question/SKILL.md")
+    advisor = read("academic-advisor/references/advisor-rubric.md")
+    story = read("good-story/SKILL.md")
+    assert "mandatory author-side output" in question
+    assert "Run a full reviewer-risk analysis for" in advisor
+    assert "Do not append a generic weakness inventory" in story
+    assert "`Weak points`: what would make reviewers resist" not in story
+
+
+def test_paper_workflow_uses_argument_jobs_and_conditional_limits():
+    workflow = read("academic-research/ars/academic-paper/WORKFLOW.md")
+    architect = read(
+        "academic-research/ars/academic-paper/agents/structure_architect_agent.md"
+    )
+    writer = read(
+        "academic-research/ars/academic-paper/agents/draft_writer_agent.md"
+    )
+    formatter = read(
+        "academic-research/ars/academic-paper/agents/formatter_agent.md"
+    )
+    assert "Reviewer-first narrative" in workflow
+    assert "Advantage Narrative Brief" in architect
+    assert "final evidence logic rather than the project's chronology" in writer
+    assert "standalone section conditional" in formatter
+    assert "unresolved items become Acknowledged Limitations" not in workflow
+
+
+def test_polishing_removes_self_undermining_comparisons():
+    skill = read("nature-polishing/SKILL.md")
+    defensive = read("nature-polishing/references/defensive-phrasing.md")
+    assert "self-undermining comparison language" in skill
+    assert "responsibility-expansion test" in defensive
+    assert "Never use positive reframing to hide a failed primary outcome" in defensive

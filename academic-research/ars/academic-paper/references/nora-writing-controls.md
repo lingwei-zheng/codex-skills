@@ -4,13 +4,18 @@ Use these controls for paper outlining, drafting, revision tracking, and submiss
 
 ## Six-Paragraph Introduction
 
+Read `../../../../shared/advantage-led-research-narrative.md` before fixing the
+Introduction. The six paragraphs should establish the paper's advantage, not
+create six opportunities to add caveats.
+
 Use this sequence by default for standard empirical papers in geography, human geography, GIScience, and health geography:
 
 1. Establish the broad problem and why it matters.
 2. Frame the problem in the relevant geographic, GIScience, or domain context.
 3. Synthesize the current approaches and literature threads needed to locate the study.
 4. State the precise unresolved gap, tension, or failure of explanation.
-5. Present the study and its numbered contributions.
+5. Present the study, its leading advantage, the decisive evidence, and its
+   numbered supporting contributions.
 6. Give a concise paper roadmap.
 
 Treat these as six rhetorical paragraphs, not six titled subsections. A paragraph may be compact, but do not merge away a move unless the target venue's verified format or the user's explicit structure requires it.
@@ -18,6 +23,10 @@ Treat these as six rhetorical paragraphs, not six titled subsections. A paragrap
 Theoretical papers, reviews, methods papers, case studies, and short formats may use a type-appropriate introduction instead. Record the reason for overriding the six-paragraph default.
 
 Do not create a standalone Literature Review merely because the paper uses IMRaD or this Introduction protocol. Add that section only when the user explicitly requests it or verified journal instructions require it. Otherwise place the necessary synthesis in the Introduction and Discussion.
+
+Do not lead paragraphs 5 or 6 with what the paper does not claim, what it fails
+to do, or a list of possible weaknesses. Establish the contribution first;
+place a material boundary later where it changes interpretation.
 
 ## Contribution Consistency
 
@@ -29,6 +38,10 @@ Assign each contribution a stable ID (`C1`, `C2`, ...). The outline must map eve
 - the Conclusion sentence that closes it.
 
 Do not add a contribution in the Conclusion that was not established and evidenced earlier. If a contribution lacks a result or evidence location, mark it as a structural gap rather than drafting around it.
+
+Add a leading-advantage row above the contribution map. Supporting
+contributions must explain, establish, demonstrate, distinguish, or bound that
+advantage rather than compete as unrelated novelties.
 
 ## Drafting Readiness
 

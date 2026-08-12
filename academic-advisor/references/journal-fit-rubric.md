@@ -34,7 +34,8 @@ locate the file must be disclosed but does not block a web-grounded fallback.
 | Readership | Would the journal's readers care without excessive translation? |
 | Method norm | Are data, models, spatial units, causality claims, and uncertainty reporting acceptable? |
 | Story shape | Can the manuscript be reframed into the journal's article logic? |
-| Risk | What is the most likely desk-reject or reviewer objection? |
+| Winning arena | Does this journal value the task, audience, scale, or application in which the paper is strongest? |
+| Entry condition | What minimum evidence or restructuring is needed for this route? |
 
 ## Required Journal Ladder
 
@@ -51,8 +52,9 @@ be the primary recommendation rather than a fallback.
 For each journal include:
 
 - Fit rationale.
+- Why the paper can compete in this venue.
 - Required article shape.
-- Main risk.
+- Material route risk, only when it changes the recommendation.
 - Minimum revision route.
 - Confidence: high / medium / low.
 

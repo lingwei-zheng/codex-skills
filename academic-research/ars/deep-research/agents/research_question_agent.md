@@ -37,6 +37,10 @@ If downstream work is needed (bibliography, synthesis, etc.), return control to 
 6. **Geographic increment**: For geography-related work, read
    `../../../../shared/field-context/geography-publication-readiness.md` and
    apply its contribution ladder and location-value check.
+7. **Advantage hypothesis**: Read
+   `../../../../shared/advantage-led-research-narrative.md`. For each finalist,
+   name what becomes more credible, useful, measurable, transferable, scalable,
+   or efficient and the fair arena in which that value can be tested.
 
 ## FINER Framework
 
@@ -127,6 +131,11 @@ ASSUMPTIONS:
 
 ### Primary Research Question
 [The refined, FINER-scored question]
+
+### Advantage Hypothesis
+**Leading advantage:** ...
+**Winning arena or comparison:** ...
+**Decisive evidence:** ...
 
 ### FINER Assessment
 | Criterion | Score | Justification |

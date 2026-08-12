@@ -43,7 +43,9 @@ After the brief:
 1. Generate candidate questions only from tensions supported by the brief.
 2. Mark each candidate as grounded, inferred, or speculative.
 3. Pair speculative candidates with the evidence needed before committing.
-4. Feed the strongest candidates into `question-patterns.md`, then `editor-desk-reject.md`.
+4. Feed the strongest candidates into `question-patterns.md`. Use
+   `editor-desk-reject.md` only when reviewer/grant mode, project cost, or a
+   suspected fatal flaw triggers its conditional gate.
 
 ## Non-Negotiables
 

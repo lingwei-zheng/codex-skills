@@ -6,7 +6,8 @@ Use this card after a domain brief when the user works in one of these familiar 
 
 1. Pick only the relevant adapter.
 2. Translate the user's rough idea into that domain's evidence norms.
-3. Add at least one domain-specific reviewer objection to the Good Question Card.
+3. Add a domain-specific reviewer objection only in `reviewer` or `grant` mode,
+   or when it identifies a material defect that changes the recommendation.
 4. If the claim depends on current literature, mark it as source-backed, inference, or unknown.
 5. Calibrate expectations with `../../shared/research-calibration.md`. Treat
    incremental and regional contributions as valid when their added value and
