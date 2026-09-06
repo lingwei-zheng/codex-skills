@@ -59,8 +59,16 @@ minimum set of panels that make the conclusion clear and defensible.
 - Separate primary evidence from supporting evidence. The primary evidence gets
   the hero panel or the clearest axis; controls and robustness panels should be
   visually quieter.
-- If the user provides data but no claim, infer a provisional claim from the data
-  request and ask for confirmation before final styling.
+- If the user provides data but no claim, infer only a supported provisional
+  claim, label it provisional, and prepare a reviewable preview before asking for
+  confirmation. Keep final styling dependent on that confirmation. A selected
+  backend is still required before plotting; do not invent data or scientific
+  meaning to make a preview.
+- For underspecified color roles, resolution, or layout, use the existing figure
+  conventions to prepare a provisional preview. Present pending visual choices
+  and scientific-claim decisions together where possible. Reuse unchanged choices
+  already specified or explicitly approved; do not ask again. Keep any outstanding
+  finalization confirmation and never treat silence as approval.
 
 ## Archetype selection
 

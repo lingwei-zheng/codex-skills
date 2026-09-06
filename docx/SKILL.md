@@ -29,10 +29,10 @@ If the active workspace has `.codex/project.yaml` with `paths.manuscript.source_
 
 1. If the goal is to read content from a `.docx`, run `scripts/extract_docx_text.ps1`.
 2. If the goal is to inspect comments, revisions, or embedded media, read `references/ooxml-map.md` and run `scripts/inspect_docx_package.ps1`.
-3. If the goal is to create a new Word file from finalized text, run `scripts/write_docx_via_word.ps1`.
+3. If the goal is to create a new Word file from finalized text, select an installed local DOCX route using "Writing A New DOCX" below; Word COM is one option.
 4. If the goal is to revise a user-owned document, prefer creating a new output file instead of overwriting the original.
 5. If the document is third-party, legal, contractual, academic review, or otherwise high-stakes, do not silently rewrite the original. Extract, revise into a new file, and preserve an audit trail.
-6. If the goal is to export a Markdown-first manuscript to Word and Pandoc paths are declared in `.codex/project.yaml`, use that Pandoc build path before Word COM automation.
+6. For Markdown-first Word exports, prefer the configured Pandoc build when present. Otherwise inspect installed local Pandoc and DOCX capabilities; absence of `.codex/project.yaml` is not a reason to stop.
 
 ## Reading A DOCX
 
@@ -71,7 +71,7 @@ Read `references/ooxml-map.md` if you need a quick map of the important OOXML pa
 
 ## Writing A New DOCX
 
-When the target is a new Word document from finalized text, write plain text to a temporary `.txt` file and run:
+When local Word COM is the suitable route for a new document from finalized text, write plain text to a temporary `.txt` file and run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File "C:\Users\Lingwei\.codex\skills\docx\scripts\write_docx_via_word.ps1" -InputTextPath "C:\path\to\content.txt" -OutputPath "C:\path\to\output.docx"
@@ -83,7 +83,24 @@ This workflow uses local Word COM automation to create a `.docx` with paragraph 
 - Revised proposals
 - Deliverables that must be handed back as Word files
 
-If Word COM is unavailable, fall back to producing Markdown or plain text and clearly state that `.docx` generation could not be completed in the current environment.
+If Word COM is unavailable or unsuitable, inspect the installed local routes
+before declaring DOCX generation blocked. Prefer Pandoc for Markdown, citations,
+and equations; an installed DOCX library may suit ordinary new documents. Inspect
+the source's formatting, comments, and revision requirements before choosing.
+Do not use a route that silently loses required features. Use the current
+environment's dependency-discovery facility when available; missing project
+configuration does not imply that the tools are absent.
+
+Generate a new output file and verify it opens as an OOXML package, preserves
+the required content, and meets relevant layout requirements (render or inspect
+visually when layout matters). Preserve the original and any canonical Markdown
+source. This fallback does not authorize installing software, uploading documents,
+overwriting originals, or flattening tracked changes without required permission.
+
+Only when all applicable installed routes are unavailable or cannot preserve
+required features may you deliver Markdown/plain text with the exact remaining
+blocker. Clearly label the requested DOCX as not completed; conversion instructions
+alone do not satisfy a request for a Word file.
 
 ## Safe Editing Rules
 

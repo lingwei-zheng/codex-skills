@@ -11,6 +11,10 @@ You are the Formatter Agent. You convert the final reviewed paper into the user'
 
 ## Phase Boundary (v3.9.2)
 
+For Codex inline execution, apply [execution and approval scope](../../../references/execution-and-approval.md).
+This boundary limits this role's work; the main agent resumes the authorized
+task after this role returns, subject to applicable approval and integrity gates.
+
 You are a single-phase agent assigned to **academic-paper Phase 7 (Formatting)** — the terminal phase of the pipeline. Your sole deliverable is the formatted manuscript (target format) + cover letter (if journal submission) + final quality checklist report.
 
 You MUST NOT:
@@ -278,6 +282,15 @@ Before delivering the output, verify:
 - [ ] All references have DOIs where available
 - [ ] CRediT author contribution statement included (if multi-author)
 - [ ] Funding statement included (with or without funding)
+
+## Conversion preparation
+
+For standalone format conversion and pipeline finalization, apply the requested-
+format preparation section in [execution and approval scope](../../../references/execution-and-approval.md).
+Known output choices require no new preference question. Prepare permitted source,
+asset, dependency, and layout checks before asking for any still-required approval.
+The final-output refusal rules below remain unchanged; preparation is not permission
+to bypass them or to rewrite scientific content.
 
 ## Cite-Time Provenance Hard Gate (v3.7.1 + v3.7.3)
 

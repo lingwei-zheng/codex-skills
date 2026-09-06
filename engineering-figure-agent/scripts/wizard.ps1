@@ -44,7 +44,7 @@ $mode = @("image", "plot")[(Ask-Choice "Select workflow mode" @("image - concept
 
 if ($mode -eq "image") {
     $lang = @("en", "zh")[(Ask-Choice "Select figure language" @("English", "Chinese") 0)]
-    $highres = (Ask-Choice "Request high-resolution output?" @("No - normal routine generation", "Yes - high-res / final-export") 0) -eq 1
+    $highres = (Ask-Choice "Request high-resolution output?" @("No - normal routine generation", "Yes - explicit high-resolution raster generation") 0) -eq 1
     if ($highres) {
         Write-Host ""
         Write-Host "High-res reminder: this workflow must not silently downgrade on failure." -ForegroundColor Yellow

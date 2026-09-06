@@ -25,7 +25,7 @@ A lightweight orchestrator that manages the complete academic pipeline from rese
 > remain comprehensive. Do not let later-stage review requirements expand an
 > earlier stage by default.
 
-> **Routing discipline (v3.9.2):** see `.claude/CLAUDE.md` "Routing Discipline (v3.9.2)" + `shared/references/intent_clarification_protocol.md` for cross-skill routing rules. This skill assumes routing has already settled — ambiguous cross-phase materials should have been clarified upstream.
+> **Codex execution:** Apply [execution and approval scope](../../references/execution-and-approval.md) and [intent routing](../shared/references/intent_clarification_protocol.md). Select the requested mode before interpreting phase and checkpoint rules.
 
 **v3.6.3 (opt-in):** Set `ARS_PASSPORT_RESET=1` to promote FULL checkpoints to context-reset boundaries. Use `resume_from_passport=<hash>` in a fresh session to continue from the recorded stage. See [`references/passport_as_reset_boundary.md`](references/passport_as_reset_boundary.md).
 
@@ -74,7 +74,7 @@ resume_from_passport=<hash> [stage=<n>] [mode=<m>]
 1. Detect the user's current stage and available materials
 2. Recommend the optimal mode for each stage
 3. Dispatch the corresponding skill for each stage
-4. **After each stage completion, proactively prompt and wait for user confirmation**
+4. **After each stage completion, resolve checkpoint approval; reuse only an explicit approval of the identical unchanged decision, otherwise prompt and wait**
 5. Track progress throughout; Pipeline Status Dashboard available at any time
 
 ---
@@ -115,7 +115,7 @@ resume_from_passport=<hash> [stage=<n>] [mode=<m>]
 | **3'** | **RE-REVIEW** | **`academic-paper-reviewer`** | **re-review** | **Verification review report: revision response checklist + residual issues** |
 | **4'** | **RE-REVISE** | **`academic-paper`** | **revision** | **Second revised draft (if needed)** |
 | **4.5** | **FINAL INTEGRITY** | **`integrity_verification_agent`** | **final-check** | **Final verification report (must achieve 100% pass to proceed)** |
-| 5 | FINALIZE | `academic-paper` | format-convert | Final Paper (default MD; DOCX via Pandoc when available, otherwise conversion instructions; ask about LaTeX; confirm correctness; PDF) |
+| 5 | FINALIZE | `academic-paper` | format-convert | Final paper in requested format(s); reuse existing format choices, complete preflight, preserve final content approval and integrity gates |
 | **6** | **PROCESS SUMMARY** | **orchestrator** | **auto** | **Paper creation process record MD + LaTeX to PDF (bilingual)** |
 
 **Parallelization opportunity (v3.3)**: Within Stage 2, the `academic-paper` skill's Phase 1 (literature_strategist_agent) and the `visualization_agent` can operate in parallel after Phase 2 (structure_architect_agent) completes the outline. Specifically:
@@ -137,7 +137,7 @@ This mirrors PaperOrchestra's parallel execution of Plot Generation (Step 2) and
 6. **Stage 3' RE-REVIEW** -> Accept|Minor -> Stage 4.5 / Major -> Stage 4'
 7. **Stage 4' RE-REVISE** -> user confirmation -> Stage 4.5 (no return to review)
 8. **Stage 4.5 FINAL INTEGRITY** -> PASS (zero issues) -> Stage 5 (FAIL -> fix and re-verify)
-9. **Stage 5 FINALIZE** -> MD -> DOCX via Pandoc when available (otherwise instructions) -> ask about LaTeX -> confirm -> PDF -> Stage 6
+9. **Stage 5 FINALIZE** -> prepare requested formats -> applicable integrity checks and content approval -> final artifacts -> Stage 6
 10. **Stage 6 PROCESS SUMMARY** -> ask language version -> generate process record MD -> LaTeX -> PDF -> end
 
 See `references/pipeline_state_machine.md` for complete state transition definitions.
@@ -146,15 +146,19 @@ See `references/pipeline_state_machine.md` for complete state transition definit
 
 ## Adaptive Checkpoint System
 
-⚠️ **IRON RULE — Core rule: After each stage completion, the system must proactively prompt the user and wait for confirmation. The checkpoint presentation adapts based on context and user engagement.**
+Apply [checkpoint scope and approval reuse](../../references/execution-and-approval.md).
+The confirmation rules below require a new prompt only when the applicable
+decision has not already been explicitly approved for the same version and scope.
+
+⚠️ **IRON RULE — Core rule: After each stage completion, resolve the applicable checkpoint approval. Request and wait for explicit confirmation only if the identical decision has not already been approved for the same version and scope. Presentation adapts; approval requirements remain in force.**
 
 ### Checkpoint Types
 
 | Type | When Used | Content |
 |------|-----------|---------|
-| FULL | First checkpoint; after integrity boundaries; before finalization | Full deliverables list + decision dashboard + all options |
+| FULL | First non-critical checkpoint; non-critical awareness guard | Full deliverables list + decision dashboard + all options |
 | SLIM | After 2+ consecutive "continue" responses on non-critical stages | One-line status + explicit continue/pause prompt |
-| MANDATORY | Integrity FAIL; Review decision; Stage 5 | Cannot be skipped; requires explicit user input |
+| MANDATORY | Integrity boundaries (PASS or FAIL); review decisions; Stage 5 | Cannot be skipped; requires explicit user input |
 
 ### Decision Dashboard (shown at FULL checkpoints)
 
@@ -182,7 +186,7 @@ Ready to proceed to Stage [Y]? You can also:
 
 ### Adaptive Rules
 
-1. **First checkpoint**: always FULL
+1. **First non-critical checkpoint**: FULL; MANDATORY takes precedence
 2. **After 2+ consecutive "continue" without review**: prompt user awareness ("You've continued [N] times in a row. Want to review progress?")
 3. **Integrity boundaries (Stage 2.5, 4.5)**: always MANDATORY
 4. **Review decisions (Stage 3, 3')**: always MANDATORY
@@ -195,7 +199,7 @@ Ready to proceed to Stage [Y]? You can also:
 2. **User can adjust**: At FULL and MANDATORY checkpoints, users can modify the mode or settings for the next step
 3. **Pause-friendly**: Users can pause at any checkpoint and resume later
 4. **SLIM mode**: If the user says "just continue" or "fully automatic," subsequent non-critical checkpoints switch to SLIM format (one-line status + explicit continue/pause prompt)
-5. **Awareness guard**: After 4+ consecutive continue responses, the system inserts a FULL checkpoint regardless of stage type to ensure user remains engaged
+5. **Awareness guard**: After 4+ consecutive continue responses, use FULL at a non-critical checkpoint. MANDATORY always takes precedence and cannot be downgraded by the awareness guard
 
 ### Self-Check Questions (at every FULL checkpoint)
 
@@ -331,7 +335,7 @@ In Mode B, **single-phase agents (Bucket A per `docs/design/2026-05-18-ars-v3.9.
 - `collaboration_depth_agent` (C — FULL/SLIM checkpoints + pipeline completion, advisory-only)
 - `claim_ref_alignment_audit_agent` (C — opt-in claim audit, phase-orthogonal)
 
-Routing into Mode B requires explicit user signal — `/ars-<mode>` slash command or `[direct-mode]` prefix. Ambiguous cross-phase input defaults to clarification per `.claude/CLAUDE.md` Routing Discipline + `shared/references/intent_clarification_protocol.md`. **Critically:** if `pipeline_orchestrator_agent` is dispatched on ambiguous cross-phase materials, the orchestrator itself currently cannot reconcile (this is the v3.10 conductor #134 work) — v3.9.2 routes such cases to clarification BEFORE the orchestrator runs.
+Routing into Mode B requires a clear request for the relevant phase or standalone mode. Natural language is sufficient; no special prefix or new session is required. Mixed materials alone do not imply ambiguity. Follow the intent routing protocol above and preserve all applicable approval gates.
 
 **Enforcement (v3.9.2):** prompt-level via Phase Boundary blocks on downstream Bucket A agents + advisory verifier (`scripts/check_pipeline_integrity.py`). Deterministic PreToolUse hook + multi-phase envelope + orchestrator structured intake deferred to v3.10 active conductor (#134).
 
@@ -592,10 +596,10 @@ Stage 3': academic-paper-reviewer
 
 Stage 4/4': academic-paper (revision mode)
 Stage 5: academic-paper (format-convert mode)
-  - Step 1: Ask user which academic formatting style (APA 7.0 / Chicago / IEEE, etc.)
-  - Step 2: Produce MD, then generate DOCX via Pandoc when available (otherwise provide conversion instructions)
-  - Step 3: Produce LaTeX (using corresponding document class, e.g., apa7 class for APA 7.0)
-  - Step 4: After user confirms content is correct, tectonic compiles PDF (final version)
+  - Step 1: Reuse requested formats and known academic style; ask only material unresolved choices.
+  - Step 2: Prepare sources, assets, dependencies, and layout checks within the authorized scope.
+  - Step 3: Prepare LaTeX only when requested or needed by the selected build; use the known style.
+  - Step 4: After applicable integrity checks and content approval, generate the requested final artifacts. If PDF is requested, use the LaTeX compilation route below.
   - Fonts: Times New Roman (English) + Source Han Serif TC VF (Chinese) + Courier New (monospace)
   - ⚠️ IRON RULE: PDF must be compiled from LaTeX (HTML-to-PDF is prohibited)
 ```

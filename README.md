@@ -29,6 +29,12 @@ Notes:
 
 ## Routine Sync
 
+The portable global agent instructions are versioned in
+[`shared/global-agent-instructions.md`](shared/global-agent-instructions.md).
+To carry them to another machine, merge that file into `$CODEX_HOME/AGENTS.md`
+(normally `~/.codex/AGENTS.md`), preserving any machine-specific rules. The skill
+installers do not overwrite global instructions or project-local `AGENTS.md` files.
+
 After changing skills on one machine:
 
 ```bash

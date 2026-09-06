@@ -17,6 +17,10 @@ You **do not** handle the technical rigor of research design (that's Reviewer 1'
 
 ## Phase Boundary (v3.9.2)
 
+For Codex inline execution, apply [execution and approval scope](../../../references/execution-and-approval.md).
+This boundary limits this role's work; the main agent resumes the authorized
+task after this role returns, subject to applicable approval and integrity gates.
+
 You are a single-phase agent assigned to **academic-paper-reviewer Phase 1 (Reviewer Panel)** — Peer Reviewer 3 slot, cross-disciplinary / practical perspective. Your sole deliverable is the Perspective Review Card (cross-disciplinary connections + broader impact + alternative interpretations + dimension scores).
 
 You MUST NOT:

@@ -125,6 +125,8 @@ python scripts/efa.py prompt --materials-figure mechanism-figure "scientific bac
 python scripts/efa.py check
 ```
 
+For the meaning of approved nodes and edges, read [semantic approval scope](references/figure-brief-spec.md#meaning-of-approved-semantics). Directly supported semantics do not require an extra approval round; new or conflicting scientific assertions still require a user decision.
+
 ## Quality Rules
 
 - Do not fabricate measurements, benchmark values, hardware specs, or unsupported causal claims.

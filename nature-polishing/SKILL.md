@@ -51,6 +51,16 @@ For `human-final-pass`:
   polishing.
 - Prefer direct, information-dense claims over `we do not claim`, `this does not
   mean`, or `our purpose is not ... but ...`.
+- Do not compress away a load-bearing noun head, referent, article, preposition,
+  or scope phrase merely to shorten a sentence. When concise wording becomes
+  underspecified, state the object or relation explicitly.
+- Prefer conventional, field-appropriate academic collocations over novel,
+  literal, or over-compressed phrasing when both preserve meaning. Natural
+  disciplinary English takes priority over stylistic cleverness.
+- Increase descriptive precision by naming the supported setting, population,
+  measure, temporal or spatial resolution, or comparison when it materially
+  helps interpretation. Greater specificity must not strengthen causality,
+  generalisability, novelty, or mechanism beyond the evidence.
 - Remove self-undermining comparison language such as `unfortunately`,
   `merely`, `only`, `still lags behind`, `failed to outperform`, or broad
   `performance degradation` when it turns a non-central comparison into a

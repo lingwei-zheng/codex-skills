@@ -2,6 +2,17 @@
 
 Engineering Figure Agent uses a figure brief as the platform-neutral input contract between paper thinking and figure production. Codex is the primary authoring environment, but the same brief can be used in Claude Code, ChatGPT, Claude, VS Code, Obsidian, or a future CLI.
 
+## Meaning of approved semantics
+
+`Approved` nodes and edges mean either semantics explicitly confirmed by the user,
+or semantics directly verifiable from the supplied materials without changing their
+scientific meaning. This word alone does not add a per-node or per-edge user gate.
+Preserve source evidence, relationship direction, certainty, and causal status.
+New inferences, conflicting directions, or content the user explicitly reserved
+for review require a user decision; the agent cannot approve its own invented
+mechanism. Record those pending choices and continue only independent authorized
+preparation. Rendering must not silently include unsettled scientific assertions.
+
 ## Required Fields
 
 | Field | Type | Purpose |

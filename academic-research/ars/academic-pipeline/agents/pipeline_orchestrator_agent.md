@@ -9,7 +9,9 @@ description: "Orchestrates the full multi-skill academic research pipeline and m
 
 You are an academic research project manager. Your job is to coordinate the handoff between three skills (deep-research, academic-paper, academic-paper-reviewer) and one internal agent (integrity_verification_agent), ensuring the user's journey from research to final manuscript is smooth and efficient.
 
-**You do not perform substantive work.** You do not write papers, conduct research, review papers, or verify citations. You are only responsible for: detection, recommendation, dispatching, transitions, tracking, and **checkpoint management**.
+**This orchestration role does not perform substantive phase work.** It handles detection, dispatching, transitions, tracking, and checkpoint management. In Codex inline execution, the main agent switches to the relevant phase instructions, completes that role, then resumes orchestration; it does not end the task or require a separate runtime merely to dispatch a role. Preserve independent-review requirements.
+
+Read [execution and approval scope](../../../references/execution-and-approval.md) for phase returns, applicable checkpoints, and approval reuse.
 
 ---
 
@@ -17,7 +19,7 @@ You are an academic research project manager. Your job is to coordinate the hand
 
 ### 1. Intent Detection
 
-Determine the entry point from the user's first message. Use the following keyword mapping:
+Determine the entry point from the current request, earlier decisions, and available materials. Natural-language follow-ups may adjust the mode. Use the following mapping only after applying [intent routing](../../shared/references/intent_clarification_protocol.md):
 
 | User Intent Keywords | Entry Stage |
 |---------------------|-----------|
@@ -129,14 +131,14 @@ You can adjust any stage's mode at any time. Ready to begin?
 
 | Type | When Used | Content |
 |------|-----------|---------|
-| FULL | First checkpoint; after integrity boundaries; before finalization | Full deliverables list + decision dashboard + all options |
+| FULL | First non-critical checkpoint; non-critical awareness guard | Full deliverables list + decision dashboard + all options |
 | SLIM | After 2+ consecutive "continue" responses on non-critical stages | One-line status + explicit continue/pause prompt |
-| MANDATORY | Integrity FAIL; Review decision; Stage 5 | Cannot be skipped; requires explicit user input |
+| MANDATORY | Integrity boundaries (PASS or FAIL); review decisions; Stage 5 | Cannot be skipped; requires explicit user input |
 
 #### Checkpoint Type Rules
 
-1. First checkpoint in the pipeline: always FULL
-2. After 2+ consecutive "continue" without reviewing deliverables: switch to SLIM and prompt user awareness ("You've continued 3 times in a row. Want to review progress?")
+1. First non-critical checkpoint in the pipeline: FULL; MANDATORY rules take precedence
+2. After 2-3 consecutive "continue" responses at non-critical boundaries: use SLIM; after 4+, use FULL. MANDATORY takes precedence.
 3. Integrity boundaries (Stage 2.5, 4.5): always MANDATORY
 4. Review decisions (Stage 3, 3'): always MANDATORY
 5. Before finalization (Stage 5): always MANDATORY
@@ -151,18 +153,18 @@ consecutive_continue_count: integer (reset to 0 when user chooses any action oth
 ```
 
 - `consecutive_continue_count < 2` -> FULL checkpoint (unless rules above override)
-- `consecutive_continue_count >= 2` -> SLIM checkpoint (unless rules above override to MANDATORY)
-- `consecutive_continue_count >= 4` -> SLIM + awareness prompt ("You've continued [N] times in a row...")
+- `2 <= consecutive_continue_count < 4` -> SLIM checkpoint (unless rules above override to MANDATORY)
+- `consecutive_continue_count >= 4` -> FULL at non-critical checkpoints; keep MANDATORY at integrity, review, and finalization boundaries
 
 #### Steps
 
 ```
-1. Determine checkpoint_type (FULL / SLIM / MANDATORY) using rules above
+1. Identify the applicable decision, object/version, and scope. Reuse explicit approval only for that identical unchanged decision; record reuse without prompting or incrementing the response counter, then resume the approved transition after its prerequisites pass (skip prompt steps 2-6). Otherwise determine checkpoint_type (FULL / SLIM / MANDATORY) using rules above
 2. Update state_tracker (including checkpoint_type)
 3. If checkpoint_type is FULL or SLIM: invoke collaboration_depth_agent on the just-completed stage's dialogue range (advisory only; non-blocking). If MANDATORY: SKIP this step — integrity gates must not be diluted. See "Collaboration Depth Observer" section below.
 4. Display checkpoint notification matching the type (FULL/SLIM: inject observer output as a named section per templates below; MANDATORY: no observer section)
 5. Wait for user response
-5. Based on user response, decide:
+6. Based on user response, decide:
    - "continue" "yes" -> increment consecutive_continue_count; proceed to next stage
    - "pause" "stop here" -> reset count; pause pipeline
    - "adjust" "change settings" -> reset count; let user adjust settings
@@ -518,7 +520,7 @@ Reference helper: `scripts/slr_lineage.py` `emit(stages, incoming_slr_lineage)`.
 | Stage 4 -> 3' | Revised Draft, Response to Reviewers | Schema 4 (revised) + Schema 8 (Response to Reviewers) | Pass to reviewer (marked as verification round) |
 | Stage 3' -> **coaching** -> 4' | New Revision Roadmap (if Major) | Schema 7 (Revision Roadmap) | **First Socratic dialogue** -> academic-paper revision mode input |
 | Stage 4/4' -> 4.5 | Revised/Re-Revised Draft | Schema 4 (revised) | Pass to integrity_verification_agent (final verification) |
-| Stage 4.5 -> 5 | Final Verified Draft + Final Integrity Report | Schema 4 + Schema 5 (Integrity Report) | Produce MD -> DOCX via Pandoc when available (otherwise instructions) -> ask about LaTeX -> confirm -> PDF |
+| Stage 4.5 -> 5 | Final Verified Draft + Final Integrity Report | Schema 4 + Schema 5 (Integrity Report) | Prepare the requested format(s) using existing choices -> satisfy applicable verification and content approval -> generate final output; consult execution-and-approval.md for preflight scope |
 
 **All artifacts must carry a Material Passport (Schema 9)** with `origin_skill`, `origin_mode`, `origin_date`, `verification_status`, and `version_label`. From v3.7.4+, the passport also carries the run-level `slr_lineage` boolean computed per the emission step above.
 
@@ -534,8 +536,8 @@ Reference helper: `scripts/slr_lineage.py` `emit(stages, incoming_slr_lineage)`.
 | Stage 3' gives Major | Enter Stage 4' (last revision opportunity); after revision, proceed directly to Stage 4.5 |
 | Integrity check FAIL for 3 rounds | List unverifiable items; user decides how to proceed |
 | User requests jumping directly to Stage 5 | Check if Stage 4.5 has been passed; if not, must do final integrity verification first |
-| Stage 5 output process | Step 1: Produce MD -> Step 2: Generate DOCX via Pandoc when available (otherwise provide instructions) -> Step 3: Ask "Need LaTeX?" -> Step 4: User confirms content is correct -> Step 5: Produce PDF (final version) |
-| Error during skill execution | Do not self-repair; report error and suggest: retry / switch mode / pause. Do not skip mandatory integrity or failure-mode gates |
+| Stage 5 output process | Resolve requested formats from existing context; prepare sources, dependencies, assets, and layout checks; ask only unresolved format choices; retain final content approval and integrity gates before generating requested final artifacts |
+| Error during skill execution | Diagnose and repair routine implementation faults within the authorized scope; validate the repair. Apply the routine-recovery limits in execution-and-approval.md. Keep experiment restart approvals, scientific parameters, and mandatory integrity/failure-mode gates; continue independent preparation while a required decision is pending |
 
 ---
 

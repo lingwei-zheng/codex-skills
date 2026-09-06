@@ -25,7 +25,7 @@ OPENAI_OFFICIAL_HOSTNAME = "api.openai.com"
 OPENAI_DEFAULT_MODEL = "gpt-image-1.5"
 DEFAULT_TIMEOUT = 120
 DEFAULT_AUTH_MODE = "google"
-HIGHRES_HINTS = ("2k", "highres", "high-res", "high resolution", "final export", "final-export", "final quality")
+HIGHRES_HINTS = ("2k", "highres", "high-res", "high resolution")
 
 
 def load_figure_templates() -> dict:

@@ -4,6 +4,15 @@ This document defines all legal states, transition conditions, transition action
 
 ---
 
+## Approval semantics
+
+Apply [execution and approval scope](../../../references/execution-and-approval.md).
+In the tables below, "Wait for user confirmation" means obtain explicit approval
+if that identical decision on the same object/version and scope has not already
+been approved. Reuse a recorded approval without entering `awaiting_confirmation`
+again. Integrity failures and new decisions remain blocked until their own
+requirements are satisfied; approval reuse never skips verification.
+
 ## State Definitions
 
 ### Stage States

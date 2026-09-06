@@ -66,6 +66,8 @@ publication plots and multi-panel empirical figures.
    statistical panels. Do not ask an execution skill to reinterpret the theory
    from scratch.
 
+For the meaning of approved nodes and edges, read [semantic approval scope](../engineering-figure-agent/references/figure-brief-spec.md#meaning-of-approved-semantics). Directly supported semantics do not require an extra approval round; new or conflicting scientific assertions still require a user decision.
+
 ## Output Contract
 
 When the user asks only for planning, return the figure brief and stop.

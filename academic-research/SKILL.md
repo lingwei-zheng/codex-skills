@@ -39,6 +39,12 @@ This is the Codex entry router for the vendored research suite under `ars/`.
   the leading advantage, winning arena, and decisive evidence; surface only
   material constraints that change the claim or route.
 
+## Execution scope
+
+Read [execution and approval scope](references/execution-and-approval.md) when
+using internal workflows. Phase completion returns control to the main agent;
+continue the authorized task while preserving applicable explicit approvals.
+
 ## First rule
 
 Do not load the whole suite by default. Start from one workflow entry file and then load only the needed agent, reference, or template files.

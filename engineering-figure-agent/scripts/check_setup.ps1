@@ -109,7 +109,7 @@ if (Test-Path $envFile) {
     }
 
     if (-not ($envMap.ContainsKey("NANOBANANA_HIGHRES_MODEL") -and $envMap["NANOBANANA_HIGHRES_MODEL"])) {
-        Add-Result "WARN" "NANOBANANA_HIGHRES_MODEL is not configured" "Routine generation can still work, but `pro-2k` or final-export requests will stop instead of silently downgrading. Add the provider's high-res model name if you want that path available."
+        Add-Result "WARN" "NANOBANANA_HIGHRES_MODEL is not configured" "Routine generation can still work, but explicit high-resolution requests will stop instead of silently downgrading. Add the provider's high-res model name if you want that path available."
         $warned = $true
     } else {
         Add-Result "PASS" "NANOBANANA_HIGHRES_MODEL is set" $null

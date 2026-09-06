@@ -41,8 +41,7 @@
    |   Major: [n]  Minor: [n]  Editorial: [n]|
    +----------------------------------------+
 
-4. Confirm parsing results with user:
-   "I organized the reviewer comments into [N] items. Here is the summary — please confirm nothing was missed or misinterpreted."
+4. Prepare the supported revision-roadmap draft with proposed actions, priorities, and pending decisions before requesting parsing confirmation. Independent draft items need not wait for an ambiguous comment. Present the draft and summary together for confirmation; keep final-roadmap approval and subsequent execution approvals intact.
 ```
 
 ## Step 2: Strategic Revision Coaching (External Revision Coaching)

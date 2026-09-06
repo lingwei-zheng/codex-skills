@@ -30,6 +30,8 @@ or export editable PNG, SVG, or PDF files.
 - Use `nature-figure` for empirical maps, statistical charts, and exact
   quantitative panels.
 
+For the meaning of approved nodes and edges, read [semantic approval scope](../engineering-figure-agent/references/figure-brief-spec.md#meaning-of-approved-semantics). Directly supported semantics do not require an extra approval round; new or conflicting scientific assertions still require a user decision.
+
 ## Workflow
 
 1. Read the reviewed figure contract or establish the requested non-academic

@@ -21,7 +21,7 @@ A general-purpose academic paper writing tool — 12-agent pipeline covering all
 - **Style Calibration** (intake Step 10, optional) — Provide 3+ past papers and the pipeline learns your writing voice (sentence rhythm, vocabulary preferences, citation integration style). Applied as a soft guide during drafting; discipline conventions always take priority. See `shared/style_calibration_protocol.md`.
 - **Writing Quality Check** (`references/writing_quality_check.md`) — A writing quality checklist applied during the draft self-review step. Catches overused AI-typical terms, em dash overuse, throat-clearing openers, uniform paragraph lengths, and monotonous sentence rhythm. These are good writing rules, not detection evasion.
 
-> **Routing discipline (v3.9.2):** see `.claude/CLAUDE.md` "Routing Discipline (v3.9.2)" + `shared/references/intent_clarification_protocol.md` for cross-skill routing rules. This skill assumes routing has already settled — ambiguous cross-phase materials should have been clarified upstream.
+> **Codex execution:** Apply [execution and approval scope](../../references/execution-and-approval.md) and [intent routing](../shared/references/intent_clarification_protocol.md). Select the requested mode before interpreting phase and checkpoint rules.
 
 ## Quick Start
 
@@ -132,6 +132,11 @@ Phase 7: FORMAT        -> [formatter]                  -> Final Output Package
 
 ### Checkpoint Rules
 
+These gates apply to the phases entered by the selected mode. Reuse explicit
+approval of an unchanged configuration or outline instead of asking again in
+an outer workflow. Standalone modes do not enter unrelated full-paper phases;
+their own approval requirements remain in force. See the execution scope above.
+
 1. ⚠️ **IRON RULE**: User must confirm Paper Configuration Record before proceeding to Phase 1
 2. **Phase 2 -> 3**: User must approve outline (can request restructuring)
 3. ⚠️ **IRON RULE**: Max 2 revision loops; unresolved items stay in the revision
@@ -156,7 +161,7 @@ In Mode B, **single-phase agents (Bucket A per `docs/design/2026-05-18-ars-v3.9.
 
 Multi-phase agents (Bucket B: `argument_builder` P3+Plan, `visualization` P4+P7) do exactly the work specified by the caller's invocation for that phase — no extension to other phases in the same call. The v3.6.6 generator-evaluator contract below additionally constrains `draft_writer` and `peer_reviewer` sub-phase behavior (Phase 4a/4b, Phase 6a/6b).
 
-Routing into Mode B requires explicit user signal — `/ars-<mode>` slash command or `[direct-mode]` prefix. Ambiguous cross-phase input defaults to clarification per `.claude/CLAUDE.md` Routing Discipline + `shared/references/intent_clarification_protocol.md`.
+Routing into Mode B requires a clear request for the relevant phase or standalone mode. Natural language is sufficient; no special prefix or new session is required. Mixed materials alone do not imply ambiguity. Follow the intent routing protocol above and preserve all applicable approval gates.
 
 **Enforcement (v3.9.2):** prompt-level via Phase Boundary blocks on Bucket A agents + advisory verifier (`scripts/check_pipeline_integrity.py`). Deterministic PreToolUse hook + multi-phase envelope deferred to v3.10 active conductor (#134).
 

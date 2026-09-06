@@ -8,7 +8,7 @@ const OFFICIAL_BASE_URL = "https://generativelanguage.googleapis.com";
 const OFFICIAL_HOSTNAME = "generativelanguage.googleapis.com";
 const DEFAULT_MODEL = process.env.NANOBANANA_MODEL || "gemini-3.1-flash-image-preview";
 const DEFAULT_TIMEOUT = Number(process.env.NANOBANANA_TIMEOUT || "120");
-const HIGHRES_HINTS = ["2k", "highres", "high-res", "high resolution", "final export", "final-export", "final quality"];
+const HIGHRES_HINTS = ["2k", "highres", "high-res", "high resolution"];
 
 function containsChinese(text) {
   return /[\u3400-\u4dbf\u4e00-\u9fff]/.test(text);
@@ -413,7 +413,11 @@ async function main() {
   saveOutputs(json, args);
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+module.exports = { isExplicitHighresRequest, resolveModel };
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}

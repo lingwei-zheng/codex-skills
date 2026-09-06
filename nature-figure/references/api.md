@@ -425,4 +425,4 @@ def finalize_figure(fig, out_path, formats=None, dpi=300,
   ```
 - Always `plt.close(fig)` after saving to free memory.
 - For multi-panel figures, prefer one baseline family plus one hero family; reserve green/red for delta cues.
-- When color roles, resolution, or layout are underspecified and would change the figure, confirm with user before finalizing.
+- When color roles, resolution, or layout remain underspecified, prepare a provisional preview using the existing conventions, then present unresolved choices for confirmation before finalizing. Reuse unchanged user-specified or approved choices. Follow the preview-and-confirm rules in `figure-contract.md`; do not bypass the Python/R gate.
