@@ -62,3 +62,18 @@ Before delivery:
 
 Keep the ledgers as working state. Show the full tables only when the user asks
 for an audit trail; otherwise report concise consistency flags.
+
+## Revision Comparison
+
+Use the shared narrative protocol's Revision Invariants for touched central
+claims. Compare before/after numbers and units, direction and negation,
+comparison conditions, uncertainty, population/time/scale, causal meaning, and
+citation ownership. Preserve scientific strength in both directions. Numeric
+token equality alone cannot establish semantic equivalence.
+
+Reordering, clearer advantage statements and removal of redundant qualifiers
+are ordinary edits. A required qualifier is one that changes interpretation,
+not every hedge in the original. Mark a substantive unsupported change and
+resolve it under existing author-decision rules; do not create a per-sentence
+approval workflow. An unsupported assertion needs evidence, accurate attribution,
+omission or a material-gap marker, not cosmetic hedging.

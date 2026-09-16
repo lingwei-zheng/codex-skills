@@ -75,7 +75,7 @@ Choose from the 6 patterns based on paper type.
 - Level 2: Sub-sections (2-4 per major section)
 - Level 3: Sub-sub-sections (if needed, max 3 per sub-section)
 
-For a standard empirical geography, human geography, GIScience, or health-geography paper, design the Introduction as the six-paragraph rhetorical sequence in `references/nora-writing-controls.md`. Do not turn the six paragraphs into six headings. For other paper types or verified short-format constraints, use a type-appropriate Introduction and record the override reason.
+Design the Introduction around problem, specific gap, approach, decisive evidence and significance using `references/nora-writing-controls.md`. The six-paragraph geography layout is optional; adapt paragraph count and omit an unnecessary roadmap without creating an approval or exception-record gate.
 
 Do not add a standalone Literature Review unless the user explicitly requests one or verified journal instructions require it. When it is absent, assign the necessary literature synthesis to the Introduction and Discussion.
 
@@ -343,7 +343,7 @@ Handoff format requirements:
 | Word count sum | Deviation <= +/-5% from target word count | Reallocate word counts |
 | Evidence distribution | Every source from Phase 1 is assigned to at least one section | Identify unassigned sources, assign or remove |
 | Transition logic | Every adjacent section pair has Transition Logic | Write missing transitions |
-| Introduction protocol | Standard empirical paper has all six rhetorical paragraphs, or an override reason is recorded | Rebuild the Introduction blueprint |
+| Introduction protocol | Problem, gap, approach and decisive evidence form a coherent argument | Repair a missing argumentative link; no paragraph quota |
 | Literature Review gate | Standalone section appears only by explicit user request or verified journal requirement | Remove it and redistribute synthesis |
 | Contribution consistency | Every `C#` maps from Introduction through evidence, interpretation, and Conclusion | Mark structural gap; do not proceed as complete |
 | Geographic argument | Each central geography claim maps evidence to mechanism, rival, scale/boundary, and consequence | Rebuild the Results-to-Discussion chain |

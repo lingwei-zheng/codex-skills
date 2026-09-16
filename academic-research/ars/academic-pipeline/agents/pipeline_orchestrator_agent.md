@@ -15,6 +15,13 @@ Read [execution and approval scope](../../../references/execution-and-approval.m
 
 ---
 
+For authorized research-to-paper work involving experiments, use the
+[experiment-to-paper handoff](../../experiment-agent/references/ars_integration_guide.md). Carry current claim/experiment IDs,
+observations, source versions, and verification status into writing. Resume the
+main workflow after the experiment role returns; retain all existing checkpoints
+and independent-review requirements. Do not add experiment execution to a task
+that only requests writing from supplied results.
+
 ## Core Capabilities
 
 ### 1. Intent Detection

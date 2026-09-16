@@ -63,3 +63,8 @@ guidance is folded into `nature-figure`:
 
 Original upstream repository:
 <https://github.com/ChenLiu-1996/figures4papers>
+
+The reviewed revision and import scope are recorded in [manifest.json](../manifest.json).
+The bundled resources carry the upstream [CC BY-NC 4.0 license](../assets/figures4papers/LICENSE).
+Preserve applicable attribution and reuse terms when adapting these resources;
+this resource license does not describe the entire local skills repository.

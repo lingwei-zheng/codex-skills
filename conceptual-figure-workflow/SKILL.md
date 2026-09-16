@@ -34,11 +34,12 @@ publication plots and multi-panel empirical figures.
    `../shared/field-context/geography-conceptual-figure-patterns.md` when
    selecting the figure structure.
 3. Review the proposed figure logic before design:
-   - research question and central claim
+   - research question, central claim ID, leading advantage and evidence state
    - theoretical constructs or variables
    - mechanisms, pathways, hypotheses, or stages
    - spatial and temporal units when relevant
-   - claim-evidence boundaries and likely reviewer objections
+   - claim-evidence boundaries; check reviewer objections internally and surface
+     only material scientific or delivery issues
    - what must not be implied by the figure
 4. Build a semantic contract before choosing layout:
    - approved nodes with construct type and evidence status
@@ -48,7 +49,7 @@ publication plots and multi-panel empirical figures.
    - competing explanations and unresolved decisions in an issue ledger
 5. Produce a figure brief using
    `../engineering-figure-agent/references/figure-brief-spec.md`, including:
-   - one-sentence figure purpose
+   - one-sentence figure purpose and the supported advantage readers should notice
    - audience and paper section
    - central claim or argument
    - semantic graph and render graph
@@ -59,7 +60,8 @@ publication plots and multi-panel empirical figures.
    - negative constraints and prohibited visual implications
    - `candidate_mode: single` or, only when structure is genuinely ambiguous,
      `candidate_mode: explore`
-   - caption draft or caption logic
+   - caption draft or caption logic, with evidence/derivation pointers for each
+     assertion and the manuscript claim it supports
 6. Hand the brief to `engineering-figure-agent`. Use its OpenAI image route for
    illustrative synthesis and its `drawio` route for exact, editable,
    label-heavy frameworks. Use `nature-figure` separately for quantitative or

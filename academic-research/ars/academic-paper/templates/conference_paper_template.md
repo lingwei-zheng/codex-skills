@@ -90,11 +90,11 @@ This template provides the skeleton for a concise conference paper presenting re
 
 ---
 
-## 6. Conclusion and Future Work
+## 6. Conclusion
 
-[Summary of contribution: 1-2 sentences.]
-[Practical implications: 1 sentence.]
-[Future work: 1-2 sentences describing next steps.]
+[Core contribution -> decisive evidence -> memorable implication. Future work
+and repeated boundaries are optional unless the venue requires them; add no
+new defect or unsupported claim.]
 
 ---
 

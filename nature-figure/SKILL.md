@@ -63,7 +63,9 @@ user asks for a recommendation or backend details.
 1. **Define the contract.** Read
    [references/figure-contract.md](references/figure-contract.md). State the core
    conclusion, evidence chain, figure archetype, target size, panel map,
-   statistics, source data, export formats, and strongest reviewer risk.
+   statistics, source data and export formats. Reuse the paper's leading
+   advantage and claim/experiment IDs. Check risks internally; surface only
+   material issues that change interpretation or delivery.
 2. **Select the minimum evidence.** Give every panel a unique claim-bearing role.
    Remove or merge panels that do not change what the reader can conclude.
 3. **Load the relevant track.** Use Python references for Python; use
@@ -83,8 +85,10 @@ user asks for a recommendation or backend details.
    aligned with the actual evidence and target journal.
 7. **Export with the selected backend.** Produce the requested editable and
    raster formats at final dimensions.
-8. **Verify.** Read [references/qa-contract.md](references/qa-contract.md) and
-   inspect the rendered outputs at final size.
+8. **Verify.** Read [references/qa-contract.md](references/qa-contract.md), inspect
+   outputs at final size, and check the data -> transformation -> caption ->
+   manuscript claim trace in the figure contract. Correct rendering alone does
+   not establish support for an interpretation.
 
 ## Quality Rules
 

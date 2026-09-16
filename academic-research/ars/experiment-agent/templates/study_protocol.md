@@ -16,6 +16,22 @@
 - **Design**: [experimental | quasi-experimental | observational | mixed]
 - **Type**: [survey | experiment | field_study | interview | mixed]
 
+## Argument And Evidence Plan
+
+- **Claim / experiment IDs**: [reuse C# / E#]
+- **Advantage hypothesis and argument job**: [candidate; establish/explain/demonstrate/distinguish/bound]
+- **Fair comparison**: [population, setting, comparator and relevant constraints]
+- **Primary / secondary / exploratory outcomes**: [distinguish their roles]
+- **Supports / narrows / defeats**: [observable outcomes and meaningful precision/effect]
+- **Protocol version and state location**: [reuse project governance]
+
+| Experiment ID / unit | Planned measurement | Execution status | Skip reason, if not run | Result locator and version |
+|---|---|---|---|---|
+| [E#] | [measurement] | planned | [if deferred] | pending |
+
+Record actual completion and metadata only. Retain required outcomes and
+material contrary observations; do not create participant records here.
+
 ## Participants
 
 - **Target Population**: [who]

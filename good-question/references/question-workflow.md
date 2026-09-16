@@ -143,7 +143,8 @@ Use this stable schema:
 **What would falsify it:**
 **Contribution level:**
 **What this adds beyond prior work:**
-**Leading advantage:**
+**Leading advantage (candidate until supported):**
+**Claim ID and decisive experiment ID, when assigned:**
 **Winning arena or comparison:**
 **Two-week pilot:**
 **Data/resources needed:**
@@ -165,7 +166,8 @@ For Chinese responses, use:
 **什么结果会推翻它：**
 **贡献层级：**
 **相较既有研究增加了什么：**
-**领先优势：**
+**领先优势（证据支持前为候选）：**
+**主张编号和关键实验编号（已有时）：**
 **取胜场景或比较口径：**
 **两周内可做的 pilot：**
 **需要的数据/资源：**

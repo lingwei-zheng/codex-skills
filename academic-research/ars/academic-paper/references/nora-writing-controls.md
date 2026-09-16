@@ -2,31 +2,33 @@
 
 Use these controls for paper outlining, drafting, revision tracking, and submission preparation. They supplement the existing ARS claim-intent and claim-reference audit; do not create a parallel claim-support schema.
 
-## Six-Paragraph Introduction
+## Advantage-Led Introduction And Title
 
-Read `../../../../shared/advantage-led-research-narrative.md` before fixing the
-Introduction. The six paragraphs should establish the paper's advantage, not
-create six opportunities to add caveats.
+Read `../../../../shared/advantage-led-research-narrative.md` and reuse the
+current advantage/evidence record before fixing the Introduction.
 
-Use this sequence by default for standard empirical papers in geography, human geography, GIScience, and health geography:
+Use problem -> specific gap -> core approach -> decisive finding -> significance.
+The gap must follow from the reviewed evidence; use a bounded search statement
+or precise account of existing evidence rather than inventing universal absence.
+The proposed contribution must answer that same gap. A brief quantitative or
+qualitative preview of the strongest supported result belongs in the contribution
+paragraph; detailed result narration belongs in Results.
 
-1. Establish the broad problem and why it matters.
-2. Frame the problem in the relevant geographic, GIScience, or domain context.
-3. Synthesize the current approaches and literature threads needed to locate the study.
-4. State the precise unresolved gap, tension, or failure of explanation.
-5. Present the study, its leading advantage, the decisive evidence, and its
-   numbered supporting contributions.
-6. Give a concise paper roadmap.
+For a longer geography paper, six paragraphs are one optional expansion: problem,
+domain context, relevant synthesis, precise gap, approach/contribution/evidence,
+and an optional roadmap. Merge or omit rhetorical moves when the argument is
+clear without them. No fixed paragraph count, roadmap, or exception record is
+required; the user's structure and verified venue requirements take priority.
 
-Treat these as six rhetorical paragraphs, not six titled subsections. A paragraph may be compact, but do not merge away a move unless the target venue's verified format or the user's explicit structure requires it.
+Do not create a standalone Literature Review merely because the paper uses
+IMRaD. Add that section only when the user requests it or verified journal
+instructions require it. Otherwise synthesize relevant literature in the
+Introduction and Discussion.
 
-Theoretical papers, reviews, methods papers, case studies, and short formats may use a type-appropriate introduction instead. Record the reason for overriding the six-paragraph default.
-
-Do not create a standalone Literature Review merely because the paper uses IMRaD or this Introduction protocol. Add that section only when the user explicitly requests it or verified journal instructions require it. Otherwise place the necessary synthesis in the Introduction and Discussion.
-
-Do not lead paragraphs 5 or 6 with what the paper does not claim, what it fails
-to do, or a list of possible weaknesses. Establish the contribution first;
-place a material boundary later where it changes interpretation.
+State the contribution first; add a boundary where it changes interpretation.
+The title should name the central contribution and useful searchable specifics,
+with a scope and claim strength supported by the design. Avoid empty openers
+such as "A study of"; do not impose a universal title length or claim type.
 
 ## Contribution Consistency
 

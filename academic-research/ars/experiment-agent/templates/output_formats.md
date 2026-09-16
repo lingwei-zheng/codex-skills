@@ -31,7 +31,20 @@ All outputs use Markdown-based structured format with Material Passport for ARS 
 
 ### Output Summary
 
-[Auto-generated summary of structured output, if available]
+[Observed values and uncertainty, if available; never substitute expected values]
+
+### Evidence Handoff
+
+| Claim / experiment ID | Planned vs actual measurement and conditions | Execution status / skip reason | Result locator and version | Observation and verification status |
+|---|---|---|---|---|
+| [C# / E#] | [primary/secondary/exploratory; preserve original definition] | [executed/planned/skipped + reason] | [file plus table/row/metric] | [observed value; UNVERIFIED/ANALYZED/VERIFIED as justified] |
+
+- **Material contrary observations / boundaries**: [traceable observations, none identified within stated scope, or unknown]
+- **Changed configuration or evidence dependencies**: [actual changes or none]
+- **Next authorized stage**: [validation/interpretation/writing, or run-only delivery]
+
+The runner records facts. The main workflow separately assesses support for the
+advantage; execution success does not establish a scientific claim.
 
 ### Anomalies Detected
 
@@ -89,7 +102,7 @@ All outputs use Markdown-based structured format with Material Passport for ARS 
 
 ## Validation Report
 
-- **Source**: [exp_id | external | manual_study]
+- **Source**: [exp_id | external | manual_study; result version and claim IDs when known]
 - **Overall Confidence**: [SOLID | CAUTION | RED_FLAG]
 
 ### Statistical Findings
@@ -106,7 +119,7 @@ All outputs use Markdown-based structured format with Material Passport for ARS 
 
 ### Fallacy Scan
 
-- **Coverage**: [N]/11 fallacy types checked
+- **Coverage**: [triggered checks performed; deferred and inapplicable checks with reasons]
 
 | Fallacy | Severity | Detail | Recommendation |
 |---------|----------|--------|----------------|

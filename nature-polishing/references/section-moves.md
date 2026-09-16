@@ -183,8 +183,7 @@ Useful phrase families:
 - `This study set out to ...`
 - `The present findings indicate that ...`
 - `These results extend our understanding of ...`
-- `Notwithstanding these limitations, ...`
-- `Further studies are required to ...`
+- A concrete forward implication, only when supported and useful
 
 Avoid:
 

@@ -2,6 +2,11 @@
 
 Used by `structure_architect_agent` and `intake_agent` to select the appropriate paper structure.
 
+These are adaptable patterns, not section/paragraph quotas. Use the user's
+structure and verified venue requirements. In author-side work, limitations
+and future directions appear where material; the Conclusion closes the central
+contribution with decisive evidence and significance, without a weakness inventory.
+
 ## Pattern 1: IMRaD (Introduction-Method-Results-Discussion)
 
 **Best for**: Empirical research with original data collection and analysis
@@ -151,8 +156,8 @@ When no standalone Literature Review is enabled, redistribute its allocation acr
    7.3 Methodological Implications
 8. Conclusion
    8.1 Summary of Contribution
-   8.2 Limitations of the Analysis
-   8.3 Future Directions
+   8.2 Decisive reasoning and significance
+   8.3 Material boundary or forward direction only when needed
 9. References
 ```
 
@@ -302,7 +307,7 @@ When no standalone Literature Review is enabled, redistribute its allocation acr
 7. Discussion
    7.1 Interpretation
    7.2 Limitations
-8. Conclusion and Future Work
+8. Conclusion (future work only when useful or required)
 9. References
 ```
 

@@ -178,3 +178,13 @@ ARS `deep-research/references/logical_fallacies.md` contains a broader 32-type c
 ## Output Template
 
 See `templates/output_formats.md` "Validation Report" section for the Markdown template.
+
+## Comparison And Author-Side Handoff
+
+Report the actual primary comparison, uncertainty and matched conditions.
+Retain primary outcomes even when another metric is more favorable. Label
+post hoc dimensions exploratory and keep required contrary results traceable.
+An efficiency or deployment trade-off requires evidence for that benefit;
+do not invent it from a performance shortfall. Avoid a generic win/lose verdict.
+Pass these facts to the main workflow for evidence-supported interpretation;
+statistical validation and the paper's advantage state are distinct.

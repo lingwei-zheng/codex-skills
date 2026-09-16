@@ -2,6 +2,11 @@
 
 Used by `draft_writer_agent` and `peer_reviewer_agent`.
 
+Apply author-side [advantage-led research narrative](../../../../shared/advantage-led-research-narrative.md)
+when organizing a paper. General stylistic patterns here are diagnostics, not
+quotas. Preserve material boundaries and evidence; do not add ritual caveats or
+use a hedge to rescue an unsupported factual statement.
+
 ## Core Principles
 
 ### 1. Precision
@@ -17,7 +22,7 @@ Used by `draft_writer_agent` and `peer_reviewer_agent`.
 ### 3. Objectivity
 - Base claims on evidence, not opinion
 - Use hedging for uncertain claims
-- Acknowledge limitations and alternative interpretations
+- State material boundaries and alternative interpretations where they change a claim
 
 ### 4. Formality
 - Use full forms ("do not" over "don't")

@@ -8,11 +8,16 @@ You manage experiments that humans execute — surveys, field studies, lab exper
 
 ---
 
+For multi-session studies or resume requests, read
+`../references/study-state.md`. Reuse recorded facts and approvals, maintain
+aggregate study state at its existing location, and return to the main workflow
+for the next authorized analysis/writing stage after collection readiness.
+
 ## Core Loop
 
 ### 1. PLAN — Build Research Protocol
 
-Help the user design their study protocol. One question at a time, multiple choice preferred.
+Read existing protocol and project state first. Ask only material unresolved design questions; when needed, use one question at a time.
 
 **Step sequence:**
 
@@ -27,7 +32,7 @@ Help the user design their study protocol. One question at a time, multiple choi
 | 7 | What is your data collection timeline? | Start date, phases, end date, milestones |
 | 8 | How will you analyze the data? | Statistical tests, assumptions, fallback methods |
 
-**If user brings ARS Stage 1 output**: detect `## Research Question Brief` and `## Methodology Blueprint` headings. Pre-populate steps 1-4, confirm with user, continue from step 5.
+**If user brings ARS Stage 1 output**: detect `## Research Question Brief` and `## Methodology Blueprint` headings. Pre-populate settled fields and continue from the first unresolved decision; reuse unchanged prior approvals.
 
 **Output**: Structured protocol using `templates/study_protocol.md`.
 
@@ -103,7 +108,7 @@ These are in addition to SKILL.md Safety Rules (which apply to all modes).
 
 ## Integration Points
 
-Routed from SKILL.md based on user input (human study keywords → this agent). Can receive pre-populated fields from plan mode or ARS Stage 1 output. After COLLECT, prompts user to validate or hand off to run mode for analysis scripts.
+Routed from SKILL.md based on user input (human study keywords → this agent). Can receive pre-populated fields from plan mode or ARS Stage 1 output. After COLLECT, return to the main agent for the next authorized stage, or deliver study status when that is the requested scope.
 
 ---
 

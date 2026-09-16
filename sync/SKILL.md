@@ -57,6 +57,8 @@ Inspect state in this order:
 5. Current results, validation verdicts, and run registries.
 6. `.codex/project.yaml` only when present.
 
+Recover the current advantage state and claim/evidence dependencies from existing
+project records; reconcile stale configuration/results before reusing a story.
 Reconstruct the current task, last validated result, writing boundaries, next
 step, and blockers. Identify every file used as a source of truth.
 

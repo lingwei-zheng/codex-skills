@@ -53,7 +53,7 @@ Before writing, confirm you have:
 - [ ] Style Profile — check `style_profile` field in Paper Configuration Record. If `null`, skip all style-related steps below. Only if non-null: read `shared/style_calibration_protocol.md` and apply as soft guide
 - [ ] Writing Quality Check reference (`references/writing_quality_check.md`)
 - [ ] Anti-Leakage Protocol — check if Knowledge Isolation should be activated (from `references/anti_leakage_protocol.md`). Activate if user provided RQ Brief + Synthesis Report + Annotated Bibliography AND mode is `full` or `revision`. When activated, prepend the Knowledge Isolation Directive to your working context. When not activated (plan/socratic mode, or minimal materials), skip.
-- [ ] NORA-informed writing controls (`references/nora-writing-controls.md`), including the six-paragraph empirical Introduction, contribution map, readiness modes, and Literature Review gate
+- [ ] NORA-informed writing controls (`references/nora-writing-controls.md`), including the advantage-led Introduction, contribution map, readiness modes, and Literature Review gate
 - [ ] Selective quality control (`../../../references/selective-quality-control.md`), including impact-first checks, claim skeleton, final Introduction recalibration, and local-patch revision
 - [ ] Advantage-led narrative (`../../../../shared/advantage-led-research-narrative.md`), including the leading advantage, winning arena, experiment-job map, and materiality threshold
 
@@ -226,7 +226,7 @@ Phase A: Preparation (before each section begins)
 Phase B: Writing (strictly section by section)
   Writing order decision:
   ├── Recommended order (not mandatory):
-  │   1. Provisional Introduction (use the six-paragraph protocol for standard empirical papers)
+  │   1. Provisional Introduction (problem -> gap -> approach -> supported decisive finding)
   │   2. Literature Review (only when explicitly requested or required by verified journal instructions)
   │   3. Methodology (explain methods)
   │   4. Results / Analysis (present findings)
@@ -353,7 +353,7 @@ Step 4: Decision
   └── Under target > 15% ->
       1. Identify the 2 weakest-argued paragraphs
       2. Check for unused assigned sources
-      3. Add new TEEL paragraphs -> recalculate
+      3. Develop an under-explained supported point only when useful -> recalculate
       4. If still under target -> mark "requires additional analysis"
 
 Step 5: Output Word Count Tracking table
@@ -366,6 +366,16 @@ Total word count monitoring (after assembly):
       3. If cannot adjust (content is already optimal) -> explain reason in Draft Metadata
 ```
 
+## Claim Preservation
+
+Apply the Revision Invariants in
+`../../../../shared/advantage-led-research-narrative.md` to touched central
+claims. Check numbers/units, sign and negation, comparison scope, uncertainty,
+causal meaning and citation ownership. A fluent or more positive sentence must
+not quietly strengthen or weaken the science. Ordinary reordering and removal
+of redundant qualifiers may proceed; material scientific changes use existing
+author-decision rules. Report actual gaps without inventing weakness inventories.
+
 ## Quality Gates
 
 ### Pass Criteria
@@ -373,10 +383,10 @@ Total word count monitoring (after assembly):
 | Check Item | Pass Criteria | Failure Handling |
 |--------|---------|-----------|
 | Section completeness | All sections from outline have been written | Write missing sections |
-| Citation density | Every factual claim has at least 1 citation | Identify uncited paragraphs, add citations |
+| Evidence support | External factual claims have sources; original findings have result locators | Add support/attribution, omit nonessential assertions, or mark material gaps |
 | Total word count | Deviation <= +/-10% from target | Adjust per word count monitoring mechanism |
 | Section word count | Each section deviation <= +/-15% | Expand or trim that section |
-| Paragraph structure | >=80% of paragraphs follow TEEL structure | Rewrite non-compliant paragraphs |
+| Paragraph structure | Clear point, evidence, explanation and linkage suited to the section | Repair unclear reasoning locally; no TEEL percentage or length quota |
 | Transition completeness | Every adjacent section pair has a Transition | Write missing transition paragraphs |
 | Register consistency | Uniform register throughout (no colloquial mixing) | Fix inconsistent paragraphs |
 | Revision response (Round 1/2) | All Critical + Major items addressed | Continue processing until complete |
@@ -386,9 +396,9 @@ Total word count monitoring (after assembly):
 ```
 Quality gate not passed ->
 ├── Insufficient citation density ->
-│   1. List all factual claims without citations
+│   1. Identify factual claims without adequate source or original-result support
 │   2. Find usable sources from Annotated Bibliography
-│   3. If no usable source -> rewrite using hedging language ("It may be argued that...")
+│   3. If support is absent -> obtain evidence/attribution, omit a nonessential claim, or mark [MATERIAL GAP]; hedging alone is not recovery
 ├── Register inconsistency ->
 │   1. Scan full text for paragraphs not matching target register
 │   2. Rewrite each paragraph, keeping argument intact
@@ -418,8 +428,8 @@ Quality gate not passed ->
 | Issue | Handling |
 |------|---------|
 | Outline too brief (missing Content Summary) | Infer section content from Literature Matrix, but quality may be reduced |
-| Argument Blueprint CER chain lacks sufficient evidence | Use hedging language in paragraphs + mark "[evidence needs strengthening]" |
-| Source annotation missing Key Findings | Use source's Title + Method to infer likely contribution direction |
+| Argument Blueprint CER chain lacks sufficient evidence | Obtain supporting evidence or attribution; omit a nonessential assertion or leave [MATERIAL GAP]. A hypothesis requires supported premises and must not be presented as an observation |
+| Source annotation missing Key Findings | Inspect the source's abstract or relevant text; if unavailable, keep the finding unresolved instead of inferring it from the title or method |
 
 ### Paper Type Adjustments
 
@@ -460,7 +470,7 @@ Quality gate not passed ->
 ## Quality Criteria
 
 - All sections from the outline are present and complete
-- Every factual claim has at least one citation
+- External factual claims have supporting sources or accurate attribution; original findings have supplied result evidence
 - Word count within +/-10% of overall target
 - No section deviates >15% from its allocation
 - Paragraph structure follows topic-evidence-analysis pattern
@@ -468,7 +478,7 @@ Quality gate not passed ->
 - Register is consistent throughout
 - If revision round: all Critical and Major items addressed
 - The declared drafting readiness matches the available materials; unsupported sections remain explicit gaps
-- For standard empirical papers, the Introduction follows the six rhetorical paragraphs unless an override is recorded
+- The Introduction makes the gap, approach and decisive contribution clear; paragraph count and roadmap are optional unless user/venue requirements specify them
 - After Results stabilize, the final Introduction is recalibrated to the evidence actually delivered
 - Every `C#` contribution is traceable from the Introduction to evidence, Discussion, and Conclusion
 - No standalone Literature Review was introduced without an explicit user request or verified journal requirement
@@ -516,8 +526,8 @@ Your task is to write the complete paper draft, then self-score it against your 
 
 **Required output sections in this order** (4 lint checks):
 
-1. `## Draft Body` — the complete paper text, following the Paper Outline section structure and the Argument Blueprint's CER chains. Per-section word counts must respect the Paper Configuration Record (per dimension D5). Total draft word count must stay within ±10% of the overall target (per dimension D4). Every factual claim cites at least one source from the Annotated Bibliography (per dimension D2).
-2. `## Dimension Scores` — one `### <Dn>: <name>` subsection per writer dimension D1–D7 (seven subsections). Each subsection assigns one of `block` / `warn` / `pass` and one paragraph of evidence. The seven dimensions are exactly those declared in `shared/contracts/writer/full.json` (D1 section_completeness, D2 citation_density, D3 argument_blueprint_fidelity, D4 total_word_count, D5 per_section_word_count, D6 acknowledged_limitations, D7 register_consistency).
+1. `## Draft Body` — the complete paper text, following the Paper Outline section structure and the Argument Blueprint's CER chains. Per-section word counts must respect the Paper Configuration Record (per dimension D5). Total draft word count must stay within ±10% of the overall target (per dimension D4). External factual claims have supporting sources or accurate attribution; original findings have supplied result evidence. Missing support is handled under D2, never by hedging alone.
+2. `## Dimension Scores` — one `### <Dn>: <name>` subsection per writer dimension D1–D7 (seven subsections). Each subsection assigns one of `block` / `warn` / `pass` and one paragraph of evidence. The seven dimensions are exactly those declared in `shared/contracts/writer/full.json` (D1 section_completeness, D2 citation_density, D3 argument_blueprint_fidelity, D4 total_word_count, D5 per_section_word_count, D6 paragraph_structure, D7 register_consistency).
 3. `## Failure Condition Checks` — one `### <Fn>` subsection per F-condition F1 / F4 / F2 / F3 / F0 (five subsections, severity-ordered). Each subsection states whether the condition fired (`fired` / `did not fire`) and, if fired, the dimensions involved.
 4. `## Writer Decision` — exactly one `writer_decision=accept` / `writer_decision=revise_in_phase_4b` / `writer_decision=escalate_to_evaluator` value, derived from F-condition severity precedence (highest-severity fired condition wins; F0 is the accept-grade baseline).
 
@@ -637,7 +647,8 @@ You MUST:
    specific date or version identifier ("as of YYYY-MM-DD, ..." or "the YYYY
    edition, ..."), not a deictic word.
 5. If the dates required to verify the claim are absent from `timeline.yaml` and
-   `literature_corpus[]`, either hedge ("appears to", "is reported as") or do
-   NOT write the claim.
+   `literature_corpus[]`, obtain the missing dated source, use an accurately
+   attributed supported statement, omit the assertion, or mark [MATERIAL GAP].
+   A bare hedge does not establish the missing temporal evidence.
 
 You may not rely on linguistic plausibility for temporal claims. Temporal claims are arithmetic, not stylistic.

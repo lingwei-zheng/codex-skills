@@ -20,7 +20,9 @@ Classify the story before recommending structural changes:
 ## Story handoff
 
 **Status:** supported | candidate | blocked
+**Research question:**
 **Leading advantage:**
+**Advantage state:** candidate | supported | needs-reframing
 **Winning arena:**
 **Central claim:**
 **Resolved tension:**
@@ -36,8 +38,10 @@ Classify the story before recommending structural changes:
 5.
 
 ### Evidence and experiment-job map
-| Claim or beat | Evidence location | Argument job | Evidence strength | Material condition, if any |
-|---|---|---|---|---|
+| Claim ID / beat | Experiment ID, if applicable | Evidence location and version | Argument job | Evidence strength | Material condition, if any |
+|---|---|---|---|---|---|
+
+**Material change since the previous handoff:** [new evidence and affected claims; omit if unchanged]
 
 ### Rewrite targets
 | Priority | Target | Required change | Evidence dependency |
@@ -51,6 +55,10 @@ Classify the story before recommending structural changes:
 - May revise:
 - Must not claim:
 ```
+
+Reuse this record within the existing writing outline when present. Advantage
+state, overall story status, and material verification status answer different
+questions; none grants permission to execute a pending action.
 
 ## Rules
 

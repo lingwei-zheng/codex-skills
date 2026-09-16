@@ -35,6 +35,22 @@ preparation. Rendering must not silently include unsettled scientific assertions
 | `output_formats` | array | For example `drawio`, `png`, `pdf`, `svg`, or `prompt-only`. |
 | `verification_checklist` | array | What must be checked before the figure is used in a paper. |
 
+## Research Evidence Continuity
+
+For research figures, reuse existing brief fields rather than adding a second
+schema: `paper_claim` carries the C# and supported advantage; each panel's
+`purpose` names its argument job; `data`/`evidence_or_data` points to E#, source
+version and transformation (or explicit theory/hypothesis status); include
+caption-to-manuscript alignment in `verification_checklist`.
+
+Keep an internal trace from source/derivation to each caption assertion and the
+manuscript claim. Keep claim IDs, file locations, version labels and approval
+history in working notes, not publication-facing labels or captions unless the
+user explicitly requests that audit information. Numeric arrays, visible labels and scientific meaning remain
+unchanged by visual emphasis. A conceptual mechanism is not empirical evidence;
+do not render an unsettled assertion. For quantitative panels use the
+`nature-figure` evidence trace and its selected backend/confirmation rules.
+
 ## Mode Rules
 
 - Use `openai-image` for illustrative conceptual synthesis, graphical abstracts,

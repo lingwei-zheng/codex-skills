@@ -62,8 +62,8 @@ already fixed.
 For empirical papers, treat the early Introduction as provisional. After the
 Results and main evidence stabilize, recalibrate the final Introduction so that
 its gap, contribution, and roadmap promise only what the paper actually
-delivers. Preserve the six-paragraph geography Introduction unless a valid
-format or paper-type override applies.
+delivers. Paragraph count and roadmap follow the argument and the user/venue
+requirements; a six-paragraph layout is optional.
 
 Order Results by final argument logic, not by the order in which analyses were
 attempted. Each prominent experiment, model, figure, or table must establish,
@@ -103,3 +103,16 @@ Report only:
 - local changes made;
 - deferred checks and their triggers;
 - any central claim drift requiring author confirmation.
+
+## Claim Preservation In Revision
+
+Use the shared narrative protocol's Revision Invariants on touched central
+claims: preserve numbers/units, direction/negation, comparison conditions,
+uncertainty, causal meaning, scope and citation ownership. Foregrounding a
+supported advantage is ordinary editing; a material scientific change follows
+existing author-decision rules. Removing redundant qualifiers is not itself
+claim drift. Do not add a per-sentence approval gate or a universal verb ranking.
+
+Missing factual support requires evidence, attribution, omission or an explicit
+material gap. A hedge cannot substitute for evidence. Presentation quality,
+source support, execution completion and reproducibility remain separate checks.

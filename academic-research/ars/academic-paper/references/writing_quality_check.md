@@ -10,6 +10,14 @@ Reference this checklist during the self-review step of drafting (draft_writer_a
 
 ---
 
+## Scope
+
+Use these as context-sensitive diagnostics, not rewrite gates or a numeric
+score. Author preferences, disciplinary terminology and venue rules take
+priority. Fix a demonstrated clarity problem in the smallest coherent span;
+do not rewrite sound prose to satisfy a pattern or rhythm quota. Preserve
+scientific content and required quotation/anchor grammar.
+
 ## A. High-Frequency Term Warnings
 
 The following terms appear disproportionately in AI-generated text. They are not banned — but when you encounter one, ask: **"Is this really the most precise word here, or am I defaulting to it?"**
@@ -57,18 +65,18 @@ If a flagged term is **standard terminology in the target discipline**, it is ex
 ## B. Punctuation Pattern Control
 
 ### Em Dash (—)
-- **Limit**: ≤ 3 per paper total, recommend 0-1
+- **Diagnostic**: Does an aside interrupt the argument? Follow the user/venue punctuation policy; no universal count
 - **Why**: AI text overuses em dashes for parenthetical asides. Academic writing typically uses commas, parentheses, or separate sentences instead
 - **Fix**: Replace with commas, parentheses, or restructure into separate sentences
 - **Exception**: Direct quotes from sources retain their original punctuation
 
 ### Semicolons
-- **Limit**: ≤ 2 per 1000 words
+- **Diagnostic**: Does the semicolon clarify a relationship or overload the sentence? No universal count
 - **Why**: AI text chains independent clauses with semicolons where a period would be clearer
 - **Fix**: Use a period and start a new sentence. Reserve semicolons for closely related parallel structures
 
 ### Colon-List Sequences
-- **Rule**: Avoid 2+ consecutive paragraphs that each open with a colon followed by a list
+- **Diagnostic**: Repeated colon-list openings warrant a clarity check, not automatic rewriting
 - **Why**: Creates a monotonous enumerate-everything pattern
 - **Fix**: Integrate list items into prose, or use a single consolidated list
 
@@ -100,7 +108,7 @@ Also watch for sentences that describe what the paper is doing instead of doing 
 - "The following paragraph examines..." → Just examine it
 - "We now turn our attention to..." → Just turn to it
 
-Exception: Roadmap sentences in the Introduction ("Section 2 reviews the literature; Section 3 describes the methodology") are standard academic practice and should be kept.
+An Introduction roadmap is optional unless the user or venue requires it. Retain one when it helps navigation, not merely because a template includes it.
 
 ---
 
@@ -122,9 +130,9 @@ Exception: Roadmap sentences in the Introduction ("Section 2 reviews the literat
 - **Fix**: Pick one term per concept per section. Repeat it. Technical repetition is clarity, not weakness
 
 ### Binary Contrast Overuse
-- **Pattern**: "Not X. Y." or "It's not about X — it's about Y." used more than twice per paper
-- **Why**: This rhetorical device is effective once. Repeated, it becomes a tic
-- **Limit**: ≤ 2 per paper
+- **Pattern**: Repeated "Not X. Y." or "It's not about X — it's about Y." contrasts that add no substantive distinction
+- **Why**: Repetition can distract from the evidence and make prose formulaic
+- **Diagnostic**: Keep contrast when it carries information; remove repetitive rhetorical contrast, without a fixed quota
 
 ### Mirror Structure
 - **Pattern**: Every section has the same internal structure (topic sentence → 3 evidence points → synthesis sentence)
@@ -139,14 +147,14 @@ Exception: Roadmap sentences in the Introduction ("Section 2 reviews the literat
 Good writing has **natural variation in sentence length**. Short sentences create impact. Longer sentences develop complex ideas. The alternation creates rhythm.
 
 ### Detection Rule
-If 5+ consecutive sentences all fall within a narrow word-count range (e.g., all between 20-25 words): **flag for review**.
+If a passage feels monotonous or difficult to follow, inspect rhythm in context. Similar sentence lengths alone are not a defect.
 
 ### How to Fix
-- Insert a short sentence (≤ 10 words) to break the pattern
+- Use a shorter sentence when it clarifies the point, not to hit a length target
 - Combine two short sentences into one complex one if the pattern is monotonously short
 - Read the paragraph aloud — if it feels metronomic, vary it
 
-### Burstiness Targets (by section)
+### Section-Sensitive Rhythm Suggestions
 - **Abstract**: Moderate variation (factual, steady pace)
 - **Introduction**: High variation (hook with short sentences, build with long ones)
 - **Literature Review**: Moderate (steady analytical pace, occasional short synthesis)
@@ -164,10 +172,8 @@ Apply rules **while writing each section** in the self-review sub-step (Step 2.7
 ### During Final Review (Fallback)
 If not applied during drafting, run a full-paper sweep before handoff to citation_compliance_agent.
 
-### Scoring (Internal, Not Reported to User)
-For each rule category, track violations:
-- 0 violations: Clean
-- 1-3 violations: Minor — fix in self-review
-- 4+ violations: Pattern issue — review the section's writing approach
+### Review Outcome
 
-Do NOT report scores to the user. Just fix the issues silently during drafting.
+Record only consequential clarity or evidence issues and the changes made.
+Do not tally stylistic violations into pass/fail scores or repair sound prose
+merely to satisfy a count. The checklist does not establish scientific validity.

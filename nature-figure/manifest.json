@@ -1,0 +1,21 @@
+{
+  "name": "nature-figure",
+  "generated_for": "codex",
+  "source_resources": [
+    {
+      "name": "figures4papers",
+      "url": "https://github.com/ChenLiu-1996/figures4papers",
+      "local_path": "assets/figures4papers",
+      "reviewed_revision": "3c181f85e82c6f24948fcaaf3be6696102b41d8d",
+      "reviewed_date": "2026-09-16",
+      "baseline_status": "Historical resource import revision was not recorded.",
+      "adopted_in_this_review": [
+        "LICENSE"
+      ],
+      "license": "CC-BY-NC-4.0",
+      "license_file": "assets/figures4papers/LICENSE",
+      "license_scope": "Bundled figures4papers resources only; not the entire nature-figure skill or skills repository.",
+      "integration_scope": "Existing examples retained; no wholesale upstream replacement."
+    }
+  ]
+}

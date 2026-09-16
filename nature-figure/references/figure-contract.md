@@ -14,7 +14,9 @@ where a private draft came from unless the user explicitly asks for provenance.
 Create a short contract in working notes or in the response:
 
 ```text
-Core conclusion:
+Core conclusion and claim ID:
+Leading advantage and evidence state:
+What the reader should notice:
 Figure archetype:
 Target journal/output:
 Backend: Python or R
@@ -30,7 +32,7 @@ Evidence hierarchy:
 Statistics needed:
 Source data needed:
 Image-integrity notes:
-Reviewer risk:
+Material interpretation/delivery risk (if any):
 ```
 
 For an interaction or moderation figure, append:
@@ -69,6 +71,22 @@ minimum set of panels that make the conclusion clear and defensible.
   and scientific-claim decisions together where possible. Reuse unchanged choices
   already specified or explicitly approved; do not ask again. Keep any outstanding
   finalization confirmation and never treat silence as approval.
+
+## Evidence Trace
+
+Reuse the existing contribution/evidence map in working notes; do not duplicate
+raw data or disclose private working paths in captions.
+
+| Figure/panel | Claim / experiment ID | Argument job | Source data and version | Transformation / derivation | Caption claim | Supported manuscript claim |
+|---|---|---|---|---|---|---|
+| ... | C# / E# or N/A | establish/explain/demonstrate/distinguish/bound | exact locator | script/version or precise derivation | atomic assertion | text or locator |
+
+Distinguish observed evidence from conceptual hypotheses. Split a compound
+caption into its separate assertions and verify each against the relevant data
+and transformation. A rendered association does not establish mechanism or
+causality. Preserve comparison conditions, uncertainty and material contrary
+evidence; report missing support without inventing values. For conceptual
+figures, use theory/evidence status and semantic edges instead of numeric data.
 
 ## Archetype selection
 

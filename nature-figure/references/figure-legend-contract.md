@@ -72,3 +72,12 @@ promises a file that is absent.
 - Statistics match the plotted data and analysis.
 - Attribution is complete.
 - No private local path or internal template name is disclosed.
+
+## Caption To Manuscript Alignment
+
+Use the evidence trace in `figure-contract.md`. Match each caption assertion to
+source data and its transformation, and each manuscript claim citing the figure
+to what the figure actually supports. Split compound causal/mechanistic and
+quantitative claims for this check. A correct image and matching numbers are
+necessary but do not establish the interpretation. Preserve necessary scope and
+uncertainty; highlight a supported advantage without hiding material evidence.

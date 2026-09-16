@@ -2,6 +2,16 @@
 
 Used by `abstract_bilingual_agent`.
 
+## Evidence-Led Spine
+
+Use problem -> specific gap -> core approach -> strongest supported result ->
+significance. Foreground one leading advantage rather than equal-weight findings
+or project chronology. State the decisive quantitative result with its relevant
+comparison and uncertainty, or precise qualitative evidence when appropriate.
+Sentence counts below are examples, not quotas. The user's structure and verified
+venue format/length take priority. A plan-only abstract states proposed work;
+never invent results to complete the pattern. Reuse the current story handoff.
+
 ## Abstract Types
 
 ### Structured Abstract

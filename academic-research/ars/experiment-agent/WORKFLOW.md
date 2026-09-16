@@ -20,7 +20,10 @@ metadata:
 
 Execute, monitor, interpret, and verify experiments for academic research. Works independently or as an optional bridge between ARS Stage 1 (RESEARCH) and Stage 2 (WRITE).
 
-**Role**: Executor + Monitor. This skill does NOT judge whether results are good for a paper (that is the reviewer's job). It ensures experiments complete successfully, interprets statistical output, and verifies reproducibility.
+**Role**: Executor + Monitor. Execution roles record observations and validation;
+the main research workflow interprets their implications for the paper using
+the shared continuity record. Keep these responsibilities distinct without
+requiring a formal reviewer for ordinary author-side interpretation.
 
 ## Quick Start
 
@@ -75,7 +78,7 @@ Help me design an experiment to test whether AI tools improve QA officer product
 
 ## Calibration Profile
 
-Before `plan`, `run`, or `validate`, read
+Before `plan`, `run`, `manage`, or `validate`, read
 `../../../shared/research-calibration.md` and
 `../../../shared/advantage-led-research-narrative.md`, then infer:
 
@@ -102,7 +105,7 @@ with no current job.
 
 ## Routing
 
-1. Detect intent from user's first message using trigger keywords
+1. Detect intent from the current request, prior decisions, and available artifacts
 2. Code execution keywords → dispatch `code_runner_agent` (run mode)
 3. Human study keywords → dispatch `study_manager_agent` (manage mode)
 4. Validation keywords → enter validate mode (handled inline, see below)
@@ -131,13 +134,18 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 5. **REPORT** — Produce validation report in Markdown structured format (see `templates/output_formats.md`). Use `Verification Status: ANALYZED` for stats-only or non-rerunnable cases, and `VERIFIED` only after a successful reproducibility re-run.
 
-**Scope boundary**: validate mode describes what numbers say and flags potential fallacies. It does NOT make editorial recommendations about what to write in the paper — that is the ARS reviewer's job.
+**Scope boundary**: validate mode records what the numbers support and flags
+applicable fallacies. The main agent then updates claim/evidence alignment and
+continues authorized author-side work; formal review remains a separate role.
 
 ---
 
 ## plan Mode (Inline)
 
-Socratic dialogue to help users design experiments before running them. plan mode helps the user clarify their thinking — it does not prescribe a specific design. The user makes all design decisions.
+Develop a concrete experiment proposal from the current question, materials, and
+recorded decisions. Use Socratic clarification when a material design choice
+cannot be reasonably inferred. Scientific decisions reserved for the user stay
+with the user; proposing a reviewable design does not approve or execute it.
 
 ### Procedure
 
@@ -158,9 +166,15 @@ Socratic dialogue to help users design experiments before running them. plan mod
 10. **Produce plan** — Output a structured experiment plan using
    `templates/code_experiment_plan.md` or `templates/study_protocol.md`
 
-One question at a time. Multiple choice preferred. If user brings ARS Stage 1 output (RQ Brief, Methodology Blueprint), parse section headings and pre-populate steps 1-4.
+Read available RQ Briefs, Methodology Blueprints, and prior decisions before
+asking. Produce the supported parts of the plan immediately; mark unresolved
+material choices rather than making every step a mandatory question. When
+clarification is necessary, prefer one focused question with concrete options.
 
 ---
+
+For human-study resume or multi-session tracking, read
+`references/study-state.md` and reuse the project's existing state location.
 
 ## Output Formats
 
@@ -182,7 +196,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | Standard | Requirement |
 |----------|-------------|
 | Monitoring coverage | Every code experiment must have at least process-alive + timeout monitoring |
-| Statistical rigor | Proportionate to stage and claim risk; full 11-type coverage only for comprehensive validation |
+| Statistical rigor | Proportionate to stage and claim risk; comprehensive validation covers all applicable patterns without a fixed count |
 | Reproducibility | Deterministic experiments: exact match required. Stochastic: < 5% relative diff default |
 | Runtime efficiency | Long code runs require a pilot estimate, utilization monitoring, and bottleneck-aware execution |
 | ARS compatibility | All outputs include Material Passport with required fields per ARS Schema 9 |
@@ -215,7 +229,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | 2 | Silently retrying a crashed run | Masks the real error; wastes compute |
 | 3 | Reporting p < .05 as "the result is significant" without effect size | Statistical significance without practical significance is misleading |
 | 4 | Running every possible robustness or fallacy check on a first draft | Wastes time and obscures the main result; use stage- and risk-triggered checks |
-| 5 | Making editorial recommendations in validate mode | That's the reviewer's job, not ours |
+| 5 | Treating successful execution as scientific support | Validate observations, then let the main workflow assess claim support |
 | 6 | Letting a long process run at low utilization without profiling | Completion monitoring is not performance management |
 
 ---
@@ -240,8 +254,11 @@ Plan mode outputs use separate templates and also carry Material Passport:
 This skill works independently. When used with ARS:
 
 - **Consuming ARS output**: Recognizes ARS Stage 1 section headings (`## Research Question Brief`, `## Methodology Blueprint`) to pre-populate plan/manage modes
-- **Producing ARS-compatible output**: All outputs carry Material Passport (Schema 9). Users bring results to ARS Stage 2 manually.
-- **ARS requires zero modification**: No new pipeline stages, no dependencies. The user is the bridge.
+- **Producing ARS-compatible output**: Keep the existing Material Passport and
+  carry the compact evidence table beside it; no new passport schema is required.
+- **Continuing the authorized task**: The main agent passes results and their
+  actual validation status into the next appropriate stage. A run-only request
+  does not authorize manuscript work. See the integration guide.
 
 See `references/ars_integration_guide.md` for details.
 

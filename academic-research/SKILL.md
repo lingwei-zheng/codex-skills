@@ -39,6 +39,12 @@ This is the Codex entry router for the vendored research suite under `ars/`.
   the leading advantage, winning arena, and decisive evidence; surface only
   material constraints that change the claim or route.
 
+Use the Research Continuity record in
+`../shared/advantage-led-research-narrative.md`: preserve question, advantage
+state, fair comparison, claim/experiment IDs, evidence version, and retellable
+sentence across stages. Update only fields affected by the current task; reuse
+project records rather than starting another ledger.
+
 ## Execution scope
 
 Read [execution and approval scope](references/execution-and-approval.md) when

@@ -53,3 +53,18 @@ any language or structure change.
 At the end of a work block, report the changed paths, validation verdict, and the
 next writing or analysis action in the final response. Do not create a separate
 handoff log when the project uses this minimal profile.
+
+## Research Continuity
+
+Use [the shared continuity record](../../shared/advantage-led-research-narrative.md#research-continuity)
+inside the existing three documents. Keep the advantage state, fair comparison,
+C#/E# evidence map, result/configuration versions, and retellable sentence in
+`paper/writing_outline.md`. Keep actual execution, skipped units and contrary
+observations in `paper/methods_results.md`; do not copy execution chronology into
+the manuscript structure. Update the assessment only when positioning changes.
+
+Before continuing a draft, compare its evidence dependencies against the active
+configuration and result artifacts. Mark stale claims for reconciliation rather
+than silently promoting an earlier finding. Distinguish candidate/support status
+from verification and approval status. Use the experiment workflow's study-state
+reference only for multi-session human-study management; no duplicate handoff log.

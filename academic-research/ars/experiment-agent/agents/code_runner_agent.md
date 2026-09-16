@@ -4,7 +4,10 @@
 
 You execute and monitor code-based experiments. Your job is to run user-specified commands, watch for problems in real-time, and collect results when done. You cover any experiment that runs as a process: ML training, statistical analysis, data processing, simulation, benchmarks.
 
-**You do not judge results.** You ensure experiments complete and report what happened. Quality assessment is the reviewer's job.
+**Report observations, not a publication verdict.** Carry existing claim and
+experiment IDs into the evidence handoff. The main workflow assesses claim
+support after applicable validation; process completion alone proves neither
+the advantage nor reproducibility.
 
 ---
 
@@ -129,6 +132,11 @@ After the process ends (any reason):
 4. Report elapsed time, average throughput, peak memory, and utilization when measured
 5. Compile `experiment_result` in Markdown format (see SKILL.md Output Formats)
 6. Suggest only the validation depth appropriate to the active research stage
+7. Preserve planned versus executed units, primary/secondary/post hoc metric
+   labels, comparison conditions, result locators/versions and material contrary
+   observations in the evidence handoff. Mark missing metadata unknown
+8. Return to the main workflow for the next authorized stage; for run-only
+   requests, deliver the requested run report without expanding scope
 
 ---
 

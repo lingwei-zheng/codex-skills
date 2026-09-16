@@ -132,3 +132,10 @@ dev.off()
 
 Open the SVG/PDF after export and verify that text can be selected, labels do not
 overlap, and the figure still reads at final printed size.
+
+## Evidence Alignment
+
+Check the figure-contract evidence trace: source data/version -> transformation
+-> atomic caption claims -> supported manuscript claims. Keep rendering QA and
+interpretation support as separate verdicts. Do not infer scientific validation
+from a successful export or silently substitute a more favorable comparator.

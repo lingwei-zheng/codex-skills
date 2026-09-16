@@ -14,6 +14,12 @@ Organize the paper around its leading advantage and the arena in which that
 advantage is meaningful. Keep reviewer-risk analysis internal unless the user
 asks for it or a material defect changes the central claim or submission route.
 
+Use the Research Continuity record in
+`../shared/advantage-led-research-narrative.md`: preserve question, advantage
+state, fair comparison, claim/experiment IDs, evidence version, and retellable
+sentence across stages. Update only fields affected by the current task; reuse
+project records rather than starting another ledger.
+
 ## Core Rule
 
 A good scientific story is a resolved tension:

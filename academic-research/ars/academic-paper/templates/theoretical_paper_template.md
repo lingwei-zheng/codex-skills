@@ -101,14 +101,9 @@ This template provides the skeleton for a paper that develops, critiques, or ext
 
 ## 6. Conclusion
 
-### 6.1 Summary of Contribution
-[1 paragraph restating the paper's key contribution.]
-
-### 6.2 Limitations of the Analysis
-[Acknowledge the boundaries of this theoretical work.]
-
-### 6.3 Future Directions
-[What research should follow?]
+[State the central theoretical contribution, decisive reasoning/evidence and
+memorable implication. Add no new defect. Repeat a material boundary or forward
+direction only when needed for interpretation or required by the venue.]
 
 ---
 

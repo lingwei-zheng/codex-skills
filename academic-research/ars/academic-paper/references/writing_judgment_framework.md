@@ -2,6 +2,11 @@
 
 A cognitive framework for making writing decisions. Complements the procedural `writing_quality_check.md` with judgment heuristics.
 
+Apply author-side [advantage-led research narrative](../../../../shared/advantage-led-research-narrative.md)
+when organizing a paper. General stylistic patterns here are diagnostics, not
+quotas. Preserve material boundaries and evidence; do not add ritual caveats or
+use a hedge to rescue an unsupported factual statement.
+
 ## The Clarity Test
 
 For every paragraph, ask: "If I remove this paragraph, does the paper still make sense?"
@@ -41,7 +46,7 @@ If ANY of these is unclear, the writing needs revision — regardless of how acc
 |---------|------------------------|----------|
 | Introduction | Why should I care about this topic? | Hook with a real-world consequence or knowledge gap |
 | Literature Review | What's missing from what we know? | Build to the gap, don't just summarize |
-| Methodology | Can I trust these results? | Show rigor, acknowledge limitations upfront |
+| Methodology | Can I trust these results? | Explain the design and place material constraints beside the claims they affect |
 | Results | What did you actually find? | Lead with the finding, not the statistical test |
 | Discussion | What does this mean for the field? | Connect back to the gap; state the delta clearly |
 | Conclusion | What should I remember? | One sentence that captures the contribution |

@@ -35,6 +35,12 @@ draft into a question that is important, tractable, falsifiable, and defensible.
   or when a material flaw changes the decision.
 - Respond in Chinese when the user writes in Chinese unless asked otherwise.
 
+Use the Research Continuity record in
+`../shared/advantage-led-research-narrative.md`: preserve question, advantage
+state, fair comparison, claim/experiment IDs, evidence version, and retellable
+sentence across stages. Update only fields affected by the current task; reuse
+project records rather than starting another ledger.
+
 ## Boundaries
 
 - Use `good-question` to decide what should be asked, tested, falsified, or

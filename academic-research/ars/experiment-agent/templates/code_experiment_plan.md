@@ -18,6 +18,15 @@
 - **Rigor profile**: [proportionate | comprehensive]
 - **Compute profile**: [quick | balanced | max-throughput]
 
+## Argument And Comparison
+
+- **Claim / experiment IDs**: [reuse C# / E#]
+- **Advantage hypothesis**: [candidate, not an observed result]
+- **Argument job**: [establish | explain | demonstrate | distinguish | bound]
+- **Fair arena**: [task, population/scale, comparator, resource budget]
+- **Supports / narrows / defeats**: [observable outcomes for this claim]
+- **Intended presentation**: [main text | supplement | internal; provisional]
+
 ## Setup
 
 - **Language/Framework**: [e.g., Python 3.11, PyTorch 2.x]
@@ -60,9 +69,22 @@
 
 ## Analysis Plan
 
-- **Primary metric**: [what to look at first]
-- **Success threshold**: [e.g., "accuracy > 0.90", "p < .05"]
-- **Comparison**: [baseline, previous run, theoretical expectation]
+- **Primary metric and purpose**: [prespecified metric and decision relevance]
+- **Secondary / exploratory metrics**: [distinguish planned from post hoc]
+- **Scientific criterion**: [meaningful effect, precision, performance or cost,
+  with uncertainty and an applicable statistical test; not p-value alone]
+- **Comparison**: [fair baseline and matched conditions]
+- **Configuration / input version**: [existing config and data version, or unknown]
+
+## Planned Execution And Evidence
+
+| Experiment ID / unit | Planned measurement | Execution status | Skip reason, if not run | Result locator and version |
+|---|---|---|---|---|
+| [E#] | [measurement] | planned | [if deferred] | pending |
+
+Update from actual runs, never expected values. Preserve raw results and required
+controls even when a unit will not appear in the paper. Execution success in
+Expected Outputs is distinct from the scientific criterion above.
 
 ## Rigor Budget
 

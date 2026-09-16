@@ -143,3 +143,16 @@ Keep the extra label only when it carries additional information:
 - `observational` identifies or contrasts the study design;
 - a no-causality statement responds to a real ambiguity in a central
   interpretation, preferably once in Discussion or Limitations.
+
+## Chinese Wording And Evidenced Trade-Offs
+
+Apply the same judgment to `遗憾的是`, `明显落后`, `效果有限`, `仅` and `仍`.
+Remove emotional self-criticism; retain meaningful quantification and scope.
+`仅需一种传感器` describes an advantage, and `仅有十个样本` may state a material
+sample fact. Neither should be deleted by a word blacklist.
+
+Before writing a positive trade-off, verify both sides: the measured outcome
+and the claimed saving, deployment benefit or target difference. If the latter
+is unknown, do not invent it. A post hoc alternative metric may be reported as
+exploratory; it does not erase the original primary outcome or a material
+counter-result. Prefer a concrete supported benefit to a generic win/lose label.

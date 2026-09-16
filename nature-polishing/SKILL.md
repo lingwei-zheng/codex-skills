@@ -69,7 +69,8 @@ For `human-final-pass`:
   it clarifies interpretation rather than leading a contribution-heavy sentence.
 - Do not create a new weakness, comparator, or burden of proof during polishing.
   For whole-manuscript contribution, Results, or Discussion work, read
-  `../shared/advantage-led-research-narrative.md`; preserve its integrity floor
+  `../shared/advantage-led-research-narrative.md`; reuse its continuity record,
+  check Revision Invariants, preserve its integrity floor
   and do not hide a materially adverse result.
 - Avoid em dashes as prose punctuation unless the user requests them.
 - Use hyphens for compound modifiers and en dashes only for ranges or established
@@ -113,12 +114,15 @@ For `human-final-pass`:
 ## Compact Section Check
 
 - `Introduction`: importance -> known context -> unresolved gap -> question or aim
-  -> approach and contribution. Do not report Results prematurely.
+  -> approach and contribution, with a concise preview of the strongest supported
+  finding. Keep detailed result narration in Results.
 - `Results`: report what was observed, where or when, and with what quantitative
   support. Keep interpretation limited and intentional.
 - `Discussion`: explain what the findings add, how they relate to prior work, which
   mechanism is plausible, and where the interpretation may fail.
-- `Conclusion`: contribution -> key evidence -> bounded implication. Add no new data.
+- `Conclusion`: contribution -> key evidence -> memorable implication. Add no new
+  data or defect; repeat a boundary only when needed to prevent misreading or
+  required by the venue. Do not add a limitation or future-work quota.
 - `Methods`: preserve reproducibility, assumptions, parameters, controls, software,
   and analysis details. Do not polish away necessary specificity.
 - `Abstract`: context or problem -> gap or objective -> approach -> key results ->

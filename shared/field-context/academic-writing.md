@@ -32,6 +32,12 @@ The standard structure for empirical research papers in natural sciences, engine
 
 ## 2. Section-Specific Guidance
 
+Use the current advantage/evidence record from
+`../advantage-led-research-narrative.md`. Section lengths and paragraph counts
+below are examples, subordinate to the argument and user/venue requirements.
+The Introduction may preview decisive findings; the Conclusion reinforces the
+same contribution without adding new weaknesses.
+
 ### 2.1 Abstract
 
 **Length:** 150-250 words for most journals; some allow 300. Always check journal guidelines. Structured abstracts (Background / Objective / Methods / Results / Conclusions) are required by some journals (EHP, GeoHealth) and recommended everywhere.
@@ -77,7 +83,7 @@ Good example: "(1) We propose XYZ-Net, a Siamese transformer architecture that j
 
 Bad example: "(1) We make a contribution to disaster mapping."
 
-**Final paragraph — Paper organization:** "The remainder of this paper is organized as follows. Section 2 reviews related work. Section 3 describes [study area, data, and methods]. Section 4 presents experimental results. Section 5 discusses implications and limitations. Section 6 concludes." This sentence is formulaic and that is fine — readers expect it.
+**Optional roadmap — Paper organization:** "The remainder of this paper is organized as follows. Section 2 reviews related work. Section 3 describes [study area, data, and methods]. Section 4 presents experimental results. Section 5 discusses implications and limitations. Section 6 concludes." Include a roadmap only when it helps navigation or the user/venue requests it.
 
 ### 2.3 Literature Review
 
@@ -173,9 +179,9 @@ Bad example: "(1) We make a contribution to disaster mapping."
 1. Brief summary (2-3 sentences: what was the problem, what did you do)
 2. Restate contributions (numbered, matching Introduction contributions list)
 3. Broader implications (what does this mean for the field, for practice, for policy?)
-4. Limitations (1-3 sentences, referring back to Discussion)
-5. Future work (3-5 specific, actionable directions, connected to identified limitations)
-6. Closing sentence: inspiring but grounded — do not overstate impact
+4. Close with the memorable contribution and its supported implication.
+5. Repeat a material boundary or concrete forward direction only when needed
+   for interpretation or required by the venue; no fixed limitation/future-work quota.
 
 ---
 
@@ -222,7 +228,7 @@ Bad example: "(1) We make a contribution to disaster mapping."
 - **Table without narrative:** never present a table without at least 2-3 sentences explaining what it shows
 - **Inconsistent numbers:** methods says 10,000 training samples, Table 1 says 9,847 — always reconcile
 - **Passive + jargon stack:** "The proposed framework was utilized to perform geospatial analysis" — use active voice and plain terms
-- **Conclusions that just summarize:** a conclusion that only reiterates the abstract adds no value; include implications and future directions
+- **Conclusions that just summarize:** synthesize the contribution and supported meaning; future directions are optional, not a remedy checklist
 
 ---
 

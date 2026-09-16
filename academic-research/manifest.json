@@ -4,6 +4,11 @@
   "version_file": "VERSION",
   "generated_for": "codex",
   "generated_date": "2026-05-19",
+  "behavioral_validation": {
+    "cases": "evals/advantage-lifecycle.json",
+    "rubric": "evals/advantage-lifecycle-rubric.md",
+    "scope": "Offline independent maintenance evaluation; not a mandatory research-project stage."
+  },
   "source_repositories": [
     {
       "name": "academic-research-skills",
@@ -28,7 +33,34 @@
         "requirements-dev.txt",
         "CHANGELOG.md",
         "LICENSE"
-      ]
+      ],
+      "reviewed_revision": "3c546bc08c56f79e0068f1ea4f0acedf5bf69b5e",
+      "reviewed_version": "v3.22.0",
+      "reviewed_date": "2026-09-16",
+      "integration_scope": "Selected principles adapted into existing Codex workflows; commit remains the imported baseline, not a full upstream upgrade.",
+      "selected_adaptations": [
+        {
+          "upstream_reference": "#260",
+          "scope": "Experiment argument jobs, actual-run provenance, and evidence handoff in experiment-agent templates and integration guide."
+        },
+        {
+          "upstream_reference": "#261",
+          "scope": "Source data, transformations, caption subclaims, and manuscript claim trace in local figure contracts."
+        },
+        {
+          "upstream_reference": "#500",
+          "scope": "Problem-gap-approach-result coherence for title, abstract, and introduction; no fixed paragraph quota."
+        },
+        {
+          "upstream_reference": "#569 / #570",
+          "scope": "Meaning-preserving claim revision checks; no upstream patch schema or per-byte approval system."
+        },
+        {
+          "upstream_reference": "#825",
+          "scope": "Missing evidence cannot be repaired by hedging; remove universal prose quotas from writer guidance and writer/full.json."
+        }
+      ],
+      "retained_local_boundaries": "Existing approval, validation, language, and cross-model opt-in rules; no new hooks, full upstream gate/schema stack, or inquiry ledger runtime."
     },
     {
       "name": "experiment-agent",
@@ -36,7 +68,11 @@
       "commit": "9b063fa895eaf1f63ac99ac03f924f8d31aa8d26",
       "included_paths": [
         "experiment-agent"
-      ]
+      ],
+      "reviewed_revision": "e291e7dc7ca268b2de7e1a9cf23bc2eef5dc0651",
+      "reviewed_version": "v1.1.0",
+      "reviewed_date": "2026-09-16",
+      "integration_scope": "Session-state restoration adapted as an on-demand study-management reference. Reuse existing project records; no concurrent-write runtime or claim of atomic locking."
     }
   ],
   "excluded_patterns": [
@@ -92,6 +128,5 @@
     "The Codex audit wrapper is patched to run on macOS stock Bash 3.2+ instead of requiring Bash 4+.",
     "ARS v3.9.4.2 is the tracked upstream commit. The v3.9.4.2 delta is CI/release-gate-only under excluded .github paths; vendored runtime content includes v3.9.4.1 temporal-verification hotfixes and earlier v3.9.x workflow updates.",
     "Cross-model API behavior is disabled by default and requires explicit user request."
-    ]
+  ]
 }
-

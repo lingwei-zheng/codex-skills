@@ -42,6 +42,12 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
   primary journal or publisher sources.
 - Do not edit the proposal or manuscript by default. Produce a separate assessment report unless the user explicitly asks for rewriting.
 
+Use the Research Continuity record in
+`../shared/advantage-led-research-narrative.md`: preserve question, advantage
+state, fair comparison, claim/experiment IDs, evidence version, and retellable
+sentence across stages. Update only fields affected by the current task; reuse
+project records rather than starting another ledger.
+
 ## Routing Boundaries
 
 - Use `academic-advisor` for author-side project diagnosis, pre-submission audit, and journal strategy.

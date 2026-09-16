@@ -94,10 +94,10 @@ If a Style Profile is available from a prior `academic-paper` intake or provided
 ## Writing Quality Check
 
 Before finalizing the report, run the Writing Quality Check checklist (see `academic-paper/references/writing_quality_check.md`):
-- Scan for AI high-frequency terms and replace with more precise alternatives
+- Review generic terms in context; replace only when a more precise expression helps
 - Verify sentence and paragraph length variation
 - Remove throat-clearing openers (e.g., "In the realm of...", "It's important to note that...")
-- Check em dash usage (≤3 per report)
+- Check whether punctuation supports clarity and the user/venue style; no numeric quota
 
 ## Temporal Integrity Iron Rule (v3.9.4)
 
@@ -123,8 +123,9 @@ You MUST:
    specific date or version identifier ("as of YYYY-MM-DD, ..." or "the YYYY
    edition, ..."), not a deictic word.
 5. If the dates required to verify the claim are absent from `timeline.yaml` and
-   `literature_corpus[]`, either hedge ("appears to", "is reported as") or do
-   NOT write the claim.
+   `literature_corpus[]`, obtain the missing dated source, use an accurately
+   attributed supported statement, omit the assertion, or mark [MATERIAL GAP].
+   A bare hedge does not establish the missing temporal evidence.
 
 You may not rely on linguistic plausibility for temporal claims. Temporal claims are arithmetic, not stylistic.
 

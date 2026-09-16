@@ -1,27 +1,16 @@
-# ARS Integration Guide
+# Experiment To Paper Integration
 
-How experiment-agent works with ARS (Academic Research Skills) pipeline. This file lives in experiment-agent repo. ARS requires zero modification.
+The main agent coordinates the existing experiment roles and author-side paper
+roles inline. Read the shared [research continuity protocol](../../../../shared/advantage-led-research-narrative.md).
+This does not install another runtime, change pipeline gates, or enable external
+transmission.
 
-## Principle
+## Intake
 
-```
-experiment-agent ──knows──> ARS handoff format
-ARS ──does not know──> experiment-agent
-User ──bridges──> between the two
-```
-
-## Reading ARS Stage 1 Output
-
-When a user brings ARS Stage 1 (RESEARCH) output to experiment-agent, detect these section headings:
-
-| Heading | Maps To |
-|---------|---------|
-| `## Research Question Brief` | plan mode step 1 (RQ + hypothesis), manage mode PLAN step 1 |
-| `## Methodology Blueprint` | plan mode steps 2-4 (variables, design, methods), manage mode PLAN steps 2-4 |
-| `## Annotated Bibliography` | Reference context (do not depend on; experiment-agent does not do lit review) |
-| `## Synthesis Report` | Background context for experiment design |
-
-**Detection method**: Loose heading matching. Do not depend on ARS schema version numbers. If headings are present, parse. If not, ask user for context.
+Reuse the current Research Question Brief, Methodology Blueprint, configuration,
+story handoff, or equivalent project files. Match meaning rather than requiring
+exact heading strings. Ask only for missing information that changes execution.
+Carry existing C# and E# identifiers forward. A plan is not an observed result.
 
 ## Producing ARS-Compatible Output
 
@@ -49,30 +38,33 @@ All experiment-agent outputs include a **Material Passport** header (ARS Schema 
 - `Integrity Pass Date`: timestamp when validate mode completed
 - `Upstream Dependencies`: version labels of artifacts this one depends on (e.g., if experiment used ARS Stage 1 RQ Brief)
 
-## User Workflow: ARS → experiment-agent → ARS
+## Evidence Handoff
 
-```
-1. User runs ARS Stage 1 (deep-research) → gets RQ Brief + Methodology Blueprint
-2. User copies relevant sections to experiment-agent
-3. experiment-agent: plan mode → run/manage mode → validate mode → produces results
-4. User copies experiment_result / validation_report back to ARS
-5. User starts ARS Stage 2 (academic-paper) with experiment results as input
-6. ARS Stage 2 writer sees Material Passport → knows origin and verification status
-```
+Use the table in `../templates/output_formats.md` beside the existing passport.
+It records planned and actual work, execution/skip status, comparison conditions,
+result location/version, actual observations and verification status. Empty or
+unknown evidence must not be auto-filled. No result-value or paper-quality
+guarantee follows from a structurally complete table.
 
-The user is the bridge. No API calls, no automated handoff, no shared state.
+For an experiment-backed claim, the main agent checks the exact result location
+and scope. Classify the implication in ordinary language: supported, needs a
+narrower claim, contradicted, or insufficient evidence. Preserve material contrary
+results and primary outcomes. Keep claim support separate from the passport's
+reproducibility status; an evidence-backed claim can still lack a rerun.
 
-## Future ARS Integration (Not v1)
+## Authorized Continuation
 
-If ARS ever wants to auto-detect experiment-agent output:
+1. Design roles establish the advantage hypothesis and experiment jobs.
+2. Run/manage roles record actual execution and study metadata.
+3. Validate only to the depth warranted by the stage and the claim.
+4. The main agent updates the existing contribution/evidence map and marks any
+   changed story assumptions before proceeding to the writer.
+5. The writer orders evidence by argument, with traceable facts kept in the
+   project records. Update dependent abstract, figures and conclusion together.
 
-```
-At Stage 2 start:
-  if user input contains "## Material Passport" with "Origin Skill: experiment-agent":
-    → auto-load experiment results as Stage 2 source material
-    → skip "do you have experiment data?" question
-  else:
-    → normal flow
-```
-
-This requires a one-line detection in ARS pipeline_orchestrator_agent. Not implemented in v1 — documented here for future reference.
+For a full research-to-paper task, continue without asking the user to copy
+artifacts between internal roles. Preserve applicable experiment-retry,
+scientific-parameter, ethics, independent-review and finalization approvals.
+For run-only, plan-only or validation-only requests, deliver that result and stop
+at the requested scope. A missing claim link blocks only dependent prose; work on
+other authorized, supported sections may continue.

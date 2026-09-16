@@ -84,3 +84,16 @@ When VLM verification is run, the Figure Package (from visualization_agent) incl
 
 - Song, Y. et al. (2026). PaperOrchestra. *arXiv:2604.05018*. — Section 4 Step 2 (Plotting Agent with VLM critic).
 - Zhu, D. et al. (2026). PaperBanana: Automating academic illustration for AI scientists. *arXiv:2601.23265*. — Closed-loop VLM refinement system.
+
+## Caption And Manuscript Evidence Trace
+
+In addition to rendering checks, inspect source data/version, the transformation
+or precise derivation, atomic caption assertions and the manuscript claims that
+cite the figure/table. Reuse C#/E# IDs and the existing figure brief. Trace a
+conceptual figure to theory and semantic evidence status, not invented data.
+
+A compound caption may be numerically accurate while overstating mechanism or
+causation. Check each assertion separately and preserve comparison conditions,
+uncertainty and material contrary evidence. Record missing support as a material
+gap under existing integrity rules; a well-formed trace is not a validity proof.
+This local prose check does not add a new schema or an external model call.

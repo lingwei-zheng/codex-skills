@@ -81,6 +81,13 @@ resume_from_passport=<hash> [stage=<n>] [mode=<m>]
 
 ## Trigger Conditions
 
+For authorized research-to-paper work involving experiments, use the
+[experiment-to-paper handoff](../experiment-agent/references/ars_integration_guide.md). Carry current claim/experiment IDs,
+observations, source versions, and verification status into writing. Resume the
+main workflow after the experiment role returns; retain all existing checkpoints
+and independent-review requirements. Do not add experiment execution to a task
+that only requests writing from supplied results.
+
 ### Trigger Keywords
 
 **English**: academic pipeline, research to paper, full paper workflow, paper pipeline, end-to-end paper, research-to-publication, complete paper workflow

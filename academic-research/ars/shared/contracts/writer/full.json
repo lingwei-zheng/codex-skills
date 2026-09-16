@@ -13,7 +13,7 @@
     {
       "id": "D2",
       "name": "citation_density",
-      "description": "Every factual claim carries at least one citation; uncited claims either gain a source or are rewritten with hedging language.",
+      "description": "External factual claims have supporting citations or accurate attribution; original findings point to supplied result evidence. Unsupported assertions gain support, are omitted when nonessential, or remain explicit [MATERIAL GAP] items for author review. Hedging alone supplies no evidence; unresolved material gaps do not become a complete final draft.",
       "priority": "mandatory"
     },
     {
@@ -37,7 +37,7 @@
     {
       "id": "D6",
       "name": "paragraph_structure",
-      "description": "At least 80 percent of body paragraphs follow TEEL (Topic / Evidence / Explanation / Link); inter-section transitions present. Introduction-first and conclusion-last paragraphs are exempt.",
+      "description": "Body paragraphs serve their section with a clear point, adequate evidence, explanation and linkage. Judge clarity and support rather than a TEEL percentage, paragraph length or count. User and venue requirements take priority; inter-section flow is clear.",
       "priority": "normal"
     },
     {

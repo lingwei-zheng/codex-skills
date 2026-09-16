@@ -11,7 +11,8 @@ Academic polishing is not only about style. It is also about making the reasonin
 Most strong research writing follows a `broad -> narrow -> broad` pattern:
 
 - `Introduction`: open the territory, narrow to the gap, then state the study
-- `Discussion/Conclusion`: start from the specific findings, then widen to implications and limits
+- `Discussion`: explain the findings, implications and material boundaries
+- `Conclusion`: reinforce contribution, decisive evidence and memorable significance
 
 Use this pattern when deciding paragraph order and section scope. If a draft jumps between background, results, and implications without control, rebuild the progression first.
 
@@ -56,7 +57,9 @@ The Introduction should answer four questions:
 3. What exact question does this study ask?
 4. How does the study address it?
 
-Do not summarize results or conclusions here.
+Briefly preview the strongest supported result in the contribution paragraph.
+Keep detailed results in Results; align the gap and approach with what the
+evidence actually delivers. Paragraph counts and roadmaps are optional.
 
 ### Results
 
@@ -97,9 +100,10 @@ Conclusion is not a mini-discussion. A strong closing usually does three things:
 
 1. restates the central contribution
 2. identifies the decisive evidence
-3. states the implication with a boundary
+3. states the memorable implication; repeat a boundary only when necessary
 
-Do not introduce new data here.
+Do not introduce new data or a new defect here. Do not append a quota of
+limitations or future-work items; preserve explicit venue requirements.
 
 ### Abstract
 
