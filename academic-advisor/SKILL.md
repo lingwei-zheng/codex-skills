@@ -31,10 +31,11 @@ Provide advisor-style evaluation for proposals, rough ideas, research plans, man
   benchmarking for submission or explicit deep-evaluation requests.
 - Default report language: Simplified Chinese. English manuscripts, English journal names, and English source metadata do not change the report language. Use English only when the user explicitly asks for an English report or when a specific submission-ready English passage is requested.
 - Default domain baseline: geography, human geography, GIScience, health geography, spatial analysis, and environmental or health geography when relevant.
-- Match journal ambition to the contribution and evidence already present.
-  Include a stretch route only when its minimum upgrade is plausible; do not
-  treat specialist, regional, replication, or incremental venues as inferior
-  when they are the best scholarly fit.
+- Prioritize the highest credible first-submission target for the strongest
+  supported contribution, within the user's time, cost, and journal constraints.
+  Separate current submission readiness from development potential. A strong
+  target need not require additional experiments or a framing upgrade. Use
+  `references/journal-fit-rubric.md`; contribution labels do not set venue ceilings.
 - Before naming or ranking journals, read
   `references/local-journal-reference.md` and attempt to load the user's local
   `journal_ai_reference.md`. Use it as the default candidate pool and preference
@@ -75,9 +76,9 @@ project records rather than starting another ledger.
    - Read `references/zotero-evidence-workflow.md`.
    - Run a Zotero readiness check and search Zotero for core theory, methods, adjacent papers, target-journal examples, and missing references.
    - Scale search depth to the decision: targeted evidence is enough for an
-     early-stage diagnosis; journal scope, current guidelines, recent special
-     issues, and representative articles require current web verification when
-     recommending a submission route.
+     early-stage diagnosis; journal scope, current guidelines, representative
+     articles, and any special issue used in a recommendation require current
+     web verification when recommending a submission route.
    - Maintain an evidence ledger with `来源支持 Source-backed`, `推断 Inference`, and `未知/待核查 Unknown`.
    - If Zotero is unavailable, do not silently skip it; report the exact blocker in the evidence ledger.
 5. Select only the lenses needed for the classified task:
@@ -104,6 +105,9 @@ project records rather than starting another ledger.
      and which resolver found it. Do not silently skip an unreadable file.
    - If the user supplies another journal list, treat that list as the active
      constraint; use the local reference to enrich it, not replace it.
+   - If that document contains `Special Issue and Collection Matching`, use
+     relevant entries as optional submission channels under
+     `references/local-journal-reference.md`; skip unrelated entries.
    - Read `references/journal-fit-rubric.md` and verify current external facts
      that could change the recommendation.
 7. Produce one integrated report using `templates/integrated-advisor-report.md`.
@@ -135,10 +139,10 @@ project records rather than starting another ledger.
   Replication, regional extension, measurement improvement, and modest method
   gains are viable when their value and venue fit are explicit.
 - For manuscripts, inspect actual text structure and, when figures or tables carry claims, use `pdf` or `docx` visual/document tools as appropriate.
-- For journal ladders, lead with the strongest credible route. Include
-  `stretch target`, `realistic target`, and `fallback target` when all three
-  are useful; omit a performative stretch route when no plausible upgrade path
-  exists.
+- Present a first-submission recommendation, same-tier alternatives, and later
+  transfer options when useful. Keep preparation needs and fit confidence
+  separate from submission order; do not imply acceptance odds or force a
+  three-tier ladder. Label development targets as conditional on named evidence.
 - Keep the final report directly reusable as a project document.
 - Do not make a weakest-gate or reviewer-attack inventory mandatory. Surface a
   constraint only when it changes the central claim, development plan, or

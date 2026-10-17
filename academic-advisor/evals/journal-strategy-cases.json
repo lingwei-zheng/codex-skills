@@ -1,0 +1,31 @@
+{
+  "suite": "journal-strategy",
+  "context": "All manuscripts, journals, criteria, and evidence below are fictional offline fixtures. Each case is a separate task. The supplied journal criteria are authoritative within the fixture. Use only these materials; do not contact journals, submit, run experiments, search Zotero, or browse.",
+  "cases": [
+    {
+      "id": "strong-specialist-result",
+      "request": "请基于以下材料推荐首投和替代期刊，并说明必要准备。我有三个月投稿时间，费用均可接受。",
+      "materials": "论文是单城市的测量研究。以新的完整基准数据发现常用暴露指标存在系统性偏差，并提出可复现的修正，实测误差从18%降至6%。匹配的简单基线、独立留出评价、不确定性及代码均齐全；独立评估未发现未解决的有效性问题。内部标签是regional/incremental。研究不是因果或机制研究。候选清单为Alpha、Beta、Gamma。Alpha选择性强，标准为对本领域专家重要的方法或证据进展；近期两篇同类文章使用单区域设计。Beta为同档方法期刊，重视测量效度和可复现性；Gamma主要服务地方应用。三刊均接受该主题。没有材料显示需跨国、因果或机制分析。"
+    },
+    {
+      "id": "early-development",
+      "request": "这项研究刚设计好，请分别判断当前可以怎么推进、值得争取哪些目标。",
+      "materials": "当前只有方案，没有结果。拟检验新暴露测量能否纠正现有方法的偏差。三个月内可完成一项独立留出验证；成功与失败都有可能。Alpha重视重要测量进展；Beta重视可靠的应用验证。若证据仅支持应用改进，Beta仍可能匹配；若发现具有解释价值的系统偏差并完成可靠修正，Alpha可能匹配。没有任何稿件达到已完成状态。"
+    },
+    {
+      "id": "rejection-feedback",
+      "request": "这篇稿子两次没有送外审，接下来该怎么投？请给出具体顺序。",
+      "materials": "论文的证据校验和核心主张均无未解决问题。第一次编辑明确说主题超出其范围；第二次仅说未予考虑，没有原因。候选Alpha与Beta为同档期刊且均有近期同问题、同证据形态的文章；Alpha读者与论文最强贡献更接近。Gamma为更低档的综合应用期刊。用户没有紧迫期限，不接受无依据的新增实验；可对摘要和定位做小幅调整。两家拒稿期刊均无重投稿邀请。"
+    },
+    {
+      "id": "validity-defect",
+      "request": "内部审阅两轮后还有问题，是否换个低一点的期刊就可以投？请给出下一步。",
+      "materials": "未解决的Critical问题是训练集和测试集参与者重叠，导致论文唯一性能优势不能可信解释。没有无泄漏结果。Alpha和Gamma均要求有效的独立评估，当前不能完成受保护的实验重跑，因为用户尚未批准。可以检查现有划分记录并准备修复方案。正式投稿与重跑的现有批准要求仍有效。"
+    },
+    {
+      "id": "user-constraints",
+      "request": "我只考虑下面三刊，不接受版面费，需在六周内提交出去。请推荐首投，说明把握程度。",
+      "materials": "稿件当前证据有效。Alpha与论文贡献高度匹配，必须支付5000元；没有豁免。Beta是高质量领域期刊、无需费用，现有结果适配，投稿准备约三天。Gamma无需费用但读者适配较弱，需要四周重写叙事。没有可靠录用概率数据，审理速度也未知。六周期限指完成提交，不是收到录用。三刊之外不在用户允许清单内。"
+    }
+  ]
+}

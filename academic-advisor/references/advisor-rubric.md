@@ -24,9 +24,10 @@ opportunity before reviewer-side resistance.
 - Winning arena: the fair task, comparator, metric, population, scale, and
   application setting in which that value is visible.
 - Research question: stake, scope, falsifiability, hidden assumptions, two-week pilot.
-- Contribution: classify direct replication, regional/contextual extension,
-  incremental improvement, mechanism/boundary advance, or theory/method
-  advance; then judge whether its value matches the intended venue.
+- Contribution: describe direct replication, regional/contextual extension,
+  incremental improvement, mechanism/boundary advance, or theory/method advance.
+  Assess importance and distinctive evidence separately; these labels do not
+  assign a journal ceiling. Use the journal-fit rubric for submission strategy.
 - Literature position: direct neighbors, missing anchors, and any material rival
   explanation; do not inflate the gap by attacking adjacent work.
 - Design and evidence: data fit, identification logic, measurement,
@@ -80,13 +81,13 @@ Name a weak gate in the bottom-line verdict only when it blocks or materially
 reroutes the project, and make its minimum repair an explicit roadmap item. Do
 not average away a blocked central question, design, or evidence chain.
 Reserve `block` for a fatal mismatch in the question, design, evidence, or
-claim. Incremental contribution alone is not a block; it changes the journal
-route and the strength of the contribution language.
+claim. Incremental contribution alone neither blocks a paper nor determines its
+journal tier; explain its actual value and assess the intended venue's criteria.
 
 ## Verdict Scale
 
 - `Proceed`: idea/manuscript is coherent; recommend journal route and targeted improvements.
-- `Revise before targeting`: core direction is viable but framing/design/story is not yet submission-ready.
+- `Revise before submission`: core direction is viable but framing/design/story needs a named repair; identify credible targets now and state their preparation conditions.
 - `Re-scope`: question, method, or evidence boundary must be narrowed before a paper route is credible.
 - `Park or kill`: current version lacks stake, falsifiability, feasible evidence, or plausible venue fit.
 

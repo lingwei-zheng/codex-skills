@@ -4,10 +4,31 @@ Use this whenever the user asks for journal targeting or provides a journal list
 
 ## Ranking Default
 
-Lead with the strongest credible route. Match venue ambition to the paper's
-contribution level, evidence maturity, readership, and revision budget. Add a
-stretch route only when the minimum upgrade is plausible; do not invent a high
-target to complete a three-tier template.
+Prioritize the highest credible first-submission target that values the paper's
+strongest supported contribution. Ground ambition in the question's importance,
+distinctive evidence, result strength, readership, and actual venue standards.
+Respect the user's journal list, deadlines, cost limits, and revision budget;
+do not assume that avoiding rejection is the user's main objective.
+
+Assess two questions separately:
+
+- **Current submission readiness:** what can the existing evidence support, and
+  what preparation, if any, is necessary before submission?
+- **Development potential:** which stronger route could become credible if a
+  named, feasible piece of evidence is obtained? State this condition without
+  treating the result as achieved or capping the project at its current draft.
+
+A strong venue may already be a justified first choice. Additional experiments,
+larger samples, global coverage, causal identification, a complete mechanism,
+or cross-disciplinary impact are prerequisites only when the central claim or
+the particular venue requires them. Distinguish necessary repairs from optional
+improvements; "no additional evidence needed for this route" is a valid finding.
+
+Contribution forms such as regional extension, replication, or incremental
+improvement describe the work, not a journal ceiling. Compare with relevant
+recent articles and the journal's verified criteria, not only exceptional cover
+stories or a generic image of a prestigious journal. Keep field-specific and
+broad-readership significance distinct.
 
 ## Journal List Handling
 
@@ -29,25 +50,28 @@ locate the file must be disclosed but does not block a web-grounded fallback.
 |---|---|
 | Scope | Does the journal publish this problem, method, geography, or audience? |
 | Contribution form | Does the paper offer the type of contribution the journal rewards? |
-| Contribution magnitude | Does the journal welcome replication, regional extension, incremental improvement, or require a broader mechanism/theory advance? |
+| Contribution significance | What important insight or capability does this result provide for this journal's readers, compared with relevant published work? |
 | Evidence level | Does the design meet the journal's evidentiary expectations? |
 | Readership | Would the journal's readers care without excessive translation? |
 | Method norm | Are data, models, spatial units, causality claims, and uncertainty reporting acceptable? |
 | Story shape | Can the manuscript be reframed into the journal's article logic? |
 | Winning arena | Does this journal value the task, audience, scale, or application in which the paper is strongest? |
-| Entry condition | What minimum evidence or restructuring is needed for this route? |
+| Preparation | Is the paper ready with current evidence, does it need presentation work, or is a specific material evidence repair necessary? |
 
-## Required Journal Ladder
+## Submission Sequence
 
-Return up to three route classes when useful:
+Use these route roles when useful; they are not mandatory slots or fixed ranks:
 
-- `Stretch target`: ambitious but plausible venue, with an explicit minimum
-  evidence or framing upgrade.
-- `Realistic target`: best fit if current evidence/design is mostly retained.
-- `Fallback target`: credible route with lower transformation cost.
+- `First submission`: the highest credible priority under the user's constraints,
+  with a specific reason this paper merits editorial consideration now.
+- `Same-tier alternative`: a comparable scholarly opportunity with a different
+  audience, emphasis, or article shape.
+- `Later transfer`: a useful subsequent route, with the feedback or cost/time
+  condition that would make switching worthwhile. It need not be lower-ranked.
 
-For a sound incremental or regional paper, a specialist or regional journal can
-be the primary recommendation rather than a fallback.
+An evidence-dependent development target can be listed separately. Do not
+present it as ready now. A specialist or regional journal can be the first
+choice when it best serves the contribution and the user's priorities.
 
 For each journal include:
 
@@ -55,13 +79,30 @@ For each journal include:
 - Why the paper can compete in this venue.
 - Required article shape.
 - Material route risk, only when it changes the recommendation.
-- Minimum revision route.
-- Confidence: high / medium / low.
+- Necessary preparation, optional improvements, and their practical cost.
+- Fit confidence: high / medium / low, tied to verified scope, comparable
+  articles, and the available manuscript. This is confidence in the assessment,
+  not an acceptance probability. Do not invent numeric odds or call any venue
+  a guaranteed acceptance route.
+
+## Rejection And Retargeting
+
+Classify the actual feedback: scope/readership, presentation, contribution
+significance, or evidence validity. Consider clearer positioning, a same-tier
+alternative, targeted evidence repair, and a lower target where justified.
+Rejection count, internal review rounds, or general journal selectivity alone
+do not justify downgrading. Unknown editorial reasons remain unknown.
+
+A core validity defect needs repair at any venue; retargeting cannot turn it
+into a valid result. Preserve independent review and existing finalization
+gates. Recommending a route or preparing materials does not itself authorize
+submission or editorial contact; follow existing authorization rules.
 
 ## Do Not
 
 - Rank only by impact factor.
-- Recommend a stretch journal without a plausible upgrade path.
+- Recommend a high target without a specific, evidence-grounded case for fit,
+  or require an upgrade merely because the target is ambitious.
 - Penalize a paper merely for being incremental when the contribution matches
   the venue and is stated accurately.
 - Treat a journal list as a passive appendix.

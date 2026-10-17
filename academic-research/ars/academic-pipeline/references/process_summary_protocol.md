@@ -1,16 +1,15 @@
 # Stage 6: Process Summary Protocol (Added in v2.4)
 
-**Trigger**: After Stage 5 (FINALIZE) completion
+**Trigger**: After Stage 5 (FINALIZE) completion, only when a process summary was requested or agreed. Otherwise finish after verified delivery of the requested final artifacts.
 **Purpose**: Document the complete human-AI collaboration history for the paper creation process, for user sharing, reporting, or reflection
 
 ## Workflow
 
 ```
-1. Ask user language preference:
-   "Which language version of the process record would you like to generate first?"
-   - Chinese (Simplified Chinese)
-   - English
-   - Both (default: generate the user's primary conversation language first)
+1. Reuse the agreed language and formats from existing context.
+   If language is unspecified, use the conversation language (Simplified Chinese
+   in this local setup). Ask only a material unresolved choice. Do not add a
+   bilingual version or another output format unless requested.
 
 2. Review session history and compile the following:
    - User's initial instructions (verbatim quote)
@@ -21,13 +20,18 @@
    - Quality requirement evolution (e.g., formatting, tone adjustments)
    - Pipeline statistics (stage count, review rounds, integrity verification count, etc.)
 
-3. Generate Markdown version (paper_creation_process.md / paper_creation_process_en.md)
+3. Prepare the process record; deliver Markdown when requested
+   (paper_creation_process.md / paper_creation_process_en.md).
 
-4. Convert to LaTeX and compile PDF:
+4. Only for requested PDF/LaTeX output, use the applicable conversion route
+   and verify the resulting artifact; an internal build file is not an extra
+   requested deliverable. Do not stop at Markdown when PDF was requested:
    - pandoc MD -> LaTeX body
    - Package complete LaTeX document (with cover page, table of contents, headers/footers)
    - tectonic compile PDF
-   - Chinese version requires xeCJK + Source Han Serif TC VF
+   - For Chinese, use available fonts supporting the selected script and the
+     established build route; preserve Simplified/Traditional Chinese choices.
+     Validate the requested output, not merely the existence of a build file.
 ```
 
 ## Required Content in Process Record

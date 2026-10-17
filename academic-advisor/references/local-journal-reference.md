@@ -46,11 +46,46 @@ Read at least:
 - required evaluation output;
 - journal target table;
 - matching map relevant to the manuscript;
+- relevant entries in `Special Issue and Collection Matching`, if present;
 - any notes attached to shortlisted journals.
 
 Extract the journal name, local tier, fit keywords, acceptance conditions, and
 recommended reframing. Treat `check`, `new`, old impact metrics, CAS/JCR class,
 and acceptance tendencies as facts requiring current verification.
+
+Local tier labels and `accepts_when`/`revise_toward` notes are search aids, not
+universal editorial prerequisites or instructions to add every listed analysis.
+Use the journal-fit rubric to separate current readiness, development potential,
+and submission order. Correct an overrestrictive local inference against the
+particular journal's current criteria; a broad-readership requirement for one
+journal must not be applied to every selective venue. Do not infer acceptance
+probability from a local tier or an available special issue.
+
+## Optional Special Issue And Collection Matching
+
+The register belongs to the user's journal reference document; do not duplicate
+it in the skill. Use its `journal_ids` to associate relevant calls with candidate
+journals, within the user's active journal constraints. Start with journal fit,
+then assess call-specific topic, audience, eligibility, timing, and preparation.
+A verified topical match may strengthen a recommendation or break a tie; it
+does not lower evidence standards or imply better acceptance odds.
+
+For relevant shortlisted calls, follow the document's Decision Rules and verify
+the current official call before recommending that channel: opening and closing
+dates, any abstract deadline or invitation requirement, article types, and author
+eligibility. Recorded status and `checked_on` describe a past check, not current
+availability. Keep unverified leads separate; exclude expired calls unless an
+extension is officially confirmed. For cross-journal collections, evaluate each
+participating journal separately and select one journal per submission.
+
+Include useful matches alongside regular submission, with the document's
+`special_issue_matches` fields. Explain the extra fit and necessary preparation;
+do not reshape a strong paper solely to fit a call. Limit checks to relevant
+candidates, unless the user asks for a broader call search or register refresh.
+If the section is absent or irrelevant, skip it. If no suitable call is verified,
+continue regular recommendations without waiting for a register update; omit an
+empty table and use a brief scoped note when reporting the call search. A failed
+verification is not evidence that no call exists.
 
 ## Priority
 

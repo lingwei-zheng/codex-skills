@@ -19,7 +19,7 @@ Users can say "status" or "pipeline status" at any time to view:
   Stage 4'  RE-REVISE         [-] Skipped (Accept)
   Stage 4.5 FINAL INTEGRITY   [..] In Progress
   Stage 5   FINALIZE          [ ] Pending
-  Stage 6   PROCESS SUMMARY   [ ] Pending
+  Stage 6   PROCESS SUMMARY   [-] Only if requested/agreed
 
 +---------------------------------------------+
 | Integrity Verification:                     |

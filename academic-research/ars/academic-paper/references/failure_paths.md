@@ -184,10 +184,12 @@ more efficiently.
 4. Execute revision after user confirmation
 ```
 
-**Note**: If still Reject after 2 rounds of revision, recommend the user to:
-- Consult domain experts
-- Rethink the research design
-- Consider switching target journals (lower the bar)
+**After two rounds**: diagnose the unresolved issue and recommend a bounded
+next step. Consult domain experts or repair design/evidence when needed; for
+positioning or audience mismatch, consider clearer framing and same-tier
+alternatives before a justified lower target. Rejection count alone does not
+establish a journal ceiling. A core validity defect requires repair at every
+venue; retargeting does not bypass review or finalization requirements.
 
 ---
 
@@ -294,14 +296,14 @@ F8 (Non-convergence) → May evolve into F10 (abandonment)
 | **Scope Mismatch** | Editor states "outside journal scope" or "not aligned with journal aims" | Re-analyze journal scope using `top_journals_by_field.md`; identify 3 alternative journals; may need to reframe the paper's contribution |
 | **Contribution-venue mismatch** | Contribution magnitude is overstated or poorly matched to the venue | State the contribution level honestly; explain replication, regional, measurement, policy, or transferability value; add analysis only when it resolves a material gap; retarget the venue when appropriate |
 | **Formatting Non-Compliance** | Immediate rejection for template/length/style violations | Review target journal's author guidelines; use `formatter_agent` to reformat; resubmit (often same journal accepts after formatting fix) |
-| **Poor Opening** | No specific reason given; likely the abstract/introduction failed to hook | Rewrite abstract with the CARS model (Create A Research Space); lead with the gap, not the background; have `peer_reviewer_agent` evaluate the new opening |
+| **Unclear Opening** | The text or editorial feedback shows that the main contribution is obscured | Foreground the strongest supported contribution and decisive evidence; assess fit again. Missing editorial reasons alone do not diagnose a writing problem |
 
 **General Protocol**:
-1. Do NOT take desk-reject personally — 30-50% of submissions to top journals are desk-rejected
+1. Treat desk rejection as feedback about this submission; it does not by itself establish the paper's journal ceiling
 2. Read the editor's email carefully for any specific feedback
-3. Determine the cause category above
+3. Determine the cause category above where evidence permits; otherwise keep the reason unknown
 4. If Scope Mismatch: pivot journal, not paper
-5. If Novelty/Opening: revise paper, then resubmit (different journal recommended)
+5. For significance or opening concerns, assess positioning and evidence against the actual venue criteria; choose justified revision or retargeting, including same-tier alternatives. Preserve the venue's resubmission rules and existing user approval
 6. Turnaround target: 2 weeks for reformatting, 4 weeks for substantive revision
 
 ---

@@ -33,7 +33,7 @@ Stage 3' RE-REVIEW: [decision]
 Stage 4' RE-REVISE: [executed / skipped]
 Stage 4.5 FINAL INTEGRITY: [PASS/FAIL] -> [refs verified]
 Stage 5 FINALIZE: Ask format style -> MD -> DOCX via Pandoc when available (otherwise instructions) -> LaTeX (apa7/ieee/etc.) -> tectonic -> PDF
-Stage 6 PROCESS SUMMARY: Ask language -> MD -> LaTeX -> PDF (zh/en)
+- **Stage 6 (only when requested/agreed)**: Verify the process record in the requested language and formats; do not require an unrequested MD/LaTeX/PDF chain.
 
 Integrity Summary:
   Pre-review: [X] refs checked, [Y] issues found, [Y] fixed

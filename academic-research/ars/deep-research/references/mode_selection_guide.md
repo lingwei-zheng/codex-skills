@@ -215,7 +215,7 @@ User Input
 socratic → full              Continue with complete research after Socratic completion
 socratic → academic-paper    Write paper directly after Socratic completion
 lit-review → full            Want complete analysis after literature review
-lit-review → systematic-review  Need formal PRISMA compliance after initial lit survey
+lit-review → systematic-review  User chooses a systematic review within the agreed scope
 fact-check → full            Need deeper research after fact-checking
 quick → full                 Worth going deeper after quick research
 review → full                Need to re-research after review
@@ -262,6 +262,16 @@ Step 5: [Repeat Steps 3-4 until passed]
 
 ---
 
+## Preserve the requested review scope
+
+Honor a named review mode and the requested deliverable. For an ordinary
+Introduction or literature synthesis, search for missing papers within that
+scope; do not launch PRISMA screening, registration, or systematic-review
+workflows merely because the topic could support them. If an unresolved article
+type or venue requirement would materially change scope, clarify that choice
+while continuing independent work. Reuse a choice already established in context.
+The transitions below describe possible requested routes, not automatic upgrades.
+
 ## Mode Transition Matrix
 
 Rules for switching between modes mid-research. Not all transitions are safe.
@@ -291,7 +301,7 @@ Rules for switching between modes mid-research. Not all transitions are safe.
 - **Quality Delta**: Fact-check is binary (true/false/mixed); full mode produces nuanced analysis
 
 ### Transition: lit-review → systematic-review
-- **When**: Literature review reveals the topic warrants formal PRISMA compliance (e.g., for publication in a journal that requires it)
+- **When**: The user requests/agrees to a systematic review, or the already chosen article type explicitly requires it. Topic complexity, missing papers, or potential publishability alone do not authorize this expansion.
 - **Reusable**: Initial keyword strategy, some identified sources (need re-screening)
 - **Must Redo**: Protocol registration, formal inclusion/exclusion criteria, dual screening, risk of bias assessment, meta-analysis feasibility assessment
 - **Quality Delta**: systematic-review requires protocol, RoB assessment, GRADE; lit-review has none of these

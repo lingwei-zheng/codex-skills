@@ -119,7 +119,7 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 ### Procedure
 
-1. **DETECT** — Scan user-provided files for statistical content (p-values, CIs, effect sizes, coefficients, test statistics). Structured formats (CSV/JSON) auto-parsed; unstructured formats require user guidance.
+1. **DETECT** — Scan user-provided statistical output (p-values, CIs, effect sizes, coefficients, test statistics). Parse CSV/JSON and autonomously extract unstructured results with source locators and label/unit/model checks; follow `references/statistical_interpretation_guide.md`. Ask only material unresolved ambiguities.
 
 2. **INTERPRET** — Item-by-item analysis. See `references/statistical_interpretation_guide.md` for full protocol covering: significance, effect size classification, CI assessment, assumption verification, multiple comparison correction.
 

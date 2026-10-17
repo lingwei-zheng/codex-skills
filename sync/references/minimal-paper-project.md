@@ -68,3 +68,9 @@ configuration and result artifacts. Mark stale claims for reconciliation rather
 than silently promoting an earlier finding. Distinguish candidate/support status
 from verification and approval status. Use the experiment workflow's study-state
 reference only for multi-session human-study management; no duplicate handoff log.
+
+On resume, also restore the Research Continuity record's user constraints,
+declined optional changes, decision locators and object/version/scope, excluded
+evidence, pending approvals, and next authorized action from existing files.
+Reconcile changed evidence or artifacts; do not reopen unchanged decisions or
+create a parallel ledger. Independent review and existing approval gates remain.

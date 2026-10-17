@@ -4,6 +4,11 @@ Used by `formatter_agent` and `intake_agent`.
 
 ## Pre-Submission Checklist
 
+For author-side target selection, use the
+[journal-fit rubric](../../../../academic-advisor/references/journal-fit-rubric.md):
+assess current readiness and development potential separately, and justify the
+first-submission choice against the venue's actual criteria.
+
 ### 1. Journal Selection Criteria
 - [ ] Scope alignment: Does the journal publish papers on your topic?
 - [ ] Audience match: Will the journal's readers care about your findings?
@@ -11,7 +16,7 @@ Used by `formatter_agent` and `intake_agent`.
 - [ ] Predatory check: Verify via Beall's List, DOAJ, or Cabells
 - [ ] Open access: Does the journal offer OA options? What are the APCs?
 - [ ] Timeline: What is the typical review turnaround?
-- [ ] Rejection rate: Is it realistic for your paper's quality?
+- [ ] Submission strategy: Does the specific fit justify an attempt within the user's time and cost constraints? General selectivity alone is not a reason to downgrade; do not invent manuscript-level acceptance odds.
 
 ### 2. Manuscript Preparation
 - [ ] Follow journal's Author Guidelines exactly

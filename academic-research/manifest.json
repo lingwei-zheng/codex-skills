@@ -7,7 +7,9 @@
   "behavioral_validation": {
     "cases": "evals/advantage-lifecycle.json",
     "rubric": "evals/advantage-lifecycle-rubric.md",
-    "scope": "Offline independent maintenance evaluation; not a mandatory research-project stage."
+    "scope": "Offline independent maintenance evaluation; not a mandatory research-project stage.",
+    "upstream_adaptation_cases": "evals/upstream-adaptation-2026-10.json",
+    "upstream_adaptation_rubric": "evals/upstream-adaptation-2026-10-rubric.md"
   },
   "source_repositories": [
     {
@@ -34,9 +36,9 @@
         "CHANGELOG.md",
         "LICENSE"
       ],
-      "reviewed_revision": "3c546bc08c56f79e0068f1ea4f0acedf5bf69b5e",
-      "reviewed_version": "v3.22.0",
-      "reviewed_date": "2026-09-16",
+      "reviewed_revision": "060cb3cbffc2ca1bdfb8f7c6d2ffa4883cf09b1a",
+      "reviewed_version": "v3.23.1 plus unreleased Windows path fixes",
+      "reviewed_date": "2026-10-17",
       "integration_scope": "Selected principles adapted into existing Codex workflows; commit remains the imported baseline, not a full upstream upgrade.",
       "selected_adaptations": [
         {
@@ -58,6 +60,34 @@
         {
           "upstream_reference": "#825",
           "scope": "Missing evidence cannot be repaired by hedging; remove universal prose quotas from writer guidance and writer/full.json."
+        },
+        {
+          "upstream_reference": "#931 / #932",
+          "scope": "External Audit Artifact Gate opt-in plus explicit provider/model/material authorization at actual orchestration/reset entry; access-only NOTE separated from integrity issues. Ordinary final integrity and approval gates retained."
+        },
+        {
+          "upstream_reference": "#978 / #963",
+          "scope": "POSIX relative path comparisons in the two installed Windows-affected validators; local WORKFLOW.md and nested-repository adaptations retained."
+        },
+        {
+          "upstream_reference": "#934 / #935 / #896",
+          "scope": "Reuse scoped author constraints/decisions in existing Research Continuity, orchestration, state tracking and sync; no new ledger schema or automatic limitations-only revisions."
+        },
+        {
+          "upstream_reference": "#937 / #940 / #941",
+          "scope": "Requested-format terminal flow and optional process summary; revision checks of all abstracts/title/conclusion and exclusion-reason continuity."
+        },
+        {
+          "upstream_reference": "#899 / #922 / #918",
+          "scope": "Preserve requested review mode and bounded source-method judgments; no forced clarification menu or weakness quota."
+        },
+        {
+          "upstream_reference": "#849",
+          "scope": "Read-only optional acronym checker and core tests/fixtures. Test helper import adapted to scripts._test_helpers; reviewer-attachment integration tests excluded because those hooks are not adopted. Findings remain advisory; parser/report language limits disclosed."
+        },
+        {
+          "upstream_reference": "#881",
+          "scope": "Targeted Chinese APA author abbreviation, disambiguation, author-count and venue-specific ordering corrections; no universal Taiwan style or invented romanization."
         }
       ],
       "retained_local_boundaries": "Existing approval, validation, language, and cross-model opt-in rules; no new hooks, full upstream gate/schema stack, or inquiry ledger runtime."
@@ -69,10 +99,10 @@
       "included_paths": [
         "experiment-agent"
       ],
-      "reviewed_revision": "e291e7dc7ca268b2de7e1a9cf23bc2eef5dc0651",
-      "reviewed_version": "v1.1.0",
-      "reviewed_date": "2026-09-16",
-      "integration_scope": "Session-state restoration adapted as an on-demand study-management reference. Reuse existing project records; no concurrent-write runtime or claim of atomic locking."
+      "reviewed_revision": "74c9835cada3d484dec2345c8319599780b7bc26",
+      "reviewed_version": "v1.2.0",
+      "reviewed_date": "2026-10-17",
+      "integration_scope": "Session-state restoration adapted as an on-demand study-management reference. Reuse existing project records; no concurrent-write runtime or claim of atomic locking. Statistical extraction autonomy with source locators adapted; no all-values confirmation, new strict state schema, ethics bypass, or generic scientific tolerance changes."
     }
   ],
   "excluded_patterns": [

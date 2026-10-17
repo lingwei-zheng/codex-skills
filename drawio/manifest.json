@@ -8,6 +8,9 @@
   "source_repository": {
     "url": "https://github.com/jgraph/drawio-mcp.git",
     "path": "plugins/codex/drawio/skills/drawio",
-    "ref": "e85fbfe712fd426df0e4899c84e851f03bffe6c3"
+    "ref": "e85fbfe712fd426df0e4899c84e851f03bffe6c3",
+    "reviewed_revision": "e227b9ad530ac22d2a00066c7e6ac3b9583dba74",
+    "reviewed_date": "2026-10-17",
+    "integration_scope": "Bounded Windows CLI discovery, one GPU-failure retry, XML root/container invariants and #R URL roundtrip; native editable output and scientific semantic approvals retained. No MCP service installed."
   }
 }

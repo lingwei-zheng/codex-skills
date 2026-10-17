@@ -93,6 +93,35 @@ Never convert a bounded search into a universal novelty statement:
 - preferred: `Within the databases, dates, and terms searched, we found...`
 - avoid: `No previous study has ever...`
 
+## Bounded Source-Method Assessment
+
+When a source's design affects selection, interpretation, or citation, identify
+the specific design choice and the condition under which it changes the claim.
+Distinguish an author-acknowledged limitation (with page/section locator) from
+a reader-inferred concern (label the inference and uncertainty). For a claim
+that a safeguard is absent, state which methods/supplement sections were
+checked; absence from an abstract is not absence from the study. An abstract-only
+read cannot support a full-methods review. Use no weakness quota or mandatory
+per-paper matrix. Keep this diagnosis internal unless it materially changes
+the manuscript's interpretation or required reporting.
+
+## Optional Acronym Check
+
+For long manuscripts or a requested terminology/terminal consistency check,
+use the read-only helper when useful:
+
+```text
+python ars/scripts/check_acronyms.py --input manuscript.md --scopes body,abstract_en,abstract_zh --lang en --json-out acronym-report.json
+```
+
+Run from the academic-research skill directory; choose only scopes present in
+the manuscript. See `--help` for headings, allowlists, and parser limits. Body
+and each abstract are independent definition scopes. Review undefined, late,
+and repeated definitions in context; findings are advisory and never a new
+submission gate. `not_checked`/partial coverage is not a clean pass. The tool
+does not modify the manuscript or call a model. Explain findings in the user's
+language; its optional `zh-TW` report labels are not a manuscript language rule.
+
 ## Delivery
 
 Report only:

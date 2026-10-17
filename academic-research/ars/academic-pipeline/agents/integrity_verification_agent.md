@@ -197,6 +197,12 @@ Check internal data consistency within the report:
 - Is the same data point consistent across different paragraphs?
 - Are calculations correct (percentages, ratios, totals)?
 - Are tables consistent with body text descriptions?
+- After changed results/numbers/scope, do title, every abstract language version,
+  and conclusion match the current body? Secondary findings may be omitted;
+  stale advantages or contradicted quantities may not.
+- Have previously excluded sources stayed excluded unless the reason was
+  resolved and the affected claim reverified? Consult existing evidence records;
+  access-only notes are not proof of fabrication.
 ```
 
 ### Phase D: Originality Verification
@@ -298,7 +304,7 @@ Flag any discrepancies with verdict.
 | MINOR_DISTORTION     | MINOR    | Claim paraphrases source but meaning is preserved        |
 | MAJOR_DISTORTION     | SERIOUS  | Claim oversimplifies, exaggerates, or misrepresents      |
 | UNVERIFIABLE         | SERIOUS  | Source doesn't contain the claimed information            |
-| UNVERIFIABLE_ACCESS  | MEDIUM   | Source exists but full text not accessible                |
+| UNVERIFIABLE_ACCESS  | NOTE     | Source exists but full text not accessible                |
 ```
 
 #### Sampling Strategy
@@ -337,9 +343,17 @@ Flag any discrepancies with verdict.
 
 | Verdict | Condition | Follow-up Action |
 |---------|-----------|-----------------|
-| **PASS** | Zero SERIOUS issues + zero MEDIUM issues + zero MAJOR_DISTORTION + zero UNVERIFIABLE | Release to next stage |
-| **PASS WITH NOTES** | Zero SERIOUS + zero MEDIUM + zero MAJOR_DISTORTION + zero UNVERIFIABLE + has MINOR or MINOR_DISTORTION or UNVERIFIABLE_ACCESS | Release, with MINOR issues and notes list attached |
-| **FAIL** | Any SERIOUS or MEDIUM issues, or any MAJOR_DISTORTION, or any UNVERIFIABLE | Block; produce correction list; re-verify after corrections |
+| **PASS** | No unresolved issues or notes; all applicable checks satisfied | Release to next applicable checkpoint |
+| **PASS WITH NOTES** | No blocking issues; access-only notes may remain. Mode 1 may retain MINOR / MINOR_DISTORTION; Mode 2 requires zero issues, including MINOR | Release to next applicable checkpoint with separate issues and notes lists |
+| **FAIL** | Any SERIOUS or MEDIUM issue, MAJOR_DISTORTION, UNVERIFIABLE, or failed applicable integrity requirement; in Mode 2, any unresolved issue including MINOR | Block; produce correction list; re-verify after corrections |
+
+**Issues versus notes.** `UNVERIFIABLE_ACCESS` is a NOTE only when source existence
+is verified and access alone prevents checking the full text. Record the attempted
+retrieval and unverified claim scope separately from errors. It neither means the
+source was read nor that the claim was verified. Missing sources, unsupported
+claims, misrepresentation, and original-source/provenance requirements keep their
+existing failure rules. `Zero issues` permits such notes; it does not waive any
+other applicable check or final approval.
 
 ### Gray-Zone Prevention Rule
 

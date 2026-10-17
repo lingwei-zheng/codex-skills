@@ -39,6 +39,17 @@ merely because an upstream file calls a phase an agent.
   before asking. Pending approval blocks dependent actions only. Do not execute
   dependent future stages before their approval or verification prerequisites.
 
+## Carry existing decisions
+
+Use the [Research Continuity record](../../shared/advantage-led-research-narrative.md#research-continuity)
+or existing project notes to carry constraints, declined optional changes,
+approval scope, and next authorized actions through role handoffs. Record
+concrete user decisions with their source, artifact/version, and scope; recording
+a choice does not require a second confirmation. Reassess materially changed
+objects or new validity evidence under the approval rules above. Author-side
+scope decisions do not override independent reviewers or unresolved integrity
+errors, and declining optional work does not automatically require new caveats.
+
 ## Checkpoint presentation
 
 MANDATORY takes precedence at integrity boundaries, review decisions, and

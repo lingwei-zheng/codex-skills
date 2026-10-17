@@ -19,11 +19,12 @@ agent continue without reconstructing the task from chat history.
 1. Infer the current objective, completed work, active decisions, verification
    state, unresolved issues, and next action from the conversation and available
    artifacts.
-2. If the user provides arguments or a stated destination, treat them as the
-   next session's focus and prioritize the handoff accordingly.
-3. Write the document to the operating system's temporary directory, not the
-   current workspace. Use a readable timestamped name such as
-   `codex-handoff-YYYY-MM-DD-HHmm.md`.
+2. Use the user's arguments to focus the next session. Honor an explicitly
+   requested save path as the handoff destination.
+3. Without a specified destination, resolve the operating system's temporary
+   directory: `%TEMP%` on Windows; `$TMPDIR` or `/tmp` elsewhere. Use a readable
+   timestamped name such as `codex-handoff-YYYY-MM-DD-HHmm.md`, and report the
+   actual resolved path. Do not redirect an existing durable handoff implicitly.
 4. Reference existing specs, plans, ADRs, issues, commits, diffs, reports, and
    files by path or URL. Do not duplicate their full content.
 5. Redact API keys, passwords, tokens, personal data, private identifiers, and
@@ -31,8 +32,8 @@ agent continue without reconstructing the task from chat history.
    configured over reproducing its value.
 6. Include a `Suggested skills` section with only the skills the next agent is
    likely to need.
-7. Report the handoff path and a one-sentence summary. Do not modify project
-   files unless the user separately requests it.
+7. Report the handoff path and a one-sentence summary. Apart from the requested
+   handoff destination, do not modify project files unless separately requested.
 
 ## Document Shape
 

@@ -1,6 +1,11 @@
 {
   "name": "academic-advisor",
   "generated_for": "codex",
+  "behavioral_validation": {
+    "cases": "evals/journal-strategy-cases.json",
+    "rubric": "evals/journal-strategy-rubric.md",
+    "scope": "Offline independent maintenance evaluation, not a required stage for research projects."
+  },
   "packaging": {
     "type": "single_codex_skill",
     "entrypoint": "skills/academic-advisor/SKILL.md"

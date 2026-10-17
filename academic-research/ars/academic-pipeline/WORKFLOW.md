@@ -123,7 +123,7 @@ that only requests writing from supplied results.
 | **4'** | **RE-REVISE** | **`academic-paper`** | **revision** | **Second revised draft (if needed)** |
 | **4.5** | **FINAL INTEGRITY** | **`integrity_verification_agent`** | **final-check** | **Final verification report (must achieve 100% pass to proceed)** |
 | 5 | FINALIZE | `academic-paper` | format-convert | Final paper in requested format(s); reuse existing format choices, complete preflight, preserve final content approval and integrity gates |
-| **6** | **PROCESS SUMMARY** | **orchestrator** | **auto** | **Paper creation process record MD + LaTeX to PDF (bilingual)** |
+| **6** | **PROCESS SUMMARY** | **orchestrator** | **on request** | **Process record in the agreed language and requested format(s)** |
 
 **Parallelization opportunity (v3.3)**: Within Stage 2, the `academic-paper` skill's Phase 1 (literature_strategist_agent) and the `visualization_agent` can operate in parallel after Phase 2 (structure_architect_agent) completes the outline. Specifically:
 - Once the outline includes a visualization plan, `visualization_agent` can begin figure generation
@@ -133,6 +133,24 @@ that only requests writing from supplied results.
 This mirrors PaperOrchestra's parallel execution of Plot Generation (Step 2) and Literature Review (Step 3) after Outline (Step 1), which reduces overall pipeline latency. The parallelization is optional — sequential execution remains the default for simplicity.
 
 ---
+
+## Optional External Audit
+
+The additional Audit Artifact Gate is OFF by default. Enable it only with
+`ARS_AUDIT_ARTIFACT_GATE=1` and explicit user authorization for the provider,
+model, and material scope; configuration alone is not consent. Follow
+[orchestrator §3.5](agents/pipeline_orchestrator_agent.md#35-audit-artifact-gate-v367-step-6)
+when activated. Otherwise continue normal checkpoints, independent review,
+integrity verification, and final content approval. No external audit session
+or artifact is required merely to continue an ordinary pipeline.
+
+**Integrity verdicts:** apply the issues/notes distinction in
+[the integrity verifier](agents/integrity_verification_agent.md#verdict-criteria).
+Access-only notes do not count as issues or prove a claim verified. Stage 4.5
+still requires zero issues and all applicable original-source checks; passing
+with notes does not remove the next checkpoint approval. In transition tables,
+`PASS` includes `PASS_WITH_NOTES` only when the current mode's issue threshold
+and every other applicable check are satisfied.
 
 ## Pipeline State Machine
 
@@ -144,8 +162,8 @@ This mirrors PaperOrchestra's parallel execution of Plot Generation (Step 2) and
 6. **Stage 3' RE-REVIEW** -> Accept|Minor -> Stage 4.5 / Major -> Stage 4'
 7. **Stage 4' RE-REVISE** -> user confirmation -> Stage 4.5 (no return to review)
 8. **Stage 4.5 FINAL INTEGRITY** -> PASS (zero issues) -> Stage 5 (FAIL -> fix and re-verify)
-9. **Stage 5 FINALIZE** -> prepare requested formats -> applicable integrity checks and content approval -> final artifacts -> Stage 6
-10. **Stage 6 PROCESS SUMMARY** -> ask language version -> generate process record MD -> LaTeX -> PDF -> end
+9. **Stage 5 FINALIZE** -> prepare requested formats -> applicable integrity checks and content approval -> verified delivery of all requested artifacts -> end, or Stage 6 if requested/agreed
+10. **Stage 6 PROCESS SUMMARY (if requested/agreed)** -> reuse known language and formats -> generate and verify requested process record -> end
 
 See `references/pipeline_state_machine.md` for complete state transition definitions.
 
@@ -431,7 +449,10 @@ Every pipeline artifact is versioned, hashed, and auditable.
 
 ## Stage 6: Process Summary Protocol
 
-Produces the final process record: paper creation journey, collaboration quality evaluation (6 dimensions, 1-100), and AI self-reflection report.
+Only when requested or agreed, produce the process record in the known language
+and requested formats: creation journey, collaboration quality evaluation
+(6 dimensions, 1-100), and AI self-reflection report. Otherwise Stage 5 verified
+delivery is terminal; do not start Stage 6 or ask for a language choice.
 
 > See `references/process_summary_protocol.md` for full workflow, required content structure, scoring dimensions, and output specifications.
 
@@ -441,7 +462,7 @@ Produces the final process record: paper creation journey, collaboration quality
 
 The `collaboration_depth_agent` observes the user's collaboration pattern with the pipeline. It is **advisory only** and **never blocks** progression at any checkpoint. It is `non-blocking` by design and carries `blocking: false` in its frontmatter as a structural guarantee.
 
-**When invoked**: every FULL checkpoint, every SLIM checkpoint, and after Stage 6 (pipeline completion). MANDATORY checkpoints (Stages 2.5 / 4.5 integrity gates) **do not** invoke the observer — those are integrity concerns and must not be diluted.
+**When invoked**: every FULL checkpoint, every SLIM checkpoint, and after Stage 6 when that process summary was requested/agreed. Completion at Stage 5 does not require a process record. MANDATORY checkpoints (Stages 2.5 / 4.5 integrity gates) **do not** invoke the observer — those are integrity concerns and must not be diluted.
 
 **What it does**: reads the dialogue range for the just-completed stage (at checkpoints) or the whole pipeline (at completion), scores the pattern against the canonical rubric at `shared/collaboration_depth_rubric.md`, and emits an advisory block/chapter. Dimensions: Delegation Intensity, Cognitive Vigilance, Cognitive Reallocation, Zone Classification (Zone 1 / Zone 2 / Zone 3). Rubric is based on Wang & Zhang (2026) IJETHE 23:11 (DOI 10.1186/s41239-026-00585-x).
 

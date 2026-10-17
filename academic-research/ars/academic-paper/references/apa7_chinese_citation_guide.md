@@ -1,6 +1,14 @@
 # APA 7.0 Complete Guide for Chinese Citations
 
-A Chinese APA 7.0 citation format guide based on Taiwan academic conventions. This guide is a Chinese-language extension of `apa7_extended_guide.md`, used by `citation_compliance_agent`, `draft_writer_agent`, and `formatter_agent`.
+A Chinese-language extension of `apa7_extended_guide.md`, used by
+`citation_compliance_agent`, `draft_writer_agent`, and `formatter_agent`. Apply
+the actual venue's current rules first. Taiwan/TSSCI examples below are regional
+conventions, not defaults for every Chinese manuscript. Simplified Chinese is
+the local response default; it does not determine citation ordering. Retain
+Chinese full names without splitting surname/given name or inventing pinyin.
+Romanization/translation is appropriate only when required by the venue and
+verified against source metadata. Examples are illustrative, not verified
+sources to add to a real bibliography.
 
 ---
 
@@ -12,7 +20,7 @@ A Chinese APA 7.0 citation format guide based on Taiwan academic conventions. Th
 Author1, Author2 (Year). Article title. Journal Name, Volume(Issue), Pages. https://doi.org/xxxxx
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 **Single author**:
 ```
@@ -29,11 +37,24 @@ Wang, Da-Ming, & Li, Xiao-Hua (2024). The evolution and prospects of Taiwan's hi
 Wang, Da-Ming, Li, Xiao-Hua, Zhang, San-Feng, Chen, Si-Hai, & Lin, Wu-Zhou (2023). A meta-analysis of blended learning models on university student learning outcomes. Bulletin of Educational Psychology, 55(2), 201-228. https://doi.org/10.6251/BEP.202312_55(2).0002
 ```
 
-**In-text citations**:
-- Single author: Wang (2024) states... / ...(Wang, 2024)
-- Two authors: Wang and Li (2024)... / ...(Wang & Li, 2024)
-- Three or more (first time): Wang et al. (2023)... / ...(Wang et al., 2023)
-- Three or more (subsequent): Wang et al. (2023)...
+**In-text citations (Chinese source names)**:
+- One author: 王大明（2024） / （王大明，2024）.
+- Two authors: 王大明、李小华（2024） / （王大明、李小华，2024）,
+  with punctuation/connectors following the venue.
+- Three or more: 王大明等（2023） from the first citation onward; use
+  “等人” if the venue specifies it. Do not spell out all authors on first use
+  merely by reverting to APA 6. English citations use `Wang et al. (2023)`.
+- If different author groups collapse to the same first-author/year shorthand,
+  retain enough author names to distinguish them before “等” / `et al.`.
+- Same author list and year: assign `a`, `b`, etc. consistently with reference
+  ordering, and repeat the suffixes in text. Do not use year suffixes to hide
+  different author groups.
+
+**Reference-list author counts are separate:** APA 7 lists all authors up to
+20. For 21 or more, list the first 19, an ellipsis, then the final author.
+Do not shorten the reference list to “等” / `et al.` because the in-text
+citation is abbreviated; apply any explicit venue exception.
+
 
 ---
 
@@ -45,7 +66,7 @@ Wang, Da-Ming, Li, Xiao-Hua, Zhang, San-Feng, Chen, Si-Hai, & Lin, Wu-Zhou (2023
 Author (Year). Book title. Publisher.
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 **Single author**:
 ```
@@ -82,7 +103,7 @@ Creswell, J. W. (2023). Research design: Qualitative, quantitative, and mixed me
 Chapter author (Year). Chapter title. In Editor name (Ed.), Book title (pp. Pages). Publisher.
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 ```
 Li, Si (2023). The evolution of quality assurance systems. In W. Wang (Ed.), Higher education quality management: Theory and practice (pp. 45-78). Higher Education Publishing.
@@ -102,7 +123,7 @@ Chen, Mei-Ling (2024). The practice of university social responsibility. In Z.-C
 Author (Year). Thesis title (Unpublished master's/doctoral dissertation). University name.
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 **Unpublished thesis/dissertation**:
 ```
@@ -128,7 +149,7 @@ Huang, Qi (2023). A case study of private university transformation strategies (
 Organization name (Year). Publication title. https://url
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 **Government report**:
 ```
@@ -159,7 +180,7 @@ Higher Education Evaluation and Accreditation Council of Taiwan (2024). Third-cy
 Author (Year, Month). Paper title [Conference paper]. Conference name, Location.
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 ```
 Lin, Ba (2024, November). The impact of generative AI on higher education teaching [Conference paper]. 2024 Taiwan Education Academic Conference, Taipei, Taiwan.
@@ -175,7 +196,7 @@ Lin, Ba (2024, November). The impact of generative AI on higher education teachi
 Author or organization (Year). Webpage title. Website name. https://url
 ```
 
-### Examples
+### Examples (romanized layout illustrations; use Chinese names unless the venue requires romanization)
 
 ```
 National Development Council (2024). Population projections (2024 to 2070). https://pop-proj.ndc.gov.tw/
@@ -191,15 +212,18 @@ University TW (2024, March 15). Analysis of Academic Year 113 university admissi
 
 ### Reference List Ordering
 
-**Option A (Recommended): Separate Chinese and English**
-- Chinese references listed first, ordered by author surname stroke count
-- English references listed after, ordered alphabetically by author surname
-- Separated by two headings: "Chinese References" and "English References"
+Use the venue's specified script, grouping, and ordering. Do not assume all
+Chinese references precede English ones or convert names to pinyin to make a
+sort key. For a venue that uses separate Chinese/English lists, apply its
+Chinese ordering convention and alphabetize the English list. Taiwan surname
+stroke ordering applies only where specified; other venues may use a combined
+list or another explicit rule.
 
-**Option B: Mixed Chinese-English Ordering**
-- All Chinese and English references listed together
-- Chinese ordered by stroke count, English by alphabetical order
-- Chinese entries placed at the corresponding phonetic/pinyin letter position (or all Chinese first)
+When checking stroke order, use a verifiable stroke/radical reference and
+identify the adjacent entries that violate the selected rule. Do not label an
+order wrong from memory or appearance. If no ordering rule is available, retain
+the current consistent convention and note the unresolved venue dependency;
+ask only when it materially changes the requested output.
 
 ### In-Text Citation Format Differences
 
@@ -207,7 +231,7 @@ University TW (2024, March 15). Analysis of Academic Year 113 university admissi
 |------|------|------|
 | Parentheses | Full-width () | Half-width () |
 | Multiple author connector | Enumeration comma | & |
-| Three or more authors | et al. (Chinese equivalent) | et al. |
+| Three or more authors | 等 / 等人 from first citation; disambiguate when needed | et al. from first citation; disambiguate when needed |
 | Year format | CE year | CE year |
 | Direct quote page | p. (Chinese format) | p. 45 |
 | Multi-page quote | pp. (Chinese format) | pp. 45-48 |
@@ -219,7 +243,7 @@ In recent years, the impact of declining birthrates on Taiwan's higher education
 Smith et al. (2024) and Wang et al. (2023) both indicated that private universities face particularly severe enrollment pressure.
 ```
 
-### Mixed Reference List Example (Option A)
+### Mixed Reference List Example (only for venues requiring separate lists)
 
 ```
 References
@@ -275,10 +299,10 @@ Some Taiwan Social Sciences Citation Index (TSSCI) journals have their own citat
 ### 1. Author Name Format
 
 | Error | Correct | Explanation |
-|------|------|------|
-| Da-Ming Wang (2024) | Wang, Da-Ming (2024) | Chinese names should follow the citation format conventions |
-| Wang, Da-Ming (2024) in English format | Use Chinese name in Chinese references | Use Chinese names for Chinese references |
-| Wang, Li (2024) without separator | Wang & Li (2024) | Use appropriate connector between authors |
+|---|---|---|
+| Inventing “Wang, Da-Ming” from 王大明 | 王大明 | Retain Chinese full names unless the venue requires verified romanization |
+| 王大明、李小华、张三丰（2024） on first use solely because it is the first | 王大明等（2024） | Three or more use the abbreviated form from first use, except necessary disambiguation |
+| Abbreviating a 5-author reference entry to 王大明等 | List all 5 authors | In-text abbreviation does not govern reference-list author counts |
 
 ### 2. Year Format
 
@@ -358,7 +382,9 @@ After completing the reference list, check each item:
 - [ ] Authors are connected with enumeration comma (Chinese) or & symbol (English)
 - [ ] Years consistently use CE years
 - [ ] No period at the end of DOI/URL
-- [ ] Chinese and English reference ordering is correct (stroke count / alphabetical)
+- [ ] Ordering follows the actual venue; any alleged stroke-order error has a verifiable adjacent-entry comparison
+- [ ] Three-plus author in-text citations abbreviate from first use, with necessary same-year disambiguation
+- [ ] Reference-list author counts remain separate from in-text abbreviation
 - [ ] Translated books include original publication year
 - [ ] Institutional authors use full names (abbreviation may be appended on first mention)
 - [ ] Book format complies with APA 7 (no publication location)

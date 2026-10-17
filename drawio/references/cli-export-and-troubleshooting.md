@@ -16,7 +16,13 @@ Check the platform before using conversion, layout, or export.
 | WSL2 | `/mnt/c/Program Files/draw.io/draw.io.exe` |
 
 Use `Get-Command drawio` or `where.exe drawio` on Windows and `command -v
-drawio` on macOS/Linux before trying fallback paths.
+drawio` on macOS/Linux before trying fallback paths. Honor an executable
+location already supplied by the user. On Windows, if standard paths fail,
+check per-user/machine `App Paths\draw.io.exe` registry entries and Draw.io
+Start Menu shortcut targets (including a custom install drive). Resolve the
+target and confirm it is an existing executable before invoking it with
+PowerShell's `&` call operator. Keep discovery bounded to these known locations;
+do not recursively scan every drive or install software implicitly.
 
 Without the Desktop CLI:
 
@@ -89,15 +95,19 @@ const xml = fs.readFileSync(process.argv[2], "utf8");
 const compressed = zlib
   .deflateRawSync(encodeURIComponent(xml))
   .toString("base64");
-const payload = encodeURIComponent(
-  JSON.stringify({ type: "xml", compressed: true, data: compressed })
-);
+const payload = encodeURIComponent(compressed);
 
 console.log(
-  "https://app.diagrams.net/?grid=0&pv=0&border=10&edit=_blank#create=" +
+  "https://app.diagrams.net/?grid=0&pv=0&border=10&edit=_blank#R" +
     payload
 );
 ```
+
+Use `#R` followed by URI-encoded Base64 of raw-deflated URI-encoded XML.
+For validation, decode the fragment, Base64-decode and inflate raw bytes, then
+URI-decode; the result must equal the original XML, including Unicode labels.
+Do not wrap the payload in the older `#create=` JSON envelope. URL generation
+is local; opening a web editor still follows the existing external-access scope.
 
 On Windows, write the URL to an `.url` shortcut before opening it. Passing the
 URL directly through `cmd.exe start` can truncate its `&` and `#` content.
@@ -109,13 +119,14 @@ browser URL.
 
 | Problem | Response |
 |---|---|
-| Desktop CLI missing | Author XML directly and deliver `.drawio` |
+| Desktop CLI missing | Check bounded custom-install locations; if absent, author XML and deliver `.drawio` |
+| `GPU process isn't usable` during CLI export/conversion | Retry the same local command once with `--disable-gpu`; inspect exit status and the actual output. If it still fails, report the failure and retain the native source |
 | Mermaid export crashes | Convert Mermaid to `.drawio`, then export that file |
 | Blank Mermaid diagram | Check the diagram-type keyword, node IDs, and quoted labels |
 | Layout does nothing | Verify the preset or provide a JSON array for custom ELK |
 | Corrupt export | Validate XML and escape special characters |
-| Diagram opens blank | Confirm root cells `id="0"` and `id="1"` |
-| Edge is missing | Add child `mxGeometry` with `relative="1"` |
+| Diagram opens blank | Confirm root `id="0"` and layer `id="1" parent="0"`; check parent references and cycles |
+| Edge is missing | Check terminals, innermost common container parent, and child `mxGeometry relative="1"` |
 | Browser URL opens empty | Use the Windows `.url` shortcut route |
 | URL is too long | Deliver the native `.drawio` file |
 

@@ -58,7 +58,12 @@ Before delivery:
 3. Confirm that the Discussion and Conclusion do not exceed the strongest claim
    supported in the Results.
 4. Confirm that a wording improvement has not removed a necessary boundary.
-5. Report unresolved conflicts with their section locations.
+5. After body revisions change results, numbers, or scope, recheck every
+   abstract language version, title, and conclusion against the current evidence.
+   Remove stale claims; do not require all secondary results in the abstract.
+6. Keep excluded sources out unless the recorded reason has been resolved and
+   the affected claim reverified; old bibliography membership is not clearance.
+7. Report unresolved conflicts with their section locations.
 
 Keep the ledgers as working state. Show the full tables only when the user asks
 for an audit trail; otherwise report concise consistency flags.
@@ -77,3 +82,7 @@ not every hedge in the original. Mark a substantive unsupported change and
 resolve it under existing author-decision rules; do not create a per-sentence
 approval workflow. An unsupported assertion needs evidence, accurate attribution,
 omission or a material-gap marker, not cosmetic hedging.
+
+For a long manuscript where acronym checking adds value, use the optional
+[read-only acronym check](../../academic-research/references/selective-quality-control.md#optional-acronym-check).
+Keep body and abstract definitions independent; findings are advisory.

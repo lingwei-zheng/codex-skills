@@ -71,12 +71,20 @@ For the meaning of approved nodes and edges, read [semantic approval scope](../e
 
 ## Critical XML Rules
 
-- Start with an `mxGraphModel` containing root cells `id="0"` and `id="1"`.
+- Start with an `mxGraphModel` containing `<mxCell id="0"/>` and
+  `<mxCell id="1" parent="0"/>`. Other cells must reference an existing parent;
+  no cell may parent itself or create a parent cycle.
+- Place a contained node relative to its parent container. Use the innermost
+  common container of an edge's terminals as the edge parent (layer `1` for
+  terminals with no deeper common container); edge geometry is relative to that
+  parent. Preserve approved endpoints and direction when repairing structure.
 - Escape `&`, `<`, `>`, and quotes in attribute values.
 - Use a unique ID for every `mxCell`.
 - Give every edge a child `<mxGeometry relative="1" as="geometry" />`.
 - Do not include XML comments in generated diagram files.
-- Validate XML well-formedness before opening or exporting.
+- Validate XML well-formedness, unique IDs, parent/terminal references, and
+  geometry before opening or exporting. Repair only demonstrated structural
+  faults; do not use broad regex rewrites that alter scientific relationships.
 
 ## References
 

@@ -97,27 +97,34 @@ and broad subgroup sweeps until:
 - a reviewer raises the issue
 - one check diagnoses a concrete risk rather than adding ceremonial volume
 
-## Contribution Ladder
+## Contribution Forms
 
 Evaluate contribution separately from novelty.
 
-| Level | Contribution form | Valid use |
-|---|---|---|
-| 1 | Direct replication | Reproducibility, cumulative evidence, benchmark confirmation |
-| 2 | Contextual or regional extension | New population, place, policy setting, or transferability evidence |
-| 3 | Incremental improvement | Better measurement, data coverage, implementation, estimation, or modest method gain |
-| 4 | Mechanism or boundary contribution | Distinguishes explanations or identifies where prior findings hold |
-| 5 | Theory or method advance | Revises a framework or materially changes inferential capability |
+The forms below describe kinds of contribution, not a scoring scale
+or a journal-tier ceiling. Assess question importance, distinctive evidence,
+result strength and audience fit separately, using the intended journal's
+actual criteria and relevant published work.
 
-All five levels can support publishable research. Judge:
+| Contribution form | Valid use |
+|---|---|
+| Direct replication | Reproducibility, cumulative evidence, benchmark confirmation |
+| Contextual or regional extension | New population, place, policy setting, or transferability evidence |
+| Incremental improvement | Better measurement, data coverage, implementation, estimation, or modest method gain |
+| Mechanism or boundary contribution | Distinguishes explanations or identifies where prior findings hold |
+| Theory or method advance | Revises a framework or materially changes inferential capability |
+
+All five forms can support publishable research. Judge:
 
 - what becomes more credible, measurable, transferable, or useful
 - who benefits from the added evidence
 - whether the contribution is stated honestly
 - whether the target venue rewards that contribution magnitude
 
-Do not block a study for being incremental. Recommend a narrower claim, a more
-appropriate venue, or a specific value-adding repair when needed.
+Do not block or downgrade a study merely for being incremental or regional.
+Identify the strongest credible route; narrow a claim, repair evidence, or
+retarget only for a specific mismatch. Keep current submission readiness and
+evidence-dependent development potential separate.
 
 Changing only the study location is weak framing, but not automatically weak
 research. It can be valuable when it adds underrepresented evidence, local

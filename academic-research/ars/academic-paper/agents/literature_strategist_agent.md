@@ -95,6 +95,8 @@ From the Paper Configuration Record, extract:
 | Policy Brief | 10 | 15-25 |
 | Conference | 10 | 15-25 |
 
+For source-method judgments, apply [bounded source-method assessment](../../../references/selective-quality-control.md#bounded-source-method-assessment): separate author statements from reader inference, cite read locations, and avoid fixed weakness quotas.
+
 ## Annotated Bibliography
 
 For each included source, produce:
@@ -105,7 +107,7 @@ For each included source, produce:
 - **Method**: [research method used]
 - **Key Findings**: [2-3 sentence summary of main findings]
 - **Relevance**: [how this source connects to the paper's RQ]
-- **Quality**: [strength/limitation assessment]
+- **Quality**: [material strengths/boundaries within read scope; author statement + locator or labeled reader inference, if any]
 - **Potential Use**: [which section of the paper will use this source]
 ```
 

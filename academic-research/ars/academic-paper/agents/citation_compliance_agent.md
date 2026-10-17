@@ -70,7 +70,7 @@ For each reference list entry:
 **In-text citations**:
 - [ ] One author: (Smith, 2024)
 - [ ] Two authors: (Smith & Jones, 2024) — "&" in parenthetical, "and" in narrative
-- [ ] Three+ authors: (Smith et al., 2024)
+- [ ] Three+ authors: (Smith et al., 2024), from first citation; expand only enough names to disambiguate colliding author groups
 - [ ] Multiple works: (Chen, 2023; Smith, 2024) — alphabetical, semicolon
 - [ ] Same author same year: (Smith, 2024a, 2024b)
 - [ ] Organization first time: (World Health Organization [WHO], 2024)
@@ -80,7 +80,8 @@ For each reference list entry:
 
 **Reference list**:
 - [ ] Hanging indent (0.5 inch)
-- [ ] Alphabetical by first author surname
+- [ ] English APA entries alphabetical by first author surname; Chinese/mixed lists follow the actual venue and Chinese guide
+- [ ] Reference list: all authors up to 20; for 21+, first 19, ellipsis, final author (separate from in-text et al.)
 - [ ] Double-spaced
 - [ ] DOI as hyperlink: https://doi.org/xxxxx
 - [ ] No period after DOI/URL
@@ -153,10 +154,10 @@ When errors are found:
 
 | Error | Correction |
 |-------|-----------|
-| Missing "et al." for 3+ authors | Add "et al." |
+| Missing abbreviation for 3+ authors | Use et al. / 等 per venue, unless names are needed for disambiguation; never shorten reference-list authors by this rule |
 | "&" in narrative citation | Change to "and" |
 | "and" in parenthetical citation | Change to "&" |
-| Wrong alphabetical order in multi-cite | Reorder |
+| Wrong order in multi-cite | Reorder only under the applicable venue/script rule |
 | Missing DOI | Add if findable |
 | dx.doi.org | Change to doi.org |
 | Period after DOI | Remove |
@@ -272,7 +273,7 @@ Step 3: If unable to determine -> ask user; if user does not respond -> default 
 |--------|---------|-------------|---------|------|-----------|
 | In-text format | (Author, Year) | Footnote or (Author Year) | (Author Page) | [N] | N (superscript) |
 | Multiple author threshold | 3+ -> et al. | 4+ -> et al. | 3+ -> et al. | 3+ -> et al. | 7+ -> et al. |
-| Ref list ordering | Alphabetical | Alphabetical | Alphabetical | Order of appearance | Order of appearance |
+| Ref list ordering | Latin-script alphabetical; Chinese/mixed per venue | Alphabetical | Alphabetical | Order of appearance | Order of appearance |
 | DOI format | https://doi.org/ | URL or DOI | Optional | Required | Required |
 | Title case | Sentence case (articles) | Title Case (book titles) | Title Case | Sentence case | Sentence case |
 
@@ -286,7 +287,7 @@ Step 3: If unable to determine -> ask user; if user does not respond -> default 
 | 4 | Secondary citation unmarked | Cited in text but not in RefList | Flag -> ask if secondary citation |
 | 5 | et al. on first citation | APA 7th uses et al. from first citation (correct) | Old APA 6th requires full list on first use -> remind |
 | 6 | & vs and mixed use | Parenthetical uses "and", Narrative uses "&" | Yes -> swap |
-| 7 | Wrong multi-source ordering | (B, 2024; A, 2023) | Yes -> reorder alphabetically |
+| 7 | Wrong multi-source ordering | Verified inversion under the applicable venue/script rule | Yes -> reorder under that rule |
 | 8 | Direct quote missing page number | Quoted text but no p./pp. | Flag -> user to provide |
 | 9 | Title Case error | Article title uses Title Case (APA requires sentence case) | Yes (auto-convert) |
 | 10 | Period after DOI | https://doi.org/xxxxx. | Yes -> remove period |
@@ -297,14 +298,16 @@ Reference: `references/apa7_chinese_citation_guide.md`:
 
 | # | Check Item | Rule |
 |---|--------|------|
-| 1 | Author name | Chinese authors use full name (no first/last split): Wang Daming (2024) |
-| 2 | Book title format | Chinese book titles use angle brackets or italics (per journal requirements) |
-| 3 | Journal name format | Chinese journal names use full names (no abbreviations) |
-| 4 | Translated works | Format: Original Author (Trans. Translator, Publication Year). *Book Title*. Publisher. (Original work published YYYY) |
-| 5 | Chinese-English mixed | Chinese references first, English references second (per Taiwan academic convention) |
-| 6 | Page number notation | Chinese uses "page" instead of "p.": (Wang Daming, 2024, page 45) |
-| 7 | Multiple author connector | Chinese uses enumeration comma instead of regular comma: (Wang Daming, Li Xiaohua, 2024) |
-| 8 | et al. equivalent | Chinese uses "deng" (meaning "et al."): (Wang Daming et al., 2024) |
+| 1 | Author name | Keep Chinese full names, e.g. 王大明; do not invent romanization or split given names |
+| 2 | Titles / punctuation | Follow the actual venue; local Simplified Chinese response language does not select a regional style |
+| 3 | Mixed-list ordering | Follow venue grouping/order; Taiwan stroke ordering only when applicable, verified with adjacent-entry evidence |
+| 4 | Translated works | Preserve original author, verified translator, publication and original-work years |
+| 5 | Direct quotes | Include page/location in the notation required by the venue |
+| 6 | Two authors | Keep both full names with venue-appropriate connector, e.g. 王大明、李小华 |
+| 7 | Three-plus authors | 王大明等（2024） / 等人 from first use; expand names if different author groups otherwise collide |
+| 8 | Same author list/year | Consistent a/b suffixes matched to reference ordering |
+| 9 | Reference-list authors | List up to 20; for 21+, first 19, ellipsis, last. Do not transfer in-text “等” to the reference list |
+
 
 ### Citation Consistency Check (Cross-Reference)
 
@@ -421,7 +424,7 @@ Quality gate not passed ->
 ### Handoff Format Requirements
 
 - **Receiving draft_writer_agent's Draft**: Reference List must exist as an independent section (`## References`)
-- **Output to formatter_agent**: Corrected Reference List must already be sorted by target format (APA/MLA = alphabetical, IEEE/Vancouver = order of appearance)
+- **Output to formatter_agent**: Corrected Reference List must follow the target venue/style ordering (English APA/MLA = alphabetical, IEEE/Vancouver = order of appearance; Chinese/mixed APA per the Chinese guide and venue)
 - **Cross-verification with literature_strategist_agent**: Each source in the Annotated Bibliography is the ground truth. If citation information in the Draft differs from the Bibliography -> correct using Bibliography as authoritative source
 
 ## Quality Criteria

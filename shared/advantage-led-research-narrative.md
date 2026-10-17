@@ -22,6 +22,9 @@ settings in the existing configuration. Do not create a parallel ledger.
 | Claim / experiment / evidence | Existing C# and E# IDs, result locator and version |
 | Retellable sentence | One evidence-supported contribution; conditional if planned |
 | Material change | What new evidence changed and which claims/figures need updating |
+| Active constraints and decisions | Word ceiling, venue, formats, prohibited work, and declined optional changes; user decision locator, artifact/version/scope |
+| Next authorized action | Applicable approved decisions, pending approvals, and the next action within scope |
+| Excluded evidence | Source key/version, reason, verification evidence/locator, affected claims, and any later verified correction |
 
 These states describe evidence, not authorization or task completion. A
 `supported` advantage is not a reproducibility verdict. Reuse the separate
@@ -42,6 +45,19 @@ story status and material verification status without promoting either.
 Continue these transitions only within the user's requested scope and existing
 approval rules. A run-only request ends with its requested results; a full
 research-to-paper request continues through the authorized downstream work.
+
+Carry these existing records or pointers into author-side writing, revision,
+formatting, and resumption. Reuse unchanged explicit choices without asking
+again. Do not give author preferences to independent reviewers as instructions
+to suppress findings. A declined optional change stays declined within its
+scope; new evidence of an actual validity defect still requires resolution.
+Do not turn every declined suggestion into a limitations paragraph.
+
+Keep excluded evidence out of downstream prose even if it remains in an old
+bibliography. Distinguish a disproven/nonexistent source, a correctable metadata
+error, and an access-only note. Restore an excluded source only after the
+reason for exclusion has been resolved and the relevant claim reverified, with
+any applicable existing approval; never restore it silently from an old draft.
 
 ## 1. Lead With the Advantage
 
@@ -168,6 +184,12 @@ existing authorization rules; no new sentence-by-sentence approval is required.
 For an unsupported factual assertion, obtain support or attribution, omit a
 nonessential assertion, or mark a material evidence gap. Adding `may` supplies
 no evidence. Distinguish a hypothesis from an observed finding.
+
+When a revision changes results, numbers, or claim scope, check every abstract
+language version, title, and conclusion against the current body and evidence.
+Replace stale advantages and quantities; omission of secondary findings is fine.
+If a requested edit cannot touch a dependent section, identify the exact stale
+claim and prepare the needed correction within the authorized scope.
 
 ## Integrity Floor
 

@@ -444,8 +444,8 @@ Round 2 (re-review):
   └── Overall Score < 6.5 AND Critical unresolved ->
       -> Notify user, suggest options:
         (a) Manually revise and resubmit
-        (b) Lower paper ambitions (e.g., target a lower-tier journal)
-        (c) Accept current state, record issues in Limitations
+        (b) Assess venue mismatch and same-tier alternatives; retarget only for a specific reason, not review-round count
+        (c) Retain the current draft with unresolved issues recorded; do not call it submission-ready
 ```
 
 ### Handling Strategy After Round 2 Still Not Passing
@@ -460,8 +460,9 @@ Step 1: Root Cause Analysis
   └── Originality problem (insufficient contribution) -> suggest repositioning research contribution
 
 Step 2: Provide user with 3 options
-  Option A: Accept current state -> write all unresolved Issues into
-            "Revision ledger updated" -> proceed to Phase 7
+  Option A: Retain current state -> record unresolved Issues in the revision ledger.
+            Proceed to Phase 7 only when existing review/finalization gates permit;
+            changing journals cannot resolve a core validity defect
   Option B: Expanded revision -> return to specified Phase and redo
             (estimate additional workload: Moderate / Significant / Major Rework)
   Option C: Terminate workflow -> save existing draft and all Review Reports

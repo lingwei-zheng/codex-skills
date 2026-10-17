@@ -1,7 +1,10 @@
 # Evidence Assessment Template
 
+For source-method judgments, apply [bounded source-method assessment](../../../references/selective-quality-control.md#bounded-source-method-assessment): separate author statements from reader inference, cite read locations, and avoid fixed weakness quotas.
+
 ## Purpose
-Per-source quality assessment card. Used by the source_verification_agent to systematically evaluate each source entering the research pipeline.
+Per-source quality assessment card. Use relevant fields for the current reading
+scope; an abstract-only read does not require filling a full-methods assessment.
 
 ## Assessment Card
 
@@ -44,8 +47,10 @@ Per-source quality assessment card. Used by the source_verification_agent to sys
 - **Design**: [description]
 - **Sample**: [size, selection, representativeness]
 - **Analysis**: [appropriate for design?]
-- **Limitations acknowledged**: [Yes / Partially / No]
-- **Replicable**: [Yes / Partially / No]
+- **Read scope**: [Methods/supplement pages or sections actually checked]
+- **Author-acknowledged boundary, if material**: [design, affected claim/condition, locator; or not assessed]
+- **Reader inference, if material**: [reasoning, uncertainty, checked locations; omit if none]
+- **Replicable**: [Yes / Partially / No / Not assessed from available material]
 
 **Method Grade**: [Excellent / Good / Adequate / Weak / Flawed]
 

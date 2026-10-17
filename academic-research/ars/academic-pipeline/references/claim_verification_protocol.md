@@ -32,7 +32,7 @@ Verifies that quantitative and factual claims in the paper are accurately suppor
 | MINOR_DISTORTION | Claim paraphrases source but meaning is preserved | MINOR | Paper: "about 15%"; Source: "15.2%" |
 | MAJOR_DISTORTION | Claim oversimplifies, exaggerates, or misrepresents source | SERIOUS | Paper: "declined sharply"; Source: "declined by 2.1%" |
 | UNVERIFIABLE | Source doesn't contain the claimed information | SERIOUS | Paper cites Smith (2020) for a claim, but Smith (2020) doesn't discuss this topic |
-| UNVERIFIABLE_ACCESS | Source exists but full text not accessible for verification | MEDIUM | Paywalled journal article |
+| UNVERIFIABLE_ACCESS | Source exists but full text not accessible for verification | NOTE | Paywalled journal article |
 
 ## Sampling Strategy
 - Mode 1 (pre-review): 30% random sample of claims (minimum 10 claims)
@@ -55,6 +55,17 @@ Verifies that quantitative and factual claims in the paper are accurately suppor
 - UNVERIFIABLE_ACCESS: [N] (noted but does not block PASS)
 
 ## Pass/Fail Criteria
-- PASS: Zero MAJOR_DISTORTION + Zero UNVERIFIABLE
-- FAIL: Any MAJOR_DISTORTION or UNVERIFIABLE
-- PASS_WITH_NOTES: Only MINOR_DISTORTION and/or UNVERIFIABLE_ACCESS
+- PASS: No unresolved claim issues or notes; all applicable checks satisfied.
+- FAIL: Any MAJOR_DISTORTION, UNVERIFIABLE, or other failed applicable requirement.
+  Mode 2 also fails for any unresolved MINOR_DISTORTION.
+- PASS_WITH_NOTES: Access-only notes may remain; MINOR_DISTORTION may remain only
+  in Mode 1. Apply the overall [verdict criteria](../agents/integrity_verification_agent.md#verdict-criteria)
+  before releasing the manuscript to its next checkpoint.
+
+**Issues versus notes.** `UNVERIFIABLE_ACCESS` is a NOTE only when source existence
+is verified and access alone prevents checking the full text. Record the attempted
+retrieval and unverified claim scope separately from errors. It neither means the
+source was read nor that the claim was verified. Missing sources, unsupported
+claims, misrepresentation, and original-source/provenance requirements keep their
+existing failure rules. `Zero issues` permits such notes; it does not waive any
+other applicable check or final approval.

@@ -85,6 +85,8 @@ After screening, resolve each included source to a Semantic Scholar ID:
 
 **Graceful degradation**: If S2 API is unavailable, skip this step entirely. Duplicates will be caught by the existing title-based deduplication in Step 3.
 
+For source-method judgments, apply [bounded source-method assessment](../../../references/selective-quality-control.md#bounded-source-method-assessment): separate author statements from reader inference, cite read locations, and avoid fixed weakness quotas.
+
 ### Step 5: Annotated Bibliography
 
 For each source:
@@ -94,7 +96,7 @@ For each source:
 - **Relevance**: [How it relates to RQ]
 - **Key Findings**: [2-3 main findings]
 - **Methodology**: [Brief method description]
-- **Quality**: [Strengths and limitations]
+- **Quality**: [Material strengths/boundaries within read scope; distinguish author statements with locators from reader inference, if any]
 - **Contribution**: [What it adds to our understanding]
 ```
 

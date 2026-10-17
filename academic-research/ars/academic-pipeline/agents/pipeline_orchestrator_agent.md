@@ -379,7 +379,7 @@ When a sub-skill stage fails or produces unacceptable output:
 
 ### Collaboration Depth Observer (advisory, never blocks)
 
-**When.** At every FULL checkpoint, every SLIM checkpoint, and after Stage 6 (pipeline completion). This is an **observer** agent — it reads the just-completed dialogue range (per-stage) or the whole pipeline log (at completion), scores the user-AI collaboration pattern against `shared/collaboration_depth_rubric.md`, and emits a short advisory report. It is **not** in the blocking path; the orchestrator's progression decision ignores its output.
+**When.** At every FULL checkpoint, every SLIM checkpoint, and after Stage 6 when that process summary was requested/agreed. Completion at Stage 5 does not require a process record. This is an **observer** agent — it reads the just-completed dialogue range (per-stage) or the whole pipeline log (at completion), scores the user-AI collaboration pattern against `shared/collaboration_depth_rubric.md`, and emits a short advisory report. It is **not** in the blocking path; the orchestrator's progression decision ignores its output.
 
 **How the orchestrator invokes it.**
 1. At checkpoint step 3 (above), after updating `state_tracker` with the new checkpoint, derive the stage's `dialogue_log_ref` (turn range covering only the just-completed stage; see `state_tracker_agent.md`).
@@ -402,9 +402,19 @@ The cost is multiplicative: a 10-stage pipeline with cross-model enabled produce
 
 **Credit.** Observer operationalizes Wang, S., & Zhang, H. (2026). "Pedagogical partnerships with generative AI in higher education: how dual cognitive pathways paradoxically enable transformative learning." *IJETHE* 23:11. DOI [10.1186/s41239-026-00585-x](https://doi.org/10.1186/s41239-026-00585-x).
 
+**Integrity verdicts:** apply the issues/notes distinction in
+[the integrity verifier](../agents/integrity_verification_agent.md#verdict-criteria).
+Access-only notes do not count as issues or prove a claim verified. Stage 4.5
+still requires zero issues and all applicable original-source checks; passing
+with notes does not remove the next checkpoint approval. In transition tables,
+`PASS` includes `PASS_WITH_NOTES` only when the current mode's issue threshold
+and every other applicable check are satisfied.
+
 ### 3.5 Audit Artifact Gate (v3.6.7 Step 6)
 
-**Trigger.** At every stage transition where a v3.6.7 downstream agent (`synthesis_agent`, `research_architect_agent` survey-designer mode, or `report_compiler_agent` abstract-only mode) just completed a deliverable.
+**Activation.** This additional external audit is OFF by default. Apply it only when `ARS_AUDIT_ARTIFACT_GATE=1` and the user has explicitly authorized the provider, model, and material scope for this run. The setting alone is not consent. When unselected, continue normal checkpoints, independent review, integrity verification, and final content approval without requesting audit artifacts. When selected but authorization is missing, prepare the audit scope for approval; do not send materials. Once activated, retain the verification and refusal rules below; a failed audit is not permission to switch it off.
+
+**Trigger when activated.** At every stage transition where a v3.6.7 downstream agent (`synthesis_agent`, `research_architect_agent` survey-designer mode, or `report_compiler_agent` abstract-only mode) just completed a deliverable.
 
 **Decision policy.** First check verdict status. If `AUDIT_FAILED` (Path B5 short-circuit per spec §5.6), BLOCK without running the eleven gating checks; surface `verdict.failure_reason`; user must dispatch a fresh wrapper run. Otherwise, validate against the eleven gating verification checks (spec §5.2), then apply ship/block per verdict status (spec §5.3 — rows evaluated top-to-bottom, first matching row wins):
 
@@ -420,8 +430,8 @@ The cost is multiplicative: a 10-stage pipeline with cross-model enabled produce
 
 **Hard rules.**
 
-- Audit gate cannot be skipped — there is no "skip audit" option in checkpoint command vocabulary.
-- Audit gate runs BEFORE collaboration_depth_agent observer dispatch and BEFORE integrity_verification_agent dispatch. It is the first transition-time check.
+- An activated audit gate cannot be skipped to bypass a failed check — there is no "skip audit" checkpoint command. An unselected external audit does not block ordinary work.
+- When activated, the audit gate runs BEFORE collaboration_depth_agent observer dispatch and BEFORE integrity_verification_agent dispatch. It is the first transition-time check.
 - A `verdict_status: PASS` does NOT imply integrity check is skipped. Stage 2.5 / 4.5 integrity gates remain mandatory per existing §3 Hard boundaries rule 9.
 
 **Failure surfacing.** Any block message uses the standard FULL/MANDATORY checkpoint visual (━━━ separator). Block message MUST include: why blocked (which check failed / which severity finding triggered), where to look (file:line for findings; artifact path for verification failures), what to do next (re-audit command, revision dispatch, escalation options).
@@ -528,6 +538,20 @@ Reference helper: `scripts/slr_lineage.py` `emit(stages, incoming_slr_lineage)`.
 | Stage 3' -> **coaching** -> 4' | New Revision Roadmap (if Major) | Schema 7 (Revision Roadmap) | **First Socratic dialogue** -> academic-paper revision mode input |
 | Stage 4/4' -> 4.5 | Revised/Re-Revised Draft | Schema 4 (revised) | Pass to integrity_verification_agent (final verification) |
 | Stage 4.5 -> 5 | Final Verified Draft + Final Integrity Report | Schema 4 + Schema 5 (Integrity Report) | Prepare the requested format(s) using existing choices -> satisfy applicable verification and content approval -> generate final output; consult execution-and-approval.md for preflight scope |
+
+**Author-side continuity:** pass the existing Research Continuity record or its
+project-file pointer to writing, revision, and formatting roles. Preserve word
+limits, venue, requested formats, prohibited work, declined optional changes,
+excluded evidence, and decision/version/scope provenance. Follow
+[execution and approval scope](../../../references/execution-and-approval.md#carry-existing-decisions);
+do not add a new ledger schema or bias independent reviewers with author
+preferences.
+
+**Terminal flow:** after Stage 5, verify that all requested artifacts are
+delivered and all applicable approvals/checks satisfied. Mark the task complete
+unless a process summary was requested or agreed. Only then enter Stage 6,
+using known language and requested formats; after its verified delivery, finish.
+A phase report or substitute format does not complete an outstanding artifact.
 
 **All artifacts must carry a Material Passport (Schema 9)** with `origin_skill`, `origin_mode`, `origin_date`, `verification_status`, and `version_label`. From v3.7.4+, the passport also carries the run-level `slr_lineage` boolean computed per the emission step above.
 

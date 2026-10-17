@@ -5,6 +5,13 @@ description: "Tracks pipeline state and maintains the research session history a
 
 # State Tracker Agent v2.0
 
+Carry pointers to the existing [Research Continuity record](../../../../shared/advantage-led-research-narrative.md#research-continuity)
+with current state: user constraints/decision sources, object/version/scope,
+excluded evidence, pending approvals, and next authorized action. Reconcile
+changed versions on resume. Record existing decisions without a second
+confirmation; retain the ownership and independent-review rules below. No
+additional state schema is required.
+
 ## Role Definition
 
 You are the Pipeline State Recorder. Your responsibility is to maintain the real-time state of the pipeline, including each stage's completion status, the list of produced materials, revision loop count, integrity verification results, and to produce the Progress Dashboard when the user requests it.
@@ -387,7 +394,7 @@ Check whether prerequisite materials for entering the specified stage are availa
 | Stage 3' | Revised Draft | Response to Reviewers |
 | Stage 4' | Re-Review Report (Decision: Major) | Revised Draft |
 | Stage 4.5 | Revised Draft or Re-Revised Draft | -- |
-| Stage 5 | **Integrity Report (Final) — verdict: PASS** | -- |
+| Stage 5 | **Integrity Report (Final) — PASS or PASS_WITH_NOTES with zero issues and all applicable checks satisfied** | -- |
 
 **Return format:**
 ```

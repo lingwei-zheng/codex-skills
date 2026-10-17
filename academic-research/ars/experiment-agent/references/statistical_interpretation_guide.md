@@ -14,7 +14,13 @@ Scan user-provided output for these patterns:
 - Coefficients: `beta = 0.23`, `B = 1.45`, `SE = 0.12`
 
 If structured format (CSV/JSON): auto-extract column names matching these patterns.
-If unstructured: ask user to highlight key numbers.
+If unstructured (console output, PDF/Word tables, or images), extract the
+results with the appropriate available reader/OCR tools. Preserve page/table/row
+or output-block locators and check labels, units, outcome, model, sample size,
+and uncertainty against the source. Separate observed numbers from inferred
+interpretations. Ask only about material unresolved recognition ambiguity or an
+unknown primary outcome; do not require confirmation of every extracted value.
+Continue interpreting clearly identified results while an ambiguous item waits.
 
 ### Step 2: Interpret Each Finding
 

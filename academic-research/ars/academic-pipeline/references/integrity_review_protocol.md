@@ -1,5 +1,13 @@
 # Integrity Review Protocol (Added in v2.0)
 
+**Integrity verdicts:** apply the issues/notes distinction in
+[the integrity verifier](../agents/integrity_verification_agent.md#verdict-criteria).
+Access-only notes do not count as issues or prove a claim verified. Stage 4.5
+still requires zero issues and all applicable original-source checks; passing
+with notes does not remove the next checkpoint approval. In transition tables,
+`PASS` includes `PASS_WITH_NOTES` only when the current mode's issue threshold
+and every other applicable check are satisfied.
+
 ## Stage 2.5: First Integrity Check (Pre-Review Integrity)
 
 **Trigger**: After Stage 2 (WRITE) completion, before Stage 3 (REVIEW)

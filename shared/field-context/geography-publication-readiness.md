@@ -21,11 +21,11 @@ Assess increment across six dimensions:
 | Data | Makes a previously unobservable process testable | Uses a newer dataset for the same claim |
 | Method | Resolves an important inferential or measurement failure | Uses a more complex model for prestige |
 
-Classify the contribution using the shared five-level ladder: direct
+Describe the contribution using the shared five forms: direct
 replication, contextual/regional extension, incremental improvement,
-mechanism/boundary contribution, or theory/method advance. Do not treat the
-first three levels as invalid; evaluate whether they add credible and useful
-evidence and whether the venue fits their magnitude.
+mechanism/boundary contribution, or theory/method advance. These are not journal
+ceilings. Evaluate the question's importance, distinctive evidence and result
+strength against the intended journal's actual criteria and comparable papers.
 
 Apply a **location-value check**, not a location-swap veto. A new study area can
 support a valid contribution through:
@@ -37,8 +37,9 @@ support a valid contribution through:
 - transferability assessment across institutions, regions, or spatial regimes
 - a consequential comparison even without a new theory
 
-If none applies, recommend a narrower contribution claim or a better-fitting
-venue. Do not block the study merely because its advance is incremental.
+If no contribution is supported, identify the specific evidence or positioning
+gap. A single-region design alone warrants neither blocking nor downgrading;
+first assess what it enables the field to learn and which venue values it.
 
 Do not treat an empty cell in a literature matrix as sufficient novelty. State what belief, explanation, measurement, or decision changes if the gap is filled.
 

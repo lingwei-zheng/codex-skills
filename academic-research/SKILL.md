@@ -42,7 +42,8 @@ This is the Codex entry router for the vendored research suite under `ars/`.
 Use the Research Continuity record in
 `../shared/advantage-led-research-narrative.md`: preserve question, advantage
 state, fair comparison, claim/experiment IDs, evidence version, and retellable
-sentence across stages. Update only fields affected by the current task; reuse
+sentence, scoped user decisions/constraints, and excluded evidence across stages.
+Update only fields affected by the current task; reuse
 project records rather than starting another ledger.
 
 ## Execution scope

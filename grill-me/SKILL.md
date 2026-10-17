@@ -27,7 +27,9 @@ unless the user later requests that work.
 4. Ask the whole frontier as one numbered round. Do not place two questions in
    the same round when one answer could change the other question.
 5. Give a recommended answer and the main tradeoff for every question. The
-   user owns each decision; never answer it on their behalf.
+   user owns each decision; never answer it on their behalf. For a yes/no
+   question, phrase it so "yes" accepts the recommended option; avoid negative
+   wording that reverses the meaning of agreement.
 6. After the user responds, update the tree, reopen branches affected by changed
    answers, recompute the frontier, and ask the next round.
 7. Continue until the frontier is empty. Then summarize the settled choices,

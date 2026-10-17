@@ -141,6 +141,14 @@ requirements are satisfied; approval reuse never skips verification.
 
 ---
 
+**Integrity verdicts:** apply the issues/notes distinction in
+[the integrity verifier](../agents/integrity_verification_agent.md#verdict-criteria).
+Access-only notes do not count as issues or prove a claim verified. Stage 4.5
+still requires zero issues and all applicable original-source checks; passing
+with notes does not remove the next checkpoint approval. In transition tables,
+`PASS` includes `PASS_WITH_NOTES` only when the current mode's issue threshold
+and every other applicable check are satisfied.
+
 ## Legal State Transitions
 
 ### Normal Flow Transitions
@@ -173,6 +181,9 @@ requirements are satisfied; approval reuse never skips verification.
 | Stage 4.5 | **checkpoint** | PASS (zero issues) | Wait for user confirmation |
 | Stage 4.5 | Stage 4.5 (retry) | FAIL | Fix issues, re-verify (max 3 rounds) |
 | checkpoint | Stage 5 | User confirms | Pass final accepted draft |
+| Stage 5 | COMPLETED | All requested artifacts delivered and verified; applicable approvals satisfied; no agreed process summary | Report delivered artifacts and finish |
+| Stage 5 | Stage 6 | Process summary requested/agreed; Stage 5 complete | Reuse known language and requested formats |
+| Stage 6 | COMPLETED | Requested process record delivered and verified | Report artifact and finish |
 
 ### Special Flow Transitions
 
