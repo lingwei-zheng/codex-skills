@@ -125,7 +125,15 @@ For the strongest one to three candidates:
 6. In `reviewer` or `grant` mode, for high-cost irreversible projects, or when a
    material defect changes the decision, name the strongest reviewer or funder
    objection. Otherwise keep speculative attacks out of the user-facing card.
-7. Repair, park, or reject any candidate that fails a fatal gate.
+7. Repair, park, or reject a route with no credible evidence path or scientific
+   value. A falsified hypothesis is not a failed research project: assess what
+   its contradiction or boundary would teach. Distinguish that from a test
+   too imprecise to decide.
+
+Apply the shared calibration protocol's complexity questions to the pilot.
+Record scientific ambition separately from the minimum sufficient method and
+its stopping rule within the existing card; do not require advanced methods to
+justify a high-value question.
 
 ## Good Question Card
 

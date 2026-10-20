@@ -82,11 +82,11 @@ advantage; execution success does not establish a scientific claim.
 
 ### Data Readiness
 
-- **Samples**: [n]
-- **Missing Rate**: [rate]
+- **Samples**: [units and usable n per source/analysis; matched cohort when relevant]
+- **Missing Rate**: [rate and denominator by relevant variable/source]
 - **Format Consistent**: [yes/no]
-- **Ready for Analysis**: [yes/no]
-- **Blockers**: [list or "None"]
+- **Ready for Analysis**: [named analysis/branch, evidence and scope restrictions]
+- **Blockers / deviations**: [affected work, protocol requirement, and next action; or "None"]
 ```
 
 ## Validation Report (from validate mode)
@@ -103,13 +103,15 @@ advantage; execution success does not establish a scientific claim.
 ## Validation Report
 
 - **Source**: [exp_id | external | manual_study; result version and claim IDs when known]
-- **Overall Confidence**: [SOLID | CAUTION | RED_FLAG]
+- **Claim scope and confidence**: [SOLID | CAUTION | RED_FLAG, with reason per affected claim/branch]
+- **Hypothesis outcome**: [supported | not supported | insufficient evidence; not inferred from p-value alone]
+- **Next research action**: [proceed within scope / bounded check / stop route / decision needed; scientific reason]
 
 ### Statistical Findings
 
-| Metric | Test | Value | Effect Size | Confidence |
+| Claim / metric | Method | Estimate and uncertainty | Scientific meaning | Confidence |
 |--------|------|-------|-------------|------------|
-| [name] | [test] | [stat, p] | [size, class] | [SOLID/CAUTION/RED_FLAG] |
+| [scope] | [method] | [estimate, interval/MCSE; test where applicable] | [magnitude, costs, boundary] | [SOLID/CAUTION/RED_FLAG + reason] |
 
 ### Warnings
 
@@ -129,6 +131,7 @@ advantage; execution success does not establish a scientific claim.
 
 - **Method**: [re-run deterministic | re-run stochastic | re-run environment-sensitive | not run | N/A]
 - **Verdict**: [REPRODUCIBLE | PARTIALLY_REPRODUCIBLE | NOT_REPRODUCIBLE | CANNOT_VERIFY | N/A]
+- **Comparison scope and criteria**: [declared outputs and justified tolerance/uncertainty; retain unresolved branches]
 
 | Metric | Original | Re-run | Diff | Status |
 |--------|----------|--------|------|--------|

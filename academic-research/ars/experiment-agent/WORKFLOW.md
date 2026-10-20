@@ -90,11 +90,18 @@ Before `plan`, `run`, `manage`, or `validate`, read
 For ordinary analysis development with no stated stage, use
 `first-draft + proportionate + incremental-allowed + balanced`.
 
-In `first-draft`, prioritize the primary analysis, one simple baseline, the
-single most consequential diagnostic, and at most two additional checks tied to
-a named risk. Record other checks as deferred rather than running them
-automatically. Submission, systematic-review, causal, high-stakes, and
-review-response tasks may require stronger profiles.
+Use the shared calibration protocol for M0-M4 complexity, the integrity floor,
+claim-specific evidence, and stopping decisions. In `first-draft`, prioritize
+the primary analysis, a simple baseline, and checks needed for its validity.
+Record other checks as deferred unless a named risk makes them decision-relevant.
+Neither a fixed diagnostic count nor all-scenarios PASS establishes validity.
+Submission, systematic-review, causal, high-stakes, and review-response tasks
+may require stronger profiles.
+
+For simulation or estimator design/execution/validation, also read
+`references/simulation-method-validation.md`. Plan targets and evidence needs
+before scaling computation; do not turn method development into an open-ended
+search for favorable results.
 
 Before adding an analysis, assign it one argument job: establish the central
 result, explain the advantage, demonstrate target-setting value, distinguish a
@@ -152,9 +159,12 @@ with the user; proposing a reviewable design does not approve or execute it.
 1. **Clarify RQ** — What are you trying to test? What is the hypothesis?
 2. **Variables** — Identify IV, DV, control variables, potential confounds
 3. **Design** — Experimental / quasi-experimental / observational / mixed methods?
-4. **Method selection** — Based on RQ + design, suggest appropriate methods
-5. **Sample** — Population, sampling strategy, power analysis for sample size
-6. **Analysis strategy** — Which statistical tests? What are the assumptions?
+4. **Method selection** — Identify the simplest adequate method and what, if
+   anything, justifies added complexity under the shared protocol
+5. **Sample** — Population, sampling strategy, source-specific units and sizes;
+   justify adequacy by the aim (precision, power when relevant, or qualitative design)
+6. **Analysis strategy** — Estimand, assumptions, claim-specific evidence,
+   and outcomes that support, do not support, or leave the hypothesis unresolved
 7. **Rigor budget** — Separate immediate validity checks from deferred
    robustness checks according to research stage and claim risk.
 8. **Argument job map** — Link each proposed experiment, model, table, or figure
@@ -197,7 +207,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 |----------|-------------|
 | Monitoring coverage | Every code experiment must have at least process-alive + timeout monitoring |
 | Statistical rigor | Proportionate to stage and claim risk; comprehensive validation covers all applicable patterns without a fixed count |
-| Reproducibility | Deterministic experiments: exact match required. Stochastic: < 5% relative diff default |
+| Reproducibility | Use `references/reproducibility_protocol.md`: distinguish exact replay from stochastic replication; no universal percentage tolerance |
 | Runtime efficiency | Long code runs require a pilot estimate, utilization monitoring, and bottleneck-aware execution |
 | ARS compatibility | All outputs include Material Passport with required fields per ARS Schema 9 |
 | User sovereignty | All anomaly detections are ADVISORY; only hard timeout auto-kills |
@@ -215,7 +225,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | 5 | Never upload data to external services |
 | 6 | Never touch raw participant data — track metadata only (counts, rates) |
 | 7 | Never send notifications to study participants |
-| 8 | Power analysis uses conservative estimates |
+| 8 | Sample-size planning uses justified assumptions and sensitivity to uncertainty; respect protocol, ethics, and resource limits |
 | 9 | Statistical interpretation is descriptive — does not draw conclusions for user |
 | 10 | RED_FLAG means "needs user attention", not "result is wrong" |
 
@@ -225,7 +235,7 @@ Plan mode outputs use separate templates and also carry Material Passport:
 
 | # | Anti-Pattern | Why It's Wrong |
 |---|-------------|---------------|
-| 1 | Auto-modifying user's experiment code | Violates safety rule 1; user owns their code |
+| 1 | Silently changing scientific specifications while editing code | Ordinary authorized implementation edits and local checks may proceed; preserve scientific meaning and existing restart/approval rules |
 | 2 | Silently retrying a crashed run | Masks the real error; wastes compute |
 | 3 | Reporting p < .05 as "the result is significant" without effect size | Statistical significance without practical significance is misleading |
 | 4 | Running every possible robustness or fallacy check on a first draft | Wastes time and obscures the main result; use stage- and risk-triggered checks |
@@ -241,7 +251,8 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | `references/stall_detection_protocol.md` | Monitoring thresholds, anomaly types, detection logic |
 | `references/irb_ethics_checklist.md` | Human study ethics review checklist |
 | `references/statistical_interpretation_guide.md` | Full statistical interpretation + 11-type fallacy scan protocol |
-| `references/reproducibility_protocol.md` | Re-run methodology, comparison thresholds, verdict criteria |
+| `references/reproducibility_protocol.md` | Re-run methodology, claim-specific comparison criteria, verdicts |
+| `references/simulation-method-validation.md` | Estimand/DGP design, Monte Carlo uncertainty, failures, budgets, and multi-source comparisons |
 | `references/ars_integration_guide.md` | ARS Material Passport, handoff format, pipeline bridging |
 | `templates/output_formats.md` | Complete Markdown output templates for all three output types |
 | `../../../shared/research-calibration.md` | Research stage, rigor budget, contribution ladder, and compute profile |

@@ -1,18 +1,25 @@
 # Statistical Reporting Standards — Statistical Reporting Standards & APA 7.0 Format Quick Reference
 
-This document defines the complete review standards for statistical reporting in quantitative research. `methodology_reviewer_agent` uses this document as the primary reference in Step 4a (Statistical Reporting Adequacy).
+This reference supports statistical reporting review. Apply
+`../../../../shared/research-calibration.md` for governing evidence standards.
+The menus below are claim- and method-dependent examples, not universal PASS
+criteria or minimum contribution sizes. Select only applicable checks and justify
+their consequence for the claim. Preserve explicit protocol/reporting obligations;
+APA style applies when requested or required by the outlet.
 
 ---
 
-## 1. Universal Statistical Reporting Checklist
+## 1. Claim-Specific Statistical Reporting
 
-All quantitative research papers **must** report the following items. Check each item during review:
+Assess the following where needed to interpret or reproduce the reported claim.
+Small effects, unequal sample sizes, and nonsignificant results are not defects
+by themselves. Separate invalid inference from imprecision or a valid null result.
 
 ### 1.1 Descriptive Statistics
 
 | Item | Standard | Common Omission |
 |------|----------|----------------|
-| Mean (*M*) | Must be reported for all continuous variables | Only overall reported, not by group |
+| Location summary | Use mean, median, quantiles, or other summaries appropriate to the distribution and claim | A pooled summary conceals a material group difference |
 | Standard deviation (*SD*) | Must appear paired with the mean | Standard error (*SE*) used incorrectly in place of SD |
 | Sample size (*N* / *n*) | Both total and group sample sizes must be reported | Sample attrition during analysis unexplained |
 | Range | Report Min-Max or interquartile range | Completely absent, unable to judge distribution characteristics |
@@ -22,9 +29,9 @@ All quantitative research papers **must** report the following items. Check each
 
 | Item | Standard | Common Omission |
 |------|----------|----------------|
-| Reporting obligation | **All statistical tests must be accompanied by effect sizes** — APA 7.0 mandatory requirement | Only *p*-value reported, no effect size |
+| Reporting obligation | Report magnitude for claim-bearing estimates and contrasts; not every diagnostic test has a scientific effect size | A scientific claim rests only on *p* |
 | Select appropriate metric | Choose effect size metric corresponding to the analysis method (see Section 2) | Inappropriate effect size metric used |
-| Interpretation | Must provide Cohen's conventional benchmarks or field-specific benchmarks | Numbers reported but magnitude not interpreted |
+| Interpretation | Interpret magnitude in scientific units/context; conventional labels are optional aids, not acceptance thresholds | Numbers reported without scientific meaning |
 
 **Common Effect Size Metrics Quick Reference:**
 
@@ -42,7 +49,7 @@ All quantitative research papers **must** report the following items. Check each
 
 | Item | Standard | Common Omission |
 |------|----------|----------------|
-| CI reporting | All effect sizes and key estimates **should** report 95% CI | CI completely absent |
+| CI reporting | Report uncertainty appropriate to key estimates, with level and method specified | Precision cannot be assessed |
 | Format | 95% CI [lower bound, upper bound] | Inconsistent format or using parentheses instead of brackets |
 | Interpretation | Describe the substantive meaning of the CI, not just statistical meaning | Only checking whether CI includes zero, not interpreting width |
 
@@ -53,18 +60,18 @@ All quantitative research papers **must** report the following items. Check each
 | *p*-value format | Report exact *p* value (e.g., *p* = .032) | Only reporting *p* < .05 or *p* > .05 |
 | *p* < .001 | Can report *p* < .001 when *p* is very small | Reporting *p* = .000 (raw statistical software output) |
 | Alpha level | Declare alpha level a priori | Failure to state whether alpha = .05 or another value |
-| Multiple comparisons | Use Bonferroni, Holm, FDR correction | Multiple comparisons without any correction |
+| Multiple comparisons | Define the inferential family and use justified error control or exploratory interpretation when needed | Selective inference ignores multiplicity |
 | Non-significant results | Must be fully reported; cannot be hidden | Selectively reporting only significant results |
 
 ### 1.5 Statistical Power
 
 | Item | Standard | Common Omission |
 |------|----------|----------------|
-| A priori power analysis | State target power (typically >= .80), assumed effect size, alpha, required sample size | Power analysis completely absent |
+| Sample-size rationale | Justify size by precision, prospective power when appropriate, or other design constraints | No rationale connecting information to the claim |
 | Effect size source | Based on prior research, pilot study, or theoretical expectation | Using Cohen's convention without explanation |
 | Tool | Use G*Power, pwr package, etc. | Tool not specified |
-| Post-hoc power | Report observed power for non-significant results | Type II error risk not discussed for non-significant results |
-| Sensitivity analysis | Report the minimum detectable effect size given *N* | Sensitivity analysis not conducted |
+| Completed-study interpretation | Use estimates/intervals to show what remains plausible; do not require observed post hoc power | Nonsignificance asserted to prove no effect |
+| Sensitivity analysis | Assess plausible design assumptions or detectable effects when they affect the decision | Unsupported claims of adequate information |
 
 ### 1.6 Missing Data Handling
 
@@ -73,9 +80,13 @@ All quantitative research papers **must** report the following items. Check each
 | Missing data reporting | Report missing data amount and proportion for each variable | Missing data situation not reported |
 | Missing mechanism | Discuss MCAR / MAR / MNAR | MCAR assumed without testing |
 | Handling method | State the method used: listwise deletion / pairwise deletion / MI / FIML | Not stated or only using listwise deletion |
-| Sensitivity analysis | Compare result robustness across different missing data handling methods | Only one method used, sensitivity not tested |
+| Sensitivity analysis | Compare plausible missingness assumptions when they could change the claim | A consequential missingness assumption remains unsupported |
 
 ### 1.7 Assumption Testing
+
+Assess assumptions of the estimator and inference actually used. Named tests
+below are possible diagnostics, not a compulsory battery or automatic switching
+rule. Design arguments and suitable robust inference may address a risk.
 
 | Assumption | Applicable Analysis | Testing Method | Common Omission |
 |-----------|-------------------|---------------|----------------|
@@ -111,7 +122,7 @@ All quantitative research papers **must** report the following items. Check each
 | Interaction effects | In factorial designs, are interactions interpreted? Are simple effects tested? |
 | Sphericity assumption | For repeated measures, is Mauchly's test reported + Greenhouse-Geisser / Huynh-Feldt correction? |
 | Assumption testing | Normality, homogeneity of variance (Levene's), independence of between-group observations |
-| Unequal group sizes | When group sizes differ substantially, is Type III SS used? |
+| Unequal group sizes | Does the specified contrast, design and variance treatment remain appropriate? Do not require a particular sum-of-squares type merely because counts differ |
 
 ### 2.3 Regression Analysis (Linear / Logistic)
 
@@ -134,14 +145,14 @@ All quantitative research papers **must** report the following items. Check each
 | Coefficient reporting | *B*, *SE*, Wald, OR, 95% CI for OR |
 | Classification accuracy | Classification table, sensitivity, specificity, AUC/ROC |
 | Assumptions | Independence of observations, linearity in the logit (linear relationship between continuous predictors and logit) |
-| Sample size | At least 10-20 events per predictor variable (EPV rule) |
+| Sample size | Assess information, separation, model stability, and precision for the target; no universal events-per-variable cutoff |
 
 ### 2.4 Structural Equation Modeling (SEM)
 
 | Check Item | Standard |
 |-----------|----------|
-| Sample size | Typically >= 200; or 5-10 times the number of estimated parameters |
-| Model fit indices | **Must report multiple indices simultaneously** (at least 4) |
+| Sample size | Justify identification and precision for the actual model, data and estimand |
+| Model fit indices | Select indices that diagnose relevant misspecification; no minimum count |
 | CFI / TLI | >= .95 (good); >= .90 (acceptable) |
 | RMSEA | <= .06 (good); <= .08 (acceptable); must report 90% CI |
 | SRMR | <= .08 |
@@ -157,10 +168,10 @@ All quantitative research papers **must** report the following items. Check each
 | Check Item | Standard |
 |-----------|----------|
 | Nested structure | Clearly explain each level (e.g., students -> classes -> schools) |
-| ICC | Report Intraclass Correlation Coefficient; ICC > .05 supports using MLM |
+| ICC | Report relevant dependence; choose modeling from design and inferential needs, not an ICC cutoff |
 | Random effects | Report random intercept and (if applicable) random slope variances |
 | Fixed effects | Report coefficients, *SE*, *t* / *z*, *p*, CI |
-| Between-group sample size | Level-2 unit count (typically recommended >= 30) |
+| Between-group sample size | Report independent clusters and justify inference/precision for the available information |
 | Centering | Explain whether grand-mean centering or group-mean centering is used and why |
 | Model comparison | Use deviance (-2LL), AIC, BIC to compare nested models |
 | Effect size | Pseudo *R*-squared (e.g., Snijders & Bosker's *R*-squared) |
@@ -244,7 +255,9 @@ All quantitative research papers **must** report the following items. Check each
 
 ## 4. Statistical Red Flags
 
-The following patterns during review should raise red flags, requiring further investigation or author clarification:
+These patterns are prompts for targeted assessment. Assign severity from the
+actual consequence for the claim, not from the label or count. Check available
+evidence before asking for clarification; patterns alone do not prove misconduct.
 
 ### 4.1 P-hacking Indicators
 
@@ -279,29 +292,29 @@ The following patterns during review should raise red flags, requiring further i
 
 | Red Flag | Description | Severity |
 |----------|-------------|----------|
-| No power analysis | Sample size lacks a priori calculation basis | MEDIUM |
-| Sample too small | In regression analysis, *N* < 10 x number of predictors | HIGH |
+| No sample rationale | Information/precision is inadequate or unjustified for the claimed conclusion | Claim-dependent |
+| Information too limited | Instability or inadequate precision undermines the claimed estimate | Claim-dependent |
 | Unexplained sample attrition | Large gap between starting *N* and final *N* without explanation | MEDIUM |
-| SEM small sample | *N* < 200 without small sample correction | MEDIUM |
-| HLM Level-2 insufficient | Level-2 units < 30 | MEDIUM |
+| SEM inference unsupported | Identification or finite-sample inference is inadequate for this model and claim | Claim-dependent |
+| Limited cluster information | Cluster-level inference lacks adequate uncertainty handling for the claim | Claim-dependent |
 
 ### 4.5 Uncorrected Multiple Comparisons
 
 | Red Flag | Description | Severity |
 |----------|-------------|----------|
-| Multiple *t*-tests instead of ANOVA | 3+ group comparisons using multiple *t*-tests | HIGH |
+| Uncontrolled contrast family | Selected group comparisons support confirmatory claims without justified error control | Claim-dependent |
 | No post-hoc after ANOVA | Main effect significant but claiming group differences without post-hoc tests | MEDIUM |
-| Multiple DVs uncorrected | Multiple dependent variables tested separately on the same dataset without Bonferroni or FDR | MEDIUM |
+| Multiple DVs selectively interpreted | A confirmatory family is searched without justified error control | Claim-dependent |
 | Multiple model comparisons | Trying multiple models but only reporting "the best one" | HIGH |
 
 ### 4.6 Assumption Violation
 
 | Red Flag | Description | Severity |
 |----------|-------------|----------|
-| Assumption testing completely absent | Skipping normality/homogeneity/linearity tests | MEDIUM |
-| Violations not addressed | Violations reported but original analysis still used | HIGH |
+| Required assumptions unsupported | A material estimator/inference assumption lacks justification or a suitable diagnostic | Claim-dependent |
+| Violations not addressed | A demonstrated violation invalidates the claimed inference without an adequate remedy or scope restriction | HIGH |
 | CLT as excuse | "Because *N* > 30, normality can be ignored" without actual testing | LOW |
-| Excessive VIF | VIF > 10 but no action taken | HIGH |
+| Collinearity threatens inference | Unstable estimates prevent the claimed variable-specific interpretation | Claim-dependent |
 
 ### 4.7 Other Red Flags
 

@@ -24,7 +24,7 @@
 - **Advantage hypothesis**: [candidate, not an observed result]
 - **Argument job**: [establish | explain | demonstrate | distinguish | bound]
 - **Fair arena**: [task, population/scale, comparator, resource budget]
-- **Supports / narrows / defeats**: [observable outcomes for this claim]
+- **Decision outcomes**: [supports / does not support / insufficient; how each changes this claim]
 - **Intended presentation**: [main text | supplement | internal; provisional]
 
 ## Setup
@@ -69,12 +69,20 @@
 
 ## Analysis Plan
 
+- **Estimand and design**: [target quantity/population/unit; DGP and estimator-visible information for simulation]
+- **Minimum sufficient method**: [baseline and current M0-M4 level; reuse settled justification]
+- **Proposed complexity, if any**: [unanswered question, substantive gain, new assumptions/validation duties, stop condition]
 - **Primary metric and purpose**: [prespecified metric and decision relevance]
 - **Secondary / exploratory metrics**: [distinguish planned from post hoc]
 - **Scientific criterion**: [meaningful effect, precision, performance or cost,
   with uncertainty and an applicable statistical test; not p-value alone]
 - **Comparison**: [fair baseline and matched conditions]
 - **Configuration / input version**: [existing config and data version, or unknown]
+- **Evidence and resource bounds**: [claim-specific uncertainty/MC precision, failure and tail handling where relevant; authorized budget and stopping rule]
+
+Apply the shared calibration protocol's A/B/C distinction. Execution criteria
+below/above describe usable artifacts; scientific support is a separate judgment.
+Use only fields relevant to this plan, not a completeness score.
 
 ## Planned Execution And Evidence
 

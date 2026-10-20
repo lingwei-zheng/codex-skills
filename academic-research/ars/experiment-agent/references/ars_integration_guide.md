@@ -68,3 +68,8 @@ scientific-parameter, ethics, independent-review and finalization approvals.
 For run-only, plan-only or validation-only requests, deliver that result and stop
 at the requested scope. A missing claim link blocks only dependent prose; work on
 other authorized, supported sections may continue.
+
+The shared calibration protocol governs scientific stopping: sufficient evidence
+for a scoped conclusion may move to authorized writing or the next question
+without every auxiliary scenario passing. Preserve unresolved branches and
+propagate shared validity defects; keep the approval and verification gates above.

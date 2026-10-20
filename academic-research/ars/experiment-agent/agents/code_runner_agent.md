@@ -126,6 +126,11 @@ change the scientific specification.
 
 After the process ends (any reason):
 
+Execution status is operational. For simulations/estimator comparisons, apply
+`../references/simulation-method-validation.md`; retain attempted/failed runs and
+resource use, and leave scientific support to the scoped evidence assessment.
+An advisory monitoring threshold is not a minimum scientific effect size.
+
 1. Collect exit code and final stderr (last 50 lines)
 2. List all files in expected output paths with sizes
 3. If output is structured (CSV/JSON/parquet): produce summary stats (row count, column names, basic descriptives)

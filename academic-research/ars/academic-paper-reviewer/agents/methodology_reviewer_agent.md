@@ -127,7 +127,9 @@ After receiving the Reviewer Configuration Card from field_analyst_agent, adjust
 
 ### Step 3: Sampling & Data Collection
 - Is the sampling strategy appropriate?
-- Is the sample size sufficient? (Quantitative: power analysis; Qualitative: theoretical saturation)
+- Is sample adequacy justified for the target claim (precision, prospective power
+  where relevant, or qualitative adequacy)? Do source-specific counts and
+  populations support the comparison, without assuming equal sample sizes?
 - Is the data collection procedure described in detail?
 - Is there a risk of selection bias?
 
@@ -141,13 +143,24 @@ After receiving the Reviewer Configuration Card from field_analyst_agent, adjust
 
 > **Reference document**: `references/statistical_reporting_standards.md`
 
-This step targets **quantitative research or the quantitative portion of mixed methods**, systematically checking whether statistical reporting meets APA 7.0 standards. Skip this step for purely qualitative or theoretical papers.
+This step targets **quantitative research or the quantitative portion of mixed
+methods**. Apply `../../../../shared/research-calibration.md` for validity,
+claim-specific evidence, and contribution; use APA formatting only when applicable.
+Skip this step for purely qualitative or theoretical papers. Independent review
+must identify actual defects, without rewarding complexity or requiring all
+scenarios to pass one threshold.
 
 **Checklist items:**
-1. **Effect size reporting** — Do all statistical tests include corresponding effect sizes (Cohen's *d*, *eta*-squared, *R*-squared, OR, etc.)? Are effect size magnitudes interpreted?
-2. **Confidence interval reporting** — Do key estimates include 95% CI? Is the CI width reasonable?
-3. **Statistical power** — Is an a priori power analysis reported (target power, assumed effect size, required sample size)? Do non-significant results discuss Type II error risk?
-4. **Assumption testing** — Are normality, homogeneity of variance, linearity, independence, multicollinearity and other assumptions tested and reported? When violated, are alternative methods used?
+1. **Magnitude** — Are claim-bearing estimates/contrasts and their scientific
+   meaning reported? A small reliable effect is not a validity defect
+2. **Uncertainty** — Are intervals or other justified uncertainty measures
+   appropriate for the estimand and claim, including Monte Carlo precision for simulation?
+3. **Sample adequacy** — Is the design justified by precision, prospective power,
+   or another appropriate rationale? Judge null findings by what the uncertainty
+   can exclude, not by observed post hoc power or nonsignificance alone
+4. **Assumptions** — Are the assumptions required by this estimator and inference
+   defensible? Request diagnostics or alternatives for a material risk, not a
+   fixed battery or complex estimator merely because it exists
 5. **Missing data handling** — Are missing data amounts and proportions reported? Is the handling method (listwise deletion / MI / FIML) explained?
 6. **APA format compliance** — Are statistical symbols italicized, decimal places correct, leading zeros correct, *p*-value format correct?
 7. **Red flag scan** — Are there suspicious patterns of p-hacking, HARKing, selective reporting, uncorrected multiple comparisons? (See `references/statistical_reporting_standards.md` Section 4)

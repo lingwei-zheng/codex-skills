@@ -12,6 +12,8 @@ For multi-session studies or resume requests, read
 `../references/study-state.md`. Reuse recorded facts and approvals, maintain
 aggregate study state at its existing location, and return to the main workflow
 for the next authorized analysis/writing stage after collection readiness.
+Apply `../../../../shared/research-calibration.md` to planning and readiness:
+metadata establish collection status, not scientific hypothesis support.
 
 ## Core Loop
 
@@ -27,7 +29,7 @@ Read existing protocol and project state first. Ask only material unresolved des
 | 2 | What is your research design? (A. Experimental / B. Quasi-experimental / C. Observational / D. Mixed methods) | Design type |
 | 3 | What are your variables? | IV, DV, control variables, potential confounds |
 | 4 | Who are your participants? (Population, sampling) | Target population, sampling strategy |
-| 5 | How many participants? | Power analysis recommendation (conservative: err toward more) |
+| 5 | How many participants? | Justified sample plan: precision, power where relevant, or qualitative adequacy; assumptions, uncertainty, feasibility, and ethics/resource limits |
 | 6 | What instruments will you use? | Questionnaire, scale, interview guide (existing or to-develop) |
 | 7 | What is your data collection timeline? | Start date, phases, end date, milestones |
 | 8 | How will you analyze the data? | Statistical tests, assumptions, fallback methods |
@@ -72,7 +74,7 @@ The user reports progress; the agent tracks and detects risks.
 | Count update | Update progress, calculate completion rate, estimate time remaining |
 | Low response rate (< 50% of target at midpoint) | Flag risk, suggest: reminder, incentive, extend deadline, adjust target |
 | Behind schedule | Recalculate timeline, suggest rescheduling |
-| High missing rate (> 15% on any variable) | Flag risk, suggest: check instrument wording, add follow-up, plan imputation strategy |
+| Missingness could change a target estimate or violates the protocol | Record variable/source-specific counts and reasons; propose a relevant diagnostic or remedy without assuming imputation or more recruitment is always needed |
 | Quality concern | Document, suggest mitigation |
 
 ### 4. COLLECT — Confirm Data Readiness
@@ -81,16 +83,23 @@ When user reports collection is complete:
 
 | Check | Criterion | Status |
 |-------|-----------|--------|
-| Sample size | current_n >= target_n | PASS / FAIL |
-| Missing data | missing_rate <= 15% overall | PASS / WARN |
-| Format | All data files in consistent format | PASS / FAIL |
-| Timeline | Collection within planned window | PASS / LATE |
+| Sample size | Compare usable units per source/claim with the protocol and scientific precision needs; distinguish unmatched and matched counts | met / deviation / unresolved |
+| Missing data | Record amounts, patterns and reasons; assess consequences for the target claim | addressed / material risk / unknown |
+| Format | Authorized metadata indicate usable schema, units and identifiers | ready / repair needed / unknown |
+| Timeline | Record actual coverage and protocol deviations; assess relevance to the question | within plan / deviation / unresolved |
 
 **Output**: `study_status` in Markdown format (see SKILL.md Output Formats) + `data_readiness` section.
 
-If all checks PASS: "Data is ready for analysis. You can analyze manually or use `run` mode to execute your analysis script."
+Report readiness for the named analysis and remaining restrictions. Unequal
+source counts, a smaller achieved sample, or delayed collection do not alone
+invalidate the study; preserve protocol requirements and flag material changes
+for the existing decision/approval process. Do not silently reduce targets,
+discard records to equalize counts, or automatically choose complex correction.
 
-If any FAIL: list blockers, suggest actions.
+Return available metadata and limits to the main agent for claim-specific
+analysis. An independently usable branch may proceed within authorization while
+another needs evidence or repair. Block dependent work on genuine integrity or
+ethics failures; do not infer full statistical validity from metadata.
 
 ---
 
@@ -99,7 +108,9 @@ If any FAIL: list blockers, suggest actions.
 1. **Never make ethics judgments** — present checklist, user answers, agent records. The agent is not an IRB.
 2. **Never touch raw participant data** — only track metadata (counts, rates, completion percentages)
 3. **Never contact participants** — no emails, no reminders, no recruitment messages
-4. **Conservative power analysis** — when calculating sample size, use conservative effect size estimates. Better to suggest more participants than fewer.
+4. **Justified sample planning** — use defensible assumptions and sensitivity to
+   uncertain effects/precision; more participants are not automatically better.
+   Preserve approved recruitment bounds and ethics/protocol decisions
 5. **Only `READY` may proceed to TRACK** — unresolved `ETHICS_PENDING` or `ETHICS_BLOCKED` items are hard gates
 
 These are in addition to SKILL.md Safety Rules (which apply to all modes).

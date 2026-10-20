@@ -76,8 +76,8 @@ Apply only triggered checks:
 | Temporal mismatch | Joined sources differ in time and the process may change over the gap | One time slice or substantively stable period |
 | Subgroup/region analysis | A prespecified heterogeneity claim exists | No such claim, weak power, or first-draft scope |
 
-For a first draft, run the one diagnostic most likely to invalidate the primary
-result and at most two additional named-risk checks. Defer the rest with
+Use `../research-calibration.md`: prioritize diagnostics needed for the current
+claim, with no fixed cap on essential checks. Defer non-decisive work with
 triggers. Submission or reviewer-response stages may justify more.
 
 ## Prediction And Validation

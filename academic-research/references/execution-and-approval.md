@@ -39,6 +39,26 @@ merely because an upstream file calls a phase an agent.
   before asking. Pending approval blocks dependent actions only. Do not execute
   dependent future stages before their approval or verification prerequisites.
 
+## Scientific decision units
+
+Organize autonomous research work around a question or substantive obstacle.
+Within the approved scope, ordinary code edits, bounded local checks, evidence
+organization, and documentation updates may proceed without approval per step.
+Validate implementation changes and preserve scientific specifications.
+
+Before materially changing the scientific objective, primary estimand, core
+DGP, acceptance principles, or a large resource commitment, prepare a concise
+decision note: current obstacle, simplest option, expected scientific gain,
+new assumptions/validation burden, resource ceiling, stopping rule, and affected
+claims. Use an existing unchanged approval where applicable; otherwise obtain
+approval for the changed scope before dependent execution. A decision note is
+not itself approval. Prepare independent authorized work meanwhile.
+
+Do not infer permission for unlimited simulation, model search, sample expansion,
+or repeated costly runs from a broad research goal. If a bounded scientific
+conclusion is ready, proceed with authorized writing or the next question while
+retaining required reporting, verification, and finalization gates.
+
 ## Carry existing decisions
 
 Use the [Research Continuity record](../../shared/advantage-led-research-narrative.md#research-continuity)

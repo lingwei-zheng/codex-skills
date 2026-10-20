@@ -35,7 +35,9 @@ any language or structure change.
 4. Read `paper/research_assessment.md` to recover the contribution and submission
    boundary.
 5. Read `paper/writing_outline.md` before drafting or restructuring prose.
-6. Inspect `results/` and run validation before reporting the project as current.
+6. Inspect `results/` and run applicable authorized validation before reporting
+   the project as current. Record operational, reproducibility, and scientific
+   evidence verdicts separately; do not rerun costly experiments implicitly.
 
 ## Synchronization rules
 
@@ -44,8 +46,9 @@ any language or structure change.
 - Preserve one main analysis line. Supporting robustness and pathway analyses are
   subordinate branches, not separate papers or competing workflows.
 - Do not describe discarded development paths as part of the paper's main text.
-- Keep the project's stated daytime window, sample definitions, and observational
-  claim boundary intact unless the analysis and all three documents are updated.
+- Preserve declared analysis windows, sample/estimand definitions, and scientific
+  claim scope. Material changes require existing authorization and consistent
+  analysis and governance updates; editing documents alone does not approve them.
 - Treat journal advice as a recommendation ledger, not a submission decision.
 
 ## Change handoff
@@ -74,3 +77,6 @@ declined optional changes, decision locators and object/version/scope, excluded
 evidence, pending approvals, and next authorized action from existing files.
 Reconcile changed evidence or artifacts; do not reopen unchanged decisions or
 create a parallel ledger. Independent review and existing approval gates remain.
+Record supported, unsupported, and unresolved questions separately from execution
+status. Carry stopped technical routes and reasons, residual branch uncertainty,
+and the next valuable scientific action; no new run is implied by resumption.

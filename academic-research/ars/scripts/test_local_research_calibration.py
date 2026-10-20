@@ -29,8 +29,21 @@ def test_research_entry_points_load_calibration():
 def test_first_draft_does_not_require_exhaustive_robustness():
     workflow = read("academic-research/ars/experiment-agent/WORKFLOW.md")
     assert "All 11 must be checked" not in workflow
-    assert "at most two additional checks" in workflow
     assert "Record other checks as deferred" in workflow
+
+
+def test_simulation_reference_is_reachable_from_active_routes():
+    """Check routing integrity, not the quality of scientific judgments."""
+    relative = "references/simulation-method-validation.md"
+    workflow_dir = SKILLS_ROOT / "academic-research/ars/experiment-agent"
+    assert (workflow_dir / relative).is_file()
+    assert relative in (workflow_dir / "WORKFLOW.md").read_text(encoding="utf-8")
+    architect_dir = SKILLS_ROOT / "academic-research/ars/deep-research/agents"
+    architect_ref = "../../experiment-agent/" + relative
+    assert architect_ref in (architect_dir / "research_architect_agent.md").read_text(
+        encoding="utf-8"
+    )
+    assert (architect_dir / architect_ref).resolve() == (workflow_dir / relative).resolve()
 
 
 def test_runtime_contract_detects_low_utilization():

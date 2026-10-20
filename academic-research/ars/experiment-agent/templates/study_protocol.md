@@ -36,7 +36,7 @@ material contrary observations; do not create participant records here.
 
 - **Target Population**: [who]
 - **Sampling Strategy**: [random | stratified | convenience | purposive | snowball]
-- **Target Sample Size**: [N] (based on power analysis: [parameters used])
+- **Target Sample Size**: [units and N by relevant source/group; precision, power when relevant, or qualitative adequacy rationale; assumptions and resource/ethics bounds]
 - **Inclusion Criteria**: [list]
 - **Exclusion Criteria**: [list]
 

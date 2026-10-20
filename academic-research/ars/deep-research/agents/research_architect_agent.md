@@ -94,13 +94,14 @@ Research Question Type
 
 For geography-related work, classify the primary question as `pattern`, `process`, `mechanism`, `meaning-or-behavior`, or `intervention-or-equity`. Do not select methods until the inferential target is explicit.
 
-Mixed methods are optional, not preferred by default. Use them only when each evidence stream answers a distinct necessary sub-question and the integration point is specified. A complex spatial or machine-learning method must identify the important uncertainty it resolves beyond a simpler baseline.
+Mixed methods are optional, not preferred by default. Use them only when each evidence stream answers a distinct necessary sub-question and the integration point is specified. Apply the shared calibration protocol's M0-M4 decision logic to all methods: specify the simplest adequate method, unresolved scientific obstacle, added assumptions/validation duties, expected explanatory gain, and stopping condition. Scientific ambition is separate from method complexity.
 
 Robustness and sensitivity analyses are risk-triggered, not status symbols.
-For `first-draft`, require only checks whose failure could invalidate the main
-result plus at most two targeted diagnostics. Record additional scale,
-specification, bandwidth, control-set, or subgroup checks as deferred unless the
-claim, venue, or user requires them now.
+For `first-draft`, prioritize checks whose failure could invalidate the claim.
+Record non-decisive scale, specification, bandwidth, control-set, or subgroup
+checks as deferred. Do not cap essential validity checks or require an exhaustive
+grid. For simulation/estimator work, read
+`../../experiment-agent/references/simulation-method-validation.md`.
 
 ### 3. Data Strategy
 
@@ -204,7 +205,7 @@ Recommended platforms: PROSPERO for systematic reviews, OSF Registries for all o
 - Research stage: [exploratory / first-draft / submission / review-response]
 - Primary specification: [...]
 - Simple baseline: [...]
-- Immediate validity checks: [0-3 named checks]
+- Immediate validity checks: [named risks and affected claims; no count target]
 - Deferred checks: [check + trigger + cost + decision affected]
 
 ### Analysis Job Map

@@ -1,6 +1,9 @@
 # Statistical Interpretation Guide
 
 Full protocol for validate mode's statistical interpretation and fallacy scan.
+Read `../../../../shared/research-calibration.md` for the integrity floor,
+claim-specific evidence, and contribution criteria. For simulation outputs,
+also read `simulation-method-validation.md`.
 
 ## Part 1: Statistical Interpretation
 
@@ -48,20 +51,21 @@ For each statistical result, assess:
 - Distinguish statistical precision from practical importance in context.
 
 **Confidence Interval:**
-- Does CI include 0 (or 1 for OR)? → result is not significant regardless of p-value
+- Interpret the interval for its actual estimand, confidence level, and method.
+  Investigate apparent disagreement with a p-value (different tests, sidedness,
+  or targets); neither automatically overrides the other
 - Width: narrow CI = precise estimate; wide CI = uncertain estimate
 - Asymmetric CI around point estimate → possible skewness
 
 **Assumption Checks:**
 
-| Test | Assumption | Red Flag |
+| Test | Assumption or risk | Claim-triggered check |
 |------|-----------|----------|
-| t-test | Normality | n < 30 per group and no normality test reported |
-| t-test | Equal variance | No Levene's test and group sizes differ > 2:1 |
-| ANOVA | Normality + homogeneity | Same as t-test; additionally check sphericity for RM |
-| Chi-squared | Expected frequencies >= 5 | Any cell < 5 → for 2x2 tables use Fisher's exact; for larger tables use an exact/Monte Carlo approach or collapse categories with justification |
-| Regression | Linearity, normality of residuals, homoscedasticity | No diagnostic plots reported |
-| Correlation | Both variables continuous, linearity | Pearson used on ordinal data |
+| t-test | Design, independence, distribution/tails, variance method | Assess validity of the chosen mean contrast and SE; absence of a named normality/Levene test is not itself failure |
+| ANOVA | Design, variance/covariance assumptions | Assess the fitted model and relevant repeated-measure structure; no compulsory battery of tests |
+| Chi-squared | Sparse expected counts can impair approximation | Assess approximation for this table; consider exact/Monte Carlo inference if needed, without changing categories to obtain a result |
+| Regression | Functional form, dependence, variance and target | Check assumptions needed for the estimator/inference used; no universal residual-normality gate |
+| Correlation | Measurement scale and relation targeted | Match the coefficient to the scientific target and data, including nonlinearity/tails when consequential |
 
 **Multiple Comparisons:**
 - Identify the inferential family and whether conclusions depend on selecting
@@ -75,9 +79,14 @@ For each statistical result, assess:
 
 | Level | Criteria |
 |-------|---------|
-| `SOLID` | Significant with medium+ effect size, assumptions met, no fallacies detected |
-| `CAUTION` | One or more: borderline p, small effect, unchecked assumptions, uncorrected comparisons |
-| `RED_FLAG` | Multiple issues: non-significant reframed as trend, violated assumptions, detected fallacy |
+| `SOLID` | Evidence is adequate for the stated scoped claim; applicable assumptions, uncertainty, and checks support it, including a small effect or informative null |
+| `CAUTION` | A named unresolved uncertainty or sensitivity limits this claim; small magnitude or a p-value near a cutoff alone is not a warning |
+| `RED_FLAG` | A material validity/integrity defect makes the stated inference unsafe; identify the affected branch and dependencies |
+
+Assign confidence to claims/branches, not by counting passing metrics. Separately
+state hypothesis outcome: supported, not supported, or insufficient evidence.
+Do not turn nonsignificance into proof of absence, require medium effects for
+reliability, or reject all findings because one independent branch is uncertain.
 
 ---
 
@@ -86,8 +95,8 @@ For each statistical result, assess:
 The 11 types below are a diagnostic menu. Check a type when its detection or
 `When to suspect` condition is present. Report triggered checks, findings, and
 material `N/A` decisions; do not claim quality from an "11/11 checked" count.
-For first-draft work, prioritize the one failure most capable of invalidating
-the main result and at most two additional named risks.
+For first-draft work, prioritize risks that could invalidate the current claim;
+defer non-decisive checks without capping essential validity checks.
 
 ### Structural Fallacies (Data Level)
 
@@ -132,7 +141,9 @@ the main result and at most two additional named risks.
 
 **7. Survivorship Bias**
 - **What**: Analyzing only "survivors" (those who completed, stayed, succeeded)
-- **Detection**: Dropout/attrition rate > 15%; no intention-to-treat analysis; no dropout comparison
+- **Detection**: Attrition, selection, or missingness could change the target
+  comparison; assess reasons and the analysis population rather than a fixed
+  percentage. Require intention-to-treat reasoning when the design/estimand calls for it
 - **When to suspect**: Longitudinal studies, intervention studies, cohort studies
 - **Severity if found**: CAUTION if dropout documented; RED_FLAG if dropout not reported
 
@@ -194,3 +205,7 @@ An efficiency or deployment trade-off requires evidence for that benefit;
 do not invent it from a performance shortfall. Avoid a generic win/lose verdict.
 Pass these facts to the main workflow for evidence-supported interpretation;
 statistical validation and the paper's advantage state are distinct.
+
+Interpretation references:
+[ASA statement on p-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf);
+[Altman and Bland, Absence of evidence is not evidence of absence](https://doi.org/10.1136/bmj.311.7003.485).

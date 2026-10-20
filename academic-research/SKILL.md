@@ -2,13 +2,15 @@
 name: academic-research
 description: >-
   Academic research, literature review, research design, paper drafting,
-  manuscript revision, research-to-paper workflow routing, and experiment
-  planning for geography, human geography, GIScience, and health geography.
+  manuscript revision, research-to-paper workflow routing, statistical simulation,
+  method validation, and experiment planning, with field support for geography,
+  human geography, GIScience, and health geography.
   Use when the user asks for literature review, systematic review, paper
   outlining, geography-specific title design, abstract writing, revision,
   citation or integrity checks, full pipeline support, or experiment/study
-  planning. Use good-question when research-question quality is the primary
-  task, peer-review for a formal referee report, good-story for an evidence-led
+  planning, simulation, or estimator validation. Use good-question when
+  research-question quality is the primary task, peer-review for a formal
+  referee report, good-story for an evidence-led
   manuscript story, and academic-advisor for submission strategy.
 ---
 
@@ -25,7 +27,8 @@ This is the Codex entry router for the vendored research suite under `ars/`.
   execution, question evaluation, or manuscript-readiness decisions. When the
   user is developing an analysis or manuscript and gives no stage, default to
   `first-draft + proportionate rigor + incremental-allowed contribution +
-  balanced compute`.
+  balanced compute`. This shared protocol governs minimum sufficient methods,
+  progressive complexity, claim-specific evidence, and scientific stopping.
 - Do not import submission, formal peer-review, systematic-review, or
   reviewer-response standards into first-draft analysis unless a named validity
   risk makes them immediately necessary.
@@ -78,8 +81,11 @@ Do not load the whole suite by default. Start from one workflow entry file and t
   `ars/academic-paper-reviewer/WORKFLOW.md`
 - End-to-end research-to-paper pipeline:
   `ars/academic-pipeline/WORKFLOW.md`
-- Experiment planning, statistical interpretation, reproducibility, human study protocol:
+- Experiment planning, statistical simulation, method validation, statistical interpretation, reproducibility, human study protocol:
   `ars/experiment-agent/WORKFLOW.md`
+  For simulation/estimator work, read the
+  [simulation guide](ars/experiment-agent/references/simulation-method-validation.md)
+  in plan, run, or validate mode.
 
 ## Mode routing
 

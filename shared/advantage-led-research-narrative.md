@@ -5,6 +5,11 @@ experiment execution and interpretation, manuscript architecture, story diagnosi
 polishing, and submission strategy.
 It governs emphasis, not scientific truth: build the paper around the strongest
 honest advantage while preserving material evidence and required reporting.
+Apply [research calibration](research-calibration.md) for scientific contribution
+and evidence standards. An informative null, contradicted hypothesis, or
+identified method boundary can be the central contribution; a positive
+performance gain is not required. Distinguish these from insufficient evidence.
+Never add model complexity or simulations merely to manufacture a stronger story.
 
 ## Research Continuity
 
@@ -69,6 +74,8 @@ Identify one leading advantage that can carry the paper:
 - better scalability, transferability, or practical usefulness;
 - a modest but credible improvement in measurement, implementation, evidence,
   or local decision value.
+- an informative constraint on a hypothesis, identification limit, or reliable
+  boundary that changes scientific understanding.
 
 Supporting contributions may strengthen that advantage, but content that does
 not help establish, explain, or use it should not compete for equal prominence.

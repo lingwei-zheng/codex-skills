@@ -62,6 +62,11 @@ Treat plain association language as already non-causal. Request a causal
 correction only when the manuscript uses causal verbs, mechanisms, mediation,
 or policy effects beyond the design; do not demand `exploratory association`,
 `observational association`, or repeated no-causality disclaimers.
+Apply `../shared/research-calibration.md` to distinguish hard validity defects,
+claim-specific statistical evidence, and contribution. Evaluate small effects,
+informative nulls, method boundaries, and unequal source counts on their actual
+evidence; do not require advanced methods or all-scenario PASS. Keep formal
+review independent of the author's preferred narrative.
 
 For relevant geography manuscripts, read only the needed field references:
 

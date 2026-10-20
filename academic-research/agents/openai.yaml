@@ -1,8 +1,8 @@
 interface:
   display_name: "Academic Research"
-  short_description: "Academic research and writing workflows for geography/GIScience."
+  short_description: "Research design, simulation, validation, and writing."
   brand_color: "#2563EB"
-  default_prompt: "Use $academic-research in plan mode to map my paper structure, missing evidence, and geography/GIScience framing."
+  default_prompt: "Use $academic-research in plan mode to connect my scientific question to the simplest adequate method, decisive evidence, and paper contribution."
 
 policy:
   allow_implicit_invocation: true

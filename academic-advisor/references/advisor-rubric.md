@@ -32,6 +32,10 @@ opportunity before reviewer-side resistance.
   explanation; do not inflate the gap by attacking adjacent work.
 - Design and evidence: data fit, identification logic, measurement,
   spatial/temporal scale, stage-appropriate robustness, and reproducibility.
+- Scientific ambition and method complexity: assess separately under the shared
+  calibration protocol. Prefer the simplest reliable method for the strongest
+  supported contribution; small credible gains, informative nulls, and boundary
+  findings are not downgraded merely for effect size or lack of model complexity.
 - Claim-evidence boundary: which claims are supported, plausible but under-evidenced, or currently unsafe.
 - Manuscript readiness: title/abstract, introduction turn, methods transparency, results logic, discussion restraint, figure/table alignment.
 - Material route risk: only a defect likely to change the core claim,

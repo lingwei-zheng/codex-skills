@@ -61,6 +61,11 @@ Recover the current advantage state and claim/evidence dependencies from existin
 project records; reconcile stale configuration/results before reusing a story.
 Reconstruct the current task, last validated result, writing boundaries, next
 step, and blockers. Identify every file used as a source of truth.
+Read `../shared/research-calibration.md` when deciding research readiness or the
+next scientific action. Restore the question outcome, simplest justified method,
+branch limits, resource bounds, and stopping decisions from existing records.
+Do not automatically reopen a stopped route or treat every failed auxiliary
+metric as a project-wide blocker; preserve genuine integrity/approval gates.
 
 ### End A Work Block
 
