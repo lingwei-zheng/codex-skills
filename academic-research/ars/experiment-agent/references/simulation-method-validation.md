@@ -1,9 +1,8 @@
 # Simulation and Method Validation
 
 Read for simulation design, estimator comparisons, or method validation.
-Apply [research calibration](../../../../shared/research-calibration.md) as the
-governing methodology; this reference supplies operational details, not extra
-stages or universal acceptance thresholds.
+Scientific decisions follow the project's `SCIENTIFIC_EXPLORATION_PROTOCOL.md`
+under `AGENTS.md`; this reference supplies statistical and execution details.
 
 ## Minimal Decision Plan
 
@@ -11,12 +10,8 @@ Reuse the existing experiment plan/configuration. Identify the scientific aim,
 estimand and unit/population, data-generating process (DGP), methods including a
 simple valid reference, and performance measures that answer the aim. Distinguish
 truth available to the simulator from information available to each estimator.
-Name the current complexity level and the obstacle an extension would resolve.
-
-Start with a small informative design, then add conditions that distinguish
-mechanisms or define a relevant boundary. Avoid a full factorial grid solely for
-completeness. Specify the seed policy, scientific decision, resource ceiling,
-and stopping rule before a long run. Pilot tuning is exploration; if used to
+Reuse the project's seed policy, scientific decision, resource ceiling and
+stopping rule before a long run. Pilot tuning is exploration; if used to
 select a method or condition, confirm with genuinely held-out runs/data under
 the declared design, or retain the exploratory label.
 

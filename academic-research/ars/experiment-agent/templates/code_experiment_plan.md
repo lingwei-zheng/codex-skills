@@ -70,8 +70,8 @@
 ## Analysis Plan
 
 - **Estimand and design**: [target quantity/population/unit; DGP and estimator-visible information for simulation]
-- **Minimum sufficient method**: [baseline and current M0-M4 level; reuse settled justification]
-- **Proposed complexity, if any**: [unanswered question, substantive gain, new assumptions/validation duties, stop condition]
+- **Method and reference**: [estimator/analysis and baseline, where applicable]
+- **Scientific decision**: [pointer to the existing decision under the project's protocol]
 - **Primary metric and purpose**: [prespecified metric and decision relevance]
 - **Secondary / exploratory metrics**: [distinguish planned from post hoc]
 - **Scientific criterion**: [meaningful effect, precision, performance or cost,
@@ -80,8 +80,8 @@
 - **Configuration / input version**: [existing config and data version, or unknown]
 - **Evidence and resource bounds**: [claim-specific uncertainty/MC precision, failure and tail handling where relevant; authorized budget and stopping rule]
 
-Apply the shared calibration protocol's A/B/C distinction. Execution criteria
-below/above describe usable artifacts; scientific support is a separate judgment.
+Execution criteria describe usable artifacts; scientific interpretation follows
+the project's protocol and cannot be inferred from a successful exit status.
 Use only fields relevant to this plan, not a completeness score.
 
 ## Planned Execution And Evidence

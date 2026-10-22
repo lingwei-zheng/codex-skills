@@ -9,9 +9,8 @@ Use this card after a domain brief when the user works in one of these familiar 
 3. Add a domain-specific reviewer objection only in `reviewer` or `grant` mode,
    or when it identifies a material defect that changes the recommendation.
 4. If the claim depends on current literature, mark it as source-backed, inference, or unknown.
-5. Calibrate expectations with `../../shared/research-calibration.md`. Treat
-   incremental and regional contributions as valid when their added value and
-   venue fit are explicit.
+5. Use the project's exploration protocol for scientific ambition and stopping;
+   the examples below supply domain context, not universal contribution tiers.
 
 ## Ecology
 

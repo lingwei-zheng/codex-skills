@@ -1,120 +1,57 @@
 ---
 name: peer-review
-description: Use when reviewing an academic journal manuscript, referee report, peer-review PDF, manuscript plus supplementary materials, or when the user wants a structured journal review with critical, important, and minor revisions. This skill uses the academic-research reviewer workflow, local geography/GIScience/health geography field context when relevant, and pdf/docx tools for manuscript and visual-material inspection. Chinese outputs default to Simplified Chinese.
+description: Use for a formal journal-style referee report on a manuscript and supplements, including critical, important and minor revisions. Supports PDF/DOCX evidence inspection and defaults to Simplified Chinese.
 ---
 
 # Journal Peer Review
 
-Produce a rigorous external-reviewer assessment from the manuscript and all
-available supplementary materials.
-
-This is a submission-stage external review and therefore uses comprehensive
-rigor. Do not export its full robustness burden backward into exploratory or
-first-draft workflows; those are calibrated by
-`../shared/research-calibration.md`.
-
-## Review Stack
-
-1. Read `../academic-research/SKILL.md` and use its
-   `academic-paper-reviewer` workflow as the main review framework.
-2. Use `../shared/field-context/` only for geography, human geography,
-   GIScience, GeoAI, remote sensing, spatial analysis, environmental exposure,
-   or health geography. Do not assume NORA is installed.
-3. Use the active PDF and DOCX skills for extraction, media inspection,
-   rendering, and visual review.
-4. Read [references/report-structure.md](references/report-structure.md) before
-   drafting the final reports.
-
-## Non-Negotiable Visual Rule
-
-Do not finalize a review from extracted text alone when figures, maps, diagrams,
-tables, equations, statistical charts, or supplementary visuals support the
-claims. Attempt visual inspection first. If it cannot be performed, disclose
-exactly what was not inspected and how that limits the review.
-
-Chinese working reports default to Simplified Chinese. Use Traditional Chinese
-only when explicitly requested.
+Produce an independent submission-stage review. Read
+`../academic-research/ars/academic-paper-reviewer/WORKFLOW.md` and
+`../academic-research/references/execution-and-approval.md`; preserve the
+workflow's independent review and validation requirements.
+Use the study's declared analysis protocol and applicable reporting standards.
+Keep formal review independent of author-side exploration/framing preferences;
+those preferences cannot suppress findings or waive verification.
 
 ## Workflow
 
-### 1. Discover Materials
+1. Identify the main manuscript and available supplements; read
+   `.codex/project.yaml` if present. Track reviewed, unread and unavailable items.
+2. Inspect actual text and claim-bearing figures, maps, tables, equations and
+   supplements with the active PDF/DOCX skills. **Attempt visual inspection
+   before finalizing** when visuals support claims. If unavailable, disclose
+   exactly what was not inspected and how this limits the review.
+3. Apply independent lenses for question/contribution, methods/statistics,
+   sampling, reproducibility, ethics/access, evidence/claims and journal fit.
+   Prioritize central claims, primary figures and load-bearing method choices.
+   Evaluate the strongest plausible rejection risk, but do not manufacture one.
+4. Calibrate issue severity by consequence and fixability. Bind each critical
+   or important issue to a page, section, figure, table, equation, supplement or
+   exact claim; distinguish observed, inferred and unverifiable concerns.
+5. Read `references/report-structure.md` before drafting. It owns report files,
+   structure, issue counts and final checks. Follow user counts where given;
+   otherwise use its defaults, with zero or one highest-risk critical issue.
+   Produce only the requested report set; preserve user-edited files.
 
-- Identify the main manuscript and every supplementary file.
-- Read `.codex/project.yaml` when present.
-- Record what was reviewed, rendered, visually inspected, or unavailable.
+## Claim-Triggered Checks
 
-### 2. Inspect Text And Evidence
+- Plain association language is already non-causal. Correct causal verbs or
+  mechanisms unsupported by design; do not demand stacked `exploratory`,
+  `observational` or no-causality qualifiers.
+- Judge small effects, informative nulls, method boundaries and unequal source
+  counts by their evidence. Advanced methods and all-scenario PASS are not
+  contribution requirements. Similarity or a new location alone is not a veto.
+- Test method stacking, theory-as-label, Discussion repetition and title
+  overpromise only when relevant.
+- Use `../shared/field-context/` only for relevant geography/GIScience,
+  GeoAI, remote-sensing or environmental/health manuscripts. Read
+  `geography-publication-readiness.md` for its five gates and the needed
+  `spatial-methods.md`, `environmental-health.md`, `geoai-domain.md` or
+  `journal-templates/`. NORA need not be installed.
+- Spatial checks (MAUP, residual dependence, weights, GWR/MGWR, spatial CV,
+  transfer/boundaries) require a triggering claim or assumption. Mark an
+  inapplicable requested check N/A with a reason; absence alone is not a defect.
 
-- For PDFs, combine text extraction with rendered-page inspection.
-- For DOCX, inspect OOXML and embedded media when relevant.
-- Inspect central figures, maps, tables, plots, diagrams, equations, and
-  supplementary evidence supporting key claims.
-- Track whether each concern arises from text, captions, visual evidence,
-  supplements, methods, statistics, or domain reasoning.
-
-### 3. Run Independent Review Lenses
-
-Assess field and journal fit, research question, contribution, method validity,
-reproducibility, sampling, representativeness, statistical assumptions,
-figure/table evidence, claim-evidence alignment, causal language, limitations,
-ethics, and data access. Preserve independent lenses before synthesis.
-Treat plain association language as already non-causal. Request a causal
-correction only when the manuscript uses causal verbs, mechanisms, mediation,
-or policy effects beyond the design; do not demand `exploratory association`,
-`observational association`, or repeated no-causality disclaimers.
-Apply `../shared/research-calibration.md` to distinguish hard validity defects,
-claim-specific statistical evidence, and contribution. Evaluate small effects,
-informative nulls, method boundaries, and unequal source counts on their actual
-evidence; do not require advanced methods or all-scenario PASS. Keep formal
-review independent of the author's preferred narrative.
-
-For relevant geography manuscripts, read only the needed field references:
-
-- `geography-publication-readiness.md` for the five publication gates and
-  desk-reject risk.
-- `spatial-methods.md` for scale, spatial units, MAUP, dependence, and validity.
-- `environmental-health.md` for exposure and outcome pathways.
-- `geoai-domain.md` for GeoAI or geospatial machine learning.
-- `journal-templates/` for venue fit.
-
-Use a devil's-advocate pass to test the strongest plausible rejection risk, but
-do not manufacture one. If no material critical risk is supported, say so and
-keep the issue at the appropriate lower severity. Explicitly test whether a
-location change has cumulative, transferability, policy,
-measurement, or boundary-condition value; do not reject it for similarity
-alone. Also test method stacking without inferential gain,
-theory-as-label, Discussion restatement, and title overpromise when relevant.
-
-Apply spatial diagnostics only when the paper's claims or method assumptions
-trigger them. Mark MAUP, residual spatial dependence, alternative weights,
-GWR/MGWR, spatial CV, transfer, or boundary checks `N/A` with a reason when they
-do not apply; their absence is not automatically a weakness.
-
-### 4. Triage And Draft
-
-Review central claims, primary figures/tables, and load-bearing method choices
-before lower-impact details. Separate zero or one highest-risk critical issue
-from important and minor issues.
-Follow user-specified counts when provided; otherwise use the defaults in
-[references/report-structure.md](references/report-structure.md). Base the
-editorial recommendation on fixability, not tone or preference.
-
-Bind every critical and important issue to an inspectable evidence pointer:
-page, section, paragraph, figure, table, equation, supplement, or exact claim.
-State whether the concern is directly observed, inferred from the manuscript, or
-cannot be verified from the available files. Do not use a vague topic label as
-the evidence for a major criticism.
-
-### 5. Verify
-
-Before delivery, confirm that visual inspection or its limitation is disclosed,
-there is at most one critical issue, issue counts are respected, geography gates were
-applied when relevant, every critical and important issue has an evidence
-pointer, and user-edited files were not overwritten.
-
-## Output
-
-Create only the report set the user needs. Use
-[references/report-structure.md](references/report-structure.md) as the source of
-truth for filenames, section structure, issue hierarchy, decision standards,
-tone, and final report checks.
+Before delivery verify evidence pointers, issue hierarchy/counts, applicable
+field gates, and visual-inspection coverage/limitations. Default Chinese
+reports to Simplified Chinese; use Traditional Chinese only when requested.

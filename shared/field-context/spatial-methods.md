@@ -1,9 +1,9 @@
 # Spatial Methods Decision Guide
 
 Use this reference for GIScience, spatial statistics, remote sensing, GeoAI,
-environmental-health, and health-geography work. Read
-`../research-calibration.md` first. The research question and claim determine
-the method; coordinates alone do not require a spatial model.
+environmental-health, and health-geography work. This is task-specific method
+guidance; exploration policy belongs to the project. The research question and
+claim determine the method; coordinates alone do not require a spatial model.
 
 ## Claim-First Intake
 
@@ -76,9 +76,8 @@ Apply only triggered checks:
 | Temporal mismatch | Joined sources differ in time and the process may change over the gap | One time slice or substantively stable period |
 | Subgroup/region analysis | A prespecified heterogeneity claim exists | No such claim, weak power, or first-draft scope |
 
-Use `../research-calibration.md`: prioritize diagnostics needed for the current
-claim, with no fixed cap on essential checks. Defer non-decisive work with
-triggers. Submission or reviewer-response stages may justify more.
+Use the study's declared analysis plan and the claim-specific triggers above;
+retain checks needed for valid inference and applicable reporting obligations.
 
 ## Prediction And Validation
 

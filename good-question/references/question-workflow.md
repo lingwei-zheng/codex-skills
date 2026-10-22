@@ -4,11 +4,10 @@ Read this reference when running the full question-development workflow. It is
 the source of truth for information sufficiency, intake, scoring, kill rules,
 card structure, onboarding, and response order.
 
-Also read `../../shared/research-calibration.md`. Default to
-`incremental-allowed` unless the user or target venue explicitly requires a
-larger contribution.
-Read `../../shared/advantage-led-research-narrative.md` for author-side emphasis,
-winning-arena selection, and the materiality threshold for risk reporting.
+Use the project's `SCIENTIFIC_EXPLORATION_PROTOCOL.md` under `AGENTS.md`
+for exploration decisions. This reference supplies question-development tools,
+not a second methodology policy. Load
+`../../shared/advantage-led-research-narrative.md` only for paper framing.
 
 ## Information Sufficiency Gate
 
@@ -68,7 +67,10 @@ change the direction. Otherwise proceed with explicit assumptions.
 
 ## Candidate Generation
 
-Generate five to ten candidates using several of these lenses:
+Generate only enough candidates to expose a meaningful choice. Refine a supplied
+question directly when the direction is settled; for open ideation, start with
+a few distinct candidates and expand only if none is adequate. Choose useful
+lenses rather than applying every lens:
 
 - importance and tractability;
 - assumption challenge;
@@ -85,7 +87,9 @@ question.
 
 ## Convergence
 
-Score promising candidates from one to five:
+Compare promising candidates on the decision-relevant criteria below. Use a
+one-to-five scoring table only when it helps resolve a real trade-off or the
+user requests it; qualitative reasoning is normally sufficient.
 
 | Criterion | Meaning |
 |---|---|
@@ -119,7 +123,8 @@ For the strongest one to three candidates:
    transferability expectation being tested.
 2. Identify an observation or experiment that distinguishes them.
 3. State what result would weaken or kill the preferred explanation.
-4. Design a two-week pilot or the smallest feasible evidence test.
+4. Design the smallest feasible evidence test within available resources;
+   two weeks is an example planning horizon, not a required duration.
 5. State the advantage hypothesis and the fair comparison, metric, population,
    or setting in which it would matter.
 6. In `reviewer` or `grant` mode, for high-cost irreversible projects, or when a
@@ -130,14 +135,12 @@ For the strongest one to three candidates:
    its contradiction or boundary would teach. Distinguish that from a test
    too imprecise to decide.
 
-Apply the shared calibration protocol's complexity questions to the pilot.
-Record scientific ambition separately from the minimum sufficient method and
-its stopping rule within the existing card; do not require advanced methods to
-justify a high-value question.
-
 ## Good Question Card
 
-Use this stable schema:
+Use this stable schema for a full planning/handoff card. For a focused question
+refinement, return the question, rationale, discriminating test and next action
+without empty fields or a full card. Preserve field names when a downstream
+workflow expects the schema.
 
 ```markdown
 ## Good Question Card
@@ -196,6 +199,9 @@ prompt. Use `docs/field-playbooks.md` only when a fuller discipline-oriented
 onboarding example is needed.
 
 ## Response Order
+
+For full development, combine the applicable elements below; these are not
+mandatory separate sections for every request.
 
 1. Brief diagnosis.
 2. Mode and assumptions.

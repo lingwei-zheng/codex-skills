@@ -1,149 +1,78 @@
 ---
 name: academic-advisor
-description: >-
-  Use when evaluating a research proposal, rough idea, paper concept,
-  manuscript, pre-submission package, or journal targeting strategy through an
-  advisor-style assessment. Triggers include proposal review, idea
-  evaluation, research supervision, manuscript pre-submission audit, journal
-  targeting, 投稿建议, 研究想法评估, 论文投稿路线, and 投稿期刊选择. Produces one
-  integrated Simplified Chinese report by combining good-question,
-  good-story, academic-research, Zotero evidence, and web literature checks as
-  appropriate to the task.
+description: Use for advisor-style evaluation of research ideas, proposals, manuscripts, pre-submission readiness, revision strategy or journal targeting. Produces an integrated assessment calibrated to the decision.
 ---
 
 # Academic Advisor
 
-Provide advisor-style evaluation for proposals, rough ideas, research plans, manuscripts, and journal targeting decisions. The output is one integrated Simplified Chinese report, not separate sub-skill reports.
+Help the author make a research or submission decision. Default to Simplified
+Chinese, including for English manuscripts; use another language when requested.
+Do not edit source manuscripts unless rewriting is requested.
 
-## Defaults
+## Workflow
 
-- Read `../shared/research-calibration.md` and infer the research stage,
-  contribution level, rigor profile, and compute profile before judging the
-  project. If the user does not specify them, use the shared defaults.
-- Read `../shared/advantage-led-research-narrative.md`. Lead the assessment with
-  the project's strongest honest advantage, the arena in which it can matter,
-  and the decisive evidence needed to establish it. Keep speculative reviewer
-  attacks out of the headline verdict.
-- Ground decisive recommendations in evidence: read
-  `references/zotero-evidence-workflow.md`, check Zotero readiness, and search
-  Zotero first. For rough ideas and first drafts, use a targeted search around
-  the decision-critical claims; reserve comprehensive novelty and journal
-  benchmarking for submission or explicit deep-evaluation requests.
-- Default report language: Simplified Chinese. English manuscripts, English journal names, and English source metadata do not change the report language. Use English only when the user explicitly asks for an English report or when a specific submission-ready English passage is requested.
-- Default domain baseline: geography, human geography, GIScience, health geography, spatial analysis, and environmental or health geography when relevant.
-- Prioritize the highest credible first-submission target for the strongest
-  supported contribution, within the user's time, cost, and journal constraints.
-  Separate current submission readiness from development potential. A strong
-  target need not require additional experiments or a framing upgrade. Use
-  `references/journal-fit-rubric.md`; contribution labels do not set venue ceilings.
-- Before naming or ranking journals, read
-  `references/local-journal-reference.md` and attempt to load the user's local
-  `journal_ai_reference.md`. Use it as the default candidate pool and preference
-  ledger, then verify current scope, guidelines, and unstable metrics from
-  primary journal or publisher sources.
-- Do not edit the proposal or manuscript by default. Produce a separate assessment report unless the user explicitly asks for rewriting.
+1. Identify the decision: `idea-proposal`, `manuscript-pre-submission`,
+   `journal-targeting-only`, or `revision-strategy`. Use supplied materials and
+   existing records before seeking clarification.
+2. Use the project-root `SCIENTIFIC_EXPLORATION_PROTOCOL.md`, under project
+   `AGENTS.md`, for scientific judgments; no bundled methodology fallback.
+   If missing, identify the dependency and continue only independent authorized
+   work. Use `../shared/advantage-led-research-narrative.md` for manuscript
+   framing. Keep current readiness separate from development potential.
+3. Ground decisive recommendations using `references/evidence-triangulation.md`
+   and `references/zotero-evidence-workflow.md`: check readiness, search Zotero
+   first, then verify missing/current facts from primary sources. Use targeted
+   evidence for an early idea; comprehensive benchmarking is for submission or
+   requested deep evaluation. Reuse verified evidence within its valid scope.
+   Distinguish 来源支持 Source-backed, 推断 Inference, 未知/待核查 Unknown.
+   If Zotero fails, name the exact blocker and use the documented fallback.
+4. Load only a needed lens from the table below. For manuscripts, inspect actual
+   text and claim-bearing figures/tables with the active PDF/DOCX tools.
+5. Deliver one integrated recommendation, its decisive evidence, material
+   constraint if any, and next action. Use
+   `templates/integrated-advisor-report.md` for a full assessment; a focused
+   decision needs only the relevant sections. Reuse existing continuity records.
 
-Use the Research Continuity record in
-`../shared/advantage-led-research-narrative.md`: preserve question, advantage
-state, fair comparison, claim/experiment IDs, evidence version, and retellable
-sentence across stages. Update only fields affected by the current task; reuse
-project records rather than starting another ledger.
+## Selective Lenses
 
-## Routing Boundaries
+| Decision | Read when needed |
+|---|---|
+| Proposal, manuscript or revision evaluation | `references/advisor-rubric.md` |
+| Question, falsifier or pilot needs work | `../good-question/SKILL.md` |
+| Manuscript story affects readiness or fit | `../good-story/SKILL.md`; preserve its handoff |
+| Literature, study design or writing needs execution | `../academic-research/SKILL.md` |
+| Concrete journal names or ranking | Both journal references below |
+| Geography-related proposal/manuscript readiness | `../shared/field-context/geography-publication-readiness.md`; apply its five gates |
 
-- Use `academic-advisor` for author-side project diagnosis, pre-submission audit, and journal strategy.
-- Use `good-question` logic for question quality, advantage hypothesis,
-  falsifiability, and pilot design. Add reviewer rejection analysis only for
-  pre-submission, revision, `reviewer`/`grant`-like, or materially risky cases.
-- Use `good-story` logic for completed manuscripts whose evidence, figure order,
-  central claim, or narrative spine needs diagnosis.
-- Use `academic-research` logic for literature positioning, research design,
-  manuscript structure, contribution, and its internal paper or reviewer
-  workflows.
-- Use `zotero:Zotero` for local-library evidence search, citation metadata, and full text only when needed. If the plugin skill is not automatically loaded, follow `references/zotero-evidence-workflow.md` to locate and run the current Zotero helper without hard-coding a cache hash.
-- Use `peer-review` instead for formal referee reports, external manuscript review, or journal-style reviewer comments not tied to the user's author strategy.
+Formal external referee reports belong to `../peer-review/SKILL.md`.
+Do not run every lens or emit separate sub-skill reports by default.
 
-## Required Workflow
+## Journal Recommendations
 
-1. Intake the provided proposal, idea file, manuscript, and optional journal list.
-2. Classify the task as `idea-proposal`, `manuscript-pre-submission`, `journal-targeting-only`, or `revision-strategy`.
-3. Apply the shared calibration profile:
-   - Name the research stage and contribution level.
-   - Separate checks needed now from checks that can be deferred.
-   - Do not penalize a first draft for omitting submission-stage robustness
-     unless the omission makes the current result invalid or misleading.
-4. Build evidence before giving a mature recommendation:
-   - Read `references/zotero-evidence-workflow.md`.
-   - Run a Zotero readiness check and search Zotero for core theory, methods, adjacent papers, target-journal examples, and missing references.
-   - Scale search depth to the decision: targeted evidence is enough for an
-     early-stage diagnosis; journal scope, current guidelines, representative
-     articles, and any special issue used in a recommendation require current
-     web verification when recommending a submission route.
-   - Maintain an evidence ledger with `来源支持 Source-backed`, `推断 Inference`, and `未知/待核查 Unknown`.
-   - If Zotero is unavailable, do not silently skip it; report the exact blocker in the evidence ledger.
-5. Select only the lenses needed for the classified task:
-   - `idea-proposal`: good-question for importance, tractability, advantage
-     hypothesis, fair comparison, falsifier, pilot, and material assumptions;
-     academic-research for
-     literature positioning, design, methods, and contribution.
-   - `manuscript-pre-submission`: good-story for the central claim, evidence
-     ladder, leading advantage, winning arena, experiment jobs, and figure
-     order; academic-research for structure,
-     methods, claim-evidence boundaries, and readiness.
-   - `journal-targeting-only`: journal-fit and evidence-triangulation rubrics;
-     add good-story only when manuscript materials are available and story
-     shape affects fit.
-   - `revision-strategy`: load only the question, story, research, or journal
-     lens implicated by the requested revision.
-6. For every journal-targeting task:
-   - Read `references/local-journal-reference.md` and run its path-resolution
-     sequence before recommending journals. Prefer
-     `python scripts/resolve_journal_reference.py --project-root <project>`;
-     pass `.codex/project.yaml`'s `paths.journal_reference` value through
-     `--configured` when present.
-   - Record whether the local reference was loaded, its visible update date,
-     and which resolver found it. Do not silently skip an unreadable file.
-   - If the user supplies another journal list, treat that list as the active
-     constraint; use the local reference to enrich it, not replace it.
-   - If that document contains `Special Issue and Collection Matching`, use
-     relevant entries as optional submission channels under
-     `references/local-journal-reference.md`; skip unrelated entries.
-   - Read `references/journal-fit-rubric.md` and verify current external facts
-     that could change the recommendation.
-7. Produce one integrated report using `templates/integrated-advisor-report.md`.
+Read `references/journal-fit-rubric.md` and
+`references/local-journal-reference.md` before naming or ranking journals.
 
-## Reference Loading
+- Resolve the local `journal_ai_reference.md` using
+  `python scripts/resolve_journal_reference.py --project-root <project>`;
+  pass `.codex/project.yaml`'s `paths.journal_reference` through `--configured`
+  when present. Record loaded/unavailable status, visible update date and
+  resolver; do not silently skip an unreadable reference.
+- Use that document as the default candidate pool and preference ledger.
+  A user-supplied list takes precedence. Its `Special Issue and Collection Matching`
+  section offers optional channels; skip irrelevant entries.
+- Verify current journal scope, guidelines, representative articles, unstable
+  metrics and any recommended special issue from primary journal/publisher sources.
+- Prefer the highest credible first submission within user constraints.
+  Contribution labels do not set venue ceilings. Separate fit confidence and
+  preparation needs from submission order; do not imply acceptance odds.
+  Add same-tier alternatives or later transfers when useful, without forcing
+  a three-tier ladder. Label development targets with their evidence conditions.
 
-- Read `references/advisor-rubric.md` for proposal, idea, manuscript, and revision evaluation.
-- Read `references/evidence-triangulation.md` before making novelty, literature-gap, or target-journal claims.
-- Read `references/zotero-evidence-workflow.md` whenever evidence grounding is required.
-- Read `references/journal-fit-rubric.md` when the user provides a journal list or asks where to submit.
-- Read `references/local-journal-reference.md` before every concrete journal
-  recommendation or ranking.
-- Read `../shared/research-calibration.md` for stage, rigor, contribution, and
-  compute defaults.
-- Read `../shared/advantage-led-research-narrative.md` for author-side emphasis,
-  experiment purpose, winning-arena selection, and materiality triage.
-- For a completed manuscript whose story affects submission readiness, read
-  `../good-story/SKILL.md` and preserve its stable story handoff.
-- For geography-related proposals or manuscripts, read `../shared/field-context/geography-publication-readiness.md` and include its five-gate diagnosis.
+## Judgment and Output
 
-## Output Rules
-
-- Lead with a Chinese bottom-line verdict, the paper's leading advantage, its
-  strongest credible route, and the evidence needed to make that route work.
-- Separate source-backed claims from inferences and unknowns using the Chinese evidence ledger labels.
-- Do not output the final integrated report in full English unless the user explicitly requests English.
-- Do not claim "nobody has studied this" unless the evidence search supports that claim.
-- State the contribution level without demanding category uniqueness.
-  Replication, regional extension, measurement improvement, and modest method
-  gains are viable when their value and venue fit are explicit.
-- For manuscripts, inspect actual text structure and, when figures or tables carry claims, use `pdf` or `docx` visual/document tools as appropriate.
-- Present a first-submission recommendation, same-tier alternatives, and later
-  transfer options when useful. Keep preparation needs and fit confidence
-  separate from submission order; do not imply acceptance odds or force a
-  three-tier ladder. Label development targets as conditional on named evidence.
-- Keep the final report directly reusable as a project document.
-- Do not make a weakest-gate or reviewer-attack inventory mandatory. Surface a
-  constraint only when it changes the central claim, development plan, or
-  journal route.
+Do not demand categorical novelty, mandatory extra experiments or a framing
+upgrade. Replication, regional work and modest gains can be valuable. Bound gap
+claims by the search performed. Surface a weakness only when it changes the
+central claim, development plan or submission route; a reviewer-attack inventory
+is not a default author-side deliverable. Preserve explicit approvals and the
+user's scope when a recommendation leads to further work.

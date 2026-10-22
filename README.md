@@ -29,6 +29,12 @@ Notes:
 
 ## Routine Sync
 
+Research methodology is project-owned. Place `SCIENTIFIC_EXPLORATION_PROTOCOL.md`
+in each research project and reference it from that project's `AGENTS.md`.
+Research skills supply task-specific procedures and preserve applicable approval,
+integrity and verification requirements; they do not bundle a fallback exploration
+policy or install/overwrite the project's protocol.
+
 The portable global agent instructions are versioned in
 [`shared/global-agent-instructions.md`](shared/global-agent-instructions.md).
 To carry them to another machine, merge that file into `$CODEX_HOME/AGENTS.md`

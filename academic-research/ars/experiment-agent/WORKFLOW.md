@@ -76,37 +76,18 @@ Help me design an experiment to test whether AI tools improve QA officer product
 | Wants to figure out what experiment to do | `plan` |
 | Ambiguous | Ask: "Are you running code or managing a human study?" |
 
-## Calibration Profile
+## Project Methodology
 
-Before `plan`, `run`, `manage`, or `validate`, read
-`../../../shared/research-calibration.md` and
-`../../../shared/advantage-led-research-narrative.md`, then infer:
+For design and scientific interpretation, read the project-root
+`SCIENTIFIC_EXPLORATION_PROTOCOL.md` under `AGENTS.md`. There is no bundled
+methodology fallback. If missing, identify the path and defer only dependent
+decisions; execution of an already approved specification and independent
+authorized checks can continue. Do not create a replacement protocol.
 
-- `research_stage`
-- `rigor_profile`
-- `contribution_profile`
-- `compute_profile`
-
-For ordinary analysis development with no stated stage, use
-`first-draft + proportionate + incremental-allowed + balanced`.
-
-Use the shared calibration protocol for M0-M4 complexity, the integrity floor,
-claim-specific evidence, and stopping decisions. In `first-draft`, prioritize
-the primary analysis, a simple baseline, and checks needed for its validity.
-Record other checks as deferred unless a named risk makes them decision-relevant.
-Neither a fixed diagnostic count nor all-scenarios PASS establishes validity.
-Submission, systematic-review, causal, high-stakes, and review-response tasks
-may require stronger profiles.
-
-For simulation or estimator design/execution/validation, also read
-`references/simulation-method-validation.md`. Plan targets and evidence needs
-before scaling computation; do not turn method development into an open-ended
-search for favorable results.
-
-Before adding an analysis, assign it one argument job: establish the central
-result, explain the advantage, demonstrate target-setting value, distinguish a
-plausible material alternative, or define a material boundary. Defer analyses
-with no current job.
+This workflow supplies execution and verification procedures. For simulation
+or estimator work, read `references/simulation-method-validation.md`.
+For paper-facing evidence organization, use
+`../../../shared/advantage-led-research-narrative.md` only when writing is in scope.
 
 ---
 
@@ -159,8 +140,8 @@ with the user; proposing a reviewable design does not approve or execute it.
 1. **Clarify RQ** — What are you trying to test? What is the hypothesis?
 2. **Variables** — Identify IV, DV, control variables, potential confounds
 3. **Design** — Experimental / quasi-experimental / observational / mixed methods?
-4. **Method selection** — Identify the simplest adequate method and what, if
-   anything, justifies added complexity under the shared protocol
+4. **Method selection** — Specify the method and reuse the decision made under
+   the project's scientific protocol
 5. **Sample** — Population, sampling strategy, source-specific units and sizes;
    justify adequacy by the aim (precision, power when relevant, or qualitative design)
 6. **Analysis strategy** — Estimand, assumptions, claim-specific evidence,
@@ -255,7 +236,6 @@ Plan mode outputs use separate templates and also carry Material Passport:
 | `references/simulation-method-validation.md` | Estimand/DGP design, Monte Carlo uncertainty, failures, budgets, and multi-source comparisons |
 | `references/ars_integration_guide.md` | ARS Material Passport, handoff format, pipeline bridging |
 | `templates/output_formats.md` | Complete Markdown output templates for all three output types |
-| `../../../shared/research-calibration.md` | Research stage, rigor budget, contribution ladder, and compute profile |
 | `../../../shared/advantage-led-research-narrative.md` | Leading advantage, winning arena, experiment jobs, and materiality threshold |
 
 ---

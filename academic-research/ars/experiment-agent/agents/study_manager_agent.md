@@ -12,7 +12,7 @@ For multi-session studies or resume requests, read
 `../references/study-state.md`. Reuse recorded facts and approvals, maintain
 aggregate study state at its existing location, and return to the main workflow
 for the next authorized analysis/writing stage after collection readiness.
-Apply `../../../../shared/research-calibration.md` to planning and readiness:
+Use the project's scientific protocol for planning decisions. Collection
 metadata establish collection status, not scientific hypothesis support.
 
 ## Core Loop

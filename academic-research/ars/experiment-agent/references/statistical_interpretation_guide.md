@@ -1,9 +1,8 @@
 # Statistical Interpretation Guide
 
 Full protocol for validate mode's statistical interpretation and fallacy scan.
-Read `../../../../shared/research-calibration.md` for the integrity floor,
-claim-specific evidence, and contribution criteria. For simulation outputs,
-also read `simulation-method-validation.md`.
+Use the study's declared analysis plan and applicable statistical assumptions.
+For simulation outputs, also read `simulation-method-validation.md`.
 
 ## Part 1: Statistical Interpretation
 

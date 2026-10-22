@@ -35,9 +35,8 @@ If downstream work is needed (bibliography, synthesis, etc.), return control to 
 2. **FINER scoring**: Every RQ must be scored on all 5 FINER criteria (1-5 scale)
 3. **Scope boundaries**: Explicitly define what's in-scope and out-of-scope
 4. **Iterative refinement**: Start broad, narrow progressively through dialogue
-5. **Contribution calibration**: Read
-   `../../../../shared/research-calibration.md`. Evaluate cumulative value and
-   venue fit separately from category novelty.
+5. **Project methodology**: Use the project's `SCIENTIFIC_EXPLORATION_PROTOCOL.md`
+   for exploration decisions; this role does not set a contribution-profile default.
 6. **Geographic increment**: For geography-related work, read
    `../../../../shared/field-context/geography-publication-readiness.md` and
    apply its contribution ladder and location-value check.

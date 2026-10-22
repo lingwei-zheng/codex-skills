@@ -37,11 +37,9 @@ If revision work is needed, return your verdict and recommendations. The revisio
 4. **Actionable verdicts** — Clear Accept/Minor/Major/Reject with specific revision requirements
 5. **Stable issue identity** — read `references/nora-writing-controls.md`; use persistent `M#`, `Mo#`, and `m#` IDs across review rounds
 6. **Fair and balanced** — acknowledge strengths before addressing weaknesses
-7. **Author-side calibration** — read
-   `../../../../shared/advantage-led-research-narrative.md` and
-   `../../../../shared/research-calibration.md`; identify whether the leading
-   advantage is visible before looking for defects, and do not manufacture an
-   issue quota
+7. **Author-side framing** — read
+   `../../../../shared/advantage-led-research-narrative.md`; assess whether the
+   supported contribution is visible, without manufacturing an issue quota
 8. **Materiality threshold** — report only issues that affect the central
    claim, its evidence, the intended venue, or required reporting. Keep optional
    extensions out of revision requirements and never copy speculative attacks

@@ -5,135 +5,70 @@ description: Use when a researcher is choosing, framing, refining, or stress-tes
 
 # Good Question
 
-Turn a vague interest, literature gap, rough idea, failed project, or proposal
-draft into a question that is important, tractable, falsifiable, and defensible.
-
-## Core Rules
-
-- Prefer one sharp question over many decorative ideas.
-- Separate the topic, problem, hypothesis, and project plan.
-- Treat novelty as insufficient unless the question also matters.
-- Separate novelty from contribution. Direct replication, regional extension,
-  and modest data, measurement, implementation, or method improvements are
-  valid when their value and venue fit are stated honestly.
-- Do not reject a question merely because it resembles prior work. Identify
-  what becomes more credible, transferable, measurable, or useful.
-- Make hidden assumptions explicit. Name competing explanations when the
-  question is explanatory or causal and the alternative could materially
-  change the decision; do not invent rivals for descriptive or bounded
-  incremental work.
-- Do not let a preferred method create the research problem.
-- Treat first-principles reasoning as a calibration lens for constraints,
-  assumptions, rivals, falsifiers, and evidence boundaries. It cannot override
-  field evidence, source audit, domain norms, or competing explanations.
-- Never turn "I do not know of work on X" into "nobody has studied X."
-- Do not recommend a mature question without a stake, falsifier, feasible pilot,
-  and a clear advantage hypothesis: what this study could make more credible,
-  useful, measurable, transferable, or efficient.
-- Do not make the strongest reviewer objection a mandatory author-side output.
-  Surface it in `reviewer` or `grant` mode, for high-cost irreversible choices,
-  or when a material flaw changes the decision.
-- Respond in Chinese when the user writes in Chinese unless asked otherwise.
-
-Use the Research Continuity record in
-`../shared/advantage-led-research-narrative.md`: preserve question, advantage
-state, fair comparison, claim/experiment IDs, evidence version, and retellable
-sentence across stages. Update only fields affected by the current task; reuse
-project records rather than starting another ledger.
-
-## Boundaries
-
-- Use `good-question` to decide what should be asked, tested, falsified, or
-  stopped.
-- Use `good-story` when the question is defensible and the task is to organize
-  existing evidence, figures, results, or a manuscript into a scientific story.
-- Use `academic-advisor` for an integrated proposal or pre-submission decision
-  that includes evidence grounding and journal strategy.
-- Do not create a persuasive story to rescue an unfalsifiable question.
-
-## Modes
-
-| Mode | Use when | Emphasis |
-|---|---|---|
-| `mentor` | Direction is early or uncertain | Compare options and identify the most promising advantage |
-| `reviewer` | The user wants criticism or stress testing | Rejection risks and repair paths |
-| `collaborator` | Data or resources are ready | Pilot, milestones, and decision gates |
-| `grant` | Proposal, fund, or pitch | Audience, success criteria, and kill criteria |
+Turn an interest or obstacle into a valuable, testable question with a feasible
+evidence path. Match the depth of work to the decision, not a fixed checklist.
 
 ## Workflow
 
-1. **Check information sufficiency.** Read
-   [references/question-workflow.md](references/question-workflow.md) and
-   `../shared/research-calibration.md` plus
-   `../shared/advantage-led-research-narrative.md`. Retrieve
-   current evidence before field-specific ideation when novelty, literature
-   consensus, reviewer expectations, journal fit, or technical feasibility
-   affects the recommendation.
-   When the user invokes first principles, fundamental assumptions, or root
-   constraints, also read
-   [references/first-principles-lens.md](references/first-principles-lens.md).
-2. **Diagnose the starting point.** Identify the field, current idea, available
-   resources, target output, hard constraints, and largest uncertainty. Ask at
-   most one short clarifying question when an essential input is missing.
-3. **Generate candidates.** Use a small mix of importance, assumption challenge,
-   strong inference, boundary probing, structural analogy, simplicity, and
-   stakeholder lenses. Keep candidates comparable and falsifiable.
-4. **Converge.** Score importance, feasibility, falsifiability, evidence
-   leverage, contribution value, venue fit, and downside learning. Classify the
-   contribution level instead of demanding maximal originality. Drop questions
-   only when they fail a fatal rule.
-5. **Test finalists.** Name the advantage hypothesis, the fair comparison or
-   decision arena, a discriminating test, and what evidence would kill the
-   idea. Add competing hypotheses when the claim requires them. Add the
-   strongest reviewer objection only when the active mode or a material
-   decision requires it.
-6. **Deliver a decision.** Produce one to three Good Question Cards and, when the
-   user wants execution, a short pilot with a decision gate.
+1. Identify the question, stake, available evidence/resources and constraints.
+   Use supplied information first. Ask only for missing information that would
+   materially change the direction.
+2. For scientific decisions, read the project-root
+   `SCIENTIFIC_EXPLORATION_PROTOCOL.md` under project `AGENTS.md`; no bundled
+   methodology fallback. If missing, identify the dependency and continue
+   independent authorized work. A wording-only edit needs no protocol loading.
+   Use `../shared/advantage-led-research-narrative.md` only for paper framing or
+   an existing writing handoff.
+3. When the choice depends on literature, novelty, current field knowledge,
+   journal norms or feasibility not established in the materials, retrieve and
+   audit decisive evidence using `references/source-audit.md`. Separate
+   Source-backed, Inference and Unknown; unavailable retrieval permits only
+   provisional questions, with the missing claims identified.
+4. Refine an existing question directly. Generate alternatives only if the
+   direction is open or a comparison helps the decision. For full question
+   development, read `references/question-workflow.md` for convergence and cards.
+5. Give the recommended question, why it matters, the smallest discriminating
+   test, what would weaken it, and the next action. Use a full card only when
+   planning or handing off a research direction; do not turn a wording fix into
+   a multi-candidate exercise.
 
-## Evidence Discipline
+## Judgment
 
-- Use `Source-backed`, `Inference`, and `Unknown` when field claims influence the
-  choice.
-- If retrieval is unavailable, provide a claim-to-verify list and label proposed
-  questions as provisional.
-- Load [references/source-audit.md](references/source-audit.md) when a decisive
-  claim depends on current literature, a target journal, or reviewer norms.
-- Do not attach citations that do not directly support the claim they accompany.
+- Separate topic, problem, hypothesis and plan. A preferred method or novelty
+  claim alone does not establish scientific value.
+- A mature recommendation needs a stake, falsifier or decision-discriminating
+  observation, feasible pilot and explicit advantage hypothesis.
+- Name competing explanations for explanatory/causal claims when they can
+  change the conclusion; use a benchmark or prior estimate for descriptive or
+  replication work. Do not invent rivals to fill a template.
+- Assess replication, regional extension and modest improvements by their
+  evidence and use value. Do not infer that nobody studied a topic from not
+  knowing of prior work.
+- First-principles reasoning tests assumptions; it does not override field
+  evidence or source audit. Do not rescue an unfalsifiable claim with a story.
+- The strongest reviewer objection is not a mandatory author-side output.
+  Surface it in `reviewer` or `grant` mode, for high-cost irreversible choices,
+  or when a material flaw changes the decision.
+- Use `mentor` for open directions, `collaborator` for pilot planning,
+  `reviewer` for requested stress testing, and `grant` for proposal decisions.
+  Announce the mode only if it helps. Match the user's language.
 
-## Reference Router
+## Optional References
 
-- [references/question-workflow.md](references/question-workflow.md): information
-  gate, scoring, kill rules, card schema, onboarding, and response shape.
-- [references/alon-problem-choice.md](references/alon-problem-choice.md) and
-  [references/fischbach-problem-picking.md](references/fischbach-problem-picking.md):
-  problem choice, research taste, and method-first traps.
-- [references/platt-strong-inference.md](references/platt-strong-inference.md):
-  mechanisms, competing hypotheses, and decisive tests.
-- [references/first-principles-lens.md](references/first-principles-lens.md):
-  distinguish constraints, assumptions, evidence, inference, and unknowns
-  without bypassing field evidence or source audit.
-- [references/problematization.md](references/problematization.md): assumption
-  challenges and theory-oriented questions.
-- [references/heilmeier-catechism.md](references/heilmeier-catechism.md): grants,
-  proposals, milestones, and risk.
-- [references/hamming-nielsen-research-taste.md](references/hamming-nielsen-research-taste.md)
-  and [references/peters-question-development.md](references/peters-question-development.md):
-  broad direction and literature-to-question development.
-- [references/orchestra-lenses.md](references/orchestra-lenses.md): rapid
-  high-value ideation lenses.
-- [references/domain-brief-template.md](references/domain-brief-template.md) and
-  [references/domain-adapters.md](references/domain-adapters.md): current
-  field-specific grounding.
-- [references/question-patterns.md](references/question-patterns.md): convert
-  topics, gaps, methods, and activities into questions.
-- [references/editor-desk-reject.md](references/editor-desk-reject.md):
-  conditional skeptical gate for `reviewer`, `grant`, pre-submission, or
-  high-cost decisions; not a default final ritual.
+| Need | Reference |
+|---|---|
+| Full development, scoring and card schema | `references/question-workflow.md` |
+| Decisive external claims | `references/source-audit.md` |
+| First-principles calibration | `references/first-principles-lens.md` |
+| Problem choice and method-first traps | `references/alon-problem-choice.md`, `references/fischbach-problem-picking.md` |
+| Rival explanations and decisive tests | `references/platt-strong-inference.md` |
+| Challenge theoretical assumptions | `references/problematization.md` |
+| Grants, milestones and risk | `references/heilmeier-catechism.md` |
+| Broad direction or literature-to-question work | `references/hamming-nielsen-research-taste.md`, `references/peters-question-development.md` |
+| Ideation or question forms | `references/orchestra-lenses.md`, `references/question-patterns.md` |
+| Unfamiliar field grounding | `references/domain-brief-template.md`, `references/domain-adapters.md` |
+| Requested reviewer/grant/pre-submission stress test | `references/editor-desk-reject.md` |
 
-## Output
-
-Lead with a brief diagnosis, then the evidence status when needed, ranked
-candidates, one to three Good Question Cards, and the next action. Include
-repair or rejection notes only when they affect the decision. Keep the tone
-constructive and opportunity-seeking without relaxing the falsifier or evidence
-standard.
+Use `../good-story/SKILL.md` for organizing supported evidence and
+`../academic-advisor/SKILL.md` for integrated assessment or journal strategy.
+Load these only when that additional task is within scope.

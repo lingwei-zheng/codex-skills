@@ -1,150 +1,71 @@
 ---
 name: nature-polishing
-description: Polish, restructure, translate, or humanize academic prose into Nature-leaning English using writing-strategy principles, curated Nature/Nature Communications article patterns, and phrase-level support from Academic Phrasebank. Use whenever the user asks to polish a manuscript paragraph, abstract, introduction, results, discussion, conclusion, title, methods section, or Chinese academic draft for publication-quality English, or when the user wants an already polished paper to sound less mechanical through a controlled final human-style pass.
+description: Polish, translate or restructure academic prose into clear, concise Nature-leaning English; also supports a requested final human-style pass on already polished text.
 ---
 
 # Nature-Style Academic Polishing
 
-Improve scientific prose without changing its verified scientific content. Treat
-`Nature-leaning` as concise, evidence-led, readable academic English, not as an
-instruction to imitate a journal mechanically. Follow the user's target journal,
-house style, and explicit preferences when they differ from the defaults here.
+Improve scientific prose while preserving verified content. Nature-leaning means
+clear, concise, evidence-led English; the user's journal/style takes precedence.
 
-## Modes
+## Scope and Workflow
 
-Choose the smallest mode that matches the request.
+1. Use `formal-polish` by default. Identify the section's job and revise the
+   smallest coherent unit. Repair local argument order before sentence style.
+2. Load only a reference needed for the identified problem (table below).
+   For Chinese-to-English work, reconstruct propositions and logical relations
+   rather than translating clause by clause.
+3. Preserve numbers/units, formulas, citations, terminology, negation, comparison
+   conditions, uncertainty, causal meaning and population/time/scale.
+4. Compare touched claims against the source. For multi-section work, use
+   `references/document-consistency.md`; check dependent abstracts, title and
+   conclusion if a result or claim changes. Return the requested text, with
+   notes only for consequential changes or unresolved gaps.
 
-- `formal-polish`: default mode for translation, restructuring, section rewriting,
-  clarity, concision, academic register, and publication-quality English.
-- `human-final-pass`: use only after formal polishing when the user wants credible
-  academic prose that sounds less mechanical.
+## Scientific and Language Boundaries
 
-For `human-final-pass`:
+- Do not invent evidence, mechanisms, references or novelty, upgrade association
+  to causation, or broaden generalisability. A missing material factual basis
+  needs evidence or an explicit gap; a hedge does not supply support.
+- Treat an accurate associational verb as a sufficient causal boundary.
+  Use `exploratory` for post hoc/confirmatory status and `observational` for
+  meaningful design distinctions, not automatic caution labels.
+- Preserve supported claim strength. For whole-paper framing, Results/Discussion
+  interpretation or central-claim edits, read
+  `../shared/advantage-led-research-narrative.md` and reuse existing decisions,
+  evidence and exclusions. Substantive question/evidence redesign belongs to
+  `academic-research` or `good-story`, within the authorized scope.
+- Remove self-undermining comparison language when rhetorical; report material
+  trade-offs precisely and retain required boundaries. Do not add a weakness,
+  limitations or future-work quota, or hide a failed primary outcome.
+- Prefer direct claims and conventional disciplinary collocations. Do not shorten
+  away a necessary noun head, referent, article, preposition or scope phrase.
+  Add specificity only when supported; preserve Methods detail for reproducibility.
+- Avoid em dashes by default; preserve necessary hyphens, ranges and notation.
 
-- Mention once that it is intended for already polished text, then continue.
-- Preserve facts, citations, formulas, LaTeX, numbers, technical terms, and claims.
-- Apply natural variation only to eligible prose in Introduction, related-work
-  Literature Review, Results or result-facing Discussion, Conclusion, and
-  Limitations.
-- Do not humanize Methods, formulas, tables, references, code, exact technical
-  claims, or numeric statements.
-- Never add grammar errors unless the user explicitly enables grammar-error mode
-  in the same request.
-- Read the three `human-final-pass-*` references before making substantial changes.
+## Human Final Pass
 
-## Non-Negotiable Boundaries
+Use `human-final-pass` only when requested for already polished text. Mention
+its purpose once and continue; read all three `human-final-pass-*` references
+before substantial changes. Natural variation is limited to Introduction,
+related-work Literature Review, Results/result-facing Discussion, Conclusion
+and Limitations. Protect Methods, formulas, tables, references, code, exact
+technical claims and numeric statements. Never add grammar errors unless the
+user explicitly enables grammar-error mode in the same request.
 
-- Repair argument and section logic before sentence style.
-- Do not invent data, references, mechanisms, evidence, or novelty claims.
-- Do not upgrade association to causation or broaden generalisability.
-- Treat an accurate associational verb as a sufficient causal boundary in
-  ordinary prose. Do not automatically add `exploratory`, `observational`,
-  `non-causal`, or a no-causality disclaimer to `association`, `relationship`,
-  or `correlation`.
-- Retain `exploratory` only when confirmatory versus post hoc status matters,
-  and `observational` only when the study design or design contrast matters.
-- Do not alter verified quantitative values, citations, formulas, or terminology.
-- Do not hide a weak core argument under fluent prose. State material gaps plainly.
-- If the central research question, evidence interpretation, or paper story needs
-  substantive redesign, diagnose the problem and hand it to `academic-research`
-  or `good-story`; do not solve it by silently changing the science during
-  polishing.
-- Prefer direct, information-dense claims over `we do not claim`, `this does not
-  mean`, or `our purpose is not ... but ...`.
-- Do not compress away a load-bearing noun head, referent, article, preposition,
-  or scope phrase merely to shorten a sentence. When concise wording becomes
-  underspecified, state the object or relation explicitly.
-- Prefer conventional, field-appropriate academic collocations over novel,
-  literal, or over-compressed phrasing when both preserve meaning. Natural
-  disciplinary English takes priority over stylistic cleverness.
-- Increase descriptive precision by naming the supported setting, population,
-  measure, temporal or spatial resolution, or comparison when it materially
-  helps interpretation. Greater specificity must not strengthen causality,
-  generalisability, novelty, or mechanism beyond the evidence.
-- Remove self-undermining comparison language such as `unfortunately`,
-  `merely`, `only`, `still lags behind`, `failed to outperform`, or broad
-  `performance degradation` when it turns a non-central comparison into a
-  general weakness. State a material trade-off neutrally and specifically.
-- Keep a limitation when removing it would overstate the evidence. Place it where
-  it clarifies interpretation rather than leading a contribution-heavy sentence.
-- Do not create a new weakness, comparator, or burden of proof during polishing.
-  For whole-manuscript contribution, Results, or Discussion work, read
-  `../shared/advantage-led-research-narrative.md`; reuse its continuity record,
-  check Revision Invariants, preserve its integrity floor
-  and do not hide a materially adverse result.
-- Avoid em dashes as prose punctuation unless the user requests them.
-- Use hyphens for compound modifiers and en dashes only for ranges or established
-  forms. Do not create forms such as `mobility–based` or `indoor–outdoor`.
+## References on Demand
 
-## Workflow
-
-1. **Establish the target.** Identify the paper type, section, target journal or
-   style, source language, requested depth, and whether the text is ready for
-   `formal-polish` or `human-final-pass`.
-2. **Diagnose before rewriting.** Check, in order:
-   `paper type -> section job -> paragraph logic -> claim/evidence/boundary -> sentence style`.
-3. **Load only the needed references.** Use the table below. Do not load every
-   reference for a narrow sentence-level request.
-4. **Rewrite at the highest necessary level.** Rebuild section or paragraph logic
-   when needed; otherwise make the smallest wording change that solves the problem.
-5. **Keep document-level state when needed.** For a whole manuscript, multiple
-   sections, or repeated revision rounds, read `references/document-consistency.md`
-   and maintain terminology and claim-strength ledgers.
-6. **Preserve the evidence contract.** Keep claim strength aligned with the source,
-   retain necessary uncertainty, and distinguish observation from interpretation.
-7. **Run a final check.** Verify meaning, citations, numbers, terminology, section
-   function, overclaim, defensive phrasing, self-undermining comparison,
-   qualifier stacking, punctuation, and target-journal fit.
-
-## Reference Router
-
-| Reference | Read when |
+| Need | Reference |
 |---|---|
-| [references/writing-strategy.md](references/writing-strategy.md) | Section or paragraph reasoning needs repair |
-| [references/published-article-patterns.md](references/published-article-patterns.md) | An abstract, Introduction, Results, Discussion, Conclusion, or title needs article-level patterns |
-| [references/section-moves.md](references/section-moves.md) | A specific section needs rhetorical moves or ordering |
-| [references/phrasebank-playbook.md](references/phrasebank-playbook.md) | Hedging, transitions, evidence, comparison, limitation, or implication wording is needed |
-| [references/style-guardrails.md](references/style-guardrails.md) | Mechanics, register, articles, numbers, sentence checks, integrity, or AI boundaries need review |
-| [references/defensive-phrasing.md](references/defensive-phrasing.md) | Defensive disclaimers must be retained, compressed, or rewritten |
-| [references/document-consistency.md](references/document-consistency.md) | A whole manuscript, multiple sections, or repeated rounds need stable terminology and claim strength |
-| [references/human-final-pass-policy.md](references/human-final-pass-policy.md) | `human-final-pass` is active |
-| [references/human-final-pass-targeting.md](references/human-final-pass-targeting.md) | Section eligibility or protected content is uncertain |
-| [references/human-final-pass-calibration.md](references/human-final-pass-calibration.md) | Naturalness intensity or explicit grammar-error mode needs calibration |
+| Argument repair | `references/writing-strategy.md` |
+| Article-level patterns | `references/published-article-patterns.md` |
+| Section structure | `references/section-moves.md` |
+| Transitions, hedging or comparisons | `references/phrasebank-playbook.md` |
+| Mechanics, register or integrity checks | `references/style-guardrails.md` |
+| Defensive wording | `references/defensive-phrasing.md` |
+| Cross-section consistency | `references/document-consistency.md` |
+| Human pass policy, eligibility and intensity | `references/human-final-pass-policy.md`, `references/human-final-pass-targeting.md`, `references/human-final-pass-calibration.md` |
 
-## Compact Section Check
-
-- `Introduction`: importance -> known context -> unresolved gap -> question or aim
-  -> approach and contribution, with a concise preview of the strongest supported
-  finding. Keep detailed result narration in Results.
-- `Results`: report what was observed, where or when, and with what quantitative
-  support. Keep interpretation limited and intentional.
-- `Discussion`: explain what the findings add, how they relate to prior work, which
-  mechanism is plausible, and where the interpretation may fail.
-- `Conclusion`: contribution -> key evidence -> memorable implication. Add no new
-  data or defect; repeat a boundary only when needed to prevent misreading or
-  required by the venue. Do not add a limitation or future-work quota.
-- `Methods`: preserve reproducibility, assumptions, parameters, controls, software,
-  and analysis details. Do not polish away necessary specificity.
-- `Abstract`: context or problem -> gap or objective -> approach -> key results ->
-  implication, unless the journal requires another structure.
-- `Title`: accurate, searchable, evidence-supported, and no broader than the paper.
-
-## Chinese-to-English Work
-
-Extract propositions before translating. Reconstruct causal, contrastive,
-qualifying, and inferential links instead of translating clause by clause. Keep
-technical terminology stable and verify causality and hedging after reconstruction.
-
-## Output
-
-Unless the user requests another format, provide:
-
-1. The polished text as plain prose.
-2. `Revision notes:` with `3-5` short bullets covering substantive structural or
-   stylistic changes.
-3. A clear note when the rewrite changed section logic or exposed an unresolved
-   evidence or argument gap.
-
-For side-by-side requests, use `Original`, `Polished`, and `Why changed`.
-For document-level work, report only unresolved terminology or claim-strength
-conflicts unless the user asks to see the full ledgers.
+Return polished prose without a fixed revision-note quota. Use Original /
+Polished / Why changed when a side-by-side comparison is requested. For
+document-level work, report unresolved conflicts, not full internal ledgers.

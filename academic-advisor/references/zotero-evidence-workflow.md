@@ -44,7 +44,9 @@ Do not import, edit, tag, delete, or otherwise write to Zotero unless the user e
 
 ## Query Sources
 
-Generate 5-12 targeted Zotero queries from:
+Use enough targeted Zotero queries to resolve the decisive evidence gaps;
+there is no minimum query count. Expand only if coverage remains inadequate.
+Useful query terms include:
 
 - research question terms and synonyms;
 - theory constructs;

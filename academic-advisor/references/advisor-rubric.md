@@ -2,9 +2,8 @@
 
 Use this rubric to produce a demanding but author-side assessment.
 
-Read `../../shared/research-calibration.md` first. Evaluate an early-stage idea
-as an early-stage idea, not as a submitted manuscript. Name the stage,
-contribution level, checks needed now, and checks that can be deferred.
+Use the project's exploration protocol for scientific judgments. Apply only
+rubric dimensions relevant to the requested assessment and project stage.
 Read `../../shared/advantage-led-research-narrative.md` and evaluate author-side
 opportunity before reviewer-side resistance.
 
@@ -12,7 +11,7 @@ opportunity before reviewer-side resistance.
 
 | Type | Use When | Primary Question |
 |---|---|---|
-| `idea-proposal` | rough idea, concept note, proposal draft, grant direction | Is this worth doing, and what paper can it become? |
+| `idea-proposal` | rough idea, concept note, proposal draft, grant direction | Is this worth investigating, and what evidence would decide? |
 | `manuscript-pre-submission` | full or partial manuscript, tables, figures, supplement | Is this ready to submit, and to which journal tier? |
 | `journal-targeting-only` | journal list plus abstract/title/summary | Which route is most strategic? |
 | `revision-strategy` | reviews, response letter, revised manuscript, stalled draft | What must change to improve acceptance odds? |
@@ -23,7 +22,7 @@ opportunity before reviewer-side resistance.
   more scalable, more transferable, or more useful.
 - Winning arena: the fair task, comparator, metric, population, scale, and
   application setting in which that value is visible.
-- Research question: stake, scope, falsifiability, hidden assumptions, two-week pilot.
+- Research question: stake, scope, falsifiability, hidden assumptions, feasible evidence test.
 - Contribution: describe direct replication, regional/contextual extension,
   incremental improvement, mechanism/boundary advance, or theory/method advance.
   Assess importance and distinctive evidence separately; these labels do not
@@ -32,10 +31,6 @@ opportunity before reviewer-side resistance.
   explanation; do not inflate the gap by attacking adjacent work.
 - Design and evidence: data fit, identification logic, measurement,
   spatial/temporal scale, stage-appropriate robustness, and reproducibility.
-- Scientific ambition and method complexity: assess separately under the shared
-  calibration protocol. Prefer the simplest reliable method for the strongest
-  supported contribution; small credible gains, informative nulls, and boundary
-  findings are not downgraded merely for effect size or lack of model complexity.
 - Claim-evidence boundary: which claims are supported, plausible but under-evidenced, or currently unsafe.
 - Manuscript readiness: title/abstract, introduction turn, methods transparency, results logic, discussion restraint, figure/table alignment.
 - Material route risk: only a defect likely to change the core claim,

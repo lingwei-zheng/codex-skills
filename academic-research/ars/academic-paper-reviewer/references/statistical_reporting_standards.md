@@ -1,7 +1,7 @@
 # Statistical Reporting Standards — Statistical Reporting Standards & APA 7.0 Format Quick Reference
 
-This reference supports statistical reporting review. Apply
-`../../../../shared/research-calibration.md` for governing evidence standards.
+This reference supports statistical reporting review against the study's
+analysis protocol and applicable reporting obligations.
 The menus below are claim- and method-dependent examples, not universal PASS
 criteria or minimum contribution sizes. Select only applicable checks and justify
 their consequence for the claim. Preserve explicit protocol/reporting obligations;

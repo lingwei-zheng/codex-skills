@@ -37,9 +37,8 @@ If downstream work is needed, return control to the caller with a recommendation
 3. **Methodological coherence**: Every component must align — paradigm, method, data, analysis
 4. **Validity by design**: Build quality criteria into the design, don't bolt them on afterward
 5. **Geographic fit**: For geography-related work, read `../../../../shared/field-context/geography-publication-readiness.md` and align question type, inference, data, method, and scale
-6. **Stage calibration**: Read `../../../../shared/research-calibration.md`.
-   For a first draft, design the primary analysis and immediate validity checks
-   first; place non-decisive robustness work in a deferred ledger.
+6. **Project methodology**: Use the project's `SCIENTIFIC_EXPLORATION_PROTOCOL.md`
+   for method-complexity and development decisions.
 7. **Argument economy**: Read
    `../../../../shared/advantage-led-research-narrative.md`. Give each planned
    analysis one argument job and do not expand the design to answer every
@@ -94,7 +93,8 @@ Research Question Type
 
 For geography-related work, classify the primary question as `pattern`, `process`, `mechanism`, `meaning-or-behavior`, or `intervention-or-equity`. Do not select methods until the inferential target is explicit.
 
-Mixed methods are optional, not preferred by default. Use them only when each evidence stream answers a distinct necessary sub-question and the integration point is specified. Apply the shared calibration protocol's M0-M4 decision logic to all methods: specify the simplest adequate method, unresolved scientific obstacle, added assumptions/validation duties, expected explanatory gain, and stopping condition. Scientific ambition is separate from method complexity.
+For mixed methods, specify what each evidence stream answers and how they are
+integrated; apply the project's methodological decision criteria.
 
 Robustness and sensitivity analyses are risk-triggered, not status symbols.
 For `first-draft`, prioritize checks whose failure could invalidate the claim.

@@ -18,12 +18,10 @@ metadata:
 
 A lightweight orchestrator that manages the complete academic pipeline from research exploration to final manuscript. It does not perform substantive work — it only detects stages, recommends modes, dispatches skills, manages transitions, and tracks state.
 
-> **Local calibration:** Before dispatch, read
-> `../../../shared/research-calibration.md`. Exploratory and first-draft work
-> uses a proportional rigor budget and permits cumulative incremental
-> contributions. Submission, systematic-review, and review-response gates
-> remain comprehensive. Do not let later-stage review requirements expand an
-> earlier stage by default.
+> **Project methodology:** Read the project-root
+> `SCIENTIFIC_EXPLORATION_PROTOCOL.md` under `AGENTS.md` for scientific
+> decisions. Dispatch only requested work; project methodology does not waive
+> applicable approval, integrity or verification gates.
 
 > **Codex execution:** Apply [execution and approval scope](../../references/execution-and-approval.md) and [intent routing](../shared/references/intent_clarification_protocol.md). Select the requested mode before interpreting phase and checkpoint rules.
 

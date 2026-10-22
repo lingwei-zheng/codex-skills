@@ -4,9 +4,8 @@ Use this domain gate for geography, human geography, GIScience, GeoAI, remote se
 
 This is an evaluation aid, not a journal rule. Verified author guidelines and the actual study design take priority. Do not infer additional rules beyond these five checks.
 
-Read `../research-calibration.md` first. Calibrate the verdict to research stage,
-claim strength, contribution level, and target venue. A first draft is not
-expected to satisfy every submission-stage repair.
+Apply these publication checks to the requested stage and actual target venue;
+project exploration decisions follow the project's scientific protocol.
 
 ## 1. Geographic Contribution
 
@@ -21,11 +20,9 @@ Assess increment across six dimensions:
 | Data | Makes a previously unobservable process testable | Uses a newer dataset for the same claim |
 | Method | Resolves an important inferential or measurement failure | Uses a more complex model for prestige |
 
-Describe the contribution using the shared five forms: direct
-replication, contextual/regional extension, incremental improvement,
-mechanism/boundary contribution, or theory/method advance. These are not journal
-ceilings. Evaluate the question's importance, distinctive evidence and result
-strength against the intended journal's actual criteria and comparable papers.
+Replication, contextual extension, measurement improvement, mechanism/boundary
+findings and method advances are possible contributions, not journal ceilings.
+Evaluate importance and evidence against actual venue criteria and comparable papers.
 
 Apply a **location-value check**, not a location-swap veto. A new study area can
 support a valid contribution through:

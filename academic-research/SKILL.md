@@ -1,131 +1,74 @@
 ---
 name: academic-research
-description: >-
-  Academic research, literature review, research design, paper drafting,
-  manuscript revision, research-to-paper workflow routing, statistical simulation,
-  method validation, and experiment planning, with field support for geography,
-  human geography, GIScience, and health geography.
-  Use when the user asks for literature review, systematic review, paper
-  outlining, geography-specific title design, abstract writing, revision,
-  citation or integrity checks, full pipeline support, or experiment/study
-  planning, simulation, or estimator validation. Use good-question when
-  research-question quality is the primary task, peer-review for a formal
-  referee report, good-story for an evidence-led
-  manuscript story, and academic-advisor for submission strategy.
+description: Route literature reviews, research design, statistical simulation, method validation, experiment planning, paper drafting and revision, or a full research-to-paper workflow. Supports geography, GIScience and health geography when relevant.
 ---
 
 # Academic Research
 
-This is the Codex entry router for the vendored research suite under `ars/`.
+Codex router for the research suite in `ars/`. Select one entry and load only
+the references needed for the current decision; do not traverse the whole suite.
 
-## Defaults
+## Select the Task
 
-- Domain default: geography, human geography, GIScience, and health geography.
-- Chinese default: Simplified Chinese. Use Traditional Chinese only when the user explicitly asks for it.
-- NORA is not an installed skill here. Use `../shared/field-context/` only as a local reference pack when domain grounding is needed.
-- Read `../shared/research-calibration.md` for analysis planning, experiment
-  execution, question evaluation, or manuscript-readiness decisions. When the
-  user is developing an analysis or manuscript and gives no stage, default to
-  `first-draft + proportionate rigor + incremental-allowed contribution +
-  balanced compute`. This shared protocol governs minimum sufficient methods,
-  progressive complexity, claim-specific evidence, and scientific stopping.
-- Do not import submission, formal peer-review, systematic-review, or
-  reviewer-response standards into first-draft analysis unless a named validity
-  risk makes them immediately necessary.
-- For reading, outlining, drafting, or revision, read
-  `references/selective-quality-control.md`. Check load-bearing claims first,
-  accept bounded PDF/manuscript reading scopes, use claim skeletons before
-  uncertain prose, and prefer local patches over whole-section rewrites.
-- For question framing, analysis planning, paper architecture, Results,
-  Discussion, or revision, also read
-  `../shared/advantage-led-research-narrative.md`. Build author-side work around
-  the leading advantage, winning arena, and decisive evidence; surface only
-  material constraints that change the claim or route.
+| Main task | Entry |
+|---|---|
+| Choose or assess a research question | `../good-question/SKILL.md` |
+| Organize existing evidence into a paper story | `../good-story/SKILL.md` |
+| Author-side assessment or journal strategy | `../academic-advisor/SKILL.md` |
+| Formal referee report | `../peer-review/SKILL.md` |
+| Polish or translate supplied prose | `../nature-polishing/SKILL.md` |
+| Literature review, systematic review, meta-analysis | `ars/deep-research/WORKFLOW.md` |
+| Outline, abstract, drafting, revision, citations, disclosure, format conversion | `ars/academic-paper/WORKFLOW.md` |
+| Experiment/study planning, simulation, method validation, statistical interpretation, reproducibility | `ars/experiment-agent/WORKFLOW.md` |
+| End-to-end research-to-paper task | `ars/academic-pipeline/WORKFLOW.md` |
 
-Use the Research Continuity record in
-`../shared/advantage-led-research-narrative.md`: preserve question, advantage
-state, fair comparison, claim/experiment IDs, evidence version, and retellable
-sentence, scoped user decisions/constraints, and excluded evidence across stages.
-Update only fields affected by the current task; reuse
-project records rather than starting another ledger.
+Keep `ars/academic-paper-reviewer/WORKFLOW.md` and internal question refinement
+available for explicit academic-research requests and full pipelines. Do not
+route an established, narrowly scoped task through question development again.
 
-## Execution scope
+For a bounded judgment from supplied evidence, such as whether a reliable
+result supports writing, use the project's exploration protocol. Enter execution
+workflows for design, running or verification work; a judgment alone need not
+start one. This does not waive any applicable approval or verification gate.
 
-Read [execution and approval scope](references/execution-and-approval.md) when
-using internal workflows. Phase completion returns control to the main agent;
-continue the authorized task while preserving applicable explicit approvals.
+## Project Methodology
 
-## First rule
+Read the project-root `SCIENTIFIC_EXPLORATION_PROTOCOL.md` under the project's
+`AGENTS.md` for scientific decisions. There is no bundled methodology fallback.
+If unavailable, identify the missing path and defer only decisions needing it;
+continue independent authorized work. Do not create a replacement protocol.
+Routine wording or formatting does not reopen scientific exploration.
 
-Do not load the whole suite by default. Start from one workflow entry file and then load only the needed agent, reference, or template files.
+## Execution and Loading
 
-## Routing boundaries
+Before using an internal workflow, read
+[execution and approval scope](references/execution-and-approval.md).
+Select its matching mode; do not expand a narrow request to the full pipeline.
+Phase completion returns control to the main agent, who continues the authorized
+task while preserving explicit approval and validation gates.
 
-- Use `good-question` when the main decision is whether a question is important,
-  tractable, falsifiable, or worth pursuing.
-- Use `good-story` when results or manuscript materials already exist and the
-  main task is to organize them into an evidence-supported narrative.
-- Use `academic-advisor` for proposal diagnosis, pre-submission assessment, and
-  journal targeting.
-- Use `peer-review` for a formal external-reviewer report.
-- Keep the internal question-refinement and reviewer workflows available only
-  when the user explicitly invokes this skill or needs an end-to-end pipeline.
+| Read when | Source of truth |
+|---|---|
+| Developing a question, experiment argument, paper architecture or central claim | `../shared/advantage-led-research-narrative.md` |
+| Reading, outlining, drafting or revising research content | `references/selective-quality-control.md` |
+| Simulation or estimator work in plan, run or validate mode | [Simulation guide](ars/experiment-agent/references/simulation-method-validation.md) |
 
-## Workflow router
+Reuse existing decisions, claim/evidence records and verified sources; update
+only affected parts. A wording-only edit does not require a new research ledger.
 
-- Deep research, literature review, systematic review, meta-analysis, research question refinement:
-  `ars/deep-research/WORKFLOW.md`
-- Academic paper writing, outline, abstract, revision, citation formatting, disclosure, formatting guidance:
-  `ars/academic-paper/WORKFLOW.md`
-- Peer review, reviewer simulation, editorial decision, re-review:
-  `ars/academic-paper-reviewer/WORKFLOW.md`
-- End-to-end research-to-paper pipeline:
-  `ars/academic-pipeline/WORKFLOW.md`
-- Experiment planning, statistical simulation, method validation, statistical interpretation, reproducibility, human study protocol:
-  `ars/experiment-agent/WORKFLOW.md`
-  For simulation/estimator work, read the
-  [simulation guide](ars/experiment-agent/references/simulation-method-validation.md)
-  in plan, run, or validate mode.
+## Local Adaptation
 
-## Mode routing
-
-Prefer `/academic-research mode=<mode>` or the equivalent natural-language
-request. Supported modes include:
-
-- `plan`
-- `outline`
-- `abstract`
-- `lit-review`
-- `citation-check`
-- `disclosure`
-- `format-convert`
-- `revision-coach`
-- `revision`
-- `full`
-
-Legacy `ars-*` tokens may be interpreted as these internal modes when supplied
-after `/academic-research`; they are not separate slash-callable skills.
-
-If the user only has a broad topic or tentative title but no clear research
-question, use `good-question` first unless the user explicitly requests the
-end-to-end academic-research pipeline.
-
-## Codex mapping
-
-- Treat upstream Claude/agent dispatch wording as phase prompts to execute inline.
-- Do not install or run Claude hooks.
-- Treat `WORKFLOW.md` files as the actual internal entrypoints.
-- Use `../shared/field-context/geography-publication-readiness.md` for geography-specific contribution, method-fit, theory, argument, and title checks.
-- Apply `../shared/research-calibration.md` before interpreting contribution
-  magnitude, deciding robustness scope, or scheduling expensive analysis.
-- Use `references/selective-quality-control.md` for impact-first review,
-  bounded novelty language, evidence-led Introduction recalibration, and
-  advisory claim-drift checks.
-- Use `../shared/advantage-led-research-narrative.md` to prevent reviewer-first
-  drafting, experiment accumulation without an argument job, and project-diary
-  Results structures.
-- Use `../shared/field-context/academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`, `environmental-health.md`, and `journal-templates/` only when relevant.
-- For projects that use dynamic greenspace exposure and Space-Time Constraints,
-  read `references/space-time-greenspace-terminology.md` before drafting,
-  revising, or auditing terminology. Treat it as a project/domain calibration
-  reference, not a universal replacement for field-standard wording.
+- Default Chinese output to Simplified Chinese.
+- Apply `../shared/field-context/` only to relevant geography, GIScience, GeoAI,
+  remote-sensing or environmental/health-geography tasks. NORA is not installed.
+  Use `geography-publication-readiness.md` for readiness and the relevant
+  `academic-writing.md`, `spatial-methods.md`, `geoai-domain.md`,
+  `environmental-health.md` or `journal-templates/` for domain decisions.
+- For dynamic greenspace exposure and Space-Time Constraints projects, use
+  `references/space-time-greenspace-terminology.md` only for that terminology.
+- Treat upstream Claude dispatch as inline phase prompts; do not install or run
+  Claude hooks. `WORKFLOW.md` files are the internal entrypoints.
+- Accept natural language or `/academic-research mode=<mode>`: `plan`, `outline`,
+  `abstract`, `lit-review`, `citation-check`, `disclosure`, `format-convert`,
+  `revision-coach`, `revision`, `full`. Legacy `ars-*` tokens are internal
+  modes, not separate slash-callable skills.

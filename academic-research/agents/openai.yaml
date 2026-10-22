@@ -2,7 +2,7 @@ interface:
   display_name: "Academic Research"
   short_description: "Research design, simulation, validation, and writing."
   brand_color: "#2563EB"
-  default_prompt: "Use $academic-research in plan mode to connect my scientific question to the simplest adequate method, decisive evidence, and paper contribution."
+  default_prompt: "Use $academic-research in plan mode to develop the study design under my project's scientific exploration protocol."
 
 policy:
   allow_implicit_invocation: true

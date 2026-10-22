@@ -1,8 +1,8 @@
 # Reproducibility Protocol
 
 Defines how validate mode verifies reproducibility by re-running and comparing.
-Apply `../../../../shared/research-calibration.md` for claim-specific evidence;
-successful execution, reproducibility, and scientific contribution are separate.
+Compare against the recorded specification and declared tolerances.
+Successful execution, reproducibility and scientific contribution are separate.
 
 ## Applicability
 

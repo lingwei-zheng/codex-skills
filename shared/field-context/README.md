@@ -14,9 +14,8 @@ Use `geography-publication-readiness.md` for domain-specific contribution,
 question-method-scale fit, theory-mechanism fit, argument progression, title
 accuracy, and desk-reject risk checks.
 
-Use `../research-calibration.md` before applying those checks so first-draft
-rigor, contribution ambition, and compute effort stay proportional to the
-research stage.
+These references provide domain checks, not an exploration policy. Use the
+project's scientific protocol for research ambition and development decisions.
 
 Use `geography-conceptual-figure-patterns.md` for defensible figure structures,
 scale-aware semantic graphs, spatial-versus-causal distinctions, health

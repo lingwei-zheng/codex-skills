@@ -69,7 +69,6 @@ For run-only, plan-only or validation-only requests, deliver that result and sto
 at the requested scope. A missing claim link blocks only dependent prose; work on
 other authorized, supported sections may continue.
 
-The shared calibration protocol governs scientific stopping: sufficient evidence
-for a scoped conclusion may move to authorized writing or the next question
-without every auxiliary scenario passing. Preserve unresolved branches and
-propagate shared validity defects; keep the approval and verification gates above.
+Use the project's scientific protocol for continuation and stopping decisions.
+Carry unresolved findings and their dependencies into any authorized next stage;
+the approval and verification gates above remain binding.

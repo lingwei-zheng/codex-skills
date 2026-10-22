@@ -8,28 +8,33 @@ def read(path: str) -> str:
     return (SKILLS_ROOT / path).read_text(encoding="utf-8")
 
 
-def test_shared_calibration_defaults_are_stable():
-    calibration = read("shared/research-calibration.md")
-    assert "research_stage: first-draft" in calibration
-    assert "rigor_profile: proportionate" in calibration
-    assert "contribution_profile: incremental-allowed" in calibration
-    assert "compute_profile: balanced" in calibration
+def test_retired_shared_policy_has_no_remaining_markdown_callers():
+    """Prevent a dangling load or a bundled replacement of project policy."""
+    retired = "research-calibration.md"
+    assert not (SKILLS_ROOT / "shared" / retired).exists()
+    assert not list(SKILLS_ROOT.rglob("SCIENTIFIC_EXPLORATION_PROTOCOL.md"))
+    for path in SKILLS_ROOT.rglob("*.md"):
+        assert retired not in path.read_text(encoding="utf-8-sig"), path
 
 
-def test_research_entry_points_load_calibration():
+def test_scientific_decision_routes_reference_project_protocol():
     for path in (
         "academic-research/SKILL.md",
         "academic-advisor/SKILL.md",
         "good-question/SKILL.md",
-        "peer-review/SKILL.md",
+        "good-story/SKILL.md",
+        "sync/SKILL.md",
+        "academic-research/ars/deep-research/WORKFLOW.md",
+        "academic-research/ars/experiment-agent/WORKFLOW.md",
+        "academic-research/ars/academic-pipeline/WORKFLOW.md",
     ):
-        assert "research-calibration.md" in read(path), path
+        assert "SCIENTIFIC_EXPLORATION_PROTOCOL.md" in read(path), path
 
 
-def test_first_draft_does_not_require_exhaustive_robustness():
+def test_validation_checks_remain_claim_triggered():
     workflow = read("academic-research/ars/experiment-agent/WORKFLOW.md")
     assert "All 11 must be checked" not in workflow
-    assert "Record other checks as deferred" in workflow
+    assert "Check every pattern triggered by the design and claim" in workflow
 
 
 def test_simulation_reference_is_reachable_from_active_routes():
@@ -73,26 +78,23 @@ def test_geography_uses_location_value_not_location_veto():
 
 
 def test_association_language_uses_one_sufficient_boundary():
-    calibration = read("shared/research-calibration.md")
     polishing = read("nature-polishing/SKILL.md")
     protected = read(
         "academic-research/ars/shared/references/"
         "protected_hedging_phrases.md"
     )
-    assert "Causal Language Economy" in calibration
     assert "accurate associational verb as a sufficient causal boundary" in polishing
     assert "Minimal sufficient inclusion" in protected
     assert "Conservative inclusion." not in protected
 
 
 def test_spatial_diagnostics_are_claim_triggered():
-    calibration = read("shared/research-calibration.md")
     spatial = read("shared/field-context/spatial-methods.md")
     stats = read(
         "academic-research/ars/experiment-agent/references/"
         "statistical_interpretation_guide.md"
     )
-    assert "Diagnostics are a menu" in calibration
+    assert "Diagnostics And Robustness Menu" in spatial
     assert "coordinates alone do not require a spatial model" in spatial
     assert "MGWR is not inherently preferable to GWR" in spatial
     assert "Check ALL 11 types" not in stats

@@ -44,8 +44,8 @@ If auto-detection is uncertain, ask the user. User can always override.
 
 ### 2. PROFILE — Estimate Before A Long Run
 
-Read `../../../../shared/research-calibration.md`. For work likely to run longer
-than a few minutes:
+Use the authorized resource budget. For work likely to run longer than a few
+minutes:
 
 1. Detect available CPU cores, memory, GPU, and relevant runtime limits.
 2. Run a 1-5% pilot or one representative work unit when feasible.

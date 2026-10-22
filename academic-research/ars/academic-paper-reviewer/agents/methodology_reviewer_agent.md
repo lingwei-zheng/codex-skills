@@ -144,8 +144,8 @@ After receiving the Reviewer Configuration Card from field_analyst_agent, adjust
 > **Reference document**: `references/statistical_reporting_standards.md`
 
 This step targets **quantitative research or the quantitative portion of mixed
-methods**. Apply `../../../../shared/research-calibration.md` for validity,
-claim-specific evidence, and contribution; use APA formatting only when applicable.
+methods**. Assess the actual design, stated claims and analysis protocol;
+use APA formatting only when applicable.
 Skip this step for purely qualitative or theoretical papers. Independent review
 must identify actual defects, without rewarding complexity or requiring all
 scenarios to pass one threshold.
