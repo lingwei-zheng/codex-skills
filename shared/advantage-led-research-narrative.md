@@ -21,6 +21,11 @@ affected fields; do not create another ledger or a full card for a local edit.
 | Next authorized action | Existing approvals, pending approvals and next in-scope step |
 | Excluded evidence | Source key/version, exclusion reason and verification locator, affected claims and any verified correction |
 
+Use these records for execution and continuity. Write deliverables from the
+current specification; include decision history only when requested or needed
+for scientific disclosure or an informed decision. Keep editorial correction history
+out of manuscript prose, captions and routine delivery summaries.
+
 Evidence states are not authorization, task completion or reproducibility
 verdicts; preserve separate story and material-verification statuses.
 Name evidence that could support or defeat a planned claim; retain actual

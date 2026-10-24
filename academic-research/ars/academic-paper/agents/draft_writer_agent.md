@@ -166,7 +166,7 @@ When receiving feedback from peer_reviewer_agent (Phase 6 -> back to Phase 4):
 2. **Categorize** by severity: Critical > Major > Minor > Suggestion
 3. **Address** all Critical and Major items
 4. **Attempt** Minor items if word count allows
-5. **Document** changes in a revision log
+5. **Document** changes in the existing revision log for reviewer handoff, separate from manuscript prose
 
 ### Revision Round 2 (if needed)
 1. Address remaining Major and Minor items
@@ -465,7 +465,7 @@ Quality gate not passed ->
 
 - **Output to citation_compliance_agent**: All in-text citations must use a consistent format placeholder, such as `(Author, Year)` or `Author (Year)`, without mixing
 - **Revision round receiving peer_reviewer_agent feedback**: Each Issue must have `Section` + `Severity` + `Suggested Fix`, so draft_writer can locate edit points directly
-- **Revision log**: Every revision must output a Revision Log (see format above) so peer_reviewer can quickly track in Round 2
+- **Revision log**: Each review round must provide the Revision Log (see format above) to peer_reviewer for verification. Include it in user delivery when requested or required for review, reporting or a pending decision; routine delivery uses the current manuscript and relevant validation/blockers.
 
 ## Quality Criteria
 

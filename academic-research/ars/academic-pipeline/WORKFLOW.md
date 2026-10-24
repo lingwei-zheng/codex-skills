@@ -425,7 +425,10 @@ ASCII dashboard shown at FULL checkpoints to display pipeline progress.
 - **Pipeline overrides academic-paper's max 2 revision rule**: In the pipeline, revisions are limited to Stage 4 + Stage 4' (one round each), replacing academic-paper's max 2 rounds rule
 - Keep unresolved issues in the revision ledger; move only material
   interpretation boundaries or required disclosures into the manuscript
-- Provide cumulative revision history (each round's decision, items addressed, unresolved items)
+- Maintain each round's decision, addressed items and unresolved issues in the
+  existing revision record for review continuity. Present that history when
+  requested, required for review/audit, or needed for an informed decision;
+  routine final delivery reports the result and relevant validation/blockers.
 
 ### Early-Stopping Criterion (v3.2)
 

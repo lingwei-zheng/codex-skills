@@ -102,7 +102,11 @@ User Input →
 - No existing paper draft (→ full mode)
 - Only need to check citation format (→ citation-check mode)
 
-**Expected Output**: Revised paper + revision notes (tracked changes)
+**Expected Output**: Self-contained revised text. Supply comparison copies,
+tracked changes or revision notes when requested or required by the submission.
+Use `../templates/revision_tracking_template.md` for reviewer feedback; keep review
+records separate from manuscript prose and preserve existing originals and
+revision records. This default does not authorize accepting tracked changes.
 **Expected Duration**: Medium
 **Agents Used**: peer_reviewer → draft_writer → citation_compliance
 

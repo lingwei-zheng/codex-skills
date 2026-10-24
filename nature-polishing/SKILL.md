@@ -19,8 +19,9 @@ clear, concise, evidence-led English; the user's journal/style takes precedence.
    conditions, uncertainty, causal meaning and population/time/scale.
 4. Compare touched claims against the source. For multi-section work, use
    `references/document-consistency.md`; check dependent abstracts, title and
-   conclusion if a result or claim changes. Return the requested text, with
-   notes only for consequential changes or unresolved gaps.
+   conclusion if a result or claim changes. Return self-contained text. Add notes
+   when requested or needed to understand scientific meaning, use, validation
+   status or a pending decision; apply routine editorial corrections directly.
 
 ## Scientific and Language Boundaries
 

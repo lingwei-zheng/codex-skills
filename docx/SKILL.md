@@ -107,6 +107,7 @@ alone do not satisfy a request for a Word file.
 - Treat the original file as read-only unless the user explicitly asks to overwrite it.
 - For user-owned drafts, prefer output names like `*-revised.docx` or `*-rewritten.docx`.
 - For third-party or high-stakes documents, do not flatten tracked changes unless the user explicitly asks for a clean copy.
+- Deliver self-contained document content. Keep comparison copies and reviewer responses separate from manuscript prose; place required disclosures where reporting rules require them. A clean-output rule does not authorize deleting originals, accepting tracked changes or removing audit records.
 - When exact formatting is business-critical, inspect OOXML before editing assumptions into the workflow.
 
 ## Current Skill Boundaries

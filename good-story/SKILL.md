@@ -40,8 +40,9 @@ scope and state its consequences; do not imply unread evidence was inspected.
 
 ## Scale the Deliverable
 
-For a local rewrite, return the requested text and explain only consequential
-changes. For a full story diagnosis, provide the leading advantage, fair arena,
+For a local rewrite, return self-contained text. Explain changes when requested
+or needed to understand scientific meaning, use, validation status or a pending
+decision. For a full story diagnosis, provide the leading advantage, fair arena,
 one-paragraph story, short spine, evidence/job map and relevant rewrite targets.
 
 Use `references/handoff-contract.md` when another workflow or later work block

@@ -30,9 +30,12 @@ governance documents, then current results/validation/run registries. Use the
 path map if present. Identify the source-of-truth files.
 
 Recover the current task, last validated result, claim/evidence versions,
-writing boundaries, decisions, blockers and next authorized step. Reconcile
-stale configurations/results before reusing claims. When deciding readiness or
-the next scientific action, read the project-root
+writing boundaries, current decisions, blockers and next authorized step.
+Resolve superseded decisions into the active specification; retain necessary
+history in existing records. Carry only history needed for the next decision
+or required reporting into the handoff, without replaying editorial corrections.
+Reconcile stale configurations/results before reusing claims. When deciding
+readiness or the next scientific action, read the project-root
 `SCIENTIFIC_EXPLORATION_PROTOCOL.md` under project `AGENTS.md` and restore
 recorded decisions, branch limits and resource bounds. There is no bundled
 methodology fallback: report a missing protocol and defer only dependent

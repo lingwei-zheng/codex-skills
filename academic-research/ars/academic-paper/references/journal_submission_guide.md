@@ -250,5 +250,5 @@ Sincerely,
 2. Be respectful and grateful
 3. If you disagree, explain why with evidence
 4. Reference specific page/line numbers for changes
-5. Use tracked changes in the revised manuscript
-6. Submit a clean copy AND a tracked-changes copy
+5. Follow the venue's current requirements or the user's request for tracked changes or highlighting.
+6. Provide clean and marked copies when required or requested, preserving the original and revision records; keep the response letter separate from manuscript prose.
