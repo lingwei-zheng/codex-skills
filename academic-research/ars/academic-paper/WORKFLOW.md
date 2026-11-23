@@ -23,6 +23,13 @@ A general-purpose academic paper writing tool — 12-agent pipeline covering all
 
 > **Codex execution:** Apply [execution and approval scope](../../references/execution-and-approval.md) and [intent routing](../shared/references/intent_clarification_protocol.md). Select the requested mode before interpreting phase and checkpoint rules.
 
+For author-side style and section organization, use the shared
+[manuscript style and structure](../../../shared/manuscript-style-and-structure.md)
+reference. Reuse these preferences without repeating sample collection; apply
+additional style calibration only when requested or useful for a different voice.
+
+For manuscript deliverables, use the local [review and submission workflow](../../../md-to-docx/references/paper-review-and-submission.md) to select the source and Word outputs for the current stage.
+
 ## Quick Start
 
 **Minimal command:**

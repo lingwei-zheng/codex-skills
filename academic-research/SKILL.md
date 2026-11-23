@@ -50,6 +50,8 @@ task while preserving explicit approval and validation gates.
 | Read when | Source of truth |
 |---|---|
 | Developing a question, experiment argument, paper architecture or central claim | `../shared/advantage-led-research-narrative.md` |
+| Choosing author-side manuscript style or section organization | [Manuscript style and structure](../shared/manuscript-style-and-structure.md) |
+| Delivering or revising a paper and its supplement | [Manuscript review and submission workflow](../md-to-docx/references/paper-review-and-submission.md) |
 | Reading, outlining, drafting or revising research content | `references/selective-quality-control.md` |
 | Simulation or estimator work in plan, run or validate mode | [Simulation guide](ars/experiment-agent/references/simulation-method-validation.md) |
 

@@ -116,6 +116,6 @@ the existing workflow already specifies that build route.
 
 Keep final content approval, provenance refusal rules, and applicable verification
 prerequisites. Do not emit a gated final artifact early, silently rewrite scientific
-content, or relabel an artifact as a draft to bypass its final-output gate. A new
-draft-export exception has not been authorized. Preparation may continue while
+content, or relabel an artifact as a draft to bypass its final-output gate.
+For author review copies, follow the [paper review and submission workflow](../../md-to-docx/references/paper-review-and-submission.md). Preparation may continue while
 approval is pending only where it does not depend on that approval.

@@ -40,6 +40,10 @@ If content changes are needed, raise them to the caller — do not silently revi
 
 ## Supported Output Formats
 
+For a local research manuscript and supplement, take the default deliverables
+and render inputs from the [paper review and submission workflow](../../../../md-to-docx/references/paper-review-and-submission.md).
+The format-specific options below apply within the selected stage.
+
 ### 1. Markdown (.md)
 - Default output format
 - Clean markdown with proper heading levels

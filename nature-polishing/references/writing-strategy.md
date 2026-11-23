@@ -48,74 +48,10 @@ When polishing, repair these failures before polishing rhythm.
 
 ## Section responsibilities
 
-### Introduction
-
-The Introduction should answer four questions:
-
-1. What is already known?
-2. What remains unresolved?
-3. What exact question does this study ask?
-4. How does the study address it?
-
-Briefly preview the strongest supported result in the contribution paragraph.
-Keep detailed results in Results; align the gap and approach with what the
-evidence actually delivers. Paragraph counts and roadmaps are optional.
-
-### Results
-
-Results state what was observed. They should provide:
-
-- object or system
-- condition
-- quantitative support
-- direct result
-
-Do not turn Results into a Discussion section by adding long mechanistic interpretation.
-
-### Discussion
-
-Discussion explains what the findings mean. It should address:
-
-- how the work fits the broader field
-- what has been added to understanding
-- which earlier work is being supported, revised, or complicated
-- which explanations are plausible
-- which limitations constrain the interpretation
-
-Discussion is the natural home for hedging.
-
-### Methods
-
-Methods should pass a reproducibility test: could another group repeat the work from this description, or from this description plus a clearly cited prior protocol?
-
-Reject vague writing such as:
-
-- `under standard conditions`
-- `using routine methods`
-- `data were analysed statistically`
-
-### Conclusion
-
-Conclusion is not a mini-discussion. A strong closing usually does three things:
-
-1. restates the central contribution
-2. identifies the decisive evidence
-3. states the memorable implication; repeat a boundary only when necessary
-
-Do not introduce new data or a new defect here. Do not append a quota of
-limitations or future-work items; preserve explicit venue requirements.
-
-### Abstract
-
-The abstract is a mini-paper:
-
-1. context or problem
-2. gap
-3. approach
-4. key result
-5. implication
-
-It should help the reader decide whether the paper is relevant, credible, and potentially important.
+Use the section functions in the shared
+[manuscript style and structure](../../shared/manuscript-style-and-structure.md)
+reference when allocating content. Use [section moves](section-moves.md) only
+for phrase-level support within that chosen structure.
 
 ## Citation as positioning
 

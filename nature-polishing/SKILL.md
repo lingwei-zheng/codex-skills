@@ -12,7 +12,9 @@ clear, concise, evidence-led English; the user's journal/style takes precedence.
 
 1. Use `formal-polish` by default. Identify the section's job and revise the
    smallest coherent unit. Repair local argument order before sentence style.
-2. Load only a reference needed for the identified problem (table below).
+2. For tone or section-organization decisions, use the shared
+   [manuscript style and structure](../shared/manuscript-style-and-structure.md).
+   Load other references only for the identified problem (table below).
    For Chinese-to-English work, reconstruct propositions and logical relations
    rather than translating clause by clause.
 3. Preserve numbers/units, formulas, citations, terminology, negation, comparison
@@ -39,9 +41,6 @@ clear, concise, evidence-led English; the user's journal/style takes precedence.
 - Remove self-undermining comparison language when rhetorical; report material
   trade-offs precisely and retain required boundaries. Do not add a weakness,
   limitations or future-work quota, or hide a failed primary outcome.
-- Prefer direct claims and conventional disciplinary collocations. Do not shorten
-  away a necessary noun head, referent, article, preposition or scope phrase.
-  Add specificity only when supported; preserve Methods detail for reproducibility.
 - Avoid em dashes by default; preserve necessary hyphens, ranges and notation.
 
 ## Human Final Pass
@@ -58,13 +57,15 @@ user explicitly enables grammar-error mode in the same request.
 
 | Need | Reference |
 |---|---|
+| Author-side style and section organization | `../shared/manuscript-style-and-structure.md` |
 | Argument repair | `references/writing-strategy.md` |
-| Article-level patterns | `references/published-article-patterns.md` |
-| Section structure | `references/section-moves.md` |
+| Optional Nature article patterns | `references/published-article-patterns.md` |
+| Phrase-level and rhetorical moves | `references/section-moves.md` |
 | Transitions, hedging or comparisons | `references/phrasebank-playbook.md` |
 | Mechanics, register or integrity checks | `references/style-guardrails.md` |
 | Defensive wording | `references/defensive-phrasing.md` |
 | Cross-section consistency | `references/document-consistency.md` |
+| Updating manuscript deliverables after polishing or Word feedback | [Paper review and submission workflow](../md-to-docx/references/paper-review-and-submission.md) |
 | Human pass policy, eligibility and intensity | `references/human-final-pass-policy.md`, `references/human-final-pass-targeting.md`, `references/human-final-pass-calibration.md` |
 
 Return polished prose without a fixed revision-note quota. Use Original /

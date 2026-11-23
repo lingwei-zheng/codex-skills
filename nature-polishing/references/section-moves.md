@@ -1,6 +1,10 @@
 # Section Moves
 
-Use this file only after the main section logic has been decided in `SKILL.md`. This file is for phrase-level and move-level support derived from `Academic Phrasebank`, not for deciding the paper's overall writing strategy.
+Use this file for phrase-level and move-level support derived from `Academic
+Phrasebank`, after choosing the section's function with the shared
+[manuscript style and structure](../../shared/manuscript-style-and-structure.md)
+reference. The move lists are optional combinations, not paragraph templates.
+Choose phrases for the actual evidence and task; they do not supply factual support.
 
 ## Introduction
 
@@ -105,11 +109,10 @@ Question this section must answer:
 
 Preferred move order:
 
-1. orient the reader to the figure, table, or experiment
-2. state the main observation
-3. add quantitative detail
-4. note expected or unexpected patterns
-5. compare with prior work only if it clarifies the result
+1. state the main observation, adding orientation first only when needed
+2. add quantitative detail, conditions and uncertainty
+3. make the relevant comparison and locate the supporting figure or table
+4. leave extended literature comparison and mechanisms to Discussion
 
 Useful phrase families:
 

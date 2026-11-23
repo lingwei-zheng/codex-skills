@@ -63,9 +63,10 @@ cost and benefit; do not invent advantages to explain a lower score.
 
 ## 3. Carry the Advantage Through the Paper
 
-- Abstract/Introduction: problem -> gap -> approach -> strongest supported result
-  -> significance. Detailed analysis belongs in Results; paragraph quotas and
-  roadmaps are optional unless required.
+- Abstract: problem -> gap -> approach -> strongest supported result -> significance.
+- Introduction: develop the problem, literature, gap, approach and contribution;
+  preview a finding when it serves the argument and venue. Detailed analysis
+  belongs in Results; paragraph quotas and roadmaps are optional unless required.
 - Results: what readers must believe, in argument order.
 - Discussion: what the evidence adds, why and where it matters.
 - Conclusion: core contribution, decisive evidence, memorable implication.

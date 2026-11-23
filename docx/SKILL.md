@@ -18,12 +18,10 @@ Prefer this skill over ad hoc zip/XML poking when the user explicitly asks to op
 
 ## Markdown-First Project Rule
 
-If the active workspace has `.codex/project.yaml` with `paths.manuscript.source_of_truth`, treat that file as the canonical editable manuscript. In that setup:
-
-- Use `.docx` files as originals, advisor review copies, or Pandoc exports.
-- When generating Word output, prefer Pandoc with `paths.manuscript.reference_docx` and `paths.manuscript.bibliography` if those paths exist.
-- If a reviewed Word file contains useful comments or edits, inspect/extract them and merge accepted changes into the Markdown source of truth.
-- Do not overwrite or treat generated DOCX as the primary source unless the user explicitly asks to switch source formats.
+For manuscript exports and returned Word comments or tracked edits, follow the
+[paper review and submission workflow](../md-to-docx/references/paper-review-and-submission.md).
+Use `paths.manuscript.source_of_truth`, `reference_docx` and `bibliography` from
+the project configuration when present.
 
 ## Workflow Decision Tree
 

@@ -3,8 +3,11 @@
 Use this file when polishing should improve scientific argument, not just English.
 The patterns below are distilled from curated Nature and Nature Communications
 research articles across materials, energy systems, construction decarbonization
-and machine learning. Do not copy their wording. Use the patterns to diagnose
-and reshape the user's manuscript.
+and machine learning. Use them as optional diagnostics when these article types
+fit the task, after the shared
+[manuscript style and structure](../../shared/manuscript-style-and-structure.md)
+reference. Select useful moves without requiring every stage or adding analyses.
+Do not copy the source wording.
 
 ## Abstract pattern
 

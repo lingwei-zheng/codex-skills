@@ -67,7 +67,11 @@ If `OutputPath` is omitted, the script writes:
 
 - `output/submission/docx/<source-basename>.docx`
 
-## Typical use
+## Single-file renderer
+
+For manuscript deliverables, choose explicit input and output paths using the
+[paper review and submission workflow](paper-review-and-submission.md). The
+examples below illustrate the underlying renderer.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File "C:\Users\Lingwei\.codex\skills\md-to-docx\scripts\build_md_to_docx.ps1"
