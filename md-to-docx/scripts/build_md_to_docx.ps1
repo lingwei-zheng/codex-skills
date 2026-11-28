@@ -1,4 +1,4 @@
-param(
+﻿param(
   [string]$WorkspaceRoot,
   [string]$SourcePath,
   [string]$OutputPath,
@@ -12,6 +12,8 @@ $ErrorActionPreference = 'Stop'
 $skillRoot = Split-Path $PSScriptRoot -Parent
 $bundledReference = Join-Path $skillRoot 'assets\default_reference.docx'
 $bundledFilter = Join-Path $skillRoot 'assets\docx_blank_lines.lua'
+$referencesHeading = '^(References|参考文献)$'
+$supplementHeading = '^(Supplementary Material|补充材料|附录)$'
 
 function Resolve-WorkspaceRoot {
   param([string]$StartPath)
@@ -403,13 +405,15 @@ function Convert-HeadingsToMinimalBody {
     $italic = $false
     $numberPrefix = ''
     $isDocumentTitle = $firstHeading
+    $isBackMatter = $paragraphText -match $referencesHeading -or $paragraphText -match $supplementHeading
+    $isUnnumbered = $isBackMatter -or $paragraphText -match '^(Abstract|摘要)$'
     if ($isDocumentTitle) {
       $bold = $true
       Set-ParagraphJustification -Paragraph $p -Value 'center' -Doc $Doc -NamespaceManager $NamespaceManager -NamespaceUri $NamespaceUri
       $firstHeading = $false
-    } elseif ($paragraphText -match '^(Abstract|References|Supplementary Material)$') {
+    } elseif ($isUnnumbered) {
       $bold = $true
-      if ($paragraphText -match '^(References|Supplementary Material)$') {
+      if ($isBackMatter) {
         $numberingActive = $false
       }
     } elseif ($level -eq 1) {
@@ -421,7 +425,7 @@ function Convert-HeadingsToMinimalBody {
       $italic = $true
     }
 
-    if ((-not $isDocumentTitle) -and $numberingActive -and $paragraphText -notmatch '^(Abstract|References|Supplementary Material)$' -and $paragraphText -notmatch '^\d+(\.\d+)*\.?\s+') {
+    if ((-not $isDocumentTitle) -and $numberingActive -and (-not $isUnnumbered) -and $paragraphText -notmatch '^\d+(\.\d+)*\.?\s+') {
       $sectionCounters[$level - 1] += 1
       for ($counterIndex = $level; $counterIndex -lt $sectionCounters.Count; $counterIndex++) {
         $sectionCounters[$counterIndex] = 0
@@ -460,7 +464,7 @@ function Clear-MinimalCaptionJustification {
     foreach ($t in @($p.SelectNodes('.//w:t', $NamespaceManager))) {
       $text += $t.InnerText
     }
-    if ($text -match '^\s*(Figure|Table)\s+[A-Za-z0-9]+\.') {
+    if ($text -match '^\s*((Figure|Table)\s+[A-Za-z0-9]+\.|[图表]\s*[A-Za-z0-9]+[.．。：:\s])') {
       $jc = $p.SelectSingleNode('w:pPr/w:jc', $NamespaceManager)
       if ($null -ne $jc) {
         [void]$jc.ParentNode.RemoveChild($jc)
@@ -482,7 +486,7 @@ function Apply-LegacyBibliographyFormatting {
       $text += $t.InnerText
     }
     $text = $text.Trim()
-    if ($text -eq 'References') {
+    if ($text -match $referencesHeading) {
       $inReferences = $true
       continue
     }

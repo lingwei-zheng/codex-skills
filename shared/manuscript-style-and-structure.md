@@ -1,58 +1,54 @@
 # Manuscript Style and Structure
 
-Use this shared reference for author-side outlining, drafting and revisions that
-affect tone or section organization. These are reusable author preferences;
-current task instructions, the study design and target venue determine their
-application. For a local edit, apply only the relevant guidance.
-
-Section functions below are flexible. Combine, split or reorder them to fit the
-argument and article type. Paragraph, research-question, citation and figure
-counts are not prescribed. Use contextual comparisons, mediation, interactions,
-nonlinearity or sensitivity analyses only when the research question and evidence
-call for them. A writing preference does not require additional analyses.
+Use these author preferences when outlining, drafting or revising. For a local
+edit, apply the guidance relevant to that passage. The research question and
+study design govern the choice of analyses. Let the argument, evidence and
+venue guide the number of research questions, citations and displays, and how
+paragraphs and sections are grouped or ordered.
 
 ## Argument and Language
 
 Use [advantage-led research narrative](advantage-led-research-narrative.md) for
-contribution selection, evidence integrity and claim-preserving revision. This
-reference governs presentation, not scientific design or independent review.
+contribution selection, evidence integrity and claim-preserving revision.
 
-- Develop the reasoning far enough for readers to understand why the question
-  matters and how the findings change understanding. Keep coherent paragraphs
-  rather than compressing necessary explanation into disconnected short units.
-- Integrate theory and literature into the argument: establish a premise,
-  synthesize agreement or disagreement, motivate a question, or interpret a
-  finding. Make each citation's role clear; avoid paper-by-paper catalogues.
-- Use direct, natural disciplinary English. Preserve necessary noun heads,
-  referents, articles, prepositions and scope phrases when shortening prose.
-  Specify the research setting, measurement and spatial or temporal support
-  precisely where relevant. Stylistic precision preserves evidential strength.
-- Keep necessary qualifications with the claims they affect and develop broader
-  design limitations in the appropriate discussion. Use the existing
-  [defensive-phrasing guide](../nature-polishing/references/defensive-phrasing.md)
-  when assessing repeated or self-undermining caveats.
+- Develop the reasoning in coherent paragraphs. When research questions build
+  on one another, show how answering one makes the next worth asking.
+- Use theory and prior studies where they establish a premise, explain a
+  disagreement or help interpret a finding. Compare the study directly with
+  the closest prior work so readers can identify the knowledge it adds.
+- Distinguish the concept under study from the measure used to represent it.
+  Define the measure and any shortened label at first use. Use meaningful
+  category names alongside numerical cutoffs where helpful. When a comparison
+  changes, name the groups or measures so the reader can follow the shift.
+- Keep the English natural when shortening a sentence. Retain the nouns,
+  articles, prepositions and scope phrases that make its meaning precise.
+  State directly where, to whom and at what scale a result applies when those
+  details affect its interpretation. If a finding changes
+  under a different definition or assumption, explain that sensitivity where
+  the reader encounters it. Distinguish a plausible explanation from a
+  demonstrated cause. See the [defensive-phrasing guide](../nature-polishing/references/defensive-phrasing.md)
+  for judging repeated caveats.
 
 ## Section Functions
 
 | Component | Preferred function and organization |
 |---|---|
-| Title | Identify the core relationship, concept or contribution and its distinctive perspective. A subtitle or question can help when it remains precise; punctuation and title form are optional. Name a method prominently when the method is a central contribution. |
-| Abstract | Connect problem, specific gap, approach, decisive findings and scientific significance. Include the data, sample, comparisons and quantities needed to understand the findings, within the venue's format. Give the main result adequate space. |
-| Introduction | Build a developed progression from importance and established knowledge through the relevant conceptual or measurement issue to the unresolved question, its consequences, and the study's approach and contribution. Integrate the literature review here when a separate review section adds no useful function. Let theory explain the question. Keep operational details in Methods. A brief finding preview is optional and must not make a result appear to have been assumed in advance. |
-| Methods | Follow the logic from setting and design through data, eligibility, measures, construction or aggregation, and analysis. Define units, denominators, coding and treatment of repeated observations where relevant. Explain how analyses answer the research questions. Put sampling and inclusion rules here; report the observed sample composition in Results. |
-| Results | Establish the sample or system and relevant descriptive patterns, then organize findings by the questions and their logical dependencies. Where a new measurement tool underpins substantive findings, establish its performance first. Prefer a finding-led paragraph followed by key quantities, uncertainty, comparisons and figure/table references. Use orienting text when needed; leave extended mechanisms and literature dialogue to Discussion. |
-| Discussion | Open with a compact synthesis of the principal findings. Develop their conceptual contribution through comparison with prior evidence and explanations distinguished from direct observations. Give contextual differences space when they matter to the question. Derive concrete research, assessment or practical implications from the findings. Usually place implications and limitations within Discussion; headings and combinations follow the venue and argument. |
-| Conclusion | Usually keep a separate, concise close that answers the central question, identifies the decisive finding and leaves a clear scientific implication. Use a combined Discussion/Conclusion when the format calls for it. |
-| Figures and tables | Assign each display an argument function, such as establishing the setting, showing the main relationship, comparing conditions or demonstrating consequences. Choose the number and arrangement from the evidence. Keep terminology and comparison units consistent with the text. |
-| Supplementary material | Make the information needed to evaluate the main claims readable on its own: definitions, denominators, complete estimates, uncertainty and relevant checks, with self-contained captions and notes. Data and code links complement this presentation. |
+| Title | A memorable phrase or question can work if the title still identifies the research task or core relationship. Give a method prominence when it is central to the contribution. |
+| Abstract | Connect the specific gap, approach, decisive finding and its meaning. Include the sample, comparisons and quantities readers need. Give a secondary or sensitivity result space when it changes how readers interpret the main finding. |
+| Introduction | Start from a broader issue when it helps readers see the stakes. Narrow to the unresolved conceptual or measurement question, its consequences and the study's response. Develop the literature review here when it advances that progression. Once the gap and contribution are clear, move on. Keep operational detail in Methods. A brief preview of the findings can follow the question and approach. |
+| Methods | Give enough context about the setting, recruitment, eligibility and analytic sample for readers to understand who or what was studied. Explain how each comparison answers its question. Define units, denominators, notation, aggregation and handling of repeated observations where relevant. Explain shared rules once and group related checks by the uncertainty they address. |
+| Results | Orient readers to the observed sample or system, then organize findings by question and logical dependency. If a substantive result relies on a new measure, establish its performance first. Lead with the finding and support it with magnitude, uncertainty and a figure or table where helpful. A secondary comparison earns space in the text when it reveals a distinction readers need to understand the main claim. Summarize less informative comparisons and point to the full estimates. |
+| Discussion | A brief *Principal findings* opening often works well. Recall what was studied or compared and summarize the main findings together. Organize the ensuing discussion by the scientific issues they raise. Use prior evidence and relevant contextual differences to interpret the findings, then develop the implications and limitations that affect their use. |
+| Conclusion | State what the findings together establish about the central question. Where useful, follow that scientific point with a concrete implication for what readers can assess, compare or do differently. A short separate conclusion is usually helpful, though a combined Discussion and Conclusion can serve the same function. |
+| Figures and tables | Give each display a clear purpose. Keep related comparisons together when seeing them side by side helps the reader. Use restrained color and annotation, consistent symbols, terms and units, and labels legible at publication size. Captions should let readers interpret the display on its own. Develop the broader scientific explanation in the text. |
+| Supplementary material | Organize the supplement around the claims readers may want to check. Provide the relevant definitions, denominators, complete estimates, uncertainty and sensitivity checks with self-contained notes. Refer to the specific section, figure or table from the manuscript. Data and code links can support reproduction. |
 
-Research questions should form a coherent progression where the study supports
-one. Presentation of a phenomenon, its conditions and its implications is a
-useful option, not a required sequence or a reason to add a new question.
-Practical implications should identify what can be assessed, compared or done
-differently; their prominence depends on the contribution and audience.
+Match the level of detail to the audience. A cover letter can connect the gap,
+the study's approach and its distinctive contribution in a short paragraph.
+An email asking a supervisor to review an attached draft usually needs only
+a brief statement of the central finding and the request.
 
 For phrase-level assistance, use
 [section moves](../nature-polishing/references/section-moves.md). For a rewrite,
-check that the touched sections still connect the question, evidence and
-contribution; use the existing consistency workflow for dependent claims.
+check that the revised sections still connect the question, evidence and
+contribution. Use the existing consistency workflow for dependent claims.
